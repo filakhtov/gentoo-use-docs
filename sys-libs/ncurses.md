@@ -1,6 +1,8 @@
 # sys-libs/ncurses
 ### ada
-Enables `--with-ada` configure option. This will instruct make to build and install bindings and expample program for Ada95 programming language. It is not usual to find a program written in Ada in general, let alone the one that is using ncurses, so for the average user it is safe to disable this flag.
+Enables `--with-ada` configure option. This will instruct make to build and install bindings and expample program for Ada95 programming language.
+
+It is not usual to find a program written in Ada in general, let alone the one that is using ncurses, so for the average user it is safe to disable this flag.
 
 ### cxx
 Enables `--with-cxx` and `--with-cxx-binding` configure options.
@@ -14,13 +16,19 @@ This however, posesses a problem when C++ compiler is used to build ncurses libr
 It is recommended to keep this flag enabled.
 
 ### debug
-Enables `--with-debug` configure option. This will build a set of ncurses libraries that include debugging symbols. These libraries are usually prefixed with `_g`, e.g. `libncurses_g.a` or `libpanel_g.a`. This flag is normally not required, unless debugging/development to be done against ncurses.
+Enables `--with-debug` configure option. This will build a set of ncurses libraries that include debugging symbols. These libraries are usually prefixed with `_g`, e.g. `libncurses_g.a` or `libpanel_g.a`.
+
+This flag is normally not required, unless debugging/development to be done against ncurses.
 
 ### doc
-This flag simply instructs ebuild to install a copy of HTML documentation that comes with ncurses into subdirectory of `/usr/share/doc`. Minimum amount of documentation (e.g. README, intro, TO-DO) is still installed if this flag is disabled. It is safe to disable this flag, unless development against ncurses library to be done and documentation is required to assist in doing so.
+This flag simply instructs ebuild to install a copy of HTML documentation that comes with ncurses into subdirectory of `/usr/share/doc`. Minimum amount of documentation (e.g. README, intro, TO-DO) is still installed if this flag is disabled.
+
+It is safe to disable this flag, unless development against ncurses library to be done and documentation is required to assist in doing so.
 
 ### gpm
-This flag enables `--with-gpm` configure option. GPM stands for **G**eneral **P**urpose **M**ouse and is a daemon that provides mouse support for virtual consoles. Normally GPM enables just copy-paste behavior, but ncurses can use it for navigating menus, selecting options and so on. This flag is recommended for users who plan to use mouse in their virtual consoles (command line, not usual Graphical Interface).
+This flag enables `--with-gpm` configure option. GPM stands for **G**eneral **P**urpose **M**ouse and is a daemon that provides mouse support for virtual consoles. Normally GPM enables just copy-paste behavior, but ncurses can use it for navigating menus, selecting options and so on.
+
+This flag is recommended for users who plan to use mouse in their virtual consoles (command line, not usual Graphical Interface).
 
 ### minimal
 This flag will instruct ebuild to exclude contents of `/usr/share/terminfo` from installation into the target system. This directory contains a database of terminal capabilities, that provides information on what escape sequences and control characters to send to terminal in order to move cursor, erase part of the screen, scroll, change mode, color, blinking, etc.
@@ -28,13 +36,19 @@ This flag will instruct ebuild to exclude contents of `/usr/share/terminfo` from
 It is generally safe to enable this flag and thus remove `terminfo` directory, because ncurses comes with minimal database installed into `/etc/terminfo` and unless it is planned to use terminal that is not a regular screen it should have no effect whatsoever.
 
 ### profile
-Enables `--with-profile` configure option. This is similar to `debug` flag and will build profiled libraries with `_p` prefix, e.g. `libncurses_p.a`. These libraries are built with `-pg` flag in order to enable collection of profiling information during runtime. It has performance and size overhead and unless profiling of the ncurses library itself or applications dependent on it is planned this USE flag should be disabled.
+Enables `--with-profile` configure option. This is similar to `debug` flag and will build profiled libraries with `_p` prefix, e.g. `libncurses_p.a`. These libraries are built with `-pg` flag in order to enable collection of profiling information during runtime.
+
+This flag has performance and size overhead and unless profiling of the ncurses library itself or applications dependent on it is planned this USE flag should be disabled.
 
 ### static-libs
-This flag will instruct ebuild to preserve static `.a` libraries. Normally, these libraries are removed by ebuild and only `.so` (shared) libraries that dynamically resolve and load their dependencies during runtime are installed. This is not an option that is normally needed by regular user and is mostly oriented for developers or systems without dynamic loader (which isn't Gentoo anyway).
+This flag will instruct ebuild to preserve statically linked libraries. Normally, these libraries are removed by ebuild.
+
+This is not an option that is normally needed by regular user and is mostly oriented for development purposes.
 
 ### test
-This USE flag tells configure to enable `--with-tests` option and execute regression test suite that comes together with ncurses during build phase. This will take extra build time and output is not something that is easily understood or can be act upon by regular user.
+This USE flag tells configure to enable `--with-tests` option and execute regression test suite that comes together with ncurses during build phase.
+
+This will take extra build time and output is not something that is easily understood or can be act upon by regular user, so this flag should be normally disabled.
 
 ### threads
 Enables `--with-pthread` configure option and `ncursest` Makefile target. This will build thread-safe version of the curses library. Thread implementation is based on pthread (POSIX threads). This flag should be enabled if library to be used to compile threaded applications. There are no packages in portage tree that explicitly require threaded ncurses, so it can be safely disabled by most users.
@@ -56,4 +70,4 @@ This flag should normally be disabled.
 ### unicode
 This flag enables `ncursesw` Makefile target. W in `ncursesw` stands for "wide" and resulting library will be able to handle Unicode character sets.
 
-Normally users want to keep this flag enabled, because popular programs like `less`, `more` and `dmesg` will happily use "wide" version of ncurses! However it can be disabled if target system is only ever dealing with English language.
+Normally users want to keep this flag enabled, because popular programs like `less`, `more` and `dmesg` will happily use "wide" version of ncurses! However it can be disabled if the target system is only ever dealing with English language.
