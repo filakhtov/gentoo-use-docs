@@ -11,6 +11,9 @@ This mainly happens, because Gentoo's existing documentation on USE flags is qui
 
 Which is great, but does not answer how this particular package will use `bzip2` dependency. This is why I decided to start this project: to document concrete use cases for as many packages as I can. My hope would be that it will became viral and together with other Gentoo community members we can get better understanding of ecosystem.
 
+### Project organization
+This project is organized to mirror Gentoo Portage tree. Directories represent categories, while `.md` files inside represent packages within these categories.
+
 ### Contribution
 Simply fork, make your changes/additions and create a PR!
 
