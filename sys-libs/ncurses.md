@@ -1,4 +1,7 @@
 # sys-libs/ncurses
+### ada
+Enables `--with-ada` configure option. This will instruct make to build and install bindings and expample program for Ada95 programming language. It is not usual to find a program written in Ada in general, let alone the one that is using ncurses, so for the average user it is safe to disable this flag.
+
 ### cxx
 Enables `--with-cxx` and `--with-cxx-binding` configure options.
 
@@ -9,14 +12,6 @@ This however, posesses a problem when C++ compiler is used to build ncurses libr
 `--with-cxx-binding` option enables compilation of C++ ncurses binding and associated example program. These bindings provide a number of classes that simplify writing ncurses-based programs in C++. There is a wide variety of C++ tools that depend on these classes.
 
 It is recommended to keep this flag enabled.
-
-### unicode
-This flag enables `ncursesw` Makefile target. W in `ncursesw` stands for "wide" and resulting library will be able to handle Unicode character sets.
-
-Normally users want to keep this flag enabled, because popular programs like `less`, `more` and `dmesg` will happily use "wide" version of ncurses! However it can be disabled if target system is only ever dealing with English language.
-
-### ada
-Enables `--with-ada` configure option. This will instruct make to build and install bindings and expample program for Ada95 programming language. It is not usual to find a program written in Ada in general, let alone the one that is using ncurses, so for the average user it is safe to disable this flag.
 
 ### debug
 Enables `--with-debug` configure option. This will build a set of ncurses libraries that include debugging symbols. These libraries are usually prefixed with `_g`, e.g. `libncurses_g.a` or `libpanel_g.a`. This flag is normally not required, unless debugging/development to be done against ncurses.
@@ -57,3 +52,8 @@ This will enable `trace` configure option. This will add `-DTRACE` option to `CF
 Normally tracing information is included only in debug libraries, however it is sometimes desirable to include tracing information into normal shared library. Enable this flag to achieve that.
 
 This flag should normally be disabled.
+
+### unicode
+This flag enables `ncursesw` Makefile target. W in `ncursesw` stands for "wide" and resulting library will be able to handle Unicode character sets.
+
+Normally users want to keep this flag enabled, because popular programs like `less`, `more` and `dmesg` will happily use "wide" version of ncurses! However it can be disabled if target system is only ever dealing with English language.
