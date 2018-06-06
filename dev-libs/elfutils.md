@@ -24,7 +24,7 @@ It's safe to disable this flag, unless there is a plan to deal with one or more 
 ### test
 This flag does two things:
 
-- it appends `-g` (debugging) flag into `CFLAGS` for compiler because of [#407135](https://bugs.gentoo.org/407135).
+- it appends `-g` (debugging) flag into `CFLAGS` for compiler because of [Gentoo bug #407135](https://bugs.gentoo.org/407135).
 - it executes `check` make target in order to run regression test suite.
 
 Running tests will extend build time. It is also recommended to re-emerge this package without this flag enabled, otherwise installed libraries and binaries will have debugging information attached.
