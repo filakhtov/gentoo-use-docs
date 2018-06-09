@@ -48,6 +48,21 @@ Use `openssl` for Encryption and Authentication features of IPv6 stack for `ping
 
 This flag conflicts with `nettle`, `libressl` and `gcrypt`, because only one SSL backend can be used at a time.
 
+### rarpd
+Install `rarpd` daemon binary and init scripts (no support for SystemD services at this time). This daemon is necessary to respond to RARP (Reverse Address Resolution Protocol) requests.
+
+RARP is an older alternative to DHCP and is not recommended nowadays, so it is safe to disable this flag unless non-PXE network booting for specific devices is necessary.
+
+### rdisc
+This flag enables `rdisc` binary installation, a tool that implements client side part of ICMP router discovery protocol, allowing system to ask for and accept routing tables from routers.
+
+This flag is only necessary if system to be part of RDISC capable network(s). Otherwise it is completely safe to disable.
+
+### SECURITY_HAZARD
+Enabling this flag will apply patch that allows unprivileged users to use flood ping. As flag name indicates this is a security problem, especially on multi-user systems with untrusted access.
+
+This flag should normally be disabled.
+
 ### ssl
 Enable Encryption and Authentication features of IPv6 protocol for `ping6` tool. This flag does not make any changes if `ipv6` flag is disabled.
 
@@ -58,6 +73,16 @@ If `ping6` tool returns a following message:
 > ping6: function not available; crypto disabled
 
 for some or all hosts, it means that `ssl` flag must be enabled in order to make it work.
+
+### static
+This flag will append `-static` option to `LDFLAGS` for building statically linked binaries.
+
+It is recommended to disable this flag for regular system.
+
+### tftpd
+Enable `tftpd` server installation for TFTP (Trivial File Transfer Protocol) support.
+
+This flag can safely be disabled unless TFTP server is required (e.g. to run PXE booting server or flashing firmware into certain routers).
 
 ### tracepath
 Enable `tracepath` tool installation. If `ipv6` flag is also enabled tracepath will be built with IPv6 protocol support.
