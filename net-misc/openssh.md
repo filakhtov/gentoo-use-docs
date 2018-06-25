@@ -1,0 +1,111 @@
+# net-misc/openssh
+### audit
+Pass the `--with-audit=linux` option to the configure script. Provide an ability to report various SSH events through a Kernel Audit Subsystem.
+
+It is safe to disable the flag. This flag is useful for environments where security auditing is necessary.
+
+### bindist
+This flag does nothing on its own.
+
+- When enabled together with a `ldns` flag - ensure that a [net-libs/ldns](../net-libs/ldns.md) package has `ecdsa` flag disabled.
+- When an `ssl` flag is enabled, while a `libressl` flag is disabled - ensure that a `bindist` flag of a [dev-libs/openssl](../dev-libs/openssl.md) package matches `bindist` on the openssh package.
+
+This flag must be disabled if there is a plan to distribute package in compiled form due to patent restrictions.
+
+### debug
+Append the `-DSANDBOX_SECCOMP_FILTER_DEBUG` option to a `CPPFLAGS` variable. Changes seccomp denial method from a default `SECCOMP_RET_KILL` to a `SECCOMP_RET_TRAP` that provides additional information about the failed syscall.
+
+This flag is only useful for debugging a seccomp filter functionality and should normally be disabled.
+
+### hpn
+Apply a set of patches that improve an SSH and SCP performance known as an "HPN patch". Install an HPN-README documentation into a `/usr/share/doc/openssh-<VERSION>/` directory. HPN provides significant performance improvements, especially on long and high bandwith network links.
+
+Append a `DisableMTAES yes` directive to `sshd_config` file, because multi-threaded AES CTR cipher is known to be broken with HPN.
+
+It is safe to disable the flag.
+
+### kerberos
+Pass the `--with-kerberos5=/usr` option to the configure script. Provide support for authentication using a Kerberos protocol.
+
+Enable a `KerberosAuthentication`, a `KerberosOrLocalPasswd`, a `KerberosTicketCleanup` and a `KerberosGetAFSToken` options support for an SSH daemon.
+
+This flag is safe to disable.
+
+### ldap
+Patch an OpenSSH source to provide a LDAP authentication support (aka OpenSSH-LPK, LDAP Public Key). Pass the `--with-ldap` option to the configure script. Provide an ability to store public keys in LDAP and allow grouping of machines in LDAP data to limit a user access to specific machines.
+
+Enable a `UseLPK`, a `LpkServers`, a `LpkUserDN`, a `LpkGroupDN`, a `LpkBindDN`, a `LpkBindPw`, a `LpkServerGroup`, a `LpkForceTLS`, a `LpkSearchTimelimit`, a `LpkLdapConf`, a `LpkFilter` and a `LpkBindTimelimit` options for SSH daemon.
+
+It is safe to disable the flag.
+
+### ldns
+Pass the `--with-ldns` option to the configure script. Provide an ability to verify host identity using an SSHFP (SSH Fingerprint) DNS record with DNSSEC signing to prevent DNS spoofing. When disabled, it is still possible to use SSHFP but DNSSEC validation won't be available.
+
+It is recommended to enable the flag if the target system will ever be connecting to SSH servers with an SSHFP record published via a DNSSEC capable server. Otherwise it can be safely disabled.
+
+### libedit
+Pass the `--with-libedit` option to the configure script. Provide a history and a line editing features for `sftp` program.
+
+This flag can be safely disabled.
+
+### libressl
+Only works together with an `ssl` flag. Use a LibreSSL library instead of an OpenSSL for various cryptographical operations.
+
+The flag should only ever be toggled system-wide, because OpenSSL and LibreSSL can not be installed on the target system at the same time.
+
+### livecd
+Change the `PermitRootLogin` option to `Yes` in an `sshd_config` file.
+
+It is safe to disable the flag as it is only used for building SSH daemon for a Live CD.
+
+### pam
+Pass the `--with-pam` option to the configure script. Modify a default `sshd_config` config file to enable PAM related options. Provide PAM stack support for SSH server to have an additional control over user authentication procedures. It can be used to improve security, e.g. to set-up two-factor authentication.
+
+It is safe to disable this flag if there is no need to use PAM stack.
+
+### pie
+Pass the `--with-pie` option to the configure script. Append an `-fPIE` option to a `CFLAGS` variable and a `-pie` option to an `LDFLAGS` variable. Build a PIE (position-independent executable) ssh binaries. It can be used with e.g. PaX to randomize an application memory location and thus improve a security.
+
+It is recommended to keep this flag enabled.
+
+### sctp
+Apply SCTP (Stream Control Transmission Protocol) patches to a source code before compiling it. Pass the `--with-sctp` option to the configure script. Provide support for an SCTP protocol for the client and the server.
+
+It is safe to disable this flag as it is only ever necessary for systems that are using SCTP.
+
+### selinux
+Pass the `--with-selinux` option to the configure script. Enable SELinux support for OpenSSH - checking if SELinux is enabled and changing a processes context as necessary.
+
+This flag should only ever be changed system-wide, e.g. by using SELinux-enabled Portage profile.
+
+### skey
+Pass the `--with-skey` option to the configure script. Provide an ability to authenticate using S/Key - a one time password system in addition to other methods e.g. a pubkey or a password.
+
+The flag can safely be disabled.
+
+### ssl
+Modify configure scripts to provide an actual `libcrypto` library location obtained from pkg-config. Pass the `--with-openssl`, the `--with-md5-passwords` and the `--with-ssl-engine` options to the configure script.
+
+If disabled, internal cryptographic routines will be used instead of OpenSSL. Support only AES-CTR and chacha20+poly1305 ciphers, ECDH/curve25519 key exchange and Ed25519 public keys.
+
+This flag should normally be enabled, unless target system will never use routines outside of outlined above.
+
+### static
+Conflicts with `pie`. Append the `-static` option to the `LDFLAGS` variable. Build and install statically linked binaries.
+
+It is recommended to keep this flag disabled unless there is an explicit need for static SSH binaries.
+
+### test
+Execute a test-suite provided together with a source code. This will extend a build time.
+
+The flag should normally be disabled as it is only useful for the Gentoo team, developers or testers.
+
+### X
+Pull a [x11-apps/xauth](../x11-auth/xauth.md) package as a dependency. It is necessary for `X11Forwarding` to securily access GUI on a remote server via SSH protocol.
+
+It is recommended to disable this flag unless there is a need to use X11 Forwarding functionality, especially because there are know vulnerabilities associated with the feature.
+
+### X509
+Apply a set of patches to support X.509 PKI (Public Key Infrastructure). Provide an ability to authenticate using client certificates signed by known Certificate Authority.
+
+This flag should normally be disabled due to complex nature of the X.509 infrastructure and introduces a risk.
