@@ -106,7 +106,7 @@ Pass the `--enable-libgomp` option to the configure script. Build a `libgomp.so`
 This flag is safe to disable.
 
 ### pch
-Does nothing when enabled. When disabled, however, pass the `--disable-libstdcxx-pch` option to the configure script. This option will avoid building the pre-compiled header (PCH) for libstdc++ that takes up a lot of space, and we have no use for it.
+Does nothing when enabled. When disabled, however, pass the `--disable-libstdcxx-pch` option to the configure script. This option will avoid building the pre-compiled header (PCH) for libstdc++ that takes up a lot of space, and there is no use for it.
 
 This flag is not recommended despite a performance gain it brings. See [gcc.gnu.org](https://gcc.gnu.org/wiki/PCHHaters) for details.
 
@@ -121,7 +121,26 @@ Pass the `--enable-default-pie` option to the configure script. A resulting comp
 This flag can be safely disabled, however PIE might be a useful security feature under the certain circumstances.
 
 ### regression-test
+Install additional dependencies that will only be required to run the test suite provided with a source code. Execute a `make -k check` command to run the suite when build is finished. Copies test results into `/usr/share/doc/gcc-<VERSION>/testsuite` directory.
+
+It is recommended to keep this flag disabled as it is only useful for the Gentoo team, developers and testers.
+
 ### sanitize
+Pass the `--enable-libsanitizer` option to the configure script. Enable an AddressSanitizer (aka ASan) - a fast memory error detector. Provide a `-fsanitize` family of runtime options and install a `libasan.so`, a `liblsan.so`, a `libtsan.so` and a `libubsan.so` libraries.
+
+It is safe to disable the flag.
+
 ### ssp
+Pass the `--enable-default-ssp` option to the configure script. Enable an SSP (stack smashing protection) feature by default. A resulting compiler will automatically use the `-fstack-protector-strong` option for all compilation processes. On platforms, where an SSP functionality is not provided by C library the `--enable-libssp` option will also be used regardless of the `libssp` flag state.
+
+It is recommended to enable this flag due to security benefits it provides.
+
 ### vanilla
+Skip applying any patches. This means hardening features like SSP, PIE and others won't be available.
+
+This flag should be enabled.
+
 ### vtv
+Pass the `--enable-vtable-verify` and `--enable-libvtv` options to the configure script. Enable a vtable verification feature that causes libstdc++ to be built with its virtual calls in verifiable mode. Build and install a `libvtv.so` runtime library to support this feature.
+
+It is recommended to enable this flag as it provides an additional safety net.
