@@ -40,6 +40,11 @@ When disabled, export the `ac_cv_search_setfilecon=no`, `ac_cv_header_selinux_co
 
 This flag should only ever be toggled system-wide, i.e. as part of a SELinux-enabled Portage profile.
 
+### split-usr
+Move critical binaries from a `/usr/bin` directory into a `/bin` directory and create symlinks back to a `/usr/bin`. This is necessary to support booting a system with a `/usr` directory on a separate partition.
+
+This flag should only be enabled if there is a need to use a separate partition for a `/usr` directory.
+
 ### static
 Append `-static` option to the `LDFLAGS` variable. Patch `configure` script to set `elf_sys=no` (instead of default `yes`), see [Gentoo Bug #321821](https://bugs.gentoo.org/321821) for details. Build and install statically linked binaries.
 
