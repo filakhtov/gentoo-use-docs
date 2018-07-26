@@ -16,7 +16,7 @@ Pull in a [gnome-extra/polkit-gnome](../gnome-extra/polkit-gnome.md) or an [lxde
 This flag should be enabled if target system to be running a GTK-based or an LXDE-based Desktop Environments.
 
 ### introspection
-Pass the `--enable-introspection` option to the configure script. Generate GIR metadata files during a build time to provide dynamic bindings support for languages other than C.
+Pass the `--enable-introspection` option to the configure script. Generate GIR metadata `Polkit-1.0.gir` and `PolkitAgent-1.0.gir` files during the build time to provide dynamic bindings support for languages other than C.
 
 It is safe to disable the flag unless there is an explicit need for GIR files.
 
