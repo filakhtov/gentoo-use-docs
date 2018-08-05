@@ -10,7 +10,7 @@ Run `make info` during a build to produce info pages. They will be installed int
 It is safe to disable this flag.
 
 ### multitarget
-Pass the `--enable-targets=all` and `--enable-64-bit-bfd` options to the configure script. Provide a 64-bit support on hosts with narrower word sizes and enable all supported targets (not only natively supported targets) for cross-compiling.
+Pass the `--enable-targets=all` and `--enable-64-bit-bfd` options to the configure script. Provide a 64-bit computing support (also on hosts with narrower word sizes) and enable all supported targets (not only natively supported targets) for cross-compiling.
 
 This flag can safely be disabled unless there is a need for cross-compiling.
 
