@@ -10,6 +10,11 @@ Install additional example files into the `/usr/share/doc/pygobject-<VERSION>/ex
 
 It is safe to disable the flag.
 
+### libffi
+Pass the `--with-ffi` option to the configure script. Use the `libffi` library to provide an ability to directly call into underlying C libraries.
+
+This flag should normally be enabled, because Glib an GObject Introspection are dependent on `libffi` anyway.
+
 ### test
 Prepare an environment, start a new Xvfb session and execute the `make check` command inside of it when the main build is completed. Run a test suite provided with the source code. This will extend a build time.
 
