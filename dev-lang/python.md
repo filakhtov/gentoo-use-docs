@@ -1,8 +1,14 @@
 # dev-lang/python
+
 ### berkdb
 The flag enables the `dbm`, the `_bsddb` and the dependent Python modules. The `dbm` module is linked against Oracle Berkeley DB implementation.
 
 It is not recommended to enable the flag, because the `bsddb` modules are deprecated and no longer maintained inside of the `python` package. Up to date alternative is provided by the [dev-python/bsddb3](../dev-python/bsddb3.md) package.
+
+### bluetooth
+Enable support for the L2CAP, RFCOMM, HCI and SCO Bluetooth protocols in the Socket module. When disabled, export the `ac_cv_header_bluetooth_bluetooth_h=no` environment variable for the configure script to disable Bluetooth support.
+
+This flag should be enabled if there is a need for the Bluetooth protocol.
 
 ### build
 This flag is used by the Gentoo team for building early stage images and bootstrapping. This will ignore the [app-misc/mime-types](../app-misc/mime-types.md) package dependency.
