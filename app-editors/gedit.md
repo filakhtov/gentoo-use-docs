@@ -6,7 +6,7 @@ Pass the `--enable-introspection` option to the configure script. Generate and i
 It is safe to disable the flag, however some Gedit plugins might require this.
 
 ### python
-Prepare environment for the configure script to find an appropriate version of Python interpreter. Pass the `--enable-python` option to the configure script. Build support for the Python-based plugins.
+Prepare environment for the configure script to find an appropriate version of Python interpreter. Pass the `--enable-python` option to the configure script. Build support for the Python-based plugins and build some of the bundled plugins, e.g. quick open, Python console, external tools.
 
 The flag can be safely disabled, however Python plugins won't be available.
 
@@ -23,4 +23,4 @@ This flag should normally be disabled as these tests are mainly used by the deve
 ### vala
 Prepare environment for the configure script to find an appropriate version of vala files. Pass the `--enable-vala` option to the configure script. Provide an ability to use Gedit plugins written in Vala.
 
-This flag should be enabled if there is a need to use Vala plugins.
+This flag should be enabled if there is a need to use or develop Vala plugins.
