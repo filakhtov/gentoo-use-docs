@@ -5,6 +5,11 @@ Pass the `--enable-midi` option to the configure script. Enable support for the 
 
 This flag should only be enabled if there is a need to use MIDI Synthesizer that advertises the MIDI Primary Service over Bluetooth.
 
+### btpclient
+Pass the `--enable-btpclient` option to the configure script. Build and install the `btpclient` tool - a BTP (Bluetooth Test Protocol) client for qualification testing.
+
+This flag should normally be disabled.
+
 ### cups
 Pass the `--enable-cups` option to the configure script. Patch the `Makefile` files to point it to the correct location of the CUPS libraries. Provide an ability to use Bluetooth printers.
 
