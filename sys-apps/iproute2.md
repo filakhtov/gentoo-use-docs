@@ -10,6 +10,11 @@ Add a `HAVE_BERKELEY_DB := y` (`n` if disabled) option to the build configuratio
 
 This flag should normally be disabled as modern Linux kernels are handling ARP cache properly, however it might be useful if there is a need to maintain a local ARP table.
 
+### elf
+Add a `HAVE_ELF := y` (`n` when disabled) option to the build configuration file `config.mk`. Enable support for the eBPF (extended Berkeley Packet Filter) classifier and actions for the `tc` (traffic control) tool. Link against the `libelf` library for parsing an ELF file to extract the map and bytecode specification generated from a compiler such as llvm that is then pushed into the kernel by `tc`.
+
+This flag should be enabled if there is a need to use `tc` with the eBPF filters.
+
 ### iptables
 Add a `TC_CONFIG_XT := y` (`n` when disabled) and a `TC_CONFIG_NO_XT := n` (`y` if disabled) options to the build configuration file `config.mk`. Provide support for xtables based targets for a QoS policing with a `tc` tool.
 
