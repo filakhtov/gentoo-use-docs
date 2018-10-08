@@ -48,3 +48,8 @@ This flag should only be enabled systemwide as part of the selinux-enabled Gento
 Executes test suite provided with a source code after a build is complete. This will extend a build time.
 
 This flag should be disabled. It is only useful for the Gentoo team, developers or testers.
+
+### vim-syntax
+Pull in the [app-editors/vim](../app-editors/vim.md) package as a dependency. VIM provides support for PAM configuration files syntax highlighting out of the box.
+
+This flag should be enabled if there is a need for syntax highlighting when editing PAM config files with the VIM editor.
