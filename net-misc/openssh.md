@@ -1,4 +1,5 @@
 # net-misc/openssh
+
 ### audit
 Pass the `--with-audit=linux` option to the configure script. Provide an ability to report various SSH events through a Kernel Audit Subsystem.
 
