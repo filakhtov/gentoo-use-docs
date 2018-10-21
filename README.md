@@ -17,5 +17,15 @@ This project is organized to mirror Gentoo Portage tree. Directories represent c
 ### Contribution
 Simply fork, make your changes/additions and create a PR!
 
+### Commit message format
+Commit messages in this project are structured in the following way:
+
+```
+category/package-name
++flag1 -flag2 ~flag3
+```
+
+where `category/package-name` comes on the first line and is a fully qualified package name, omitting version. Flags come on the second line and are prefixed by the `+` (added flag and its description, `flag1` in the example above), `-` (deleted flag and its description, because it was removed from ebuild, `flag2` in the example above) or `~` (modified flag description, `flag3` in the example above) symbols.
+
 ### License
 This repository is covered by Unlicense, because I'm too bored to get into licensing politics, sorry.
