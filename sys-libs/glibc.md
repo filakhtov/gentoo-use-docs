@@ -9,6 +9,11 @@ This flag only works if a `suid` flag is enabled or both a `nscd` and a `selinux
 
 It is safe to disable this flag. It is recommended to keep it enabled if `suid` flag is enabled too.
 
+### compile-locales
+Normally, only locales that are specified in the `/etc/locale.gen` configuration file are generated after the package is installed. Enabling this flag will ignore the aforementioned config and generate all available locales. This will extend the build time and is generally used for building stage images and bootstrapping.
+
+It is recommended to disable the flag.
+
 ### debug
 This flag only makes sense if `hardened` flag is also enabled. Patch Makefile to allow core dump on SIGABRT signal on hardened systems or when debug mode is requested (append a `-DSSP_SMASH_DUMPS_CORE` option to the compiler flags when building an SSP source).
 
