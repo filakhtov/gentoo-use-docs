@@ -26,7 +26,7 @@ Download a missing JPEG file necessary for running tests and copy it into the so
 This flag should be normally disabled as it is primarily oriented to the developers and testers.
 
 ### tiff
-Pass the `--with-libtiff` option to the configure script. Build and install the `libpixbufloader-tiff` library - a progressive loader for JPEG2000 image format.
+Pass the `--with-libtiff` option to the configure script. Build and install the `libpixbufloader-tiff` library - a progressive loader for TIFF image format.
 
 This flag should be enabled to provide support for loading TIFF images via GDK-PixBuf library.
 
