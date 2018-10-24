@@ -34,6 +34,11 @@ This flag only makes sense under the cross-compilation. When enabled ignores a [
 
 This flag should normally be disabled.
 
+### multiarch
+Enable the GNU indirect function support (IFUNC) - a feature that allows a developer to create multiple implementations of a given function and to select amongst them at runtime using a resolver function which is also written by the developer. The resolver function is called by the dynamic loader during early startup to resolve which of the implementations will be used by the application. Once an implementation choice is made it is fixed and may not be changed for the lifetime of the process.
+
+This flag should be enabled for multi-architecture builds, e.g. if there is a need to run 32-bit apps in a 64-bit OS or when cross-compiling.
+
 ### multilib
 Enable multilib support, e.g. both a 32-bit and a 64-bit libraries will be built and installed. This is usually necessary to run a 32-bit application on a 64-bit OS.
 
