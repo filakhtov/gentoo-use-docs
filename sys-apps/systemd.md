@@ -102,6 +102,11 @@ The flag passes the `-Dqrencode=true` option to the Meson build script. It will 
 
 This flag can be safely disabled, because verification keys can simply be typed or copied away.
 
+### resolvconf
+The resolvectl/systemd-resolve tool provides `resolvconf` compatibility mode. Enabling this flag will install symlink under the `resolvconf` name, in which case it will take arguments and input compatible with the Debian and FreeBSD resolvconf tool.
+
+This flag can be enabled to support resolvconf compatibility mode.
+
 ### seccomp
 Passes the `-Dseccomp=true` option to the Meson build script. This builds variety of the SystemD tools with the `seccomp` filtering framework support. A Kernel has to be compiled with the `seccomp` support for this feature to work properly.
 
