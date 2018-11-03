@@ -20,6 +20,11 @@ Pass a `--with-ads` option to a WAF configure script. Enable integration with AD
 
 This flag should only be enabled if there is a need to join an AD domain.
 
+### ceph
+Pass the `--enable-cephfs` option to the WAF configure script. Build and install the `vfs_ceph` VFS (Virtual File System) module to utilize features provided by the CephFS. Enable support for the `vfs objects` configuration option.
+
+This flag should only be enabled if there is a need to expose shares that are located on CephFS volumes.
+
 ### client
 Pull in the [net-fs/cifs-utils](../net-fs/cifs-utils.md) package as a dependency (and ensure that `ads` flag is enabled if necessary). CIFS utils provide an ability to access Windows or Samba file shares over an SMB (Server Message Block) protocol.
 
@@ -38,6 +43,11 @@ This flag should only be enabled if there is a need to run HA cluster.
 Pass a `--enable-cups` option to a WAF configure script. Enable support for CUPS (Common Unix Printing System) based printers and print jobs, to allow them to be shared with or managed by other systems over an SMB (Server Message Block) protocol.
 
 This flag should be enabled if there is a need to share local CUPS printers over an SMB protocol.
+
+### debug
+Pass the `--with-lttng` option to the WAF configure script. Use the LTTng (Linux Trace Toolkit Next Generation) framework to enable tracing in order to analyze behavior and interaction between various components of Samba and operating system.
+
+This flag should only be enabled for debugging purposes.
 
 ### dmapi
 Pass a `--with-dmapi` option to a WAF configure script. Enable support for a Data Management API (DMAPI) interface for Hierarchical Storage Management (HSM) for an XFS filesystem.
@@ -73,6 +83,11 @@ This flag should only be enabled if integration with LDAP is desired.
 Pass a `--with-pam` and a `--with-pammodulesdir=/lib/security` options to a WAF configure script. Build and install a `pam_winbind` module to integrate Samba with a PAM (Pluggable Authentication Modules) infrastructure. This module can authenticate users against the local domain by talking to the Winbind daemon.
 
 This flag should only be enabled if there is a need to integrate with the PAM subsystem.
+
+### python
+Build and install a wide variety of Python-based Samba tools, libraries and modules, e.g. `smbtorture` - a testsuite for finding differences in implementations of the SMB protocol and testing SMB servers, `pytalloc-util` - utility functions library for using talloc objects with Python, `pytevent` - Python bindings for tevent and many others. A lot of these tools are required for AD DC (Active Directory Domain controller). When disabled, apply a set of patches that provide an ability to disable Python bindings and pass the `--disable-python` option to the WAF configure script to do so.
+
+This flag can be safely disabled if Python tools aren't necessary and must be enabled if AD DC is necessary.
 
 ### quota
 Pass a `--with-quotas` option to a WAF configure script. Enable support for filesystem disk quotas and provide an ability to limit disk space usage for file shares.
