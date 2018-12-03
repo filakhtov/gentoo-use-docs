@@ -5,6 +5,11 @@ Pass the `--enable-libbrasero` option to the configure script. Build and install
 
 It is safe to disable the flag.
 
+### colord
+Pass the `--enable-colord` and `--enable-lcms2` options to the configure script. Use the colord service to make ICC color profiles to properly work when running on the Wayland display server.
+
+This flag should be enabled when target system runs the Wayland display server.
+
 ### debug
 Pass the `--enable-debug` option to the configure script. Disable compiler optimizations and build binaries and libraries with debugging symbols. Enable output of the debugging messages to the stderr at runtime.
 
