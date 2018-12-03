@@ -41,9 +41,9 @@ Pass the `--with-fftw` option to the configure script. Build and install the `mo
 It is safe to disable the flag.
 
 ### gconf
-Pull in the [gnome-base/gconf](../gnome-base/gconf.md) package as a dependency that is normally used for the `module-gconf` PulseAudio module to store configuration in or migrate from GConf backend. However, current ebuild does not pass the `--enable-gconf` option to the configure script, and therefore module is not built.
+Pull in the [gnome-base/gconf](../gnome-base/gconf.md) package as a dependency to provide the `gsettings-data-convert` tool that is used for copying settings from the GConf configuration backend into the GSettings one. Note: this is one-shot operation and this flag can be disabled once migration is done.
 
-This flag should currently be disabled as it pulls in unused dependency.
+This flag should only be enabled if there is a need to migrate PulseAudio settings from GConf.
 
 ### gdbm
 Pass the `--with-database=gdbm` (instead of `simple`) option to the configure script. Use the GNU dbm library to store PulseAudio settings in the dbm format instead of simple binary data storage.
