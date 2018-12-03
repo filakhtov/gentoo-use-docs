@@ -19,8 +19,3 @@ This flag should normally be enabled, because Glib an GObject Introspection are 
 Prepare an environment, start a new Xvfb session and execute the `make check` command inside of it when the main build is completed. Run a test suite provided with the source code. This will extend a build time.
 
 This flag should normally be disabled as it is primarily used by the Gentoo team, developers and testers.
-
-### threads
-Pass the `--enable-thread` option to the configure script. Enable threading support and allow Python to properly coexist with C threads from GObject infrastructure when calling foreign functions using the GIL (Global Interpreter Locks) appropriately.
-
-This flag is required if there is a need to use PyGObject in threaded scripts.
