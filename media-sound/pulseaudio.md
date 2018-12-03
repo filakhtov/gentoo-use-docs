@@ -40,6 +40,11 @@ Pass the `--with-fftw` option to the configure script. Build and install the `mo
 
 It is safe to disable the flag.
 
+### gconf
+Pull in the [gnome-base/gconf](../gnome-base/gconf.md) package as a dependency that is normally used for the `module-gconf` PulseAudio module to store configuration in or migrate from GConf backend. However, current ebuild does not pass the `--enable-gconf` option to the configure script, and therefore module is not built.
+
+This flag should currently be disabled as it pulls in unused dependency.
+
 ### gdbm
 Pass the `--with-database=gdbm` (instead of `simple`) option to the configure script. Use the GNU dbm library to store PulseAudio settings in the dbm format instead of simple binary data storage.
 
@@ -49,11 +54,6 @@ The flag can be safely disabled.
 Pass the `--enable-glib2` and the `--enable-gsettings` options to the configure script. Build and install the `libpulse-mainloop-glib` for integration with the `libglib2` library to allow using PulseAudio client library for GLib-based programs. Also build `module-gsettings` plugin to store user's PulseAudio settings in the GSettings backend.
 
 This flag is recommended for regular desktop systems.
-
-### gnome
-Pass the `--enable-gconf` option to the configure script. Build and install the `module-gconf` plugin to store user's PulseAudio settings in the GConf backend.
-
-This flag should be disabled, because GConf is deprecated. It can be used when updating to migrate settings from the GConf backend to GSettings one.
 
 ### gtk
 Pass the `--enable-gtk3` option to the configure script. Build a demo GTK+ test application.
