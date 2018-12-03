@@ -1,4 +1,5 @@
 # dev-libs/glib
+
 ### dbus
 Enabling this flag will pull in the [gnome-base/dconf](../gnome-base/dconf.md) package as a dependency. This will enable a dconf GSettings backend required by certain applications to save their settings. If disabled, applications that require a GSettings backend will not be able to persist their settings between executions. See [Gentoo bug #498436](https://bugs.gentoo.org/498436) for more information.
 
