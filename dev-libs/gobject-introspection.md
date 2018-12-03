@@ -1,7 +1,7 @@
 # dev-libs/gobject-introspection
 
 ### cairo
-Pass the `--with-cairo` option to the configure script. This flag only works when a `test` flag is also enabled. Use a Cairo library to enable building and executing additional test cases.
+Pass the `--with-cairo` option to the configure script. This flag only makes sense when a `test` flag is enabled. Use a Cairo library to enable building and executing additional test cases.
 
 This flag should be normally disabled.
 
