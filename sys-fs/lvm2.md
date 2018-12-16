@@ -1,18 +1,4 @@
 # sys-fs/lvm2
-### clvm
-Pass the `--with-cluster=shared`, the `--with-clvmd=none` and the `--with-pool=shared` options to the configure script. Build and install `clvmd` - a cluster LVM daemon and appropriate init files.
-
-This flag should be disabled unless there is a need to run clustered LVM.
-
-### cman
-The flag only works if the `clvm` flag is also enabled. Pass the `cman` value instead of `none` for the `--with-clvmd` option of configure script. Enable CMAN (Cluster MANager) that provides the low-level infrastructure for the clustered LVM, e.g. node communications, votes, quorum, etc.
-
-This flag should be disabled unless there is a need to run clustered LVM.
-
-### corosync
-The flag only works if the `clvm` flag is also enabled. Append a `corosync` value to the `--with-clvmd` option of configure script. Use Corosync as a messaging layer between cluster members.
-
-This flag should be disabled if there is no need to run clustered LVM.
 
 ### device-mapper-only
 Pass the `--disable-udev-systemd-background-jobs` option to the configure script. Pass a `none` value to the `--with-mirrors` and the `--with-snapshots` options. Build a package using a `make device-mapper` command and only install device-mapper binary. Do not install init scripts and configuration files.
@@ -28,11 +14,6 @@ This flag should only be enabled if there is an explicit requirement to work wit
 Install an `lvm2create_initrd` tool - a tool to create initial ramdisk (initrd) image suitable for booting systems with a root partition on LVM.
 
 This flag should normally be disabled as it is obsolete and does not even work with Gentoo.
-
-### openais
-The flag only works if the `clvm` flag is also enabled. Append an `openais` value to the `--with-clvmd` option of the configure script. Use OpenAIS extension to Corosync that provides support for clustered filesystems, e.g. GFS2 and OCFS2.
-
-This flag should be disabled if there is no need to support clustered LVM.
 
 ### readline
 Pass the `--enable-readline` option to the configure script. Enable support for an LVM shell. Provide a history support using a GNU Readline library.
