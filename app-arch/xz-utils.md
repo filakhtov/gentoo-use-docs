@@ -5,7 +5,7 @@ Does nothing when enabled and thus installing a complete set of encoders, decode
 
 If disabled, Pass the `--enable-encoders=lzma1,lzma2`, `--enable-decoders=lzma1,lzma2`, `--enable-match-finders=hc3,hc4,bt4` and `--enable-checks=crc32,crc64` options to the configure script. Only enable a subset of `lzma1` and an `lzma2` encoders and decoders, an `hc3`, `hc4` and `bt4` matchers and a `crc32`, `crc64` checkers.
 
-This flag can be enabled to minimize library size.
+This flag can be disabled to minimize library size.
 
 ### nls
 Pass the `--enable-nls` option to the configure script. Enable messages translation into different languages using Gettext library and install language files.
@@ -20,4 +20,4 @@ This flag can be safely disabled, unless there is an explicit need for static li
 ### threads
 Pass the `--enable-threads` option to the configure script. Use a `pthread` threading library to parallelize compression and decompression tasks.
 
-It is safe to disable this flag.
+It is safe to disable this flag, but it should be enabled on multi-core or multi-processor system to improve performance.
