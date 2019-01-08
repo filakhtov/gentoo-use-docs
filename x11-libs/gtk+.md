@@ -30,6 +30,11 @@ Examples and demo code are built by default, so this flag does nothing if enable
 
 It is safe to disable the flag.
 
+### gtk-doc
+Pass the `--enable-gtk-doc` option to the configure script. Generate documentation using the GTK-Doc tool in the HTML format and install it into the `/usr/share/gtk-doc/html/gtk<VERSION>/` directory, including widgets and objects description and usage, core reference, theming and so on.
+
+It is safe to disable the flag.
+
 ### introspection
 Pass the `--enable-introspection` option to the configure script. Generate GIR metadata `Gdk-3.0.gir`, `Gtk-3.0.gir` (and also `GdkX11-3.0.gir` if the `X` flag is enabled) files during a build time and generate typelib from them to provide dynamic bindings support for languages other than C.
 
