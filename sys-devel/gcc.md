@@ -1,4 +1,5 @@
 # sys-devel/gcc
+
 ### altivec
 Only available on PowerPC family of processors. Pass the `--enable-altivec` option to the configure script. Enable `AltiVec` operations and provide appropriate runtime options a `-maltivec` and a `-mabi=altivec`.
 

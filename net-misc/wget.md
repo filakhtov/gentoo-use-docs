@@ -1,4 +1,5 @@
 # net-misc/wget
+
 ### debug
 Passes the `--enable-debug` option to the configure script. The resulting `wget` binary will have a support for the `--debug` runtime option that is producing a lot of debugging information as requests are executed.
 
