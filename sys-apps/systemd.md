@@ -1,4 +1,5 @@
 # sys-apps/systemd
+
 ### acl
 Enabling this flag will pass the `-Dacl=true` to the Meson build script. This in turn will enable support for the ACL permission mechanism for various tools. If enabled, a `journald`, for example, checks ACLs in addition to regular permissions on journal files before accessing them and a `systemd-nspawn` updates ACL entries when the `--private-users-chown` option is used.
 
@@ -34,11 +35,17 @@ This flag can be safely disabled if an `importd` functionality is not desired.
 ### elfutils
 This flag is passing the `-Delfutils=true` option to the Meson build script. Resulting SystemD binaries will be linked against the `libdw` library (from a [dev-libs/elfutils](../dev-libs/elfutils.md) package) to allow them to obtain and include stack traces into the coredump files generated during a crash handling routine.
 
+This flag should normally be disabled, and can be enabled for debugging purposes, when there is a need to obtain stack traces.
+
 ### gcrypt
 Passes the `-Dgcrypt=true` to the Meson build script. This flag enables support for the `allow-downgrade` mode of a DNSSEC operation for the `systemd-resolved`. It also enables the FSS (Forward Secure Sealing) feature of the `systemd-journald`.
 
+It is safe to disable the flag, unless there is a need to seal a journal or support the DNSSEC downgrading mode.
+
 ### gnuefi
 This flag passes the `-Dgnu-efi=true` option to the Meson build script and enables compilation and installation of a `systemd-boot` - a SystemD EFI boot manager. The `systemd-boot` can be used as a lightweight replacement for a GRUB bootloader on systems that support the UEFI.
+
+This flag should be enabled on UEFI systems to use the `systemd-boot` bootloader.
 
 ### http
 Passes the `-Dmicrohttpd=true` option to the Meson build script. This builds and installs a `systemd-remote-journal` - a server (receiving) part of a remote journalling support. A `ssl` flag has to be enabled too in order to support an HTTPS protocol.
