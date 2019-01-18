@@ -1,4 +1,5 @@
 # sys-apps/util-linux
+
 ### build
 This flag is used by Gentoo team when building and bootstrapping early stage images. Under the hood this flag will exclude [sys-apps/systemd](systemd.md) from dependencies regardless if `systemd` USE flag is set or not.
 
@@ -11,6 +12,8 @@ No packages in Portage tree require `setpriv` and it is safe to disable this fla
 
 ### cramfs
 This passes `--enable-cramfs` option to configure script. This option is responsible for building and installing `mkfs.cramfs` and `fsck.cramfs` tools that are responsible for dealing with compressed ROM file system.
+
+This flag can be safely disabled, unless there is a need to manage cramfs.
 
 ### fdformat
 This will pass `--enable-fdformat` option to configure script. This will build and install `fdformat` tool for low level formatting of a floppy disk.
