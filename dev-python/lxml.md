@@ -1,4 +1,5 @@
 # dev-python/lxml
+
 ### doc
 Install additional documentation in TXT and HTML format into a `/usr/share/doc/lxml-<VERSION>/`.
 
@@ -15,4 +16,4 @@ Execute a test suite provided with a source code after a build is complete. Addi
 This flag should normally be disabled as it is only useful for the Gentoo team, developers or testers.
 
 ### threads
-The flag is actually never used.
+The flag is actually never used and should be disabled.
