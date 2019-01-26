@@ -35,6 +35,11 @@ Pass the `--enable-svg` option to the configure script. Build Cairo library with
 
 It is safe to disable the flag.
 
+### utils
+Pass the `--enable-trace` option to the configure script. Build and install the `cairo-trace` utility to produces a trace of all cairo-based rendering operations made by an application. This allows to record and replay calls that has been made to the Cairo library by any application.
+
+This flag should normally be disabled.
+
 ### valgrind
 Pass the `--enable-valgrind` option to the configure script. Enable and build additional code that is necessary to properly handle false positive reports of memory leaks while running an application linked against Cairo library under the Valgrind debugging tool.
 
