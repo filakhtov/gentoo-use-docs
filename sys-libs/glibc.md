@@ -1,4 +1,5 @@
 # sys-libs/glibc
+
 ### audit
 This flag only makes sense together with a `nscd` and a `selinux` flags. Export an `ac_cv_lib_audit_audit_log_user_avc_message=yes` (`no` if disabled) variable for the configure script, because there is no relevant configure option. Enable an ability to SELinux AVC denials via Kernel Audit Subsystem for a `nscd` daemon.
 
