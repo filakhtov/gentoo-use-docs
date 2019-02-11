@@ -20,6 +20,11 @@ Pass the `--with-gtk-doc` option to the configure script. Use the Gtk-Doc tool t
 
 It is safe to disable the flag.
 
+### escrow
+Pass the `--with-escrow` option to the configure script. Add an additional feature to the `libbd_crypto` cryptography plugin library (see the `cryptsetup` flag for details) that provides an ability to create recovery encryption keys for an encrypted volume in the so-called escrow storage which can be used to access encrypted data if the main passphrase is lost or forgotten.
+
+It is safe to disable this flag, however it is highly recommended to use some alternative recovery key creation and storage mechanism.
+
 ### kbd
 Pass the `--with-kbd` option to the configure script. Build and install the `libbd_kbd` library - a `libblockdev` plugin providing the functionality related to KBD (kernel block devices, namely zRAM and bcache): querying stats; creating and destroying bcache/zRAM devices; attaching, detaching and modifying caching mode for bcache devices, etc.
 
@@ -34,3 +39,8 @@ This flag should be enabled if there is a need to deal with LVM devices.
 Pass the `--enable-tests` option to the configure script. Execute the `make check` command after the main build is completed to run a test suite provided with the source code. This will extend a build time.
 
 This flag should normally be disabled, it is mainly used by the Gentoo team, testers and developers.
+
+### vdo
+Pass the `--with-vdo` option to the configure script. Build and install the `libbd_vdo` library - a `libblockdev` plugin that provides an ability to operate on VDO (Virtual Data Optimizer) compressed volumes, including parsing information, creating, removing, activating and deactivating volumes, changing compression and deduplication status, etc.
+
+This flag should normally be disabled, and should only be enabled if there is an explicit need to manipulate VDO volumes.
