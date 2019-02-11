@@ -5,11 +5,6 @@ Pass the `--enable-acl` option to the configure script. Set the ACL (Access Cont
 
 It is recommended to enable this flag if the filesystem that hosts mount point supports ACLs.
 
-### cryptsetup
-Pull in additional package dependencies: the [sys-libs/libblockdev](../sys-libs/libblockdev.md), [sys-fs/cryptsetup](../sys-fs/cryptsetup.md), [sys-fs/lvm2](../sys-fs/lvm2.md) to provide an ability to mount disks encrypted via cryptsetup.
-
-This flag should be enabled if there is a need to mount encrypted partition via Udisks.
-
 ### debug
 Pass the `--enable-debug` option to the configure script. Enable printing of the additional debugging messages at runtime.
 
@@ -19,11 +14,6 @@ This flag should only be enabled if there is a need to debug any problems with U
 Pull in the [sys-auth/elogind](../sys-auth/elogind.md) package as a dependency that provides `libelogind` library used for associating a disk mount with a particular user session seat to automatically unmount it when the user logs out.
 
 This flag should be enabled if the target system uses elogind as a session manager.
-
-### gptfdisk
-This flag is no longer needed, because Udisks no longer depends on `sgdisk` utility.
-
-This flag should be disabled.
 
 ### introspection
 Pass the `--enable-introspection` option to the configure script. Generate the `UDisks-2.0.gir` GIR metadata file to provide dynamic bindings to the `libudisks2` library for languages other than C via the GObject introspection.
@@ -49,3 +39,8 @@ This flag should only ever be toggled system-wide, e.g. as part of the SELinux-e
 Use the `libsystemd-login` library to provide an ability to associate disk mounts with a particular user session seat via SystemD loginD, to automatically unmount them when the user finishes a session, i.e. logs out.
 
 This flag should be enabled if the target system uses SystemD as an init system.
+
+### vdo
+Pass the `--enable-vdo` option to the configure script. Build and install the `libudisks2_vdo` library that provides an ability to create new and activate or start existing VDO (Virtual Data Optimizer) compressed volumes.
+
+This flag should normally be disabled, unless there is an explicit need to manage VDO volumes.
