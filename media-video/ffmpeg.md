@@ -20,6 +20,11 @@ Only works if the `encode` flag is enabled. Pass the `--enable-version3` and `--
 
 This flag should only be enabled if there is a need to perform audio encoding in AMR format.
 
+### appkit
+Pass the `--enable-appkit` option to the configure script. Enable support for the Apple AppKit framework, that can be used to render decoded video frames using the native macOS API.
+
+This flag should be disabled as it only works on Apple macOS systems.
+
 ### bluray
 Pass the `--enable-libbluray` option to the configure script. Use the `libbluray` library to provide an ability to play Blu-ray discs and enable support for the `bluray:` protocol to do so.
 
@@ -175,6 +180,11 @@ Pass the `--enable-libcaca` option to the configure script. Use the `libcaca` li
 
 This flag should normally be disabled.
 
+### libdrm
+Pass the `--enable-libdrm` option to the configure script. Use the `libdrm` library to provide an ability to perform screen recording by encoding KMS scanout planes, allowing to capture both graphical and virtual terminal output, including Wayland, and allow to pass decoded frames directly to a DRM plane, to avoid unnecessary object copying for supported platforms.
+
+This flag should be enabled on supported platforms that benefit from DRM hardware acceleration, including ARM Mali and RockChip, or if there is a need to use the `kmsgrab` input device for screen capturing.
+
 ### libilbc
 Pass the `--enable-libilbc` option to the configure script. Use the `libilbc` library to allow to decode the Internet Low Bitrate Codec (iLBC) audio codec - a free narrowband voice codec that was developed by Global IP Solutions, and is used in many Voice over IP (VoIP) and streaming audio applications.
 
@@ -245,6 +255,11 @@ Pass the `--enable-openal` option to the configure script. Enable the OpenAL inp
 
 This flag can be safely disabled, unless there is a need to perform audio capturing using the OpenAL API.
 
+### opencl
+Pass the `--enable-opencl` option to the configure script. Enable OpenCL-based filters that utilize the OpenCL API in order to offload more operations to the GPU, making the CPU less busy. The OpenCL implementation can also interoperate with other GPU APIs to avoid redundant copies between GPU and CPU memory, further improving the performance, however this requires a combination of supported GPU and video processing API.
+
+This flag can be enabled on platforms with compatible GPUs, however CPU-based OpenCL implementations might be slower than using native FFmpeg filters directly.
+
 ### opengl
 Pass the `--enable-opengl` option to the configure script. Enable support for the OpenGL output device that allows to render to an OpenGL context, that may be provided by an application, and when the `sdl` flag is enabled, then SDL window can be created by the FFmpeg itself.
 
@@ -310,11 +325,6 @@ Only works when the `encode` flag is enabled. Pass the `--enable-libsnappy` opti
 
 The flag can be safely disabled, unless there is a need to encode videos using the HAP format.
 
-### sofalizer
-Pass the `--enable-netcdf` option to the configure script. Enable support for the SOFAlizer audio filter via the `libnetcdf` library, that uses head-related transfer functions (HRTFs) to create virtual loudspeakers around the user for binaural listening via headphones.
-
-It is safe to disable this flag, unless the `sofalizer` filter is needed.
-
 ### speex
 Pass the `--enable-libspeex` option to the configure script. Use the `libspeex` library to enable encoding and decoding audio in the Speex format - patent-free audio compression format designed for speech, which is commonly used for VoIP applications, speech recorders, FLV files, etc.
 
@@ -329,6 +339,11 @@ It is safe to disable the flag, unless there is a need to access files over the 
 Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libavcodec`, `libpostproc`, `libavdevice` and other libraries.
 
 This flag should only be enabled if there is an explicit need for the static libraries.
+
+### svg
+Pass the `--enable-librsvg` option to the configure script. Use the `librsvg` library to provide support for the SVG image rasterization, i.e. converting from vectorized to rasterized image format.
+
+This flag can be safely disabled, and is not normally necessary.
 
 ### test
 Configure the `LD_LIBRARY_PATH` environment variable and execute the `make fate` command when the main build is completed. Run the regression test suite provided with the source code. This will extend the build time.
