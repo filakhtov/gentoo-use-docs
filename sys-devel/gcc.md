@@ -5,11 +5,6 @@ Only available on PowerPC family of processors. Pass the `--enable-altivec` opti
 
 This flag should only be ever enabled on PowerPC platform with AltiVec support.
 
-### cilk
-Pass the `--enable-libcilkrts` option to the configure script. Only makes sense if a `cxx` flag is also enabled, because Intel Cilk Plus programming language is an extension to the C and C++ languages. It is deprecated as of 2018 in favor of the OpenMP.
-
-This flag is safe to disable.
-
 ### cxx
 Append `c++` to the `--enable-languages` option and pass the `--enable-libstdcxx-time` option to the configure script. When disabled pass the `--disable-build-with-cxx`, `--disable-build-poststage1-with-cxx` options to the configure script.
 
@@ -136,10 +131,15 @@ Pass the `--enable-default-ssp` option to the configure script. Enable an SSP (s
 
 It is recommended to enable this flag due to security benefits it provides.
 
+### systemtap
+Pass the `--enable-systemtap` option to the configure script. Add a systemtap-style static marker to the debug hook function in the unwinder to enable GDB's (GNU Debugger) exception-handling code to work even in the absence of debuginfo.
+
+This flag should only be enabled for debugging purposes.
+
 ### vanilla
 Skip applying any patches. This means hardening features like SSP, PIE and others won't be available.
 
-This flag should be enabled.
+This flag should be disabled.
 
 ### vtv
 Pass the `--enable-vtable-verify` and `--enable-libvtv` options to the configure script. Enable a vtable verification feature that causes libstdc++ to be built with its virtual calls in verifiable mode. Build and install a `libvtv.so` runtime library to support this feature.
