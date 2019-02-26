@@ -10,10 +10,15 @@ Pass the `--with-crypto` option to the configure script. Build and install the `
 
 This flag should be enabled if there is a need to deal with LUKS-encrypted partitions.
 
-### dmraid
-Pass the `--with-dm` option to the configure script. Build and install the `libbd_dm` library - a `libblockdev` plugin for basic operations with device mapper, e.g. discovering RAID sets, get RAID members, activate and deactivate RAID arrays, etc.
+### device-mapper
+Pass the `--with-dm` option to the configure script. Build and install the `libbd_dm` library - a `libblockdev` plugin for basic operations with device mapper's "linear" targets, including creating and removing them.
 
-This flag should be enabled if integration with device mapper is desired.
+This flag should be enabled if integration with device mapper framework is desired.
+
+### dmraid
+Only works if the `device-mapper` flag is enabled. Pass the `--with-dmraid` option to the configure script. Extend the `libbd_dm` plugin library to provide an ability to manage `dm-raid` (Device-Mapper's RAID) devices, e.g. create, delete, activate, etc, by utilizing the `libdmraid` library.
+
+This flag should be enabled if there is a need to manage DM RAID devices using the library.
 
 ### doc
 Pass the `--with-gtk-doc` option to the configure script. Use the Gtk-Doc tool to generate library API documentation from the source code annotation and install it into the `/usr/share/doc/libblockdev-<VERSION>` directory.
