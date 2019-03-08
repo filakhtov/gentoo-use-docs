@@ -79,11 +79,6 @@ Pass the `--with-selinux` option to the configure script. Enable SELinux support
 
 This flag should only ever be changed system-wide, e.g. by using SELinux-enabled Portage profile.
 
-### skey
-Pass the `--with-skey` option to the configure script. Provide an ability to authenticate using S/Key - a one time password system in addition to other methods e.g. a pubkey or a password.
-
-The flag can safely be disabled.
-
 ### ssl
 Modify configure scripts to provide an actual `libcrypto` library location obtained from pkg-config. Pass the `--with-openssl`, the `--with-md5-passwords` and the `--with-ssl-engine` options to the configure script.
 
