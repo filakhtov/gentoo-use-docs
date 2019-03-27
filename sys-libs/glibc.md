@@ -10,6 +10,11 @@ This flag only works if a `suid` flag is enabled or both a `nscd` and a `selinux
 
 It is safe to disable this flag. It is recommended to keep it enabled if `suid` flag is enabled too.
 
+### cet
+Pass the `--enable-cet` option to the configure script. Enable support for Intel CET (Control-Flow Enforcement Technology) aims to defend against return-oriented programming (ROP) and call-jump-oriented programming (COP/JOP) attacks via a shadow stack to keep track of expected return addresses and to raise faults when the return addresses don't match up with what's found in the shadow stack. The Indirect branch tracking is for the stopping of jump/call oriented attacks.
+
+This flag should only be enabled on supported CPUs.
+
 ### compile-locales
 Normally, only locales that are specified in the `/etc/locale.gen` configuration file are generated after the package is installed. Enabling this flag will ignore the aforementioned config and generate all available locales. This will extend the build time and is generally used for building stage images and bootstrapping.
 
@@ -65,6 +70,11 @@ Pass the `--with-selinux` option to the configure script. Enable proper AVC deni
 
 This flag should only ever be toggled system-wide, e.g. as part of the SELinux-enabled Portage profile.
 
+### ssp
+Pass the `--enable-stack-protector=all` (`no` when the flag is disabled) option to the configure script. Build all glibc libraries using the GCCs stack protection features to detect and prevent stack overruns.
+
+It is recommended to enable this flag for improved protection, especially because it has minimal performance overhead.
+
 ### suid
 Normally, a `pt_chown` binary has a SUID flag. It is necessary to manipulate permissions on a `/dev/pts` tree. When disabled SUID bit will be removed from binary.
 
@@ -74,6 +84,11 @@ This flag should be disabled because there are no permission issues on modern Li
 Pass the `--enable-systemtap` option to the configure script. Enable systemtap static probe points in C library to provide tracing support via SystemTap tool.
 
 This flag should normally be disabled unless there is a need to trace C library and linked applications or collect benchmarking information.
+
+### test
+Execute the `make check` command for every enabled ABI after the main build is completed. Run the test suite provided with the source code to check for regressions. This will extend the build time.
+
+These tests are mainly useful for maintainers and developers and the flag should normally be disabled for an average user.
 
 ### vanilla
 When enabled Gentoo patches will not be applied to the source tree before compiling. Pass the `--enable-timezone-tools` option to the configure script. When disabled, these tools are provided by a [sys-libs/timezone-data](timezone-data.md) package.
