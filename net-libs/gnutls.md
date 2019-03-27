@@ -35,11 +35,6 @@ Pass the `--enable-nls` option to the configure script. Use the Gettext library 
 
 This flag should only be enabled if there is a need to use a non-English language.
 
-### openpgp
-Pass the `--enable-openpgp-authentication` option to the configure script. Use the `GnuPG` library to provide support for limited OpenPGP key authentication. This functionality has been deprecated and is no longer made available since version 3.0.6. The reason is that, supporting alternative authentication methods, when X.509 and PKIX were new on the Internet and not well established, seemed like a good idea, in today’s Internet X.509 is unquestionably the main container for certificates.
-
-This flag should be disabled as this feature is deprecated.
-
 ### openssl
 Pass the `--enable-openssl-compatibility` option to the configure script. Build and install the `gnutls-openssl` library - a compatibility layer with the OpenSSL library. This compatibility layer is not complete and it is not intended to completely re-implement the OpenSSL API with GnuTLS. It only provides limited source-level compatibility.
 
@@ -102,8 +97,3 @@ Pass the `--enable-tools` option to the configure script. Install various tools:
 This flag is only working together with the `test` flag. Pass the `--enable-valgrind-tests` option to the configure script. Build and execute additional tests that are using the Valgrind tool to test GnuTLS for memory errors.
 
 As with the `test` flag, this one should normally be disabled.
-
-### zlib
-Pass the `--with-zlib` option to the configure script. Provide support for the Zlib DEFLATE compression method in the TLS record layer using the `libz` library. A compression is implemented based on RFC3749. These compression algorithms, may be useful in high bandwidth TLS tunnels, and in cases where network usage has to be minimized. It should be noted however that compression increases latency.
-
-It is safe to disable the flag.
