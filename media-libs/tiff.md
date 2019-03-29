@@ -30,7 +30,17 @@ Execute the `make check` command after the main build is completed to run the re
 
 This flag should normally be disabled, because it is primarily oriented towards the Gentoo team, testers and developers.
 
+### webp
+Pass the `--enable-webp` option to the configure script. Use the `libwebp` library to provide an ability to read (decode) and write (encode) TIFF images using the WebP compression format.
+
+This flag should be enabled if there is a need to work with WebP compressed TIFF images.
+
 ### zlib
 Pass the `--enable-zlib` option to the configure script. Use the `libz` library to enable Deflate compression algorithm for reading and writing TIFF images.
 
 It is safe to disable the flag, unless there is a need to access Deflate compressed TIFF images.
+
+### zstd
+Pass the `--enable-zstd` option to the configure script. Use the `libzstd` library to provide an ability to decode and encode TIFF images using the lossless zstd (Zstandard) compression algorithm, that provides compression similar to DEFLATE, but with higher compression and especially decompression speeds.
+
+It is safe to disable the flag, unless there is a need to deal with Zstd compressed images.
