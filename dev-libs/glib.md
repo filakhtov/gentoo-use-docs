@@ -15,6 +15,11 @@ This flag passes the `--enable-fam` option to the configure script. The FAM (aka
 
 This flag is not recommended on modern Kernels, because the same functionality is provided by the `inotify` nowadays.
 
+### gtk-doc
+Pass the `--enable-gtk-doc` option to the configure script. Use the Gtk-Doc utility to generate reference documentation for the library in an HTML format, and install it into the `/usr/share/gtk-doc/html` directory.
+
+It is normally safe to disable the flag, as generated documentation is only useful for developers, who works with the library.
+
 ### mime
 The flag pulls in the [x11-misc/shared-mime-info](../x11-misc/shared-mime-info.md) package as a dependency. The package is used by the GIO xdgmime module for a file type detection. See [Gentoo bug #409481](https://bugs.gentoo.org/409481) for more details.
 
