@@ -89,7 +89,7 @@ Enable `tracepath` tool installation. If `ipv6` flag is also enabled tracepath w
 
 This flag can safely be disabled if `tracepath` tool is not required (e.g. for network diagnostics/debugging).
 
-### traceroute
+### traceroute6
 Enable `traceroute6` tool installation. This flag does not make any changes if `ipv6` flag is disabled. This flag conflicts with [net-analyzer/traceroute](../../net-analyzer/traceroute.md).
 
 This flag is not recommended because it only installs IPv6 protocol oriented tool and does not work for IPv4 protocol. It is necessary to install `traceroute` via standalone package if IPv4 protocol support is desired.
