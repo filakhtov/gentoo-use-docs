@@ -5,11 +5,6 @@ Pass the `--disable-udev-systemd-background-jobs` option to the configure script
 
 It is safe to disable this flag. It can be useful for embedded systems.
 
-### lvm1
-Pass the `--with-lvm1` option with a `shared` (`none` if disabled) value to the configure script. Provide support for an LVM version 1.
-
-This flag should only be enabled if there is an explicit requirement to work with LVM1.
-
 ### lvm2create_initrd
 Install an `lvm2create_initrd` tool - a tool to create initial ramdisk (initrd) image suitable for booting systems with a root partition on LVM.
 
@@ -19,6 +14,11 @@ This flag should normally be disabled as it is obsolete and does not even work w
 Pass the `--enable-readline` option to the configure script. Enable support for an LVM shell. Provide a history support using a GNU Readline library.
 
 It is safe to disable this flag.
+
+### sanlock
+Pass the `--enable-lvmlockd-sanlock` option to the configure script. Enable support for the `sanlock` type locking for the `lvmlockd` daemon, that is used to place locks on disk within LVM storage, in order to provide shared storage to the volume groups to multiple hosts.
+
+This flag should normally be disabled as it is primarily useful to provide shared logical volumes in virtualization or storage cluster applications.
 
 ### selinux
 Pass the `--enable-selinux` option to the configure script. Enable an ability to run with a SELinux enabled. Provide an ability to set a SELinux context for LVM device mapper nodes.
