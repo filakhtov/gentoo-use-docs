@@ -1,10 +1,5 @@
 # media-libs/libwebp
 
-### experimental
-Pass the `--enable-experimental` option to the configure script. Enable some experimental features, including delta palettization compression mode - fastest way to decode photographic images, however it won't work for images with alpha channel and might produce some artefacts, and JPEG's YUVj natural colorspace that is currenly only used for comparison purposes.
-
-It is safe to disable the flag.
-
 ### gif
 Pass the `--enable-gif` option to the configure script. Build and install a `gif2web` tool that converts a GIF image to a WebP image.
 
