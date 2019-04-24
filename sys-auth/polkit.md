@@ -1,5 +1,10 @@
 # sys-auth/polkit
 
+### consolekit
+Pull in the [sys-auth/consolekit](sys-auth/consolekit) package as a dependency and ensure that the `policykit` flag is enabled for it. This allows to integrate ConsoleKit session tracking with PolicyKit capability checking in order to have more granular control over privileged operations that can be performed by non-root users. ConsoleKit exposes session state, whether it is local or remote, active or inactive and PolicyKit can be configured to allow or deny certain privileged actions based on such state.
+
+This flag should only be enabled if the target system uses ConsoleKit, and it is incompatible with elogind or SystemD's logind.
+
 ### elogind
 Pass the `--enable-libelogind` option to the configure script. Use a `libelogind` library to track session via elogind instead of default ConsoleKit.
 
