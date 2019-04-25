@@ -64,6 +64,11 @@ Only works if the `smartcard` flag is enabled. Pass the `--enable-ccid-driver` o
 
 This flag should be enabled if there is a need to use CCID/ICCD cards.
 
+### user-socket
+Pass the `--enable-run-gnupg-user-socket` option to the configure script. This option allows gpg-agent to use the `/run/gnupg/user/<uid>` directory for sockets, if it exists, instead of the default `/run/user/<uid>` one. This can be useful when starting a gpg-agent early and there is no `/run/user/<uid>` directory yet to avoid sockets creation in the `~/.gnupg` directory, that can lead to another agent, started later creating new socket under the `/run/user/<uid>` directory and not knowing about existing one under the `~/.gnupg`.
+
+This flag should normally be disabled, unless there is a need to start GnuPG agent at the early stage, e.g. from the PAM stack.
+
 ### wks-server
 Pass the `--enable-wks-tools` option to the configure script. Build and install the `gpg-wks-server` - a server-side implementation of the Web Key Service that receives requests for publication, sends confirmation requests, receives confirmations, and publishes keys.
 
