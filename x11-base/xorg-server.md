@@ -20,6 +20,11 @@ Pass the `--with-doxygen` and the `--with-xmlto` options to the configure script
 
 It is safe to disable the flag.
 
+### elogind
+This flag is incompatible with the `systemd` flag. Pull in the [sys-auth/elogind](../sys-auth/elogind.md) and other relevant packages as dependencies and pass the `--enable-systemd-logind` option to the configure flag. Enable integration with the elogind daemon to provide an ability to run Xorg from an unprivileged user and provide necessary access to various devices.
+
+This flag should be normally disabled, unless there is a need to use elogind with Xorg, for example when running the GNOME desktop environment without SystemD.
+
 ### ipv6
 Pass the `--enable-ipv6` option to the configure script. Enable support for the IPv6 protocol in the Xorg networking code, e.g. for the XDMCP (X Display Manager Control Protocol).
 
