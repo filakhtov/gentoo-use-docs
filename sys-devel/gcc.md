@@ -116,11 +116,6 @@ Pass the `--enable-default-pie` option to the configure script. A resulting comp
 
 This flag can be safely disabled, however PIE might be a useful security feature under the certain circumstances.
 
-### regression-test
-Install additional dependencies that will only be required to run the test suite provided with a source code. Execute a `make -k check` command to run the suite when build is finished. Copies test results into `/usr/share/doc/gcc-<VERSION>/testsuite` directory.
-
-It is recommended to keep this flag disabled as it is only useful for the Gentoo team, developers and testers.
-
 ### sanitize
 Pass the `--enable-libsanitizer` option to the configure script. Enable an AddressSanitizer (aka ASan) - a fast memory error detector. Provide a `-fsanitize` family of runtime options and install a `libasan.so`, a `liblsan.so`, a `libtsan.so` and a `libubsan.so` libraries.
 
@@ -135,6 +130,11 @@ It is recommended to enable this flag due to security benefits it provides.
 Pass the `--enable-systemtap` option to the configure script. Add a systemtap-style static marker to the debug hook function in the unwinder to enable GDB's (GNU Debugger) exception-handling code to work even in the absence of debuginfo.
 
 This flag should only be enabled for debugging purposes.
+
+### test
+Install additional dependencies that will only be required to run the test suite provided with a source code. Execute a `make -k check` command to run the suite when build is finished. Copies test results into `/usr/share/doc/gcc-<VERSION>/testsuite` directory.
+
+It is recommended to keep this flag disabled as it is only useful for the Gentoo team, developers and testers.
 
 ### vanilla
 Skip applying any patches. This means hardening features like SSP, PIE and others won't be available.
