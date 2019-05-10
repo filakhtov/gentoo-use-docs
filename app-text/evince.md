@@ -45,6 +45,11 @@ Pass the `--enable-ps` option to the configure script. Build and install the `li
 
 It is safe to disable the flag.
 
+### spell
+Pass the `--with-gspell` option to the configure script. Use the gspell library to enable spell-checking capabilities. Both, a document content and annotations support is provided.
+
+This flag can be safely disabled.
+
 ### t1lib
 Only makes sense when the `dvi` flag is enabled. Pass the `--enable-t1lib` option to the configure script. Link the `libdvidocument` library against the `t1lib` library to provide support for the scalable Adobe Type 1 (aka PostScript Type 1) fonts to improve font rendering quality.
 
