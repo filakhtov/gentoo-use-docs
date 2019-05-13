@@ -1,4 +1,5 @@
 # sys-apps/portage
+
 ### build
 This flag should normally be disabled. It is used by the Gentoo team to create early build stages and bootstrapping. Under the hood it will ignore a number of flags and dependencies.
 
