@@ -48,6 +48,11 @@ Pass the `--enable-debug-info` and the `--enable-debug-tcg` options to the confi
 
 This flag should only ever be enabled for debugging purposes as it has performance penalties.
 
+### doc
+Pass the `--enable-docs` option to the configure script. This flag currently does nothing and exists only as a path forward for QEMU project to migrate their documentation to Sphinx Python generator.
+
+This flag should be disabled.
+
 ### fdt
 Doesn't apply when building user emulation mode. Pass the `--enable-fdt` option to the configure script. Use the `libfdt` library provided by the DTC (Device Tree Compiler) to generate device tree blob for different platforms. aarch64, arm, ppc, microblaze, mips64el and riscv emulated machines require this to function, but other platforms can use it too, e.g. ACPI FDT on x86.
 
