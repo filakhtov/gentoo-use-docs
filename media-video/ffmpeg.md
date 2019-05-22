@@ -55,6 +55,11 @@ Perform additional compilation of the `libffmpeg` library from the separate buil
 
 For now it is recommended to disable this flag for the stable FFmpeg package.
 
+### codec2
+Pass the `--enable-libcodec2` option to the configure script. Use the `libcodec2` library to enable support for Codec2 - a voice compression codec aiming towards very low bandwiths, both for muxing and demuxing.
+
+This flag can be safely disabled, because Codec2 is quite rare.
+
 ### cpudetection
 Pass the `--enable-runtime-cpudetect` option to the configure script. Provide an ability to automatically detect and utilize CPU capabilities at runtime. This allows to run optimized multimedia processing code on different processors using the same set of binaries and libraries. This increases the resulting binary sizes.
 
@@ -170,6 +175,11 @@ Pass the `--enable-ladspa` option to the configure script. Provide an ability to
 
 This flag should normally be disabled, unless there is a need to use LADSPA plugins.
 
+### libaom
+Pass the `--enable-libaom` option to the configure script. Use the `libaom` library - an AOMedia video encoder for the AV1 video codec. `libaom` can save about 30% bitrate compared to VP9 and H.265 / HEVC, and about 50% over H.264, while retaining the same visual quality.
+
+This flag should be enabled if there is a need to create AV1 videos.
+
 ### libass
 Pass the `--enable-libass` option to the configure script. Provide an ability to burn subtitles (draw subtitles on top of input video, aka hardsubs) using the `libass` library. Enable two additional filters: `subtitles` - a full featured subtitle drawing one, and `ass` - a filter that only supports ASS (Advanced Substation Alpha) subtitles files.
 
@@ -190,6 +200,11 @@ Pass the `--enable-libilbc` option to the configure script. Use the `libilbc` li
 
 It is safe to disable the flag unless there is a need to use software that requires iLBC decoding using the FFmpeg library.
 
+### libressl
+This flag conflicts with the `openssl` flag. Pass the `--disable-openssl`, `--disable-gnutls` and `--enable-libtls` flags to the configure script. Additionally pass the `--enable-nonfree` option if the `gpl` flag is enabled. Use the LibreSSL library to handle an HTTPS (Secure Hyper Text Transfer Protocol) connections.
+
+This flag should only be toggled system-wide, as OpenSSL and LibreSSL can't be installed on the same system.
+
 ### librtmp
 Pass the `--enable-librtmp` option to the configure script. Use the `librtmp` library to provide support for the Real-Time Messaging Protocol (RTMP) and its variants. Provides most client functions and a few server functions needed to support RTMP, RTMP tunneled in HTTP (RTMPT), encrypted RTMP (RTMPE), RTMP over SSL/TLS (RTMPS) and tunneled variants of these encrypted types (RTMPTE, RTMPTS). Enabling this flag will replace the native RTMP protocol implementation.
 
@@ -204,6 +219,16 @@ It is safe to disable the flag, unless there is a need to perform audio resampli
 Requires the `v4l` flag to be enabled. Pass the `--enable-libv4l2` option to the configure script. Build the FFmpeg library with v4l-utils support. Provide an ability to use the `libv4l2` userspace library to add support for a wider range of the video capture devices. Enable the `-use_libv4l2` runtime option to use this library.
 
 This flag should be enabled if it is desired to use the userspace `libv4l2` library, instead of direct kernel calls.
+
+### libxml2
+Pass the `--enable-libxml2` option to the configure script. Use the `libxml2` library to support the XML parsing, necessary for demuxing DASH (Dynamic Adaptive Streaming over HTTP) content,  an adaptive bitrate streaming technique that enables high quality streaming of media content that works by breaking the content into a sequence of small HTTP-based file segments.
+
+This flag can be safely disabled, unless there is a need to grab DASH streams, such as live broadcasts, movies, etc.
+
+### lv2
+Pass the `--enable-lv2` option to the configure script. Enable support for the LV2 (LADSPA Version 2) plugins, providing an ability to load any LADSPA (Linux Audio Developer's Simple Plugin API) v2 plugin at runtime using the `lv2` command-line option.
+
+This flag should normally be disabled, unless there is a need to load and use LV2 plugins.
 
 ### lzma
 Pass the `--enable-lzma` option to the configure script. Use the `liblzma` library to provide the LZMA compression support in the TIFF decoder. This can be useful when converting a sequence of TIFF images into a video file and source images are LZMA-compressed.
@@ -244,11 +269,6 @@ This flag should be enabled to support MP3 encoding.
 Pass the `--enable-network` option to the configure script. Enable support for network media streaming. Provide a wide range of network protocols, such as TCP, UDP, HTTP, RTSP, MMS and others. Also enable additional capabilities, e.g. name to IP resolution for SDP, an option to set buffer size for the `librtmp` streaming library.
 
 This flag should be enabled to support networking features.
-
-### nvenc
-Requires the `encode` flag to be enabled. Pass the `--enable-nvenc` option to the configure script. Enable support for the NVENC API, developed by NVIDIA which enables the use of NVIDIA GPU cards to perform H.264 and HEVC encoding through the `h264_nvenc` and `hevc_nvenc` encoders.
-
-It is safe to disable the flag and should be enabled if there is a need to use the NVENC API.
 
 ### openal
 Pass the `--enable-openal` option to the configure script. Enable the OpenAL input device, that provides an ability to capture audio stream on all systems with a working OpenAL 1.1 implementation.
@@ -326,9 +346,14 @@ Only works when the `encode` flag is enabled. Pass the `--enable-libsnappy` opti
 The flag can be safely disabled, unless there is a need to encode videos using the HAP format.
 
 ### speex
-Pass the `--enable-libspeex` option to the configure script. Use the `libspeex` library to enable encoding and decoding audio in the Speex format - patent-free audio compression format designed for speech, which is commonly used for VoIP applications, speech recorders, FLV files, etc.
+Pass the `--enable-libspeex` option to the configure script. Use the `libspeex` library to enable encoding and decoding audio in the Speex format - patent-free audio compression format designed for speech, which is commonly used for VoIP applications, speech recorders, FLV files, etc. The SRT encrypts video streams, recovers from severe packet loss and dynamically adapts to changing network conditions.
 
 This flag should be enabled if there is a need to encode or play speex audio.
+
+### srt
+Pass the `--enable-libsrt` option to the configure script. Use the `libsrt` library to enable support for the (Secure Reliable Transport) - a UDP-based open source transport techonology that optimizes streaming performance across unpredictable networks.
+
+The flag can be safely disabled, unless there is a need to access SRT streams.
 
 ### ssh
 Pass the `--enable-libssh` option to the configure script. Use the `libssh` library to enable support for the SFTP (SSH File Transfer Protocol) protocol and allow to read from or write to remote resources.
