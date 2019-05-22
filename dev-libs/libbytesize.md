@@ -1,7 +1,7 @@
 # dev-libs/libbytesize
 
 ### doc
-Generate API documentation using the Gtk-Doc tool and install it into the `/usr/share/doc/libbytesize-<VERSION>` directory.
+Pass the `--with-gtk-doc` option to the configure script. Generate the API documentation using the Gtk-Doc tool and install it into the `/usr/share/gtk-doc/html/libbytesize-<VERSION>` directory.
 
 It is safe to disable the flag.
 
