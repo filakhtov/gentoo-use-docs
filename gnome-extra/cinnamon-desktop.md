@@ -1,7 +1,7 @@
 # gnome-extra/cinnamon-desktop
 
 ### introspection
-Pass the `--enable-introspection` option to the configure script. Generate the `Cvc-1.0.gir`, `CDesktopEnums-3.0.gir` and `CinnamonDesktop-3.0.gir` GIR metadata files to provide dynamic bindings for the languages other than C to the `libcinnamon-desktop` and the `libcvc` libraries.
+Pull in the [dev-libs/gobject-introspection](../dev-libs/gobject-introspection.md) package as a dependency and make sure that the `introspection` flag is enabled for the [x11-libs/gdk-pixbuf](../x11-libs/gdk-pixbuf.md) and [x11-libs/gtk+](../x11-libs/gtk+.md) packages. This is required to generate the `Cvc-1.0.gir`, `CDesktopEnums-3.0.gir` and `CinnamonDesktop-3.0.gir` GIR metadata files to provide dynamic bindings for the languages other than C to the `libcinnamon-desktop` and the `libcvc` libraries.
 
 This flag should be enabled if there is a need for GObject Introspection bindings for the libraries.
 
