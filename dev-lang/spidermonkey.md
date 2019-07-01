@@ -16,7 +16,7 @@ Pass the `--enable-debug` option to the configure script. Build a JS engine with
 This flag should be normally disabled as it has performance impact, can crash programs linked against the library and only useful for debugging.
 
 ### jit
-Pass the `--enable-yarr-jit` and the `--enable-ion` options to the configure script. Use the Yarr (Yet Another REGEX Runtime) JIT (Just-In-Time) compiler imported from WebKit/JSC to compile regular expression into the native code so they run faster. Enable the IonMonkey JavaScript JIT (Just-In-Time) compiler for SpiderMonkey - a whole-method JIT with the ability to perform type specialization.
+Pass the `--enable-ion` option to the configure script. Enable the IonMonkey JavaScript JIT (Just-In-Time) compiler for SpiderMonkey - a whole-method JIT with the ability to perform type specialization, function inlining, linear-scan register allocation, dead code elimination and loop-invariant code motion.
 
 This flag should be enabled for platforms that support JIT compilation to improve performance.
 
