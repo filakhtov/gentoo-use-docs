@@ -10,11 +10,6 @@ Pass the `--enable-openmp` option to the configure script. Use the OpenMP API to
 
 This flag should be enabled if there is a need to parallelize RAW image processing.
 
-### demosaic
-Pass the `--enabled-demosaic-pack-gpl2` and the `--enable-demosaic-pack-gpl3` options to the configure script. Enable additional demosaic methods, licensed under the GPL2 and GPL3 licenses. These demosaic packs are very old and aren't included into the version 0.19 any longer.
-
-It is safe to disable the flag, unless there is a need to use one of the GPL-licensed method.
-
 ### examples
 Pass the `--enable-examples` option to the configure script. Build and install additional example programs:
 
