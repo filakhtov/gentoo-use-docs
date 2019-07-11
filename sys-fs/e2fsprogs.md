@@ -1,4 +1,10 @@
 # sys-fs/e2fsprogs
+
+### cron
+Pass the `--with-cron-dir=/etc/cron.d` option to the configure script. Install the cron job that periodically runs `e2scrub` tool on all LVM volumes that are formatted in ext2, ext3 or ext4 filesystem to perform online filesystem check and either mark them as clean and update last checked timestamp or mark them for subsequent check during next mount.
+
+This flag can be enabled if there is a need to perform automatic filesystem check.
+
 ### fuse
 Pass the `--enable-fuse2fs` option to the configure script. Build and install `fuse2fs` tool for userspace handling of ext2/3/4 filesystems. This is mostly useful for non-Linux UNIX-like OSes that don't have a native EXT filesystem support but have a FUSE support.
 
