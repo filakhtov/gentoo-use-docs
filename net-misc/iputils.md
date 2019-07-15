@@ -1,4 +1,5 @@
 # net-misc/iputils
+
 ### arping
 Enabling this flag will make sure that `arping` binary is built and installed. This tool allows to ping hosts using ARP protocol. It can be used to detect what IP addresses are already taken on the network.
 
@@ -6,6 +7,8 @@ This flags conflicts with [net-misc/arping](arping.md) package.
 
 ### caps
 Pass `USE_CAP=yes` to `make` invocation and thus enable support for Linux capabilities. This allows programs like `ping`, `arping` and others to drop capabilities they don't require for proper operation. This is a security feature.
+
+It is a good idea to enable this flag to ensure that aforementioned binaries only keep relevant capabilities.
 
 ### clockdiff
 Build and install `clockdiff` binary. This tool measures a difference between host it is running on and destination using ICMP protocol.
@@ -15,8 +18,12 @@ No packages in portage depend on this flag and it is safe to disable.
 ### doc
 This will execute `make html` that builds and installs documentation in HTML format.
 
+This flag can be enabled if there is a need for user facing documentation in the HTML format (similar to what manpages provide).
+
 ### filecaps
 Set `CAP_NET_RAW` capability on `ping`, `arping` and `clockdiff` binaries. Doing so will allow regular users to execute these commands. Otherwise elevated permissions will be required to run them.
+
+It is recommended to enable this flag so regular (non-root) users can use aforementioned tools.
 
 ### gcrypt
 Use `gcrypt` for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
