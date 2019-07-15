@@ -1,4 +1,5 @@
 # sys-libs/libcap
+
 ### pam
 Changes `Make.Rules` to set `PAM_CAP` to `yes`. This provides a `pam_cap` PAM module that allows to set inheritable capabilities for the current process.
 

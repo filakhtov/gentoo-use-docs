@@ -1,4 +1,5 @@
 # sys-libs/pam
+
 ### audit
 Passes the `--enable-audit` option to the configure script. This will build and install the `pam_audit` module that allows reporting PAM events via the Kernel Audit Subsystem. The `pam_loginuid` module gains an ability to prevent logins if an `auditd` is not running or crashed.
 

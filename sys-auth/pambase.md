@@ -1,4 +1,5 @@
 # sys-auth/pambase
+
 ### consolekit
 Pass the `CONSOLEKIT=yes` variable to the make command. Add a `pam_ck_connector` module
 as an `optional` into a `session` interface for `system-login` stack.

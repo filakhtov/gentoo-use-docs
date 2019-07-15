@@ -1,4 +1,5 @@
 # sys-libs/ncurses
+
 ### ada
 Enables `--with-ada` configure option. This will instruct make to build and install bindings and expample program for Ada95 programming language.
 
