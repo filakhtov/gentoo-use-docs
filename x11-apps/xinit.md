@@ -1,6 +1,6 @@
 # x11-apps/xinit
 
-### minimal
-Does nothing if enabled. When disabled, pull in additional packages: [x11-apps/xclock](../x11-apps/xclock.md), [x11-apps/xsm](../x11-apps/xsm.md) and [x11-wm/twm](../x11-wm/twm.md) as dependencies to provide a minimalistic window manager and some utilities.
+### twm
+Pull in the [x11-apps/xclock](../x11-apps/xclock.md), [x11-apps/xsm](../x11-apps/xsm.md), [x11-terms/xterm](../x11-terms/xterm.md) and [x11-wm/twm](../x11-wm/twm.md) packages as dependencies to provide twm (Tab Window Manager) desktop environment.
 
-This flag should normally be enabled, unless there is a need to run a minimalistic GUI without a proper desktop environment.
+It is safe to disable the flag if there is no plan to use `twm` on the system.
