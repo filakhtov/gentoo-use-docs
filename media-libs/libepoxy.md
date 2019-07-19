@@ -1,5 +1,10 @@
 # media-libs/libepoxy
 
+### egl
+Pass in the `-Degl=yes` option to the configure script. Enable support for the EGL stack and allow relevant symbols to be automatically loaded on their first use.
+
+This flag should normally be disabled, unless there is a need to use the EGL stack, e.g. under Wayland.
+
 ### test
 Execute the `ninja test` command to run a test suite provided with the source code. This will extend a build time.
 
