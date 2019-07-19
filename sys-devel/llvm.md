@@ -10,6 +10,11 @@ Pass the `-DLLVM_BUILD_DOCS=yes`, `-DLLVM_ENABLE_SPHINX=yes`, `-DSPHINX_WARNINGS
 
 It is safe to disable the flag.
 
+### exegesis
+Pass the `-DLLVM_ENABLE_LIBPFM=yes` option to the cmake command. Build and install the `llvm-exegesis` binary - a benchmarking tool that uses information available in LLVM to measure host machine instruction characteristics like latency, throughput, or port decomposition.
+
+This flag can be safely disabled.
+
 ### gold
 Ensure that the (sys-devel/binutils)[../sys-devel/binutils.md] package installed with the `cxx` flag enabled and pull in the `sys-devel/llvmgold` package as a dependency. Build and install the LLVMgold plugin that allows to use the `ld.gold` linker for LTO (link time optimization) to yield reduced code size and increased execution speed of the resulting binaries.
 
