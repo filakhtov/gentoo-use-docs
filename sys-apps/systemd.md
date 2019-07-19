@@ -32,6 +32,11 @@ This flag passes the `-Dlibcurl=true` option to the Meson build script. cURL dep
 
 This flag can be safely disabled if an `importd` functionality is not desired.
 
+### dns-over-tls
+Pass the `-Ddns-over-tls=true` to the Meson build script. Enable DoT (DNS over TLS) support for systemd via the `systemd-resolved` service to wrap DNS queries and answers via the TLS (Transport Layer Security) protocol in order to prevent eavesdropping and manipulation of DNS data via MITM (man-in-the-middle) attacks.
+
+It is recommended to enable this flag if the system uses a DNS server that supports encrypted connections to improve privacy.
+
 ### elfutils
 This flag is passing the `-Delfutils=true` option to the Meson build script. Resulting SystemD binaries will be linked against the `libdw` library (from a [dev-libs/elfutils](../dev-libs/elfutils.md) package) to allow them to obtain and include stack traces into the coredump files generated during a crash handling routine.
 
@@ -130,11 +135,6 @@ The flag can only be enabled as a part of the Gentoo `selinux` profile.
 The flag will change an installation prefix for the SystemD from the default `/usr` location to the `/`. This is only necessary if the system has the separate `/usr` partition, because it requires mounting a device that might not be available during early boot stages.
 
 The flag should not be enabled if the system has the `/usr` directory located on the same partition as `/`.
-
-### ssl
-The flag will pass the `-Dgnutls=true` option to the Meson build script, but only if the `http` flag is also enabled. The GnuTLS will be used by the `systemd-journal-remote` to support HTTPS protocol.
-
-The flag should not be enabled on its own and should only be used for the remote journalling where incoming connections are made over the Sercure HTTP (HTTPS) protocol.
 
 ### sysv-utils
 The flag controls whether commands like `halt`, `init`, `poweroff` that are necessary for the SysV compatibility are symlinked to various SystemD tools.
