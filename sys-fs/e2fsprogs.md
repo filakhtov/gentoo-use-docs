@@ -15,6 +15,11 @@ Pass the `--enable-nls` option to the configure script. Use gettext to translate
 
 This flag can be safely disabled unless there is a need to display messeages in languages other than English.
 
+### split-usr
+If the flag is enabled all produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
+
 ### static-libs
 Install statically linked libraries `*.a` (aka library archives) into the target system. If disabled these libraries will be removed from build tree before installation.
 
