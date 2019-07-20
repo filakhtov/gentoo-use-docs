@@ -10,6 +10,9 @@ Pass the `--enable-python-bindings` option to the configure script. Build and in
 
 This flag should be enabled if there is a need for the `pwquality` module.
 
+### split-usr
+This flag does nothing.
+
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libpwquality` library. Move static library from the `/lib` to the `/usr/lib` directory where non-static library resides before installing.
 
