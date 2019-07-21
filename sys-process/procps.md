@@ -35,6 +35,11 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 
 It is recommended to disable this flag unless there is an explicit need for a static library, e.g. for development purposes.
 
+### split-usr
+If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
+
 ### systemd
 Pass the `--with-systemd` option to the configure script. Integrate with SystemD to obtain additional information. Allow a `ps` command to display a login session, a session owner, a display seat, a parent container, a parent slice and a parent unit for running processes.
 
