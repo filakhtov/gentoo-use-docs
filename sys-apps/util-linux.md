@@ -66,6 +66,11 @@ This flag results in the same set of capabilities being build for `cfdisk` as do
 
 It is safe to disable this flag.
 
+### split-usr
+If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
+
 ### static-libs
 This flag passes `--enable-static` option to configure. As a result static libraries will be built and installed.
 
