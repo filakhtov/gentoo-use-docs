@@ -70,6 +70,9 @@ Pass the `--with-selinux` option to the configure script. Enable proper AVC deni
 
 This flag should only ever be toggled system-wide, e.g. as part of the SELinux-enabled Portage profile.
 
+### split-usr
+This flag does nothing.
+
 ### ssp
 Pass the `--enable-stack-protector=all` (`no` when the flag is disabled) option to the configure script. Build all glibc libraries using the GCCs stack protection features to detect and prevent stack overruns.
 
