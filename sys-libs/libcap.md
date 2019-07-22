@@ -5,6 +5,11 @@ Changes `Make.Rules` to set `PAM_CAP` to `yes`. This provides a `pam_cap` PAM mo
 
 This flag can be safely disabled.
 
+### split-usr
+If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
+
 ### static-libs
 This flag ensures that `libcap.a` static library is installed into the target system.
 
