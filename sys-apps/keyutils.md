@@ -5,6 +5,11 @@ Patch a `Makefile` file and insert a `RPATH = -static` variable and export a `NO
 
 This flag should only ever be enabled if there is an explicit need for the static binaries.
 
+### split-usr
+If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
+
 ### static-libs
 Export a `NO_ARLIB=0` environment variable before installing the package. Build and install a statically linked version of a `libkeyutils` library.
 
