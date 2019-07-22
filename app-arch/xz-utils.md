@@ -12,6 +12,11 @@ Pass the `--enable-nls` option to the configure script. Enable messages translat
 
 It is safe to disable the flag unless there is a need to use non-English languages.
 
+### split-usr
+If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
+
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install a statically linked `liblzma` library.
 
