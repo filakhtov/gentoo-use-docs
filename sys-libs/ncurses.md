@@ -41,6 +41,11 @@ Enables `--with-profile` configure option. This is similar to `debug` flag and w
 
 This flag has performance and size overhead and unless profiling of the ncurses library itself or applications dependent on it is planned this USE flag should be disabled.
 
+### split-usr
+If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
+
 ### static-libs
 This flag will instruct ebuild to preserve statically linked libraries. Normally, these libraries are removed by ebuild.
 
