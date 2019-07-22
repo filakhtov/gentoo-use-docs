@@ -40,6 +40,11 @@ Pass the `--with-match-limit-recursion` option with value `8192` instead of `MAT
 
 This option should normally be enabled to cut execution early and save resources unless there is a specific need to deal with a recursive pattern matching that can hit this limit.
 
+### split-usr
+If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
+
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install statically linked libraries: a `libpcreposix.a`, a `libpcre.a` and if `cxx` flag is enabled then also a `libpcrecpp.a`.
 
