@@ -1,10 +1,5 @@
 # net-wireless/bluez
 
-### alsa
-Pass the `--enable-midi` option to the configure script. Enable support for the Low-Energy Bluetooth MIDI sequencers via the ALSA API.
-
-This flag should only be enabled if there is a need to use MIDI Synthesizer that advertises the MIDI Primary Service over Bluetooth.
-
 ### btpclient
 Pass the `--enable-btpclient` option to the configure script. Build and install the `btpclient` tool - a BTP (Bluetooth Test Protocol) client for qualification testing.
 
@@ -44,6 +39,11 @@ It is safe to disable the flag.
 Pass the `--enable-mesh` option to the configure script. Enable Mesh networking support to enable an interoperable many-to-many mesh networking solution for Bluetooth Low Energy. Build and install the `meshctl` tool for provisioning and management of Mesh-based networks.
 
 This flag should only be enabled if there is a need to support Mesh-networking.
+
+### midi
+Pass the `--enable-midi` option to the configure script. Enable support for the Low-Energy Bluetooth MIDI sequencers via the ALSA API.
+
+This flag should only be enabled if there is a need to use musical instruments that advertises the MIDI Primary Service over Bluetooth.
 
 ### obex
 Pass the `--enable-obex` option to the configure script. Enable the OBEX (OBject EXchange) protocol support that facilitates the exchange of binary objects between devices. Provide support for the Bluetooth Phone Book Access Profile (PBAP) that allows to exchange Phone Book objects and call history between carkits and mobile devices and IrMC profile - another method to transfer the phone book.
