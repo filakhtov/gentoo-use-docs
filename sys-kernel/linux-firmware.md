@@ -1,5 +1,10 @@
 # sys-kernel/linux-firmware
 
+### initramfs
+Combine and install an AMD CPU microcode into the `/boot/amd-uc.img` file, mounting the `/boot` directory first if needed. This early initrd image is loaded by the GRUB bootloader during an early boot.
+
+This flag should only be enabled if there is a need to apply the AMD microcode during an early boot.
+
 ### redistributable
 Install non-free (but redistributable) firmware files, e.g. AMD GPU and Intel wireless network adapters firmware.
 
