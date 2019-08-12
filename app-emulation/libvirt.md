@@ -160,11 +160,6 @@ Ensure that the `libvirtd` flag is enabled. Pass the `--with-libxl` option to th
 
 This flag can be safely disabled, unless there is a need to manage Xen guests using libvirt.
 
-### zeroconf
-Add the `avahi-daemon` dependency to the `libvirtd` init script. Pass the `--with-avahi` option to the configure script. Integrate with the Avahi daemon to advertize libvirtd service via the mDNS (multicast DNS) protocol (aka Zeroconf).
-
-This flag should normally be disabled, especially if the `libvirtd` service will be running in an untrusted network environment.
-
 ### zfs
 Pass the `--with-storage-zfs` option to the configure script. Enable support for ZFS (Z File System) based guest storage pool, and allowing to use manually created `zpool`s, as well as creating ones on-demand.
 
