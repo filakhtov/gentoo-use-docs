@@ -20,6 +20,11 @@ Pass the `--with-dbus` option to the configure script. Build and install the `li
 
 This flag should be enabled if there is a need for the `libvirt` D-Bus API.
 
+### dtrace
+Pass the `--with-dtrace` option to the configure script. Enable DTrace static probes in both the client and server code to provide an ability to analyze RPC messages that are being sent and received during the clien-server communication.
+
+This flag should normally be disabled, unless there is a need to perform communication tracing, e.g. for debugging purposes.
+
 ### firewalld
 Add the `firewalld` dependency to the `libvirtd` init script. Pass the `--with-firewalld` option to the configure script. Provide an ability for `libvirt` to place the bridge interface of a virtual network into the specified `firewalld` zone (`libvirt` by default) to apply all the rules of the zone to the virtual machine traffic.
 
