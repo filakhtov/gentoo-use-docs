@@ -37,6 +37,11 @@ Pass the `--with-skey` option to the configure script. Provide an ability to aut
 
 It is safe to disable the flag.
 
+### split-usr
+When enabled, install the `passwd` command into the `/bin` directory and create a symlink pointing to it inside of the `/usr/bin` directory.
+
+This flag should be enabled if the system uses separate `/usr` partition to ensure that the `passwd` command is available during the early boot.
+
 ### xattr
 Pass the `--with-attr` option to the configure script. Provide an ability for a `useradd` and a `usermod` commands to copy eXtended ATTRibutes from source files into destination when creating a user home directory from skeleton files or moving home directory to different place. Enable an additional logic to exclude ACLs when copying XATTRs to avoid an unexpected permissions result while copying files between filesystems with and without an ACL support.
 
