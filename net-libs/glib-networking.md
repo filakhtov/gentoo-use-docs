@@ -1,21 +1,21 @@
 # net-libs/glib-networking
 
 ### gnome
-Pass the `--with-gnome-proxy` option to the configure script. Build and install a `libgiognomeproxy` library - a `GProxyResolverGnome` backend, that uses GSettings and the network proxy schemas from `gsettings-desktop-schemas` to provide proxy settings information.
+Pass the `-Dgnome_proxy=enabled` (`disabled` if the flag is disabled) option to the meson build script. Build and install a `libgiognomeproxy` library - a `GProxyResolverGnome` backend, that uses GSettings and the network proxy schemas from `gsettings-desktop-schemas` to provide proxy settings information.
 
 This flag should be enabled if building glib-networking in a GNOME 3 environment.
 
 ### libproxy
-Pass the `--with-libproxy` option to the configure script. Use a D-Bus service provided by the libproxy backend to provide PAC/WPAD auto-configuration support.
+Pass the `-Dlibproxy=enabled` (`disabled` when the flag is disabled) option to the meson build script. Use a D-Bus service provided by the libproxy backend to provide PAC/WPAD auto-configuration support.
 
 This flag should be enabled if there is a need to use proxy auto-configuration.
 
 ### ssl
-Pass the `--with-gnutls` option to the configure script. Build and install a `libgiognutls` library - a GIO (GLib Input/Output) TLS backend that provides an ability to establish encrypted connections.
+Pull in the [app-misc/ca-certificates](../app-misc/ca-certificates.md) package as a dependency.
 
-This flag should be enabled if there is a need to run applications that use glib-networking to establish TLS-encrypted connections.
+This flag should be enabled if there is a need to run applications that use the glib-networking to establish TLS-encrypted connections to public services.
 
 ### test
-Start a new Xvfb session and execute a `make check` command inside of it when the main build is completed. Run a test suite provided with the source code to check against regressions. This will extend a build time.
+Start a new Xvfb session and execute the `meson test` command inside of it when the main build is completed. Run a test suite provided with the source code to check against regressions. This will extend a build time.
 
 This flag should normally be disabled as it is mainly useful for the Gentoo team, testers and developers.
