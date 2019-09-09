@@ -25,9 +25,6 @@ Pass the `--enable-selinux` option to the configure script. Enable an ability to
 
 This flag should only be ever toggled system-wide, e.g. as part of the SELinux-enabled portage profile.
 
-### split-usr
-This flag does nothing.
-
 ### static
 Pass the `--enable-static_link` option to the configure script. Change a value of the `--with-lvm1` option to `internal` if the `lvm1` flag is enabled and value of the `--with-cluster` and the `--with-pool` options to `internal` if the `clvm` flag is enabled. Build and install statically linked binaries, e.g. an `lvm` and a `dmsetup` with a `.static` suffix appended.
 
