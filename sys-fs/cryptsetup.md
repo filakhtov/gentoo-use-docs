@@ -1,9 +1,9 @@
 # sys-fs/cryptsetup
 
 ### argon2
-Pass the `--with-crypto_backend=argon2` option to the configure script. Provide an ability to use the Argon2 key derivation function for PBKDF (Password-Based Key Derivation Function) available in LUKS2 header format.
+Pass the `--enable-libargon2` option to the configure script. Use the `libargon2` library to provide an ability to use the Argon2 key derivation function for PBKDF (Password-Based Key Derivation Function) available in LUKS2 header format.
 
-This flag should only be enabled if there is a need to use Argon2 algorithm, but it should be noted that it is still under heavy development.
+This flag should only be enabled if there is a need to use Argon2 key derivation algorithm.
 
 ### gcrypt
 Pull a [dev-libs/libgcrypt](../dev-libs/libgcrypt.md) package as a dependency. Pass the `--with-crypto_backend=gcrypt` option to the configure script. Use a libgcrypt library as an encryption and a decryption backend. A Libgcrypt built with threads can't be used while statically linking (`static` flag, see [Gentoo bug #496612](https://bugs.gentoo.org/496612)).
@@ -16,7 +16,7 @@ Pass the `--with-crypto_backend=kernel` option to the configure script. Use Kern
 This flag should be disabled unless the target system is an embedded system and provides no userspace cryptographic libraries.
 
 ### libressl
-This flag only works if an `openssl` flag is also enabled. Pass the `--with-crypto_backend=libressl` option to the configure script. Use a LibreSSL library instead of an OpenSSL as a backend for an encryption and a decryption operations. It's performance is
+This flag only works if an `openssl` flag is also enabled. Pass the `--with-crypto_backend=openssl` option to the configure script. Use a LibreSSL library instead of an OpenSSL as a backend for an encryption and a decryption operations. It's performance is
 
 This flag should only ever be toggled system-wide, because a LibreSSL and an OpenSSL libraries can't be installed at the same time.
 
