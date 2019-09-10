@@ -15,11 +15,6 @@ Pass a `--with-libcap` option to a configure script. Use a `libcap` library to d
 
 It is recommended to enable this flag to improve security.
 
-### caps-ng
-Only works if the `caps-ng` flag is also enabled. Pass a `--with-libcap-ng` option to a configure script. Use a `libcap-ng` library instead of the `libcap` library to handle POSIX capabilities.
-
-This flag should be enabled if it is desired to use the `libcap-ng` library.
-
 ### creds
 Pass a `--enable-cifscreds` option to a configure script. Build and install a `cifscreds` binary to manage NTLM credentials (username and password) in kernel keyring for the purpose of establishing sessions in multiuser mounts.
 
