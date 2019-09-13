@@ -55,7 +55,7 @@ This flag only works if the `gallium` flag is enabled. Prepare build environment
 
 This flag should only be enabled as a dependency of a Gallium3D driver or when software rendering without hardware acceleration is necessary.
 
-### lm_sensors
+### lm-sensors
 Only works when the `gallium` flag is enabled. Passe the `-Dlmsensors=true` option to the meson build script. Use the `libsensors` library to provide an ability to display temperature, fan speed and other information from the lm_sensors in the Gallium HUD (head-up display).
 
 It is safe to disable the flag.
