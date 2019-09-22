@@ -1,6 +1,6 @@
 # sys-libs/timezone-data
 
-### leaps_timezone
+### leaps-timezone
 Pass the `REDO=posix_right` variable (`REDO=posix_only` if disabled) to the `make` command. Install the "right" timezone files that are interpreted as seconds since the epoch counting leap seconds (usint TAI-10 standard) in addition to POSIX ones that ignore them.
 
 It is safe to disable the flag, however should be enabled if "strict correctness" of time is required.
