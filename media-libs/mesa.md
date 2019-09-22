@@ -111,9 +111,14 @@ This feature only works for one of the `r300`, `r600`, `radeonsi` and `nouveau` 
 It is recommended to enable this flag if there is a need to deal with video files encoding and decoding using a compatible GPU, e.g. Nvidia with Nouveau driver.
 
 ### vulkan
-Pass the `-Dvulkan-drivers=` option with a list of supported drivers enabled via `VIDEO_CARDS` to the configure script. Build and install drivers that utilize Vulkan API - a new generation graphics and compute API that provides high-efficiency, cross-platform access to modern GPUs used in a wide variety of devices. Currently only modern AMD and Intel GPUs are supported.
+Pass the `-Dvulkan-drivers=` option with a list of supported drivers enabled via `VIDEO_CARDS` to the build command. Build and install drivers that utilize Vulkan API - a new generation graphics and compute API that provides high-efficiency, cross-platform access to modern GPUs used in a wide variety of devices. Currently only modern AMD and Intel GPUs are supported.
 
 It is highly recommended to enable this flag if the target system has the AMD or Intel GPU.
+
+### vulkan-overlay
+Only works when the `vulkan` flag is enabled. Pass the `-Dvulkan-overlay-layer=true` option to the meson build command. Enable the Vulkan Overlay layer to expose various performance metrics, such as FPS counter, pipeline computations, etc, similar to what Gallium3D "HUD" provides.
+
+The flag can be safely disabled.
 
 ### wayland
 The Wayland server requires the EGL implementation and GBM support to work. Append the `wayland` value to the `-Dplatforms=` option and pass it to the meson build command. Provide an implementation of the EGL API for Wayland clients to draw directly to the framebuffer.
