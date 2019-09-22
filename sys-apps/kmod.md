@@ -1,4 +1,5 @@
 # sys-apps/kmod
+
 ### debug
 Pass the `--enable-debug` option to the configure script. Print an additional debugging information at runtime, e.g. a source file, a line number, a function name, etc.
 

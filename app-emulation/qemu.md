@@ -68,7 +68,6 @@ Doesn't apply when building user emulation mode. Pass the `--enable-glusterfs` o
 
 This flag should only be enabled if there is a need to use QEMU with GlusterFS volumes.
 
-
 ### gnutls
 Doesn't apply when building user emulation mode. Pass the `--enable-gnutls` and `--enable-nettle` options to the configure script. Provide an ability to use the GnuTLS library with the Nettle backend for TLS encryption in VNC, AES for qcow2 native encryption, single DES in the VNC server for password authentication, SHA256 hashing in the quorum block driver, SHA1 hashing in the VNC websockets handshake, TLS support on network backends, etc. Enable support for the `tls` and `x509` parameters for `-vnc` command line option.
 

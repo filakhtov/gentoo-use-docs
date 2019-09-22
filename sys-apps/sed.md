@@ -1,4 +1,5 @@
 # sys-apps/sed
+
 ### acl
 Pass the `--enable-acl` option to the configure script. Enable ACL support for `sed` command, e.g. copy original file ACL permissions when doing an in-place file editing and creating a backup file.
 

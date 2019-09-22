@@ -1,4 +1,5 @@
 # app-admin/eselect
+
 ### doc
 Build and install documentation in HTML format. It will be installed into the usual `/usr/share/doc/eselect-<VERSION>/` location.
 

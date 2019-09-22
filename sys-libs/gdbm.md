@@ -1,4 +1,5 @@
 # sys-libs/gdbm
+
 ### berkdb
 Passes the `--enable-libgdbm-compat` option to the configure script. Builds `libgdbm_compat` - a compatibility layer which provides UNIX-like dbm API.
 
