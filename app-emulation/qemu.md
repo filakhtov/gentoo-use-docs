@@ -93,6 +93,11 @@ Doesn't apply when building user emulation mode. Pass the `--enable-libiscsi` op
 
 This flag should be enabled if there is a need to use iSCSI volumes as block devices for the virtual machines.
 
+### jemalloc
+Doesn't apply when building user emulation mode. Pass the `--enable-jemalloc` option to the configure script. Use the `jemalloc` library to perform heap memory allocation, instead of using the built-in glibc or `tcmalloc` allocators. This can provide better performance under certain circumstances, such as using a lot of disks and iothreads.
+
+This flag should only be enabled for performance optimization and only after confirming that it is effective for the particular use case at hand.
+
 ### jpeg
 Doesn't apply when building user emulation mode and only works when the `vnc` flag is enabled. Pass the `--enable-vnc-jpeg` option to the configure script. Enable support for the JPEG lossy compression method for transmitting virtual machine display output via the VNC protocol.
 
