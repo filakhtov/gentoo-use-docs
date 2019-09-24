@@ -51,9 +51,9 @@ Pass the `--enable-chromaprint` option to the configure script. Enable the Chrom
 It is safe to disable the flag.
 
 ### chromium
-Perform additional compilation of the `libffmpeg` library from the separate build directory, that is specifically targeted for use with the Chromium browser. The `system-ffmpeg` flag should be enabled for the [www-client/chromium](../www-client/chromium.md) package to use this library. Note: latest stable Chromium versions require FFmpeg version 4 that is incompatible with many other applications.
+Perform additional compilation of the `libffmpeg` library from the separate build directory, that is specifically targeted for use with the Chromium-based browser, such as Opera, Vivaldi and others. Without this flag enabled such browsers will only be able to play open codecs.
 
-For now it is recommended to disable this flag for the stable FFmpeg package.
+This flag should be enabled if the system uses a Chromium based browser and there is a need to play non-free codecs, such as MP3, MP4, AAC, H.264, etc.
 
 ### codec2
 Pass the `--enable-libcodec2` option to the configure script. Use the `libcodec2` library to enable support for Codec2 - a voice compression codec aiming towards very low bandwiths, both for muxing and demuxing.
