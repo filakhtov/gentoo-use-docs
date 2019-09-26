@@ -105,3 +105,8 @@ It is recommended to disable this flag unless there is a need to use X11 Forward
 Apply a set of patches to support X.509 PKI (Public Key Infrastructure). Provide an ability to authenticate using client certificates signed by known Certificate Authority.
 
 This flag should normally be disabled due to complex nature of the X.509 infrastructure and introduces a risk.
+
+### xmss
+Append the `-DWITH_XMSS` option to the `CFLAGS` variable. Enable experimental support for PQC (Post Quantum Crypto) XMSS keys that are using the stateful hash-based signature scheme (RFC 8391).
+
+This flag should be disabled, unless there is a need to use XMSS keys.
