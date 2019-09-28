@@ -1,10 +1,5 @@
 # sys-libs/e2fsprogs-libs
 
-### nls
-Pass the `--enable-nls` option to the configure script. Provide an ability to translate programs messages into different languages based on the system locale settings.
-
-This flag should be enabled if there is a need to use a non-English language.
-
 ### split-usr
 If the flag is enabled all produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
 
