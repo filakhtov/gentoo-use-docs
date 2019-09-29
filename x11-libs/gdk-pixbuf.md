@@ -15,11 +15,6 @@ Pass the `-Djpeg=true` (`false` when the flag is disabled) option to the meson c
 
 This flag should be enabled to provide support for loading JPEG images via GDK-PixBuf library.
 
-### jpeg2k
-Pass the `-Djasper=true` (`false` if the flag is disabled) option to the meson configure command. Build and install the `libpixbufloader-jasper` library - a progressive loader for JPEG2000 image format.
-
-This flag should be enabled to provide support for loading JPEG2000 images via GDK-PixBuf library.
-
 ### tiff
 Pass the `-Dtiff=true` (`false` when the flag is disabled) option to the meson configure command. Build and install the `libpixbufloader-tiff` library - a progressive loader for TIFF image format.
 
