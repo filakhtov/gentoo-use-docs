@@ -30,8 +30,3 @@ This flag can be safely disabled if there is no need to use one of the aforement
 Pass the `--enable-jpeg` option to the configure script. Use the `libjpeg` library to provide support for lossy compressed DNG (Digital Negative) photo format.
 
 It is safe to disable the flag, unless there is an explicit need to deal with lossy-compressed DNG images.
-
-### jpeg2k
-Pass the `--enable-jasper` option to the configure script. Use the `libjasper` library to provide support for the Redcode R3D proprietary RAW image format (JPEG2000 compressed RAW frames).
-
-This flag should only ever be enabled if there is a need to handle Redcode RAW image format.
