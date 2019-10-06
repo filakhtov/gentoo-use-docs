@@ -76,11 +76,6 @@ For hardware-accelerated video decoding with EGL rendering, see the `vaapi` flag
 
 This flag should be enabled if there is a need for one of the EGL based video outputs.
 
-### encode
-Pass the `--enable-encoding` option to the waf build script. Enable encoding features of the mpv that can use either the [media-video/libav](../media-video/libav.md) or the [media-video/ffmpeg](../media-video/ffmpeg.md) package with the `encoding` flag enabled.
-
-This flag should normally be disabled, and should only be enabled if there is a need to perform encoding.
-
 ### gbm
 Requires the `drm`, `egl` and `opengl` flags to be enabled. Pass the `--enable-gbm` option to the waf build script. Provide an ability to store decoded video frames in q GBM (Graphics Buffer Manager) buffer for subsequent rendering via the EGL API. See the `egl` flag for additional information. See the `vaapi` flag for hardware accelerated video decoding support.
 
@@ -115,11 +110,6 @@ This flag should be enabled if there is a need to apply color profile when watch
 Pass the `--enable-libass` and `--enable-libass-osd` options to the waf build script. Use the `libass` library to provide an ability to read and display SSA (SubStation Alpha) and ASS (Advanced SSA) subtitles. Enable the pseudo-GUI mode that also uses the `libass` to provide OSC (on-screen controls) that allows to perform simple operations, such as play, pause, switching tracks, controlling volume, entering and leaving full-screen mode, etc.
 
 This flag should be enabled if there is a need to read and render subtitles, or support for graphical user interface controls.
-
-### libav
-This flag allows to use the `libav` library ([media-video/libav](../media-video/libav.md)) instead of the FFmpeg one ([media-video/ffmpeg](../media-video/ffmpeg.md)) to perform video and audio encoding or decoding, muxing or demuxing, etc.
-
-The flag should only be toggled system-wide, as both of these libraries can't be installed at the same time.
 
 ### libcaca
 Pass the `--enable-caca` option to the waf build script. Build and install the `caca` video output driver, that uses the `libcaca` library to render video frames as a color ASCII art and can display them on a text console.
@@ -225,6 +215,11 @@ It is recommended to enable this flag on systems with supported hardware, e.g. I
 Requires the `X` flag to be enabled. Pass the `--enable-vdpau` and `--enable-vdpau-hwaccel` option to the waf build script. Use the VDPAU (Video Decode and Presentation API for Unix) API to perform hardware accelerated video decoding and postprocessing. When enabled together with the `opengl` flag, additionally pass the `--enable-vdpau-gl-x11` option to the waf build script to provide an ability to render decoded video frames using the OpenGL API.
 
 This flag should be enabled on systems with supported hardware, i.e. ones with old Nvidia GPUs that don't support CUDA, to perform hardware-accelerated video decoding. For modern Nvidia cards, the `cuda` flag should be used instead.
+
+### vulkan
+Pass the `--enable-vulkan` and `--enable-shaderc` options to the configure script. Provide an ability to use the Vulkan graphics API for video presentation using the shaderc library (Google's C wrapper around glslang) to translate mpv's GLSL (aka GLslang - official OpenGL Shading Language) shaders into Vulkan's SPIR-V (Standard Portable Intermediate Representation) format.
+
+This flag should normally be disabled, because this feature is still under very early stages of development, unless these is an explicit need to use the Vulkan API as a video output.
 
 ### wayland
 Requires the `egl` flag to be enabled. Pass the `--enable-wayland` option to the waf build script. Enable the Wayland SHM (shared memory) video output to render decoded frames. If enabled together with the `opengl` flag, also pass the `--enable-gl-wayland` option to the waf build script to provide an ability to use extended OpenGL renderer to display video frames within Wayland window system. For hardware accelerated video decoding, see the `vaapi` flag.
