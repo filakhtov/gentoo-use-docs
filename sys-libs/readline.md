@@ -10,6 +10,11 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 
 This flag should only be enabled if there is a need for the static libraries.
 
+### unicode
+When enabled ensure that the `unicode` flag is enabled for the [sys-libs/ncurses](../sys-libs/ncurses.md) package and use the `libncursesw` (wide unicode version) instead of `libncurses`.
+
+It is recommended to enable this flag to properly support characters from multibyte encodings, however it can be safely disabled if there is no need to use languages other than English.
+
 ### utils
 Run a configure script from `examples/rlfe` directory followed by the `make` command. Build and install an `rlfe` binary (ReadLine Front-End) that can execute an interactive program and let readline handle input line editing.
 
