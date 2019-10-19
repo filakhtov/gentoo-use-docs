@@ -80,6 +80,11 @@ Only works if `pcre` flag enabled. Pass the `USE_LIBPCRE2=YesPlease` variable to
 
 This flag can be safely disabled.
 
+### perforce
+Use the Python integration to provide an ability to import from and submit to Perforce repositories via the `git p4` command. When disabled, pass the `NO_PYTHON=YesPlease` variable to the `make` command.
+
+The flag can be safely disabled.
+
 ### perl
 Perl integration is used by default to provide additional features, like preparing a partial commit using `git add -i` and `git add -p`, interacting with svn repositories with `git svn`, etc. When disabled, pass the `NO_PERL=YesPlease` variable to the `make` command.
 
@@ -89,11 +94,6 @@ It is safe to disable the flag.
 Only works when the `blksha1` flag is disabled. Use the GIT's own SHA1 library (inspired by Mozilla's) and optimized for the PowerPC platform, instead of relying on the OpenSSL library to calculate SHA1 hashes.
 
 It is recommended to enable this flag on PowerPC platforms.
-
-### python
-Use the Python integration to provide an ability to import from and submit to Perforce repositories via the `git p4` command. When disabled, pass the `NO_PYTHON=YesPlease` variable to the `make` command.
-
-The flag can be safely disabled.
 
 ### subversion
 When disabled, pass the `NO_SVN_TESTS=YesPlease` variable to the `make` command. Execute the `make` command from the `contrib/svn-fe` source subdirectory. Install the `svn-fe` tool to convert an SVN "dumpfile" to a fast-import stream. Provide an ability to move changesets between Subverion and GIT repositories using the `git svn` command.
