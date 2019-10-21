@@ -20,6 +20,11 @@ Pass the `--with-highlight=source-highlight` option to the configure script. Use
 
 The flag can be safely disabled.
 
+### test
+Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for regressions. This will extend overall build time.
+
+This flag should normally be disabled, because it is primarily oriented towards `gtk-doc` developers, testers and maintainers.
+
 ### vim
 Only works with if the `highlight` flag is enabled. Change the value of `--with-highlight=` option to `vim`. Use vim editor to provide syntax highlighting instead of source-highlight. See `hightligh` flag for more details.
 
