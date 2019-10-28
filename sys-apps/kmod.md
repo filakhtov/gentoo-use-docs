@@ -10,6 +10,11 @@ Run a `gtkdocize` on `libkmod/docs` directory of the source tree. Pass the `--en
 
 It is safe to disable this flag because it is only needed by developers who uses a `libkmod` library.
 
+### libressl
+Only works if the `ssl` flag is enabled. Use the LibreSSL library instead of the OpenSSL to obtain module signature information.
+
+This flag should normally be disabled and should only ever be toggled system-wide.
+
 ### lzma
 Pass the `--with-xz` option to the configure script. Provide support for modules compressed using `LZMA`/`LZMA2` compression formats via xz utils.
 
@@ -19,6 +24,11 @@ This flag can be safely disabled unless kernel modules are compressed in `LZMA` 
 Run the configure script with the `--enable-python` option passed and execute `make` afterwards for every enabled python target. Provide a `kmod` Python module.
 
 It is safe to disable this flag unless there is a need to run Python scripts that use a `kmod` module.
+
+### ssl
+Pass the `--with-openssl` option to the configure script. Use the OpenSSL library to display module signature information, such as key fingerprint, hashing algorithm and so forth. If the flag is disabled, hashing algorithm always will be "unknown".
+
+This flag can be safely disabled, unless there is a need to deal with signed kernel modules.
 
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install statically linked version of a `libkmod` library.
