@@ -5,6 +5,11 @@ Pass the `--enable-ares` option to the configure script. Use a `c-ares` library 
 
 This flag can be safely disabled.
 
+### alt-svc
+Pass the `--enable-alt-svc` option to the configure script. Enable support for HTTP Alternative Services (aka `Alt-Svc` header) which was added to cURL as a prerequisite for the HTTP/3 protocol support.
+
+This flag should normally be disabled.
+
 ### brotli
 Pass the `--with-brotli` option to the configure script. Enable support for a `brotli` compression algorithm introduced by Google (provides 14% to 21% better compression than `gzip`) that recently becoming popular.
 
@@ -39,6 +44,21 @@ This flag should normally be disabled unless there is a need to access LDAP serv
 Pass the `--with-metalink` option to the configure script. Enable a Metalink support - an extensible metadata format for downloading files that provides file verification, data corruption recovery and alternate download sources.
 
 It is safe to disable this flag unless there is a need to download files using Metalinks via cURL.
+
+### nghttp3
+Pass the `--with-nghttp3` and `--with-ngtcp2` options to the configure script. Enable support for the QUIC protocol using the `ngtcp2` library to implement the HTTP/3 protocol on top of it using the `nghttp3` library and enable the `--http3` runtime option to access this feature.
+
+This flag should normally be disabled, because HTTP/3 support is considered experimental at this stage.
+
+### progress-meter
+Pass the `--enable-progress-meter` option to the configure script. Enable progress meter that shows how transfer (either upload or download) is progressing, including the current transfer speed, elapsed time and estimated time to completion.
+
+It is safe to disable the flag if there is no need to monitor transfer progress with cURL.
+
+### quiche
+Pass the `--with-quiche` option to the configure script. Use the `quiche` library to enable support for the HTTP/3 protocol on top of the QUIC protocol and enable the `--http3` runtime option to access this feature.
+
+This flag should normally be disabled, because HTTP/3 support is considered experimental at this stage.
 
 ### rtmp
 Pass the `--with-librtmp` option to the configure script. Provide support for an RTMP protocol using an `rtmp://` scheme and allow to download stream media.
