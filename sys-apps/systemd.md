@@ -20,6 +20,11 @@ This flag is used by the Gentoo team during early build stages for creating buil
 
 This flag should normally be disabled.
 
+### cgroup-hybrid
+When enabled, pass the `-Ddefault-hierarchy=hybrid` option to the Meson build script. This will enable the hybrid cgroup tree setup, where v1 cgroups are mounted under the `/sys/fs/cgroup/<controller>` directories and the v2 cgroup tree is mounted under the `/sys/fs/cgroup/unified`. If disabled, the `-Ddefault-hierarchy=unified` option will be passed instead and only v2 cgroups will be mounted.
+
+It is preferable to disable this flag on the modern system that require no support for v1 cgroups.
+
 ### cryptsetup
 Passes the `-Dlibcryptsetup=true` to the Meson build script enabling support for encrypted file-systems. This will build and install a set of binaries to deal with `cryptsetup` partitions and associated `.service` files.
 
@@ -58,7 +63,7 @@ Passes the `-Dmicrohttpd=true` option to the Meson build script. This builds and
 This flag is only required if there is a need for a remote journal collection on the target system.
 
 ### idn
-This flag passes the `-Dlibidn=true` option to the Meson build script. Enabling it will build the `systemd-networkd` and the `systemd-resolved` daemons with the IDN support.
+This flag passes the `-Dlibidn=true` option to the Meson build script. Enabling it will build the `systemd-networkd` and the `systemd-resolved` daemons with the IDN support using the `libidn2` library.
 
 This flag can be safely disabled if there is no need to deal with non-English domain names.
 
@@ -71,11 +76,6 @@ The flag can be safely disabled if there is no need to run containerized environ
 The flag passes `-Dkmod=true` option to the Meson build script. This will build and install a `systemd-modules-load` - a tool responsible for loading kernel modules during a boot process.
 
 It is recommended to keep this flag enabled. However, it can be safely disabled if a target system kernel is compiled with all modules built-in.
-
-### libidn2
-This flag is not useful on its own but has to be used in conjunction with the `idn` flag. When enabled it passes the `-Dlibidn2=true` option to Meson build script that instructs the build to use newer (second) version of `libidn` that implements the IDNA2008 standard which is incompatible with IDNA2003 provided by older (first) version of `libidn`.
-
-This flag is recomended if the IDN support is desired, unless there is a specific need to support older IDNA2003 standard.
 
 ### lz4
 The flag passes `-Dlz4=true` option to the Meson build script. Enable LZ4 algorithm support that can be used for compressing journal files by the `journald`.
@@ -135,6 +135,11 @@ The flag can only be enabled as a part of the Gentoo `selinux` profile.
 The flag will change an installation prefix for the SystemD from the default `/usr` location to the `/`. This is only necessary if the system has the separate `/usr` partition, because it requires mounting a device that might not be available during early boot stages.
 
 The flag should not be enabled if the system has the `/usr` directory located on the same partition as `/`.
+
+### static-libs
+Pass the `-Dstatic-libsystemd=true` and `-Dstatic-libudev=true` options to the Meson build script. Build a statically linked version of the `libsystemd` and `libudev` libraries.
+
+This flag should only ever be enabled if there is an explicit need for these static libraries.
 
 ### sysv-utils
 The flag controls whether commands like `halt`, `init`, `poweroff` that are necessary for the SysV compatibility are symlinked to various SystemD tools.
