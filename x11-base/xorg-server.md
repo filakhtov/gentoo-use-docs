@@ -1,10 +1,5 @@
 # x11-base/xorg-server
 
-### glamor
-Pass the `--enable-glamor` option to the configure script. Enable Glamor - a GL-based rendering acceleration library for X server that provides an open-source 2D graphics common driver for the X Window System as implemented by X.org. It supports a variety of graphics chipsets which have OpenGL/EGL/GBM supports.
-
-It is recommended to enable this flag on for supported graphics chipsets. It is also required for acceleration under XWayland.
-
 ### debug
 Pass the `--enable-debug` option to the configure script. Enable printing of additional debugging messages at runtime.
 
