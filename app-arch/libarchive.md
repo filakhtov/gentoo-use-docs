@@ -5,6 +5,11 @@ Pass the `--enable-acl` option to the configure script. Provide an ability to st
 
 It is recommended to toggle this flag system-wide. Disabling this flag on ACL-enabled systems will lead to ACL permissions being lost after an archiving or unarchaving operations.
 
+### blake2
+Pass the `--with-libb2` option to the configure script. Use the external (system) `libb2` library (instead of an embedded implementation) to enable support for the BLAKE2 checksum algorithm for RAR archives that was introduced in the RAR v5.
+
+This flag can be safely disabled if there is no need to deal with RAR archives of the newer format.
+
 ### bzip2
 Pass the `--with-bz2lib` option to the configure script. Enable support for compressing and decompressing archives in BZip2 format.
 
