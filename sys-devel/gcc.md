@@ -12,6 +12,11 @@ Enable support for the C++ programming language (compiler, linker, etc) when cro
 
 This flag should be enabled because there are a lot of applications that depend on a C++ library and require a C++ compiler.
 
+### d
+Append `d` to the `--enabled-languages` option that is passed to the configure script. Build and install a `gdc` binary - the GNU D Compiler, and a `libphobos` library - the D run-time library.
+
+This flag can be safely disabled, unless there is a need for D language compiler.
+
 ### debug
 Pass the `--enable-checking=yes` option to the configure script. The compiler is built to perform internal consistency checks. This does not change the generated code, but adds error checking within the compiler.
 
@@ -60,6 +65,11 @@ This flag can be safely disabled.
 Pass the `--enable-libssp` option to the configure script. Use a `libssp` library for an SSP (Stack Smashing Protection) feature of a GCC. The SSP feature is provided by the C library on many target so that flag might be restricted.
 
 It is recommended to enable this flag to provide a buffer overflow protection.
+
+### lto
+Pass the `--with-build-config=bootstrap-lto` option to the configuration script. Use the LTO (Link-Time optimization) when building the compiler toolchain itself.
+
+It is recommended to enable this flag to optimize the compiler, however it is known to cause build issues in the past, so be wary.
 
 ### mpx
 Pass the `--enable-libmpx` option to the configure script. Enabled an Intel® MPX (Memory Protection eXtension) support for the GCC. The MPX support is deprecated and has been removed from the GCC in version 9.1.
