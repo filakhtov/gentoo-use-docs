@@ -1,5 +1,10 @@
 # sys-apps/attr
 
+### debug
+Pass the `--enable-debug` option to the configure script. Append the `-DDEBUG` (`-DNDEBUG` when the flag is disabled) option to the `CPPFLAGS` environment variable. Build all the binaries and libraries with debugging symbols.
+
+This flag should normally be disabled.
+
 ### nls
 Pass the `--enable-gettext` option to the configure script. Use Gettext to provide an ability to translate programs messages and library output into various languages based on the system locale settings.
 
