@@ -20,15 +20,15 @@ Pass the `--with-xz` option to the configure script. Provide support for modules
 
 This flag can be safely disabled unless kernel modules are compressed in `LZMA` or `LZMA2` format.
 
+### pkcs7
+Pass the `--with-openssl` option to the configure script. Use the OpenSSL library to display module signature information, such as key fingerprint, hashing algorithm and so forth. If the flag is disabled, hashing algorithm always will be "unknown".
+
+This flag can be safely disabled, unless there is a need to deal with signed kernel modules.
+
 ### python
 Run the configure script with the `--enable-python` option passed and execute `make` afterwards for every enabled python target. Provide a `kmod` Python module.
 
 It is safe to disable this flag unless there is a need to run Python scripts that use a `kmod` module.
-
-### ssl
-Pass the `--with-openssl` option to the configure script. Use the OpenSSL library to display module signature information, such as key fingerprint, hashing algorithm and so forth. If the flag is disabled, hashing algorithm always will be "unknown".
-
-This flag can be safely disabled, unless there is a need to deal with signed kernel modules.
 
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install statically linked version of a `libkmod` library.
