@@ -5,11 +5,6 @@ Pass the `--with-doxygen` option to the configure script. Generate and API docum
 
 It is safe to disable the flag.
 
-### static-libs
-Remove a `-Wl,-Bdirect` option from a `CFLAGS`, `CPPFLAGS`, `CXXFLAGS`, `CCASFLAGS`, `FFLAGS`, `FCFLAGS` and an `LDFLAGS` variables, and a `-Bdirect` option from an `LDFLAGS` variable for the duration of a build. Build and install a statically linked `libxkbcommon` (and also a `libxkbcommon-x11` if an `X` flag is enabled) library.
-
-This flag should normally be disabled, unless there is an explicit need for the static library.
-
 ### test
 Execute a `make check` command after the main build is complete. Run test cases provided with a source code. This will extend a build time.
 
