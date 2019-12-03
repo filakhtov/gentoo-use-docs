@@ -1,7 +1,7 @@
 # dev-python/dbus-python
 
 ### doc
-Pass the `--enable-api-docs` option to the configure script. Use the Epydoc tool to generating API documentation for the `dbus` Python module. This requires Python 2 target to be enabled.
+Pass the `--enable-documentation` option to the configure script. Use the Sphinx tool to generate an API and development documentation for the `dbus` Python module and install it into the `/usr/share/doc/dbus-python-<VERSION>` directory.
 
 This flag can be safely disabled.
 
