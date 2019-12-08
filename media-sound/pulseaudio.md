@@ -90,11 +90,6 @@ This flag only works if the `bluetooth` flag is enabled. Pass the `--enable-blue
 
 This flag should be enabled if there is a need to use HSP bluetooth devices with PulseAudio.
 
-### neon
-This flag only works on ARM platform with NEON SIMD support. Pass the `--enable-neon-opt` option to the configure script. Use an optimized assembly code to utilize ARM NEON instruction set and drastically reduce CPU load for intense tasks, e.g. resampling.
-
-This flag should be enabled on ARM platforms with NEON support.
-
 ### ofono-headset
 This flag only works if the `bluetooth` flag is enabled. Pass the `--enable-bluez5-ofono-headset` option to the configure script. Provide support for `headset=ofono` parameter of the `module-bluetooth-discover` plugin to only enable HFP (Hands-Free Profile) mode that is mainly used in car hands-free kits to communicate with mobile phones in the car.
 
