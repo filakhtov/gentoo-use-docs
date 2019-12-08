@@ -1,22 +1,22 @@
 # net-libs/libsoup
 
-### debug
-Pass the `--enable-debug=yes` option to the configure script. Build and install a `libsoup` library with debugging symbols and include additional debugging GLib code into it.
-
-This flag should only be enabled if there is a need to debug the library itself or any dependent apps.
-
 ### gssapi
-Pass the `--with-gssapi` option to the configure script. Use the `libkrb5` to provides support for the Kerberos (GSS-API - Generic Security Services API) HTTP Authentication.
+Pass the `-Dgssapi=true` (`false` if the flag is disabled) option to the meson build script. Use the `libkrb5` to provides support for the Kerberos (GSS-API - Generic Security Services API) HTTP Authentication.
 
 This flag should only be enabled if there is a need to use Kerberos HTTP authentication via the library.
 
+### gtk-doc
+Pass the `-Dgtk_doc=true` option to the meson build script. Use the Gtk-Doc tool to generate an API reference documentation in the HTML format and install it into the `/usr/share/gtk-doc` directory.
+
+It is safe to disable this flag if there is no need for developer documentation.
+
 ### introspection
-Pass the `--enable-introspection` option to the configure script. Generate the `Soup-2.4.gir` GIR metadata file to provide dynamic bindings for the `libsoup` library to languages other than C.
+Pass the `-Dintrospection=true` (`false` when this flag is disabled) option to the meson build script. Generate the `Soup-2.4.gir` GIR metadata file to provide dynamic bindings for the `libsoup` library to languages other than C.
 
 It is safe to disable the flag.
 
 ### samba
-Pass the `--with-ntlm-auth=/usr/bin/ntlm_auth` option to the configure script. Use a Samba's `winbind` daemon helper - the `ntlm_auth` tool to provide support for NTLM (NT LAN Manager) single-sign-on authentication.
+Pass the `-Dntlm=true` option to the meson build script. Use a Samba's `winbind` daemon helper - the `ntlm_auth` tool to provide support for NTLM (NT LAN Manager) single-sign-on authentication.
 
 This flag should be enabled if there is a need to use apps that utilise the `libsoup` library as a client for the NTLM authentication.
 
@@ -26,11 +26,11 @@ Ensure that the `ssl` flag is set on the [net-libs/glib-networking](../net-libs/
 This flag should be enabled if there are apps that use the `libsoup` library to connect or serve connections over an HTTPS protocol.
 
 ### test
-Execute the `make check` command when the main build is completed to run a test suite provided with the source code. This will extend the build time. When disabled, patch the `Makefile.in` and `Makefile.am` files to skip building the test related code.
+Execute the `meson test` command when the main build is completed to run a test suite provided with the source code. This will extend the build time. When disabled, patch the `Makefile.in` and `Makefile.am` files to skip building the test related code.
 
 This flag should normally be disabled as it is primarily used by the Gentoo team, testers or developers.
 
 ### vala
-Prepare environment for the configure script to find an appropriate version of vala files. Pass the `--enable-vala` option to the configure script. Generate `Soup-2.4-custom.vala` Vala language bindings for the `libsoup` library.
+Prepare environment for the configure script to find an appropriate version of vala files. Pass the `-Dvapi=true` option to the configure script. Generate `Soup-2.4-custom.vala` Vala language bindings for the `libsoup` library.
 
 It is safe to disable the flag.
