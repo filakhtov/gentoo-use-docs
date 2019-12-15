@@ -1,7 +1,7 @@
 # sys-libs/ncurses
 
 ### ada
-Enables `--with-ada` configure option. This will instruct make to build and install bindings and expample program for Ada95 programming language.
+Enables `--with-ada` configure option. This will instruct make to build and install bindings and expample program for Ada95 programming language. When disabled, pass the `--enable-warnings` option to the configure script, which turns on all GCC compiler warnings.
 
 It is not usual to find a program written in Ada in general, let alone the one that is using ncurses, so for the average user it is safe to disable this flag.
 
@@ -17,7 +17,7 @@ This however, posesses a problem when C++ compiler is used to build ncurses libr
 It is recommended to keep this flag enabled.
 
 ### debug
-Enables `--with-debug` configure option. This will build a set of ncurses libraries that include debugging symbols. These libraries are usually prefixed with `_g`, e.g. `libncurses_g.a` or `libpanel_g.a`.
+Enables `--with-debug`, `--with-assertions` and `--with-expanded` configure options. This will build a set of ncurses libraries that include debugging symbols. These libraries are usually prefixed with `_g`, e.g. `libncurses_g.a` or `libpanel_g.a`. When disabled, enable the `--enable-leaks` and `--with-macros` configure options instead.
 
 This flag is normally not required, unless debugging/development to be done against ncurses.
 
