@@ -34,3 +34,8 @@ This flag can be safely disabled if the system does not use a separate partition
 Pass the `--enable-static` and `--disable-shared` options to the configure script (or vice versa when the flag is disabled). Build and install only a static version of the plymouth libraries.
 
 This flag should only ever be enabled if there is an explicit need for the static libraries.
+
+### udev
+Pass the `--with-udev` option to the configure script. Integrate with Udev device manager in order to enumerate and discover available DRM devices to show animation on.
+
+It is recommended to enable this flag.
