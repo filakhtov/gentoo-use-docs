@@ -75,11 +75,6 @@ Pass the `-Dglx-read-only-text=true` option to the meson build command. Disable 
 
 This flag must only be enabled on hardened systems.
 
-### pic
-Pass the `-Dasm=false` option to the meson build command. Disable Assembly code that is used for performance optimization on `x86` platform in order to build PIC (position independent code) libraries (however, `-fPIC` compiler flag must be set in order to do so).
-
-This flag should be enabled on hardened systems or if there is an explicit need for the PIC libraries.
-
 ### selinux
 Pass the `-Dselinux=true` option to the meson build command. Use the `libselinux` library to check if the SELinux restricts executable code in the heap memory and avoids using it for executable section allocation if it is restricted. This is necessary when running under the SELinux-restricted kernel.
 
@@ -124,6 +119,11 @@ The flag can be safely disabled.
 The Wayland server requires the EGL implementation and GBM support to work. Append the `wayland` value to the `-Dplatforms=` option and pass it to the meson build command. Provide an implementation of the EGL API for Wayland clients to draw directly to the framebuffer.
 
 This flag should only be enabled if there is a need to run Wayland server on the target system.
+
+### X
+Append the `x11` value to the `-Dplatforms=` option and pass it to the meson build command. Enable support for X11 (X Windows System, aka X) platform for various Mesa drivers to allow indirect GLX rendering, DRI or DRM within X server applications (depending on enabled backends and drivers).
+
+This flag should be enabled if the target system runs X11.
 
 ### xa
 This feature only works for the `freedreno`, `nouveau` and `vmware` Gallium3D drivers and therefor requires the `gallium` flag to be enabled. Pass the `-Dgallium-xa=true` option to the meson build script. Build and install the XA (X.Org Acceleration) state tracker developed by VMWare. It provides versioning support, surface functionality, and YUV blits for textured X-Video, Solid fills without ROP functionality, Copies with format conversion and reinterpretation but without ROP, Xrender-type compositing for general acceleration. It is primarily designed for use by the `vmwgfx` on VMware-virtualized guest operating systems. The Freedreno driver uses XA for accelerating 2D with open-source, reverse-engineered Qualcomm graphics driver.
