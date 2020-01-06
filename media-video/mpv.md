@@ -45,6 +45,11 @@ This flag can be used together with the `libav` flag and requires the `opengl` o
 
 This flag should be enabled on systems with supported hardware, i.e. where any modern Nvidia GPU is a primary graphics card or the only one.
 
+### debug
+Pass the `--enable-debug-build` to the waf build script. Pass the `-g` option to the compiler invocation to produce libraries and binaries with debugging information attached.
+
+This flag should normally be disabled, unless there is a need to perform debugging.
+
 ### doc
 Pass the `--enable-pdf-build` option to the waf build script. Use the `rst2pdf` tool to generate a PDF version of the documentation out of the rst (reStructuredText) markup files and install it into the `/usr/share/doc/mpv-<VERSION>` directory.
 
@@ -75,6 +80,11 @@ If enabled together with the `gbm` flag, pass the `--enable-egl-drm` option to t
 For hardware-accelerated video decoding with EGL rendering, see the `vaapi` flag.
 
 This flag should be enabled if there is a need for one of the EGL based video outputs.
+
+### gamepad
+Pass the `--enable-sdl2-gamepad` option to the waf build script. Use the SDL2 library to provide an ability to control the player using gamepads. Controls can be associated with various actions, such as seek, play, pause, etc, via configuration file.
+
+This flag should only be enabled if there is a need to use SDL2 gamepad with mpv.
 
 ### gbm
 Requires the `drm`, `egl` and `opengl` flags to be enabled. Pass the `--enable-gbm` option to the waf build script. Provide an ability to store decoded video frames in q GBM (Graphics Buffer Manager) buffer for subsequent rendering via the EGL API. See the `egl` flag for additional information. See the `vaapi` flag for hardware accelerated video decoding support.
@@ -195,11 +205,6 @@ Pass the `--enable-uchardet` option to the waf build script. Use the `libucharde
 
 The flag can be safely disabled, unless there is a need to deal with non-UTF-8 subtitle files.
 
-### v4l
-Pass the `--enable-tv`, `--enable-tv-v4l2`, `--enable-libv4l2` and `--enable-audio-input` options to the waf build script. Use the `libv4l2` library to provide an ability to access various devices, such as web-cameras, TV tuners, radios and others, that are exposed via the V4L2 (Video 4 Linux version 2) API to stream and capture video and audio input from them.
-
-It is safe to disable the flag.
-
 ### vaapi
 Requires at least one of the `gbm`, `X` or `wayland` flag to be enabled. Pass the `--enable-vaapi` and `--enable-vaapi-hwaccel` options to the waf build script. Use the VA-API (Video Acceleration API) to perform hardware-accelerated video decoding and postprocessing.
 
@@ -241,7 +246,7 @@ Pass the `--enable-zlib` option to the waf build script. Use the `libz` library 
 
 It is recommended to enable this flag if there is a need to play Matroska files.
 
-### zsh-completion
-Does not make sense without the `cli` flag being enabled. Pass the `--enable-zsh-comp` option to the waf build script. Install `zsh` completion scripts that provides an interactive auto-completion and offers suggestions for `mpv` command line options and arguments.
+### zimg
+Pass the `--enable-zimg` option to the waf build script. Use the `libzimg` library to enable support for high-quality software based image scaling.
 
-This flag should only be enabled if the target system runs Z shell.
+This flag should only be enable if a target platform has no hardware accelerate image scaling capabilities.
