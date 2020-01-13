@@ -50,12 +50,8 @@ If the flag is enabled all produced libraries will be installed into the `/lib` 
 
 This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
 
-### test
-Executes test suite provided with a source code after a build is complete. This will extend a build time.
+### static-libs
 
-This flag should be disabled. It is only useful for the Gentoo team, developers or testers.
+Pass the `--enable-static` option to the configure script. Build and install a statically linked version of all the libraries, including `libpam`, `libpamc` and `libpam_misc`, as well as various modules, such as `pam_unix`, `pam_wheel`, `pam_nologin` and so on.
 
-### vim-syntax
-Pull in the [app-editors/vim](../app-editors/vim.md) package as a dependency. VIM provides support for PAM configuration files syntax highlighting out of the box.
-
-This flag should be enabled if there is a need for syntax highlighting when editing PAM config files with the VIM editor.
+This flag should only ever be enabled if there is an explicit need for the statically linked libraries.
