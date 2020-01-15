@@ -10,10 +10,10 @@ Pass the `--enable-test-surfaces` option to the configure script. Enable support
 
 It is safe to disable this flag.
 
-### gles2
-Pass the `--enable-glesv2` option to the configure script. Provide an ability for Cairo to draw something on screen with hardware acceleration using the OpenGL ES 2.0 API via the EGL interface.
+### gles2-only
+This flag only works if the `opengl` flag is disabled. Pass the `--enable-glesv2` option to the configure script. Provide an ability for Cairo to perform on screen draw operations with hardware acceleration using the OpenGL ES 2.0 API via the EGL interface.
 
-It is recommended to enable this flag on embedded systems with the OpenGL ES 2.0 support.
+This flag should normally be disabled, unless for embedded systems with the OpenGL ES 2.0 support and no full fledged OpenGL support.
 
 ### glib
 Pass the `--enable-gobject` option to the configure script. Build and install the `libcairo-gobject` library that contains helper functions to integrate Cairo with a Glib's GObject system. These functions are used for GObject introspection to provide dynamic bindings for the Cairo library.
@@ -52,8 +52,3 @@ Pass the `--with-x`, `--enable-xlib`, `--enable-xlib-xrender` and the `--enable-
 - Provide support for the tee surface backend that multiplexes all operations performed on it to the one or more underlying surfaces, mainly used by Mozilla applications.
 
 It is safe to disable this flag.
-
-### xcb
-Pass the `--enable-xcb` and the `--enable-xcb-shm` options to the configure script. Enable support for the XCB surface to allow rendering cairo graphics to X Window System windows and pixmaps using the XCB library. Also supports XCB SHM (Shared Memory Extension) API.
-
-This flag can be safely disabled.
