@@ -5,11 +5,6 @@ Pass the `--enable-acl` option to the configure script. Enable ACL support for `
 
 It is recommended to modify this flag system-wide. If disabled while trying to edit file with ACL permissions set, these permissions can be lost.
 
-### forced-sandbox
-Modify a source code before compiling to force a sandbox mode that can't be disabled (normally enabled via the `--sandbox` command line option).
-
-It is safe to disable this flag. It can be useful if there is a need to accept an untrusted input for sed, e.g. a web-service to validate sed expressions.
-
 ### nls
 Pass the `--enable-nls` option to the configure scrpit. Provide support for a program messages localization using gettext and install appropriate translation files.
 
