@@ -110,6 +110,11 @@ Pass the `--with-phyp` option to the configure script. Build and install the `ph
 
 This flag can be safely disabled.
 
+### pm-utils
+Pass the `--with-pm-utils` option to the configure script. Use the `pm-is-supported` utility from the `pm-utils` package to detect power management capabilities of the hypervisor system, such as suspend, hibernate and hybrid sleep. This is necessary if there is a need to put a hypervisor into sleep while VMs are running to properly save and restore the VMs state.
+
+It is safe to disable the flag.
+
 ### policykit
 Only works together with the `dbus` flag. Pass the `--with-polkit` option to the configure script. Integrate with PolicyKit framework to provide fine grained permission rules across client users, managed objects and API operations using JavaScript rules.
 
