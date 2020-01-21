@@ -1,7 +1,7 @@
 # sys-apps/portage
 
 ### build
-This flag should normally be disabled. It is used by the Gentoo team to create early build stages and bootstrapping. Under the hood it will ignore a number of flags and dependencies.
+This flag should normally be disabled. It is used by the Gentoo team to create early build stages and bootstrapping. Under the hood it will ignore a number of flags and dependencies as well as disable the rsync verification.
 
 ### doc
 Generate and install HTML documentation from DocBook by calling a `make docbook` command followed by a `make install_docbook`. Resulting documentation will be installed into a `/usr/share/doc/portage-<VERSION>/html` directory.
