@@ -6,6 +6,6 @@ Pass the `-Denable-gir=true` option to the Meson build script. Generate and inst
 It is safe to disable the flag.
 
 ### lcms
-Pass the `-Dwith-lcms=true` option to the Meson build script. Link against the lcms2 library to provide support for CMYK (Cyan, Magenta, Yellow, Black) color profiles.
+Pass the `-Dwith-lcms=true` option to the Meson build script. Link against the lcms2 library to provide an ability to load color spaces from CMYK (Cyan, Magenta, Yellow, Black) color profiles.
 
 This flag can be safely disabled.
