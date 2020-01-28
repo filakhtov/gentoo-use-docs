@@ -20,9 +20,6 @@ Pass the `-Dspell=true` option to the meson build script. Use the gspell library
 
 This flag should be enabled if there is a need for spell-checking.
 
-### test
-This flag does nothing on later versions of gedit that use Meson build system.
-
 ### vala
 Prepare environment for the configure script to find an appropriate version of vala files. Pass the `-Dvapi=true` option to the meson build script. Provide an ability to use Gedit plugins written in Vala.
 
