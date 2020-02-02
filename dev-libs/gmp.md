@@ -15,6 +15,11 @@ Install a `gmp-man-<VERSION>.pdf` documentation into a `/usr/share/doc/gmp-man-<
 
 This flag can be safely disabled.
 
+### pic
+Pass the `--with-pic` option to the configure script. Build the `libgmp` shared library with PIC (Position Independent Code) enabled. This will have a small overhead on each function call and global data address.
+
+This flag can be enabled to improve security in expense of small performance hit.
+
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install a statically linked `libgmp` library (and a `libgmpxx` library if the `cxx` flag is also enabled).
 
