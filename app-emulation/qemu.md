@@ -133,10 +133,20 @@ Doesn't apply when building user emulation mode. Pass the `--enable-opengl` opti
 
 This flag should be enabled if there is a need for OpenGL hardware acceleration in a UI, and is recommended when using VirGL acceleration inside of a guest machine and displaying output through SDL or GTK+ UI.
 
+### oss
+Append `oss` to the `--audio-drv-list=` option that is passed to the configure script. Provide an ability to play and capture sounds inside of the virtual machine using the OSS (Open Sound System) audio devices through an emulated sound card. OSS audio backend can be selected by setting the `QEMU_AUDIO_DRV` environment variable to `oss`.
+
+This flag should normally be disabled, because OSS is considered deprecated and is no longer in active use.
+
 ### pin-upstream-blobs
 Enforce specific versions and ensure that `binary` flag is enabled on firmware package dependencies to pull in prebuilt files recommended by the upstream maintainer. This also means that there is no way to apply a patch or modify a source before installation. When disabled, firmware files will be built from source. Note, that upstream maintainer won't likely accept bug reports if using non-recommended versions.
 
 It is recommended to enable this flag for maximum compatibility and stability.
+
+### plugins
+Pass the `--enable-plugins` option to the configure script. Enable support for TCG plugins that provide a way for users to run experiments taking advantage of the total system control emulation can have over a guest. It provides a mechanism for plugins to subscribe to events during translation and execution and optionally callback into the plugin during these events.
+
+This flag should normally be disabled, unless there is a need to use TCG plugins.
 
 ### png
 Doesn't apply when building user emulation mode. Pass the `--enable-vnc-png` option to the configure script. Enable support for the PNG lossless compression method for transmitting virtual machine display output via the VNC protocol.
@@ -256,6 +266,11 @@ Doesn't apply when building user emulation mode. Pass the `--enable-vhost-net` o
 
 This flag can be enabled to improve network performance (up to 8x faster than normal virtio), however might have issues with some DHCP clients.
 
+### vhost-user-fs
+Doesn't apply when building user emulation mode. Pass the `--enable-vhost-user-fs` option to the configure script. Enable support for the Vhost user filesystem VirtIO device that can be enabled using the `-device vhost-user-fs-pci` argument. This device allows shared access to host filesystem from inside a guest machine.
+
+This flag can be safely disabled.
+
 ### virgl
 Doesn't apply when building user emulation mode. Pass the `--enable-virglrenderer` option to the configure script. Enable support for OpenGL acceleration in the guest machine and allow some OpenGL calls to be directed to the host system's OpenGL driver for processing. Currently only Linux guest on a Linux host is supported (although Windows work is in progress). This also mean that only OpenGL can be supported and obviously no Direct3D. Enable the `virgl` parameter of the `-device` command line option for the `virtio-vga` graphics adapter.
 
@@ -285,6 +300,11 @@ This flag should be enabled if there is a need to use the VirtFS filesystem or r
 Doesn't apply when building user emulation mode. Pass the `--enable-xen` and `--enable-xen-pci-passthrough` options to the configure script. Enable QEMU integration with Xen to emulate a part of the hardware, in particular a disk, a network card and the graphic output, so a guest does not need to be modified in order to run under Xen. Even with a modified guest, QEMU can be used to handle the graphic output of the guest, or as a backend for a paravirtualized disk or network card. Enable support for Xen PCI pass-through to attach real PCI devices to Xen guest virtual machines.
 
 This flag should only be enabled if there is a need to use QEMU with Xen.
+
+### xkb
+Doesn't apply when building user emulation mode. Pass the `--enable-xkbcommon` option to the configure script. Build and install the `qemu-keymap` utility that uses `libxkbcommon` library to generate QEMU reverse keymaps from xkb keymaps which can be used with the QEMU's `-k` command line option.
+
+It is safe to disable this flag, unless there is a need to use custom keymap with QEMU.
 
 ### xfs
 Doesn't apply when building user emulation mode. Pass the `--enable-xfsctl` option to the configure script. Enable improved support for the XFS filesystem, e.g. `xfsctl()` notification and synchronizing data for virtual disks located on the XFS volumes.
