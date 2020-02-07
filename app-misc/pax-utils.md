@@ -1,4 +1,5 @@
 # app-misc/pax-utils
+
 ### caps
 Pass the `USE_CAP=yes` variable to the `make` command. The `pspax` gains an ability to read capabilities of the processes. If disabled the `pspax` will always print `=` for a `CAPS` column for all processes.
 
