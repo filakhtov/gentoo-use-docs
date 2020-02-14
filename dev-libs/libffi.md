@@ -19,3 +19,8 @@ It is recommended to disable the flag, unless there is an explicit need for the 
 Execute a `make check` command after the main build is completed. Run test cases provided with a source code.
 
 This flag should normally be disabled as it is mainly useful for the Gentoo team, testers and developers.
+
+### test-bhaible
+Only makes sense if the `test` flag is enabled. Run the bhaible (Bruno Haible's) test suite, which is suitable for automation on embedded targets. It runs extremely slowly and can take hours of runtime. When this flag is disabled, entire test suite will be removed from the source tree before running tests.
+
+It is recommended to keep this flag disabled, unless there is an explicit need to run these tests.
