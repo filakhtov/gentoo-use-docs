@@ -59,11 +59,6 @@ Pass a `--with-fam` option to a WAF configure script. Build a `vfs_notify_fam` -
 
 This flag should only be enabled if the target systems supports FAM and there is a need to support client notification.
 
-### gnutls
-Pass a `--enable-gnutls` option to a WAF configure script. Use a GnuTLS library to provide various encryption and certificate management capabilities. Features such as an SMB encryption, password encryption on SAMR (Security Account Manager (SAM) Remote) protocol, NTLMv2 authentication, SMB/NTP signing depends on the GnuTLS library.
-
-This flag should be enabled if there is a need to use GnuTLS for cryptographical operations instead of Nettle.
-
 ### gpg
 Pass a `--with-gpgme` option to a WAF configure script. Provide an ability to store cleartext passwords in a PGP/OpenGPG encrypted form by configuring the new "password hash gpg key ids" option.
 
@@ -74,6 +69,11 @@ This flag only works if the `cups` flag is enabled. Pass a `--enable-iprint` opt
 
 This flag should only be enabled if there is a need to use printers provided by Novell iPrint printing server.
 
+### json
+Pass the `--with-json` option to the WAF configure script. Use the `libjansson` library to enable support for JSON (JavaScript Object Notation) format, required for using samba in AD DC mode (Active Directory Domain Controller). Also provide an ability to generate audit logs in JSON format.
+
+It is safe to disable the flag.
+
 ### ldap
 Pass a `--with-ldap` option to a WAF configure script. Provide an ability to use a LDAP directory to provide an authentication layer in addition to containing the user, group, and machine account information. Build and install various `smbldap-*` utilities, e.g. `smbldap-groupadd`, `smbldap-useradd`, `smbldap-passwd`, `smbldap-userinfo` and others.
 
@@ -83,6 +83,11 @@ This flag should only be enabled if integration with LDAP is desired.
 Pass a `--with-pam` and a `--with-pammodulesdir=/lib/security` options to a WAF configure script. Build and install a `pam_winbind` module to integrate Samba with a PAM (Pluggable Authentication Modules) infrastructure. This module can authenticate users against the local domain by talking to the Winbind daemon.
 
 This flag should only be enabled if there is a need to integrate with the PAM subsystem.
+
+### profiling-data
+Pass the `--with-profiling-data` option to the WAF configure script. Enable support for collection of profile information during runtime. The number of calls to and the amount of time spent in various system calls, smb transactions and nmbd activity can be recorded.
+
+It is recommended to disable this flag, as it is mainly useful for Samba developers.
 
 ### python
 Build and install a wide variety of Python-based Samba tools, libraries and modules, e.g. `smbtorture` - a testsuite for finding differences in implementations of the SMB protocol and testing SMB servers, `pytalloc-util` - utility functions library for using talloc objects with Python, `pytevent` - Python bindings for tevent and many others. A lot of these tools are required for AD DC (Active Directory Domain controller). When disabled, apply a set of patches that provide an ability to disable Python bindings and pass the `--disable-python` option to the WAF configure script to do so.
