@@ -20,16 +20,6 @@ Pass the `-DWITH_NM=yes` option to the CMake command. Build and install the `net
 
 This flag should be enabled if target system uses NetworkManager for network configuration.
 
-### perl
-Pass the `-DPERL_VENDORINSTALL=ON` and the `-DWITH_PERL=yes` options to the CMake command. Build and install the `Libproxy.pm` file that provides the `Net::Libproxy` Perl module designed to obtain proxy configuration details using the `libproxy` library.
-
-This flag should be enabled if there is a need to run Perl scripts that require `Net::Libproxy` module.
-
-### python
-Prepare Python environment before the build. Pass the `-DWITH_PYTHON` option to the CMake command. Install the `libproxy.py` file for every enabled Python target, that provides `libproxy` Python module designed to obtain a list of potential proxies to use in order to reach a given URL.
-
-This flag should be enabled if there is a need to run Python scripts that require `libproxy` module.
-
 ### spidermonkey
 Pass the `-DWITH_MOZJS` option to the CMake command. Build and install the `pacrunner_mozjs` library - a `libproxy` module that contains the plugin to allow libproxy to interpret PAC (Proxy Auto-Configuration) files using mozjs.
 
