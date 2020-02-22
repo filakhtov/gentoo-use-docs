@@ -11,7 +11,7 @@ Pass the `--with-selinux` option to the configure script. Allow the `find` comma
 This flag should only be ever toggled system-wide, e.g. as part of the SELinux-enabled Portage profile.
 
 ### static
-Append the `-static` option to the `LDFLAGS` variable for the duration of a build. Build and install a statically linked `find` and `xargs` binaries.
+Append the `-pthread` option to the compiler flags variable and the `-static` option to the `LDFLAGS` variable for the duration of a build. Build and install a statically linked `find` and `xargs` binaries.
 
 It is safe to disable the flag, unless there is an explicit need for static binaries.
 
