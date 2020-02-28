@@ -30,14 +30,6 @@ Pass the `enable_hangout_services_extension=true` option to the `gn gen` command
 
 It is safe to disable the flag.
 
-### jumbo-build
-Pass the `use_jumbo_build=true` option to the `gn gen` command. Enable "unity builds", called Jumbo builds to merge many
-source files and compile them together, since a
-large portion of source code is in shared header files that
-dramatically reduces the total amount of work needed.
-
-It is recommended to enable this flag to significantly improve the build time.
-
 ### kerberos
 Pass the `use_kerberos=true` option to the `gn gen` command. Enable support for the SPNEGO authentication mechanism (Simple and Protected GSS-API Negotiation), also known as "integrated authentication" or "negotiate authentication" to provide the concept of Single Sign-On (SSO) - having authenticated once at the start of a session, users can access network services throughout a Kerberos realm without authenticating again. Enable support for the `--auth-server-whitelist` runtime option that takes as its value a comma-separated list of permitted hostnames. Also enable the `--auth-negotiate-delegate-whitelist` runtime option to allow a network service to authenticate to other network services on users behalf.
 
