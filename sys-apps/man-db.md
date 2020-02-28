@@ -1,4 +1,5 @@
 # sys-apps/man-db
+
 ### berkdb
 Passes the `--with-db=db` option to the configure script, but only if a  `gdbm` flag is disabled. This will utilize the Berkeley DB database implementation for storing cache data.
 
@@ -18,6 +19,11 @@ This flag can be safely disabled.
 The flag passes the `--enable-nls` option to the configure script. Uses gettext to translate output messages into different languages, and provides input and output in localized formats. For example input prompts, command usages, etc can be displayed in languages other than English.
 
 It is safe to disable this flag, unless there is a desire for non-English language output and input handling.
+
+### seccomp
+Pass the `--with-libseccomp` option to the configure script. Use the `libseccomp` library to confine most subprocesses that involve untrusted data handling.
+
+This flag should normally be enabled as it provides security improvement.
 
 ### selinux
 Pulls in [sec-policy/selinux-mandb](../sec-policy/selinux-mandb.md) package as a dependency to enable proper operation of `mandb` command under the SELinux hardened Kernel.
