@@ -1,5 +1,10 @@
 # sys-apps/portage
 
+### apidoc
+Add the `apidoc` target to the list of tagets that are passed to `setup.py`. Use the Sphinx Python documentation tool to generate API documentation from the source code.
+
+This flag can be safely disabled if there is no need for Portage Python API documentation.
+
 ### build
 This flag should normally be disabled. It is used by the Gentoo team to create early build stages and bootstrapping. Under the hood it will ignore a number of flags and dependencies as well as disable the rsync verification.
 
@@ -7,11 +12,6 @@ This flag should normally be disabled. It is used by the Gentoo team to create e
 Generate and install HTML documentation from DocBook by calling a `make docbook` command followed by a `make install_docbook`. Resulting documentation will be installed into a `/usr/share/doc/portage-<VERSION>/html` directory.
 
 It is safe to disable this flag unless a documentation is necessary.
-
-### epydoc
-Generate a Python API documentation using an Epydoc tool by running a `make epydoc` command and install resulting HTML into a `/usr/share/doc/portage-<VERSION>/html` directory.
-
-This flag can be safely disabled unless there is a need for Python API documentation.
 
 ### gentoo-dev
 Disable the `--dynamic-deps` emerge runtime option that is enabled by default. Enable the following additional Portage FEATURES by default: an `ipc-sandbox`, a `network-sandbox` and a `strict-keepdir`.
