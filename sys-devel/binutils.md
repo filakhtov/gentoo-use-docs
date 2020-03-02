@@ -1,10 +1,5 @@
 # sys-devel/binutils
 
-### cxx
-Ensure that the `gold` and `plugins` flags are enabled in order to improve C++ code linking speed.
-
-It is recommended to enable this flag as a lot of applications in Portage are written in C++.
-
 ### default-gold
 Requires the `gold` flag to be enabled. Pass the `--enable-gold=default` option to the configure script. Ensure that the `ld.gold` linker is used by default, instead of the `ld.bfd` one, by installing it as the `ld` binary.
 
