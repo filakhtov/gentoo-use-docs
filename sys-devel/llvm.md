@@ -1,17 +1,17 @@
 # sys-devel/llvm
 
 ### debug
-Pass the `-DLLVM_ENABLE_ASSERTIONS=yes` (`no` when the flag is disabled) to the cmake command. Enable runtime assertions, but only if the build type is `Debug`.
+Pass the `-DLLVM_ENABLE_ASSERTIONS=on` (`off` when the flag is disabled) to the cmake command. Enable runtime assertions, but only if the build type is `Debug`.
 
 This flag should normally be disabled.
 
 ### doc
-Pass the `-DLLVM_BUILD_DOCS=yes`, `-DLLVM_ENABLE_SPHINX=yes`, `-DSPHINX_WARNINGS_AS_ERRORS=OFF` and additional options to set destination directories for the documentation install to the cmake command. Generate the LLVM documentation in the HTML format using the Sphinx tool from RST source files and install it into the `/usr/share/doc/llvm-<VERSION>/html` directory.
+Pass the `-DLLVM_BUILD_DOCS=on`, `-DLLVM_ENABLE_SPHINX=on`, `-DSPHINX_WARNINGS_AS_ERRORS=OFF` and additional options to set destination directories for the documentation install to the cmake command. Generate the LLVM documentation in the HTML format using the Sphinx tool from RST source files and install it into the `/usr/share/doc/llvm-<VERSION>/html` directory.
 
 It is safe to disable the flag.
 
 ### exegesis
-Pass the `-DLLVM_ENABLE_LIBPFM=yes` option to the cmake command. Build and install the `llvm-exegesis` binary - a benchmarking tool that uses information available in LLVM to measure host machine instruction characteristics like latency, throughput, or port decomposition.
+Pass the `-DLLVM_ENABLE_LIBPFM=on` (`off` if the flag is disabled) option to the cmake command. Build and install the `llvm-exegesis` binary - a benchmarking tool that uses information available in LLVM to measure host machine instruction characteristics like latency, throughput, or port decomposition.
 
 This flag can be safely disabled.
 
@@ -46,6 +46,11 @@ Pass the `-DHAVE_LIBXAR=1` (`0` when the flag is disabled) option to the cmake c
 It is safe to disable the flag, unless there is a need to dump information about xar compressed object files and binary images.
 
 ### xml
-Pass the `-DLLVM_ENABLE_LIBXML2=yes` (`no` if the flag is disabled) option to the cmake command. Use the `libxml2` library to handle an XML document tree manipulations when merging Microsoft `.manifest` files.
+Pass the `-DLLVM_ENABLE_LIBXML2=on` (`off` if the flag is disabled) option to the cmake command. Use the `libxml2` library to handle an XML document tree manipulations when merging Microsoft `.manifest` files.
 
 This flag should normally be disabled, unless there is a need to work with Microsoft based stack, that requires manifest handling.
+
+### z3
+Pass the `-DLLVM_ENABLE_Z3_SOLVER=on` (`off` when the flag is disabled) option to the cmake command. Use the z3 SMT (Satisfiability Modulo Theories) problem solver library for the clang static analyzer, when performing symbolic execution on input code. Z3 theorem prover is slower than LLVM's built-in range-based solver, but can handle more complex queries.
+
+It is safe to disable this flag.
