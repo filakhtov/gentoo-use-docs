@@ -46,9 +46,9 @@ Pass the `-Dgles2=true` option to the meson build command. Build and install the
 This flag should be enabled on the embedded systems that support OpenGL ES 2.0 API.
 
 ### libglvnd
-Pass the `-Dglvnd=true` option to the meson build command. Use the `libgvnd` library - an OpenGL Neutral Dispatch Library led by NVIDIA, to replace the internal Mesa dispatcher implementation.
+Pass the `-Dglvnd=true` option to the meson build command. Use the `libgvnd` library - an OpenGL Neutral Dispatch Library led by NVIDIA, to replace the internal Mesa dispatcher implementation. This allows multiple OpenGL implementations from different vendors to coexist on the same system, without interfering with each other or requiring any manual configuration.
 
-This flag should be disabled for now as the feature is in an experimental state.
+This flag can be safely disabled, but it is recommended to enable it on systems with multiple GPUs from different vendors.
 
 ### llvm
 This flag only works if the `gallium` flag is enabled. Prepare build environment by detecting a latest installed version of the LLVM package and appending it to the `PATH` variable. Pass the `-Dllvm=true` option to the meson build command. Build and install the Gallium llvmpipe driver - a software rasterizer that uses LLVM to do runtime code generation. Shaders, point/line/triangle rasterization and vertex processing are implemented with LLVM IR which is translated to x86, x86-64, or ppc64le machine code. Also, the driver is multithreaded to take advantage of multiple CPU cores (up to 8 at this time). It's the fastest software rasterizer for Mesa.
