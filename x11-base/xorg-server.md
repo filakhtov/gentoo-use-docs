@@ -30,6 +30,11 @@ Pass the `--enable-kdrive`, `--enable-kdrive-kbd`, `--enable-kdrive-mouse` and t
 
 This flag should only be enabled if the KDrive X server is necessary.
 
+### libglvnd
+Pull in necessary dependencies and ensure their flags are properly configured for X11 to support `libglvnd` and allow rendering using multiple GPUs from different vendors across separate X screens.
+
+This flag can be safely disabled and should only be enabled on a system with multiple GPUs from different vendors, such as laptop hybrid graphics.
+
 ### libressl
 Use the LibreSSL library instead of the OpenSSL library.
 
