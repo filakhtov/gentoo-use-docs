@@ -10,8 +10,13 @@ Pass the `--with-audit` option to the configure script. Add logging support via 
 
 This flag can be safely enabled.
 
+### bcrypt
+Pass the `--with-bcrypt` option to the configure script. Provide an ability to use `bcrypt` hashing function for storing passwords, instead of a SHA-based one. The `bcrypt` password-hashing algorithm derived from Bruce Schneier's Blowfish block cipher, which takes advantage of the slow Blowfish key schedule to make password-checking inherently CPU-intensive, so that password-cracking attempts are slower and more difficult.
+
+It is recommended to enable this flag to greatly improve stored password hashes resistance to brute-force and rainbow attacks.
+
 ### cracklib
-Pass the `--with-cracklib` option to the configure script. Use a `libcrack` library when creating or changing a password for a user or a group using `passwd` command to verify password requirements, such as complexity, blacklist dictionary check and others.
+Pass the `--with-libcrack` option to the configure script. Use a `libcrack` library when creating or changing a password for a user or a group using `passwd` command to verify password requirements, such as complexity, blacklist dictionary check and others.
 
 It is safe to disable this flag, however it can add an additional layer of security for the multi-user system.
 
@@ -41,6 +46,11 @@ It is safe to disable the flag.
 When enabled, install the `passwd` command into the `/bin` directory and create a symlink pointing to it inside of the `/usr/bin` directory.
 
 This flag should be enabled if the system uses separate `/usr` partition to ensure that the `passwd` command is available during the early boot.
+
+### su
+Pass the `--with-su` option to the configure script. Build and install the `su` binary, which allows to run a command with substitute user and group ID, and is designed mostly for unprivileged users.
+
+This flag should normally be enabled, however it can be disabled if there is no need to run privileged commands as regular users or alternative mechanisms exist to run such commands.
 
 ### xattr
 Pass the `--with-attr` option to the configure script. Provide an ability for a `useradd` and a `usermod` commands to copy eXtended ATTRibutes from source files into destination when creating a user home directory from skeleton files or moving home directory to different place. Enable an additional logic to exclude ACLs when copying XATTRs to avoid an unexpected permissions result while copying files between filesystems with and without an ACL support.
