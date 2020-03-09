@@ -31,7 +31,7 @@ Pass the `--enable-ipv6` option to the configure script. Enable support for an I
 This flag should be enabled if the target system participates in IPv6 capable networks. It can be safely disabled otherwise.
 
 ### kerberos
-Pass the `--with-kerberos=/usr` option to the configure script. Provide support for a Kerberos authentication protocol using a GSS-API for an HTTP and to some extent for an FTP protocols.
+Pass the `--with-gssapi=/usr` option to the configure script. Provide support for a Kerberos authentication protocol using a GSS-API for an HTTP and to some extent for an FTP protocols.
 
 This flag should only be enabled if there is a need to use Kerberos authentication protocol. It can safely be disable otherwise.
 
@@ -41,7 +41,7 @@ Pass the `--enable-ldap` and the `--enable-ldaps` options to the configure scrip
 This flag should normally be disabled unless there is a need to access LDAP servers using cURL.
 
 ### metalink
-Pass the `--with-metalink` option to the configure script. Enable a Metalink support - an extensible metadata format for downloading files that provides file verification, data corruption recovery and alternate download sources.
+Pass the `--with-libmetalink` option to the configure script. Enable a Metalink support - an extensible metadata format for downloading files that provides file verification, data corruption recovery and alternate download sources.
 
 It is safe to disable this flag unless there is a need to download files using Metalinks via cURL.
 
