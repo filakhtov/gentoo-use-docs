@@ -30,11 +30,6 @@ Passes the `--enable-nis` option to the configure script. Enables a NIS (Network
 
 This flag should generally be disabled, because nowadays a LDAP is preferred over NIS.
 
-### nls
-The flag passes the `--enable-nls` option to the configure script. Enables support for message translations using gettext. An example of translated message is a password expiry notice.
-
-It is safe to disable this flag unless there is a desire for non-English messages.
-
 ### pie
 Passes the `--enable-pie` option to the configure script. Appends a `-fpie` option to the `CFLAGS` and a `-pie` to the `LDFLAGS` to produce PIE (Position Independent Executables) libraries and binaries. This is also used as a security feature.
 
