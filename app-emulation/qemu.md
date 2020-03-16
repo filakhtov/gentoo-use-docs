@@ -179,14 +179,14 @@ Doesn't apply when building user emulation mode and only works if the `vnc` flag
 This flag should be enabled if there is a need for the SASL-based authentication.
 
 ### sdl
-Doesn't apply when building user emulation mode. Pass the `--enable-sdl` and `--with-sdlabi=1.2` option to the configure script. Use the `libsdl` version 1.2 library to display video output from virtual machine (usually in a separate window) and enable support for the `sdl` value for the `-display` command line option to do so. Provide an ability to capture and play audio via the SDL (Simple DirectMedia Layer) backend through an emulated sound card. The SDL backend can be selected by setting the `QEMU_AUDIO_DRV` environment variable to the `sdl` value.
+Pass the `--enable-sdl` option to the configure script. Use the `libsdl2` library to display video output from virtual machine (usually in a separate window) and enable support for the `sdl` value for the `-display` command line option to do so. Provide an ability to capture and play audio via the SDL (Simple DirectMedia Layer) backend through an emulated sound card. The SDL backend can be selected by setting the `QEMU_AUDIO_DRV` environment variable to the `sdl` value.
 
-It is recommended to enable this flag together with the `sdl2` flag if there is a need to display an output through the SDL library.
+It is recommended to enable this flag if there is a need to display an output through the SDL library.
 
-### sdl2
-Only works if the `sdl` flag is enabled. Pass the `--with-sdlabi=2.0` (instead of `1.2`) option to the configure script. Does the same as the `sdl` flag, but uses the `libsdl2` library instead, which is a recent and non-deprecated SDL library version.
+### sdl-image
+Pass the `--enable-sdl-image` option to the configure script. Use the SDL2 image file loading library to load the PNG file and use it as an SDL window icon. When disabled, the BMP file will be used as an icon instead.
 
-It is recommended to enable this flag, if there is a need to display an output through the SDL library.
+It is safe to disable this flag.
 
 ### seccomp
 Doesn't apply when building user emulation mode. Pass the `--enable-seccomp` option to the configure script. Enable the seccomp (secure computing mode) syscall filtering facility. Prior to QEMU version 2.11 seccomp had a single giant whitelist of excluded syscalls to allow every feature to work properly, however it was still causing issues with third-party libraries. Newer versions of QEMU, however have modular blacklists and causes almost no issues, so can be safely disabled to improve security.
