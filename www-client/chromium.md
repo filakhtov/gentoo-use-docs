@@ -8,7 +8,7 @@ It is recommended to enable this flag for extra type safety, but can be disabled
 ### component-build
 Pass the `is_component_build=true` option to the `gn gen` command. Normally, one executable is compiled and a couple of shared libraries (depending on the platform), producing efficient runtime binary, but can take a long time to link because so much code goes into a single binary. This flag switches to a component build, where many smaller shared libraries will be generated. This speeds up link times, and means that many changes only require that the local shared library be linked rather than the full executable, but at the expense of program load-time performance.
 
-It is recommended to enable this flag on machines that have 16G of RAM or more.
+This flag should normally be disabled, because component build isn't generally intended for use by end users and is mostly useful for developement and debugging.
 
 ### cups
 Pass the `use_cups=true` option to the `gn gen` command. Link against the `libcups` library to enable printing support using CUPS (Common Unix Printing System), including both, remote and local printers.
@@ -20,11 +20,6 @@ Normally, a number of different options are removed from the `CFLAGS` and `CXXFL
 
 It is recommended to disable this flag to avoid build issues.
 
-### gnome-keyring
-Pass the `use_gnome_keyring=true` option to the `gn gen` command. Provide an ability to use the GNOME keyring for password management, i.e. storing passwords for autofill inside of the system keyring and retrieving when necessary.
-
-It is safe to disable the flag.
-
 ### hangouts
 Pass the `enable_hangout_services_extension=true` option to the `gn gen` command. Enable the Google Hangouts services that provide screensharing features for the Chromium browser.
 
@@ -34,11 +29,6 @@ It is safe to disable the flag.
 Pass the `use_kerberos=true` option to the `gn gen` command. Enable support for the SPNEGO authentication mechanism (Simple and Protected GSS-API Negotiation), also known as "integrated authentication" or "negotiate authentication" to provide the concept of Single Sign-On (SSO) - having authenticated once at the start of a session, users can access network services throughout a Kerberos realm without authenticating again. Enable support for the `--auth-server-whitelist` runtime option that takes as its value a comma-separated list of permitted hostnames. Also enable the `--auth-negotiate-delegate-whitelist` runtime option to allow a network service to authenticate to other network services on users behalf.
 
 This flag should only be enabled if there is a need for Kerberos/SPNEGO authentication.
-
-### neon
-Only works on ARM platforms when `system-ffmpeg` flag is disabled. Pass the `arm-neon` target (instead of just `arm`) to the `chromium/scripts/build_ffmpeg.py` script. Use the NEON SIMD instructions set on the supported ARM platforms when building bundled FFmpeg.
-
-This flag should be enabled on ARM platforms that support NEON SIMD instructions when not using system FFmpeg.
 
 ### pic
 Only makes sense on the `ia32` architecture when `system-ffmpeg` flag is disabled. Pass the `--disable-asm` option to the `chromium/scripts/build_ffmpeg.py` script. Disable optimized assembly code and use the non-optimized but PIC-friendly (Position-Independent Code) code instead.
