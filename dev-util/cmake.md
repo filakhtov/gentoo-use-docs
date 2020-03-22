@@ -25,11 +25,6 @@ Pass the `-DCMake_ENABLE_SERVER_MODE` and the `-DCMAKE_USE_LIBUV` options to a `
 
 This flag can be safely disabled.
 
-### system-jsoncpp
-Pass the `-DCMAKE_USE_SYSTEM_LIBRARY_JSONCPP` option to a `cmake` command. Use a `JsonCpp` library provided by the system instead of internal CMake one. This might be useful if there are issues or vulnerabilities with included jsoncpp library and CMake haven't pulled an updated version yet.
-
-It is safe to disable the flag. It is recommended to enable it if there are any other packages in the system that depend on [dev-libs/jsoncpp](../dev-libs/jsoncpp.md).
-
 ### test
 Execute a `bin/ctest` binary inside of the build directory when the main build is complete. Execute a test suite provided with a source code. This will extend a build time.
 
