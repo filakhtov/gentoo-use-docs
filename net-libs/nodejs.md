@@ -28,6 +28,11 @@ Pass the `--with-snapshot` option to the configure script. Use V8's startup snap
 
 It is recommended to enable this flag to improve startup performance.
 
+### system-ssl
+Requires the `ssl` flag to be enabled. Pass the `--shared-openssl` and `--openssl-use-def-ca-store` options to the configure script. Link against the system shared OpenSSL library, instead of statically linking to the embedded copy, and switch to use system OpenSSL supplied CA (Certificate Authority) store instead of compiled-in Mozilla CA copy.
+
+It is recommended to enable this flag.
+
 ### systemtap
 Pass the `--with-dtrace` option to the configure script. Provide an ability to profile Node.js applications to figure out where a program spends its time using the `DTrace` tracing framework.
 
