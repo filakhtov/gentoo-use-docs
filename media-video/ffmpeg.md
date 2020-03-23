@@ -11,7 +11,7 @@ Pass the `--enable-altivec` option to the configure script. Pass additional comp
 This flag should only be enabled on PowerPC systems with AltiVec support.
 
 ### amr
-Pass the `--enable-version3`, `--enable-libopencore-amrwb` and `--enable-libopencore-amrnb` options to the configure script. Use the `libopencore-amrnb` and `libopencore-amrwb` libraries to perform AMR-NB (Adaptive Multi-Rate NarrowBand) and AMR-WB (Adaptive Multi-Rate WideBand) decoding instead of FFmpeg's native implementation.
+Pass the `--enable-version3`, `--enable-libopencore-amrwb` and `--enable-libopencore-amrnb` options to the configure script. Use the `libopencore-amrnb` and `libopencore-amrwb` libraries to perform AMR-NB (Adaptive Multi-Rate NarrowBand) and AMR-WB (Adaptive Multi-Rate WideBand) decoding instead of FFmpeg's native implementation. Resulting libraries will be licensed under (L)GPL version 3.
 
 This flag should normally be disabled.
 
@@ -64,6 +64,16 @@ This flag can be safely disabled, because Codec2 is quite rare.
 Pass the `--enable-runtime-cpudetect` option to the configure script. Provide an ability to automatically detect and utilize CPU capabilities at runtime. This allows to run optimized multimedia processing code on different processors using the same set of binaries and libraries. This increases the resulting binary sizes.
 
 This flag should be enabled if there is a need to run the same compiled binaries on systems with different CPUs.
+
+### cuda
+Pass the `--enable-cuda-llvm` option to the configure script. Enabling CUDA adds support for video decoding via `cuvid`, as well as zero-copy transcoding from `cuvid` to `nvenc`. LLVM (clang) will be used for CUDA code compilation.
+
+This flag should only be enable if the target system uses modern Nvidia GPU and there is a need to use CUDA with FFMPEG.
+
+### dav1d
+Pass the `--enable-libdav1d` option to the configure script. Enable support for decoding AV1 video format using the VideoLAN's `dav1d` library, which is very small and very fast.
+
+It is safe to disable the flag.
 
 ### debug
 Pass the `--enable-debug` option to the configure script. Build and install binaries and libraries with debugging symbols.
@@ -180,6 +190,11 @@ Pass the `--enable-libaom` option to the configure script. Use the `libaom` libr
 
 This flag should be enabled if there is a need to create AV1 videos.
 
+### libaribb24
+Pass the `--enable-libaribb24` option to the configure script. Enable support for decoding ARIB STD-B24 (The Association of Radio Industries and Businesses STD-B24) subtitles using the `aribb24` library.
+
+This flag can be safely disabled and is only useful for Japanese-language broadcasting with ARIB STD-B24 subtitles.
+
 ### libass
 Pass the `--enable-libass` option to the configure script. Provide an ability to burn subtitles (draw subtitles on top of input video, aka hardsubs) using the `libass` library. Enable two additional filters: `subtitles` - a full featured subtitle drawing one, and `ass` - a filter that only supports ASS (Advanced Substation Alpha) subtitles files.
 
@@ -214,6 +229,11 @@ This flag should be enabled if there is a need to stream any RTMP protocol varia
 Pass the `--enable-libsoxr` option to the configure script. Provide support for high-quality audio resampling using the `libsoxr` - a SoX Resampler library. To invoke FFmpeg with the SoX Resampler, the option `-af aresample=resampler=soxr` should be given.
 
 It is safe to disable the flag, unless there is a need to perform audio resampling, in which case it is recommended.
+
+### libtesseract
+Pass the `--enable-libtesseract` option to the configure script. Enable support for OCR (Optical Character Recognition) filter that allows extracting text out of video (or image) frames.
+
+This flag should normally be disabled.
 
 ### libv4l
 Requires the `v4l` flag to be enabled. Pass the `--enable-libv4l2` option to the configure script. Build the FFmpeg library with v4l-utils support. Provide an ability to use the `libv4l2` userspace library to add support for a wider range of the video capture devices. Enable the `-use_libv4l2` runtime option to use this library.
@@ -409,7 +429,12 @@ It is highly recommended to enable this flag to accelerate video processing on s
 ### vdpau
 Pass the `--enable-vdpau` option to the configure script. Use the `libvdpau` library to enable support for VDPAU (​Video Decode and Presentation API for Unix), that is used for accelerated decoding, post-processing, compositing, and displaying compressed or uncompressed video streams on NVIDIA and ATI/AMD GPUs. Note: VDPAU is not suitable for encoding, is not updated since 2015, requires special code in the application to use it, and has support for only a limited number of the formats: H.264, MPEG-1/2/4, and VC-1.
 
-This flag should be enabled on systems with old NVIDIA GPUs, and for newer cards `cuvid` should be used instead.
+This flag should be enabled on systems with old NVIDIA GPUs, and for newer cards `cuda` should be used instead.
+
+### vidstab
+Pass the `--enable-libvidstab` option to the configure script. Use the `vid.stab` library to enable support for the `vidstabdetect` video filter to analyze shaky and unstable videos and apply compensatory transformations using the `vidstabtransform` video stabilization filter.
+
+It is safe to disable this flag if there is no need to perform video stabilization.
 
 ### vorbis
 Pass the `--enable-libvorbis` option to the configure script. Use the external `libvorbis` library for encoding and decoding audio in the Vorbis format, instead of built-in experimental implementation. This will produce much higher quality when encoding.
@@ -432,7 +457,7 @@ Requires the `encode` flag to be enabled. Pass the `--enable-libwebp` option to 
 This flag should only be enabled if there is a need to create WebP images or animations.
 
 ### X
-Requires the `gpl` flag to be enabled if the `xcb` flag is disabled, due to licensing restrictions. Pass the `--enable-xlib` option to the configure script. Enable the XVideo output device (`xv` runtime option) that uses the `libXv` library to allow to play a video stream in an X Server window.
+Pass the `--enable-xlib`, `--enable-libxcb`, `--enable-libxcb-shm` and `--enable-libxcb-xfixes` options to the configure script. Provide support for video playback and capturing within X11 server. Enable the X11 video input device (aka `x11grab`) that uses the `libX11`, `libXext` and `libXfixes` libraries to allow to capture a region of an X11 display. Enable the XVideo output device (`xv` runtime option) that uses the `libXv` library to allow to play a video stream in an X Server window.
 
 It is safe to disable the flag.
 
@@ -445,9 +470,6 @@ This flag should be enabled to support H.264 encoding, however it is recommended
 Only works when the `encode` flag is enabled and requires the `gpl` flag to be enabled due to the licensing restrictions. Pass the `--enable-libx265` option to the configure script. Use the `libx265` library to provide an ability to perform video encoding in the HEVC (High Efficiency Video Coding, aka H.265 or MPEG-H Part 2) format.
 
 It is recommended to enable this flag to perform high-quality video encoding, however not all the devices, especially older ones, are able to play it yet, let alone hardware acceleration.
-
-### xcb
-Pass the `--enable-libxcb`, `--enable-libxcb-shm` and `--enable-libxcb-xfixes` options to the configure script. Enable the X11 video input device (aka `x11grab`) that uses the `libX11`, `libXext` and `libXfixes` libraries to allow to capture a region of an X11 display.
 
 This flag should be enabled if there is a need to perform screen recording.
 
