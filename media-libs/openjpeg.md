@@ -6,7 +6,7 @@ Pass the `-DBUILD_DOC=ON` (`OFF` when disabled) option to the `cmake` command. U
 It is safe to disable the flag.
 
 ### static-libs
-Execute the `cmake` command using a separate build directory to build a statically linked version of the `libopenjp2` library and then run the `cmake install` command from that same directory to install it.
+Pass the `-DBUILD_STATIC_LIBS=yes` (`no` when the flag is disabled) option to the `cmake` command. Build a statically linked version of the `libopenjp2` library.
 
 This flag should only be enabled if there is an explicit need for the static library.
 
