@@ -36,7 +36,7 @@ Pass the `-DWITH_GObjectIntrospection=true` (`false` if disabled) option to the 
 The flag can be safely disabled.
 
 ### jpeg
-Pass the `-DWITH_JPEG=true` (`false` when disabled) and `-DENABLE_DCTDECODER=true` (`false` if disabled) options to the `cmake` command. Use the `libjpeg` library to provide an ability to write images in the JPEG (Joint Photographic Experts Group) format, e.g. when converting entire PDF into a set of images, extracting pages or images out of PDF, both with poppler tools and through the `libppopler` library itself. Note, that embedded JPEG images can be extracted as they are without a help of the `libjpeg` library. Also, use the `libjpeg` library for handling DCT (Discrete Cosine Transform) compression algorithm for JPEG images.
+Pass the `-DWITH_JPEG=yes` (`no` when disabled) and `-DENABLE_DCTDECODER=libjpeg` (`none` if disabled) options to the `cmake` command. Use the `libjpeg` library to provide an ability to write images in the JPEG (Joint Photographic Experts Group) format, e.g. when converting entire PDF into a set of images, extracting pages or images out of PDF, both with poppler tools and through the `libppopler` library itself. Note, that embedded JPEG images can be extracted as they are without a help of the `libjpeg` library. Also, use the `libjpeg` library for handling DCT (Discrete Cosine Transform) compression algorithm for JPEG images.
 
 It is recommended to enable this flag to support JPEG DCT compression for embedded images.
 
