@@ -65,6 +65,11 @@ Pass the `--enable-selinux` option to the configure script. Enable support for r
 
 This flag should only ever be toggled system-wide, e.g. as part of a SELinux-enabled Portage profile as it has too many implications.
 
+### sound
+Pass the `--enable-canberra` option to the configure script. Use the `libcanberra` library to provide an ability to play custom sounds when an action is impossible or task is complete.
+
+It is safe to disable this flag.
+
 ### tcl
 Pass the `--enable-tclinterp` option to the configure script. Enable a built-in Tcl language interpreter. Provide a `:tc` and a `:tcl` runtime commands. Support VIM scripting using a Tcl scripting language.
 
