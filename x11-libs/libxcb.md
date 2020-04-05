@@ -21,6 +21,4 @@ Run a `make check` command when the main build is finished. Build and execute a 
 This flag should usually be disabled, as it is only useful for the Gentoo team, developers or testers.
 
 ### xkb
-Pass the `--enable-xkb` option to the configure script. Build and install a `libxcb-xkb` library. Provide a library with C bindings (XCB) for X Keyboard extension (XKB).
-
-It is recommended to enable this flag if the target system to be running a Desktop Environment on top of X.Org.
+This flag does nothing starting from version `1.14` and should be disabled.
