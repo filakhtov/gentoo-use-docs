@@ -1,5 +1,10 @@
 # sys-devel/gcc
 
+### ada
+Append `ada` to the `--enable-languages` option and pass it to the configure script. Execute the `make gnatlib-shared` command to build the Ada standard library followed by the `make gnattools` command to build the GNAT (GNU NYU Ada Translator) compiler and tools, then install them into the system.
+
+This flag should only be enabled if there is a need for
+
 ### altivec
 Only available on PowerPC family of processors. Pass the `--enable-altivec` option to the configure script. Enable `AltiVec` operations and provide appropriate runtime options a `-maltivec` and a `-mabi=altivec`.
 
