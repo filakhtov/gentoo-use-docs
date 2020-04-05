@@ -1,11 +1,11 @@
 # dev-libs/libevdev
 
 ### doc
-Generate additional documentation in the HTML format using the Doxygen tool and install it into the `/usr/share/doc/libevdev-<VERSION>/html` directory.
+Pass the `-Ddocumentation=enabled` (`disabled` if the flag is off) option to the meson build script. Generate additional documentation in the HTML format using the Doxygen tool and install it into the `/usr/share/doc/libevdev-<VERSION>/html` directory.
 
 It is safe to disable the flag.
 
-### static-libs
-Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libevdev` library.
+### test
+Pass the `-Dtests=enabled` (`disabled` when this flag is off) option to the meson build script. Build the test suite and run the `meson test` command when the build is completed to run the test suite provided with the source code and check for regressions. This will extend the build time.
 
-This flag should only be enabled if there is an explicit need for the static library.
+This flag should normally be disabled, because the test suite is primarily useful for developers, maintainers and testers, not the end users.
