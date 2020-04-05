@@ -5,11 +5,6 @@ Pass the `--enable-cpplibs` option to the configure script. Build and install th
 
 This flag should be enabled if there is a need to use FLAC library in a C++ application.
 
-### altivec
-Pass the `--enable-altivec` option to the configure script. Pass additional compiler options, the `-maltivec` and `-mabi=altivec`, that utilize AltiVec (aka VMX - Vector Multimedia Extension, aka Velocity Engine) SIMD instruction on the supported PowerPC processors.
-
-This flag should be enabled for PowerPC systems that have the AltiVec instruction set support.
-
 ### debug
 Pass the `--enable-debug` option to the configure script. Append the `-DDEBUG` option to the `CPPFLAGS` variable and `-g` option to the `CFLAGS` variable for the duration of the build. Build and install libraries and binaries with debugging symbols and enable runtime assertions. Print additional debugging information at runtime.
 
