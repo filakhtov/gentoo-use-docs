@@ -6,7 +6,7 @@ Passes the `enable-asm` argument to the `Configure` script. This uses an assembl
 It is recommended to enable this flag.
 
 ### bindist
-There are licensing restrictions on binary distribution of the OpenSSL library compiled with ECC (Elliptic Curve Cryptography). The flag is passing the `no-ec` argument to the `Configure` script and this disables patented algorithms allowing the resulting binary package to be distributed.
+There are licensing restrictions on binary distribution of the OpenSSL library compiled with ECC (Elliptic Curve Cryptography). The flag is passing the `no-ec` argument to the `Configure` script and this disables patented algorithms allowing the resulting binary package to be distributed. When disabled, passes the `enable-ec2m` argument instead.
 
 This flag should normally be disabled as the ECC brings a lot of benefits. It should, however, be disabled if it is necessary to distribute compiled binaries.
 
@@ -30,15 +30,8 @@ Passes the `enable-sctp` argument to the `Configure` script. The flag enables su
 
 It is recommended to keep this flag disabled, unless TLS encrypted SCTP connections are required.
 
-### sslv2
-The flag passes the `enable-ssl2` argument to the `Configure` script. This will enable support for an obsolete SSLv2 protocol.
-
-It is strongly recommended to disable the flag, becaus an SSLv2 is considered insecure.
-
-It should only ever be enable if there is an absolute need for SSLv2 support and in such case should be disabled in all unaffected applications via configuration.
-
 ### sslv3
-This flag is passing the `enabled-ssl3` argument to the `Configure` script. It enables an SSLv3 protocol support.
+This flag is passing the `enabled-ssl3` and `enable-ssl3-method` arguments to the `Configure` script. It enables an SSLv3 (Secure Socket Layer version 3) cryptographic protocol support.
 
 It is strongly recommended to disable the flag, because an SSLv3 is vulnerable, insecure and should not be used nowadays.
 
