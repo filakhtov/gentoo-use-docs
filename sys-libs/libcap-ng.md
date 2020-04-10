@@ -6,6 +6,6 @@ For each enabled Python target execute the configure script. For version 2, pass
 This flag should only be enabled if there is a need to run Python scripts that use the `capng` module.
 
 ### static-libs
-Pass the `--enable-shared` and the `--enable-static` (or the `--disable-static` if the flag is disabled) options to the configure script. Build and install a statically linked version of the `libcap-ng` library.
+Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libcap-ng` library.
 
 This flag should only be enabled if there is an explicit need for the static library.
