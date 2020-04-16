@@ -50,11 +50,6 @@ Use `nettle` for Encryption and Authentication features of IPv6 stack for `ping6
 
 This flag conflicts with `openssl`, `libressl` and `gcrypt`, because only one SSL backend can be used at a time.
 
-### openssl
-Use `openssl` for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
-
-This flag conflicts with `nettle`, `libressl` and `gcrypt`, because only one SSL backend can be used at a time.
-
 ### rarpd
 Install `rarpd` daemon binary and init scripts (no support for SystemD services at this time). This daemon is necessary to respond to RARP (Reverse Address Resolution Protocol) requests.
 
