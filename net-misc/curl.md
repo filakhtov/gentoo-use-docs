@@ -15,6 +15,16 @@ Pass the `--with-brotli` option to the configure script. Enable support for a `b
 
 It is safe to disable this flag, however it can benefit users who have data constraints.
 
+### ftp
+Pass the `--enable-ftp` option to the configure script. Enable support for the FTP (File Transfer Protocol) support to upload files to and download them from the FTP server using the `ftp://` and `ftps://` schemas.
+
+It is recommended to keep this flag enabled, as the FTP protocol is quite widespread.
+
+### gopher
+Pass the `--enable-gopher` option to the configure script. Enable support for Gopher - a protocol designed for distributed document search and retrieval using the `gopher://` scheme.
+
+This flag should normally be disabled, as Gopher is ancient and is almost dead today.
+
 ### http2
 Pass the `--with-nghttp2` option to the configure script. Modify a pkg-config `libcurl.pc` file to remove `-lnghttp2` option from a `Libs.private` keyword and append a `libnghttp2` value to a `Requires.private` keyword. Provides support for an HTTP/2 protocol using a `nghttp2` library.
 
@@ -24,6 +34,11 @@ This flag should be enabled if there is a need to support HTTP/2 protocol via a 
 Pass the `--with-libidn2` option to the configure script. Enable support for an IDN (internationalized domain names). Provide an ability to use domain names that contain characters from language-specific scripts or alphabet.
 
 This flag can be safely disabled if there is no need to deal with non-English characters in domain names or if a Punycode is used to access such domains.
+
+### imap
+Pass the `--enable-imap` option to the configure script. Enable support to query and retrieve email messages from a mail server using the IMAP (Internet Message Access Protocol) protocol using the `imap://` schema.
+
+It is safe to disable this flag.
 
 ### ipv6
 Pass the `--enable-ipv6` option to the configure script. Enable support for an IPv6 protocol.
@@ -50,6 +65,11 @@ Pass the `--with-nghttp3` and `--with-ngtcp2` options to the configure script. E
 
 This flag should normally be disabled, because HTTP/3 support is considered experimental at this stage.
 
+### pop3
+Pass the `--enable-pop3` option to the configure script. Enable support for the POP3 (Post Office Protocol 3) protocol and provide an ability to list, download or delete email messages using the `pop3://` scheme.
+
+The flag can be safely disabled.
+
 ### progress-meter
 Pass the `--enable-progress-meter` option to the configure script. Enable progress meter that shows how transfer (either upload or download) is progressing, including the current transfer speed, elapsed time and estimated time to completion.
 
@@ -70,6 +90,11 @@ Pass the `--enable-smb` option to the configure script. Enable support for an SM
 
 It is safe to disable this flag as it is only necessary when using cURL for downloading files from SMB protocol.
 
+### smtp
+Pass the `--enable-smtp` option to the configure script. Provide an ability to send emails using the SMTP (Simple Mail Transfer Protocol) server using the `smtp://` scheme, including over the encrypted SSL or TLS connections.
+
+The flag can be safely disabled.
+
 ### ssh
 Pass the `--with-libssh2` option to the configure script. Provide support for SCP and SFTP protocols using a `libssh2` library. Enable an `scp://` and an `sftp://` shemes to download files from an SSH server.
 
@@ -85,10 +110,20 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 
 This flag should normally be disabled unless there is an explicit need for static library, e.g. for development purposes.
 
+### telnet
+Pass the `--enable-telnet` option to the configure script. Enable support for telnet application protocol using the `telnet://` scheme.
+
+It is safe to disable the flag.
+
 ### test
 Execute a test suite provided with a source code by running `make check` command after build is complete. This will extend a build time.
 
 It is recommended to keep this flag disabled as it is only required by the Gentoo team, developers and testers.
+
+### tftp
+Pass the `--enable-tftp` option to the configure script. Enable support for the TFTP (Trivial File Transfer Protocol) protocol to allow upload files to and download them from the TFTP server, using the `tftp://` scheme.
+
+The flag can be safely disabled.
 
 ### threads
 Pass the `--enable-threaded-resolver` and the `--enable-pthreads` options to the configure script. Enable cURL's builtin threaded DNS resolver (built on top of POSIX threads or Windows threads). Switch to non-blocking name resolution and prevent timeouts during resolution.
