@@ -1,62 +1,67 @@
 # net-misc/iputils
 
 ### arping
-Enabling this flag will make sure that `arping` binary is built and installed. This tool allows to ping hosts using ARP protocol. It can be used to detect what IP addresses are already taken on the network.
+Pass the `-DBUILD_ARPING=true` option to the meson build command. This will make sure that `arping` binary is built and installed. This tool allows to ping hosts using ARP protocol. It can be used to detect what IP addresses are already taken on the network.
 
 This flags conflicts with [net-misc/arping](arping.md) package.
 
 ### caps
-Pass `USE_CAP=yes` to `make` invocation and thus enable support for Linux capabilities. This allows programs like `ping`, `arping` and others to drop capabilities they don't require for proper operation. This is a security feature.
+Pass the `-DUSE_CAP=true` option to the meson build command and enable support for Linux capabilities. This allows programs like `ping`, `arping` and others to drop capabilities they don't require for proper operation. This is a security feature.
 
 It is a good idea to enable this flag to ensure that aforementioned binaries only keep relevant capabilities.
 
 ### clockdiff
-Build and install `clockdiff` binary. This tool measures a difference between host it is running on and destination using ICMP protocol.
+Pass the `-DBUILD_CLOCKDIFF=true` option to the meson build command. Build and install `clockdiff` binary. This tool measures a difference between host it is running on and destination using ICMP protocol.
 
 No packages in portage depend on this flag and it is safe to disable.
 
 ### doc
-This will execute `make html` that builds and installs documentation in HTML format.
+Pass the `-DBUILD_HTML_MANS=true` option to the meson build command. Build and install manual pages in the HTML format.
 
 This flag can be enabled if there is a need for user facing documentation in the HTML format (similar to what manpages provide).
 
 ### filecaps
-Set `CAP_NET_RAW` capability on `ping`, `arping` and `clockdiff` binaries. Doing so will allow regular users to execute these commands. Otherwise elevated permissions will be required to run them.
+Set the `CAP_NET_RAW` capability on `ping`, `arping` and `clockdiff` binaries. Doing so will allow regular users to execute these commands. Otherwise elevated permissions will be required to run them.
 
 It is recommended to enable this flag so regular (non-root) users can use aforementioned tools.
 
 ### gcrypt
-Use `gcrypt` for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
+Pass the `-DUSE_CRYPTO=gcrypt` option to the meson build command. Use the libgcrypt library for Encryption and Authentication features of the IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
 
 This flag conflicts with `openssl`, `libressl` and `nettle`, because only one SSL backend can be used at a time.
 
 ### idn
-Pass `USE_IDN=yes` to `make` invocation and thus enable support for Internationalized Domain Names (i.e. domain names written in languages other than English).
+Pass the `-DUSE_IDN=true` option to the meson build command. Use the `libidn2` library to enable support for IDN (Internationalized Domain Names), i.e. domain names written using non-latin scripts.
 
 This flag can be safely disabled if there is no need to deal with non-English domain names.
 
 ### ipv6
-Pass `IPV4_DEFAULT=no` to `make` invocation. Enable IPv6 protocol support in tools that can use it (e.g. `tracepath`). Also enable building and installing additional tools that support IPv6 protocol (e.g. `ping6`).
+Enable IPv6 protocol support in tools that can use it (e.g. `tracepath` and `ping`). Create the compatibility `ping6` symlink pointing to the `ping` binary.
 
 This flag is recommended if target system is to be participating in IPv6 capable network(s), otherwise it can safely be disabled.
 
 ### libressl
-Use `libressl` for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
+Pass the `-DUSE_CRYPTO=openssl` option to the meson build script. Use the `libressl` library for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
 
 This flag conflicts with `openssl`, `nettle` and `gcrypt`, because only one SSL backend can be used at a time.
 
 ### nettle
-Use `nettle` for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
+Pass the `-DUSE_CRYPTO=nettle` option to the meson build script. Use the `nettle` library for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
 
 This flag conflicts with `openssl`, `libressl` and `gcrypt`, because only one SSL backend can be used at a time.
 
+### nls
+Pass the `-DUSE_GETTEXT=true` option to the meson build command. Use the gettext library to provide localization support, e.g. display output in a native language based on the system locale, instead of using English.
+
+It is safe to disable the flag, unless there is a need to use a non-English language.
+
 ### rarpd
-Install `rarpd` daemon binary and init scripts (no support for SystemD services at this time). This daemon is necessary to respond to RARP (Reverse Address Resolution Protocol) requests.
+Pass the `-DBUILD_RARPD=true` option to the meson build script. Build and install the `rarpd` daemon binary and init scripts (no support for SystemD services at this time). This daemon is necessary to respond to RARP (Reverse Address Resolution Protocol) requests.
 
 RARP is an older alternative to DHCP and is not recommended nowadays, so it is safe to disable this flag unless non-PXE network booting for specific devices is necessary.
 
 ### rdisc
-This flag enables `rdisc` binary installation, a tool that implements client side part of ICMP router discovery protocol, allowing system to ask for and accept routing tables from routers.
+Pass the `-DBUILD_RDISC=true` and `-DENABLE_RDISC_SERVER=true` options to the meson build command. Build and install the `rdisc` binary - a tool that implements both a client and a server side parts of the ICMP router discovery protocol, allowing a system to ask for and accept routing tables from routers, as well as respond to queries.
 
 This flag is only necessary if system to be part of RDISC capable network(s). Otherwise it is completely safe to disable.
 
@@ -82,16 +87,16 @@ This flag will append `-static` option to `LDFLAGS` for building statically link
 It is recommended to disable this flag for regular system.
 
 ### tftpd
-Enable `tftpd` server installation for TFTP (Trivial File Transfer Protocol) support.
+Pass the `-DBUILD_TFTPD=true` option to the meson build commmand. Build and install the `tftpd` server component for TFTP (Trivial File Transfer Protocol) support, that is most commonly used for network boot (PXE).
 
 This flag can safely be disabled unless TFTP server is required (e.g. to run PXE booting server or flashing firmware into certain routers).
 
 ### tracepath
-Enable `tracepath` tool installation. If `ipv6` flag is also enabled tracepath will be built with IPv6 protocol support.
+Pass the `-DBUILD_TRACEPATH=true` option to the meson build commmand. Build and install the `tracepath` tool. If `ipv6` flag is also enabled tracepath will be built with IPv6 protocol support and the `tracepath6` compatibility link will be created.
 
 This flag can safely be disabled if `tracepath` tool is not required (e.g. for network diagnostics/debugging).
 
 ### traceroute6
-Enable `traceroute6` tool installation. This flag does not make any changes if `ipv6` flag is disabled. This flag conflicts with [net-analyzer/traceroute](../../net-analyzer/traceroute.md).
+Only works if the `ipv6` flag is enabled. Pass the `-DBUILD_TRACEROUTE6=true` option to the meson build command. Build and install the `traceroute6` tool. This flag conflicts with [net-analyzer/traceroute](../../net-analyzer/traceroute.md).
 
 This flag is not recommended because it only installs IPv6 protocol oriented tool and does not work for IPv4 protocol. It is necessary to install `traceroute` via standalone package if IPv4 protocol support is desired.
