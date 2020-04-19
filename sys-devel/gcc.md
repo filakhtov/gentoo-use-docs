@@ -157,6 +157,6 @@ Skip applying any patches. This means hardening features like SSP, PIE and other
 This flag should be disabled.
 
 ### vtv
-Pass the `--enable-vtable-verify` and `--enable-libvtv` options to the configure script. Enable a vtable verification feature that causes libstdc++ to be built with its virtual calls in verifiable mode. Build and install a `libvtv.so` runtime library to support this feature.
+Pass the `--enable-vtable-verify` option to the configure script. Enable a vtable verification feature that causes libstdc++ to be built with its virtual calls in verifiable mode. Build and install a `libvtv.so` runtime library to support this feature. If disabled, pass the `--disable-libvtv` option to disable the feature.
 
 It is recommended to enable this flag as it provides an additional safety net.
