@@ -36,7 +36,7 @@ Build and install statically linked a `libdevmapper.a` library. If the `device-m
 This flag should be disabled unless there is an explicit need for the static libraries, e.g. for development purposes.
 
 ### systemd
-Pass the `--enable-udev-systemd-background-jobs` option to the configure script. Enable integration with an udev SystemD protocol, install unit files and generators.
+Pass the `--enable-udev-systemd-background-jobs` and `--enable-notify-dbus` options to the configure script. Enable integration with an udev SystemD protocol, install unit files and generators, and provide an ability to send D-Bus notifications for various events.
 
 It is recommended to toggle this flag system-wide, e.g. as part of a SystemD Portage profile.
 
@@ -46,6 +46,6 @@ Pass the `--with-thin=internal` and the `--with-cache=internal` options to the c
 This flag should be disabled unless there is a need to manage Thin LVM.
 
 ### udev
-Enable udev sync support to ensure that parallel udev rules processing aren't conflicting and e.g. not removing a device node that might be handling another event at the same time.
+Pass the `--enable-udev_rules` and `--enable-udev_sync` options to the configure script. Enable udev sync support and install appropriate rules to ensure that parallel udev rules processing aren't conflicting and e.g. not removing a device node that might be handling another event at the same time.
 
 It is recommended to enable this flag to avoid various synchronisation issues.
