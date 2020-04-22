@@ -40,11 +40,6 @@ Pass the `--enable-mtp` option to the configure script. Build and install the `P
 
 This flag should be enabled if there is a need to support MTP devices through Rhythmbox.
 
-### nsplugin
-Pass the `--enable-browser-plugin` option to the configure script. Build and install iTunes detection NPAPI (Netscape Plugin Application Programming Interface) browser plugin, that allows browsers to open iTunes podcasts links (the `itms://` and `itmss://` protocols) in Rhythmbox.
-
-This flag should normally be disabled, because NPAPI is deprecated by and is no longer supported by modern browsers.
-
 ### python
 Prepare Python environment for the configure script to pick up the correct version. Pass the `--enable-python` option to the configure script. Build and install the following Python-based plugins:
 
