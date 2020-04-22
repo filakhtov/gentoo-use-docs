@@ -1,11 +1,11 @@
 # sys-fs/fuse
 
-### examples
-Install additional examples, written in the C language, into the `/usr/share/doc/fuse-<VERSION>/examples` directory, including implementation of character device in userspace, ioctl handling, sample FUSE implementation.
+### suid
+Set the `suid` bit on the `fusermount3` binary to allow non-privileged users to mount filesystems.
 
-It is safe to disable the flag.
+It is recommended to keep this flag enabled to allow non-root FUSE mounts.
 
-### static-libs
-Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libfuse` and `libulockmgr` libraries.
+### test
+Execute the `python -m pytest test` command after the main build is completed to run the test suite provided with the source code and check for regressions. This will extend the build time.
 
-This flag should only be enabled if there is an explicit need for the static libraries.
+This flag should normally be disabled, because these tests are primarily oriented towards developers, maintainers and testers.
