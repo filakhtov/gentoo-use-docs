@@ -10,6 +10,11 @@ Pass the `-Denable-libgcrypt=yes` (`no` when the flag is disabled) option to the
 
 It is safe to disable the flag.
 
+### gtk-doc
+Pass the `-Denable-gtk-doc=true` option to the meson build command. Use the `Gtk-Doc` tool to generate and install the API library reference for the `libtotem-plparser` library in the HTML format.
+
+It is safe to disable the flag.
+
 ### introspection
 Pass the `-Dintrospection=true` (`false` if the flag is disabled) option to the meson build command. Generate and install the `TotemPlParser-1.0.gir` GIR metadata file to provide dynamic bindings for the `libtotem-plparser` library to languages other than C using the GObject Introspection framework.
 
