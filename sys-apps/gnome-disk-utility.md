@@ -1,7 +1,7 @@
 # sys-apps/gnome-disk-utility
 
 ### elogid
-Pass the `-Dlibelogind=enabled` option to the meson build command. Use the `libelogind` library to access seat information provided by the `elogind` daemon to avoid simultaneous device access by multiple users.
+Pass the `-Dlogind=libelogind` (`none` if this flag and `systemd` are disabled) option to the meson build command. Use the `libelogind` library to access seat information provided by the `elogind` daemon to avoid simultaneous device access by multiple users.
 
 This flag should be enabled if the target system runs elogind daemon, e.g. for running GNOME desktop environment without SystemD.
 
@@ -16,6 +16,6 @@ Pass the `-Dgsd_plugin=true` option to the meson build command. Building and ins
 This flag should be enabled if the target system runs the GNOME desktop environment.
 
 ### systemd
-Pass the `-Dlibsystemd=enabled` option to the meson build command. Use the `libsystemd` library to access seat information provided by the `logind` daemon to avoid simultaneous device access by multiple users.
+Pass the `-Dlogind=libsystemd` (`none` if this flag and `elogind` are disabled) option to the meson build command. Use the `libsystemd` library to access seat information provided by the `logind` daemon to avoid simultaneous device access by multiple users.
 
 This flag should be enabled if the target system runs SytemD as an init daemon.
