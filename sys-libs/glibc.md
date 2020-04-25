@@ -20,6 +20,16 @@ Normally, only locales that are specified in the `/etc/locale.gen` configuration
 
 It is recommended to disable the flag.
 
+### crypt
+Pass the `--enable-crypt` option to the configure script. Build and install the passphrase-hashing library `libcrypt`. However, `glibc` maintainers revealed _tentative_ plans to hand over maintenance of their encryption library to a separate project, in hopes that it will be able to better keep up with ever-changing passphrase-hashing algoritms. This flag exists to provide an ability to disable `libcrypt` installation and allow using a separate library instead.
+
+This flag should be enabled, at least for now, until a decent quality replacement library exists.
+
+### custom-cflags
+Normally, all custom user-supplied compiler optimization flags are removed from `CFLAGS` variable and only `-O2` is passed in order to avoid bugs and problems that might be related to such optimizations. When this flag is enabled, all user-supplied optimization flags are preserved, however any bug reports agains `glibc` should be made with this flag disabled.
+
+It is recommended to keep this flag disabled for overall stability.
+
 ### debug
 This flag only makes sense if `hardened` flag is also enabled. Patch Makefile to allow core dump on SIGABRT signal on hardened systems or when debug mode is requested (append a `-DSSP_SMASH_DUMPS_CORE` option to the compiler flags when building an SSP source).
 
@@ -69,6 +79,11 @@ This flag can be safely disabled as it is only required for profiling applicatio
 Pass the `--with-selinux` option to the configure script. Enable proper AVC denial handling for the `nscd` and provide an ability to set file contexts for the `makedb`.
 
 This flag should only ever be toggled system-wide, e.g. as part of the SELinux-enabled Portage profile.
+
+### static-libs
+Normally, a static version of glibc-provided libraries are built and installed into the system, and so when this flag is enabled nothing is done. However, when this flag is disabled, statically linked libraries will be removed before installing the package into the system.
+
+It is recommended to keep this flag enabled, because a lot of other packages require static libraries.
 
 ### ssp
 Pass the `--enable-stack-protector=all` (`no` when the flag is disabled) option to the configure script. Build all glibc libraries using the GCCs stack protection features to detect and prevent stack overruns.
