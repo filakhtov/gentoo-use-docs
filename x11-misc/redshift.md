@@ -1,6 +1,6 @@
 # x11-misc/redshift
 
-### ayatana
+### appindicator
 Pull in the [dev-libs/libappindicator](../dev-libs/libappindicator.md) package as a dependency. Redshift uses the GObject Introspection framework to integrate with Ubuntu notification system, aka Ayatana.
 
 This flag should be enabled if the target system runs the Ubuntu Unity desktop environment.
