@@ -60,11 +60,6 @@ Skip some tests with known problems, by moving them out of the test directory. E
 
 This flag should normally be disabled.
 
-### threads
-Passes the `--with-threads` option to the configure script. It will provide a set of modules, e.g. `threading` and `multiprocessing` for the thread-based parallelism and the processes management support.
-
-This flag should be enabled. It is forced by the base Gentoo Portage profile anyway.
-
 ### tk
 Enables the `_tkinter` and the dependent Python modules. This module provides an ability to render GUIs from Python scripts using the Tcl/Tk widget toolkit.
 
