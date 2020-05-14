@@ -1,5 +1,10 @@
 # sys-apps/util-linux
 
+### audit
+Pass the `--with-audit` option to the configure script. Enable support for Kernel auditing in `login` and `hwclock` utilities. `login` will produce auditing messages on successful and failed login attempts, and `hwclock` will do so when the hardware clock is changed.
+
+It is safe to disable this flag if no auditing support is necessary.
+
 ### build
 This flag is used by Gentoo team when building and bootstrapping early stage images. Under the hood this flag will exclude [sys-apps/systemd](systemd.md) from dependencies regardless if `systemd` USE flag is set or not.
 
@@ -15,10 +20,25 @@ This passes `--enable-cramfs` option to configure script. This option is respons
 
 This flag can be safely disabled, unless there is a need to manage cramfs.
 
+### cryptsetup
+Pass the `--with-cryptsetup` option to the configure script. Enable support in `libmount` for signed verity devices via the new `verity.roothashsig` option, which if provided, will make the kernel to verify that the root hash is signed by a key from the kernel keyring.
+
+This flag can be safely disabled if there is no need to use signed verity devices.
+
 ### fdformat
 This will pass `--enable-fdformat` option to configure script. This will build and install `fdformat` tool for low level formatting of a floppy disk.
 
 It is safe to disable this flag, except when it is necessary to deal with floppy disks.
+
+### hardlink
+Pass the `--enable-hardlink` option to the configure script. Ensure that the `hardlink` program is built and installed. It traverses one or more directories searching for duplicate files. When it finds duplicate files, it uses one of them as the master, then removes all other duplicates and replaces them with a hardlink, pointing to the master file. This allows for conservation of disk space where multiple directories on a single filesystem contain many duplicate files.
+
+This flag should normally be disabled and the program be used with extreme care.
+
+### logger
+Pass the `--enable-logger` option to the configure script to build and install the `logger` program. This program is used to write messages into the system log, and most oftenly used by various scripts to produce syslog entries.
+
+It is safe to disable this flag.
 
 ### kill
 This passes `--enable-kill` option to configure script. This will build and install `kill` tool responsible for terminating a running process.
