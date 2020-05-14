@@ -101,6 +101,11 @@ This flag responsible for passing `--enable-makeinstall-chown` and `--enable-mak
 
 It is required if user mounts for unprivileged users is desired.
 
+### su
+Pass the `--enable-su` option to the configure script. Build and install the `su` binary - which allow to run a command with substitute user and group ID and uses PAM for authentication, account and session management. This program is mostly designed for unprivileged users to gain elevated privileges.
+
+It is safe to disable this flag if the `su` binary is not needed or is provided by a different package.
+
 ### systemd
 Enable `--with-sytemd` and pass `--with-systemdsystemunitdir` options to configure script. This will extend behavior of various tools to support running from SystemD init system. It will also install `socket`, `service` and `timer` files for SystemD (e.g. `fstrim.timer` for periodic TRIM calls for SSD file-systems).
 
