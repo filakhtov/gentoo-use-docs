@@ -31,7 +31,7 @@ This flag replaces an SSL backend for handling HTTPS connections with the LibreS
 The flag should only be enabled systemwide, because the OpenSSL and the LibreSSL libraries can't be installed at the same time.
 
 ### metalink
-Pass the `--with-metalink` option to the configure script. Enable support for metalink extensible metadata file format that provides a list of resources for a file (URLs for all the mirrors and P2P resources) along with checksums and other metadata. Mirrors can have details like their location listed, allowing downloads to be filtered by location to use local mirrors which is more efficient. Checksums are used to automatically verify files, along with repair information to fix corrupted files already downloaded and downloads in progress.
+Pass the `--with-metalink` option to the configure script. Enable support for downloading files using the metalink extensible metadata file format, that provides a list of resources for a file (URLs for all the mirrors and P2P resources) along with checksums and other metadata.
 
 It is safe to disable this flag, because metalink is not widely adopted.
 
