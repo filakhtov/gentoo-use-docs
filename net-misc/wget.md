@@ -1,5 +1,10 @@
 # net-misc/wget
 
+### cookie_check
+Pass the `--with-libpsl` option to the configure script. This provides an ability to check for valid cookie domains using a public suffix list.
+
+It is safe to disable this flag, however it can provide some security benefits if `wget` to be used with cookies.
+
 ### debug
 Passes the `--enable-debug` option to the configure script. The resulting `wget` binary will have a support for the `--debug` runtime option that is producing a lot of debugging information as requests are executed.
 
@@ -24,6 +29,11 @@ The flag can safely be disabled unless the target system has to participate in t
 This flag replaces an SSL backend for handling HTTPS connections with the LibreSSL library instead of the OpenSSL one. Only has an effect if an `ssl` flag is enabled too.
 
 The flag should only be enabled systemwide, because the OpenSSL and the LibreSSL libraries can't be installed at the same time.
+
+### metalink
+Pass the `--with-metalink` option to the configure script. Enable support for metalink extensible metadata file format that provides a list of resources for a file (URLs for all the mirrors and P2P resources) along with checksums and other metadata. Mirrors can have details like their location listed, allowing downloads to be filtered by location to use local mirrors which is more efficient. Checksums are used to automatically verify files, along with repair information to fix corrupted files already downloaded and downloads in progress.
+
+It is safe to disable this flag, because metalink is not widely adopted.
 
 ### nls
 The flag will pass the `--enable-nls` option to the configure script. This is used to provide the translation and the localization for variety of languages.
