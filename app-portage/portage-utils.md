@@ -6,9 +6,7 @@ Allow using the `libressl` library instead of the `openssl` library for cryptogr
 This flag should only ever be toggled system-wide, because OpenSSL and LibreSSL can't be simultaneously installed on the same system.
 
 ### nls
-Pass a `NLS=yes` option to the make command. Use a Gettext library to translate programs messages into various languages based on the system locale settings.
-
-The flag should be enabled if there is a need to use any non-English languages.
+This flag does nothing.
 
 ### openmp
 Only works if the `qmanifest` and/or `qtegrity` flag is enabled. Pass the `--enable-openmp` option to the configure script. Use the OpenMP library to perform parallel directory processing for the `qverify` and `qtegrity` applets.
