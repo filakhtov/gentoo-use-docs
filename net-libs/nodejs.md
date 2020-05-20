@@ -1,7 +1,9 @@
 # net-libs/nodejs
 
 ### debug
-Patch the `tools/install.py` script to change install path, remove optimisations and override buildtype. Pass the `--debug` option to the configure script.
+Patch the `tools/install.py` script to change install path, remove optimisations and set the build type to `Debug`. Pass the `--debug` option to the configure script. Produce (slower) binaries with additional debugging information attached.
+
+This flag should normally be disabled, unless there is a need to debug nodejs runtime binaries.
 
 ### doc
 Patch docs to remove Google fonts references and make them offline readable. Install developers, collaborators, releasing and API documentation into the `/usr/share/doc/nodejs-<VERSION>/html` directory.
@@ -22,6 +24,11 @@ It is safe to disable the flag.
 Build and install an `npm` tool - a package manager for Node.js modules. When disabled, pass the `--without-npm` option to the configure script to not build the NPM.
 
 It is safe to disable the flag.
+
+### pax_kernel
+Apply an additional PaX related patch to ensure that `node_mksnapshot` and `mkcodecache` produce PaX-marked codes, as well as set the `m` (PaX MPROTECT) flag for the `node` binary itself to allow it to run under the PaX-restricted kernel.
+
+This flag should only be enabled on hardened and PaX-enabled systems.
 
 ### snapshot
 Pass the `--with-snapshot` option to the configure script. Use V8's startup snapshots to speed up Node.js early boostrap process, and instead of creating V8 objects from scratch - deserialize the object graph from previously serialized state and thus significantly speed up starting (up to two orders of magnitude).
