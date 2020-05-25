@@ -20,6 +20,11 @@ Pass the `--enable-introspection` option to the configure script. Build and inst
 
 It is safe to disable the flag.
 
+### non_root
+Add the `lightdm` user to the `video` group to be able to run greeter as an unprivileged user.
+
+It is recommended to enable this flag.
+
 ### qt5
 Append the `-std=c++11` option to the `CXXFLAGS` variable for a duration of the build. Pass the `--enable-liblightdm-qt5` option to the configure script. Build LightDM with support for the Qt 5 toolkit.
 
