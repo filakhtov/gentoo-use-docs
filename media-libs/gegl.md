@@ -28,11 +28,6 @@ Pass the `-Dlensfun=enabled` option to the configure script. Enable the lens dis
 
 It is safe to disable the flag.
 
-### libav
-Only works when a `ffmpeg` flag is enabled. When enabled, use the Libav library instead of the FFmpeg to read and write video frames.
-
-This flag should only ever be toggled system-wide, because Libav and FFmpeg can't be installed on the same system at the same time.
-
 ### openexr
 Pass the `-Dopenexr=enabled` option to the meson build script. Use the OpenEXR library to provide an ability to read from and write to an EXR image format.
 
