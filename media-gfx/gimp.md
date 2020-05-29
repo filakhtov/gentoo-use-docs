@@ -10,11 +10,6 @@ Pass the `--with-alsa` option to the configure script. Use the ALSA (Advanced Li
 
 This flag should normally be disabled.
 
-### altivec
-Pass the `--enable-altivec` option to the configure script. Pass additional compiler options to enable support for the AltiVec extension (aka VMX - Vector Multimedia Extension, aka Velocity Engine) - a SIMD instruction set on supported PowerPC processors to perform hardware accelerated image manipulation.
-
-It is recommended to enable this flag on supported PowerPC systems and it should be disable otherwise.
-
 ### aqua
 Pass the `--with-x` option to the configure script when this flag is disabled. When enabled, GIMP will use macOS native Aqua user interface and [x11-libs/gtk-mac-integration](../x11-libs/gtk-mac-integration.md) integration toolkit instead of traditional X.Org.
 
