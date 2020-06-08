@@ -20,6 +20,11 @@ Use the LibreSSL library, instead of the OpenSSL for building toolchain.
 
 This flag should only ever be toggled system-wide, because only a single instance of the `libssl` can be installed in the system at the same time.
 
+### miri
+Requires the `nightly` flag to be enabled. Append `miri` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install the `miri` tool - an experimental interpreter for Rust's mid-level intermediate representation (MIR). It can run binaries and test suites of cargo projects and detect certain classes of undefined behavior.
+
+This flag should normally be disabled, because `miri` is an experimental nightly feature.
+
 ### nightly
 Set the `channel` option of the `rust` section to `nightly` (instead of default `stable`) in the `config.toml` build configuration file. Build and install the `nightly` unstable and experimental Rust toolchain.
 
