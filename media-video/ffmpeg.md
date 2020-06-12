@@ -5,11 +5,6 @@ Provide an ability to capture and playback audio via the ALSA system and enable 
 
 This flag should be enabled if there is a need to play or record audio through ALSA devices.
 
-### altivec
-Pass the `--enable-altivec` option to the configure script. Pass additional compiler options to enable support for the AltiVec extension (aka VMX - Vector Multimedia Extension, aka Velocity Engine) - a SIMD instruction set on supported PowerPC processors to perform hardware accelerated multimedia encoding and decoding.
-
-This flag should only be enabled on PowerPC systems with AltiVec support.
-
 ### amr
 Pass the `--enable-version3`, `--enable-libopencore-amrwb` and `--enable-libopencore-amrnb` options to the configure script. Use the `libopencore-amrnb` and `libopencore-amrwb` libraries to perform AMR-NB (Adaptive Multi-Rate NarrowBand) and AMR-WB (Adaptive Multi-Rate WideBand) decoding instead of FFmpeg's native implementation. Resulting libraries will be licensed under (L)GPL version 3.
 
