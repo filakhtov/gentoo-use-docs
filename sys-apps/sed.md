@@ -11,7 +11,7 @@ Pass the `--enable-nls` option to the configure scrpit. Provide support for a pr
 This flag can be safely disabled as it is only needed for users who use a non-English system.
 
 ### selinux
-Export SELinux related variables for the configure script. Provide an ability to copy a SELinux security context from an original file for `w` and `W` commands.
+Pass the `--with-selinux` option to the configure script. Provide an ability to copy a SELinux security context from an original file for `w` and `W` commands, when using `-i` (in-place) option with backup file and so forth.
 
 This flag should only ever be changed system-wide by one of a SELinux-enabled Portage profiles.
 
