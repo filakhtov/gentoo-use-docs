@@ -70,11 +70,6 @@ Pass the `-Dosmesa=classic` (or `gallium` if the `gallium` flag is enabled) opti
 
 It is safe to disable this flag.
 
-### pax_kernel
-Pass the `-Dglx-read-only-text=true` option to the meson build command. Disable writable `.text` section on `x86` platform necessary for running mesa under the PaX hardened Kernel. For details see [Gentoo Bug #240956](https://bugs.gentoo.org/240956).
-
-This flag must only be enabled on hardened systems.
-
 ### selinux
 Pass the `-Dselinux=true` option to the meson build command. Use the `libselinux` library to check if the SELinux restricts executable code in the heap memory and avoids using it for executable section allocation if it is restricted. This is necessary when running under the SELinux-restricted kernel.
 
@@ -134,3 +129,8 @@ This flag should only be enabled if the target system runs inside of VMWare mach
 The feature only works with the `r600` or `nouveau` Gallium3D driver and requires `gallium` flag to be enabled. Pass the `-Dgallium-xvmc=true` option to the configure script. Enable the XvMC (X-Video Motion Compensation) API support - an X.Org Server extension that allows video programs to offload portions of the video decoding process to the GPU video-hardware. It is old and outdated extension that is currently obsolete by VA-API and VDPAU and is disabled by default in Mesa.
 
 This flag should normally be disabled and VA-API or VDPAU should be used instead. However it can be used for old hardware that has no such capabilities.
+
+### zstd
+Pass the `-Dzstd=true` option to the meson build script. Use the `libzstd` library to compress the shader cache using the ZSTD compression algorithm instead of the ZLIB, which is both faster and provides better compression.
+
+This flag can be safely disabled.
