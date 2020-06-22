@@ -88,6 +88,11 @@ Doesn't apply when building user emulation mode. Pass the `--enable-rdma` option
 
 Enable this flag if there is a need to use an RDMA-based migration.
 
+### io-uring
+Doesn't apply when building qemu in user emulation mode. Pass the `--enable-linux-io-uring` option to the configure script. Enable support for iouring, introduced in Linux 5.1, which enhances the existing Linux AIO API and provides truly asynchronous communication with Kernel.
+
+It is recommended to enable this flag on systems with modern Linux Kernel versions.
+
 ### iscsi
 Doesn't apply when building user emulation mode. Pass the `--enable-libiscsi` option to the configure script. Use the `libiscsi` library to provide support for the iSCSI (Internet Small Computer Systems Interface) storage networking standard. Enable built-in iSCSI initiator for attaching iSCSI volumes as virtual machine block devices by directly connecting guest storage interfaces to an iSCSI target LUN, bypassing the need for any host iSCSI initiator configuration. Provide support for the `iscsi:` protocol of the `file` parameter for the `-drive` command line option.
 
@@ -310,3 +315,8 @@ It is safe to disable this flag, unless there is a need to use custom keymap wit
 Doesn't apply when building user emulation mode. Pass the `--enable-xfsctl` option to the configure script. Enable improved support for the XFS filesystem, e.g. `xfsctl()` notification and synchronizing data for virtual disks located on the XFS volumes.
 
 It is highly recommended to enable this flag if there is a need to use virtual disk images stored on the XFS to avoid data corruption, otherwise it should be disabled.
+
+### zstd
+Doesn't apply when building qemu in user emulation mode. Pass the `--enable-zstd` option to the configure script. Enable support for compressing qcow images using zstd (in addition to `zlib`), which significantly reduces cluster compression time, provides better compression performance maintaining the same level of compression ratio compared to zlib.
+
+It is safe to disable the flag if there is no need to use zstd compression with qcow images.
