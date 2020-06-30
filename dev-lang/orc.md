@@ -1,16 +1,16 @@
 # dev-lang/orc
 
-### examples
-Install additional example source code, in both - C and Orc languages, showing various usages of the `liborc` library, into the `/usr/share/doc/orc-<VERSION>/examples` directory.
+### gtk-doc
+Pass the `-Dgtk_doc=enabled` option to the meson build script. Use the Gtk-Doc tool to generate documentation in the HTML format and install it into the `/usr/share/gtk-doc/html/orc` directory. This is developer centric documentation, explaining how to build the library, describing its API and how to use it for building applications.
 
-It is safe to disable the flag.
-
-### pax_kernel
-Disable PaX MPROTECT restrictions by setting an `m` flag on the `orc-bugreport` and `orcc` binaries and the `liborc` and `liborc-test` libraries required for applications linked against the `liborc` to properly run under a PaX-restricted Kernel.
-
-This flag should only be enabled if the target system is running a PaX-enabled Kernel.
+It is safe to disable this flag.
 
 ### static-libs
-Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `liborc` library.
+Pass the `-Ddefault_library=both` (or `shared` if the flag is disabled) option to the meson build script. Build and install a statically linked version of the `liborc` library.
 
-This flag should only be enabled if there is a need for the static library.
+This flag should normally be disabled, unless there is an explicit need for the static library.
+
+### test
+Pass the `-Dtests=enabled` option to the configure script. Build the test suite provided with the source code and run it using the `meson test` command after the main build is completed to check for regressions. This will extend the build time.
+
+The flag should normally be disabled, because these tests are mainly used by the maintainers, developers and testers, not the end users.
