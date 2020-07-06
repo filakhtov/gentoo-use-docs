@@ -55,6 +55,11 @@ Pass the `--enable-webp` and the `--enable-webpmux` options to the configure scr
 
 This flag should be enabled if there is a need to work with WebP images.
 
+### xcb
+Pass the `--enable-xcb` option to the configure script. Use the XCB library to provide an ability to capture screenshots using the `ImageGrab.grab()` method.
+
+It is safe to disable this flag.
+
 ### zlib
 Pass the `--enable-zlib` flag to the configure script. Use the `libz` library to provides support to read and write compressed PNG (Portable Network Graphics) files.
 
