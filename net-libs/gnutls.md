@@ -26,7 +26,7 @@ Pass the `--enable-guile` option to the configure script. Build and install the 
 This flag should only be enabled if there is a need to run Guile scripts that require the GnuTLS library.
 
 ### idn
-Pass the `--with-idn` and the `--with-libidn2` options to the configure script. Use the `libidn2` library to provide support for IDN (Internationalized Domain Names) as described in the IDNA2008 protocol. Allow to properly handle PKIX (X.509) certificates and verification with internationalized domain names.
+Pass the `--with-idn` options to the configure script. Use the `libidn2` library to provide support for IDN (Internationalized Domain Names) as described in the IDNA2008 protocol. Allow to properly handle PKIX (X.509) certificates and verification with internationalized domain names.
 
 This flag should only be enabled if there is a need to deal with the IDN.
 
