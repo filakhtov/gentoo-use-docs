@@ -1,7 +1,7 @@
 # app-text/xmlto
 
 ### latex
-Pull the [app-text/passivetex](app-text/passivetex.md) and the [dev-tex/xmltex](../dev-tex/xmltex.md) packages as dependencies. A `PassiveTeX` tool is used by `xmlto` script for producing documents in DVI format from XML-DocBook. An `xmltex` tool is used to convert `TeX` files into the `DVI` format.
+Pull the [app-text/passivetex](app-text/passivetex.md) and the [dev-texlive/texlive-formatsextra](../dev-texlive/texlive-formatsextra.md) packages as dependencies. A `PassiveTeX` tool is used by `xmlto` script for producing documents in DVI format from XML-DocBook. An `xmltex` tool provided by the `texlive-formatsextra` packages is used to convert `TeX` files into the `DVI` format.
 
 It is safe to disable this flag.
 
