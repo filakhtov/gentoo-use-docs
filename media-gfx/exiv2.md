@@ -1,7 +1,7 @@
 # media-gfx/exiv2
 
 ### doc
-Update Doxygen config and run the `make doc` command to generate additional C++ API documentation in the HTML format, including class and namespace references, class hierarchy, etc and install it into the `/usr/share/doc/exiv2-<VERSION>` directory.
+Update Doxygen config and run the `ninja doc` command to generate additional C++ API documentation in the HTML format, including class and namespace references, class hierarchy, etc and install it into the `/usr/share/doc/exiv2-<VERSION>` directory.
 
 It is safe to disable the flag.
 
@@ -11,7 +11,7 @@ Install additional C++ code into the `/usr/share/doc/exiv2-<VERSION>/examples` d
 The flag should normally be disabled, unless there is a need to access code examples.
 
 ### nls
-Pass the `-DEXIV2_ENABLE_BUILD_PO=true` and the `-DEXIV2_ENABLE_NLS=true` options to the cmake command. Use the Gettext library to support runtime translation of the programs messages based on the system locale, and generate and install translation PO files.
+Pass the `-DEXIV2_BUILD_PO=true` and the `-DEXIV2_ENABLE_NLS=true` options to the cmake command. Use the Gettext library to support runtime translation of the programs messages based on the system locale, and generate and install translation PO files.
 
 It is safe to disable the flag unless there is a need to use a non-English language.
 
