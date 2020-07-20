@@ -12,6 +12,6 @@ The flag can be safely disabled.
 
 
 ### test
-Execute the `py.test tests` command for each enabled Python target after the main build is completed. Run the test suite provided with the source code. This will extend the build time.
+Execute the `pytest` command for each enabled Python target after the main build is completed. Run the test suite provided with the source code. This will extend the build time.
 
 This flag is primarily oriented towards developers, testers or the Gentoo team and should normally be disabled.
