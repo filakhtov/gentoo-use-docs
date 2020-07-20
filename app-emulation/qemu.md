@@ -15,11 +15,6 @@ Append `alsa` to the `--audio-drv-list=` option that is passed to the configure 
 
 This flag should be enabled if the host system uses ALSA on its own for handling audio.
 
-### bluetooth
-Doesn't apply when building user emulation mode. Pass the `--enable-bluez` option to the configure script. Use the `libbluetooth` library to provide an access to host Bluetooth HCI devices by passing commands and events to and from physical device identified by the name id, e.g. `hci0`. Enable support for the `hci,host[:id]` parameter for the `-bt` command line option.
-
-This flag should only be enabled if there is a need to access host's Bluetooth devices from virtual machines.
-
 ### bzip2
 Doesn't apply when building user emulation mode. Pass the `--enable-bzip2` option to the configure script. Use the `libbzip2` library to provide support for the bzip2 compression algorithm for reading DMG (aka Apple Disk) images compressed with bzip2.
 
@@ -77,11 +72,6 @@ This flag should be enabled if there is a need to use cryptographic routines and
 Doesn't apply when building user emulation mode. Pass the `--enable-gtk` and the `--with-gtkabi=3.0` option to the configure script. Use the GTK+ version 3.x library to display video output from virtual machine in a GTK window. Enable support for the `gtk` value for the `-display` command line option.
 
 It is safe to disable the flag when e.g. when using `-nographic` option with VGA pass-through, VNC or Spice, or using SDL to access virtual machine video output.
-
-### gtk2
-Only works together with the `gtk` flag. Pass the `--with-gtkabi=2.0` (instead of `3.0`) option to the configure script. Same as the `gtk` flag, but use GTK+ version 2.x instead.
-
-This flag should only be enabled if there is a need for a GTK+ display output on top of the GTK+ library of 2.x version.
 
 ### infiniband
 Doesn't apply when building user emulation mode. Pass the `--enable-rdma` option to the configure script. Use the OpenFabrics `librdmacm`, `libibverbs` and `libibumad` libraries to enable live migration of the virtual machines via the RDMA (Remote Direct Memory Access) even if a machine is under heavy load. Enable support for the `rdma:` parameter for both: the `-incoming` command line option and the `migrate` monitor command.
@@ -306,15 +296,15 @@ Doesn't apply when building user emulation mode. Pass the `--enable-xen` and `--
 
 This flag should only be enabled if there is a need to use QEMU with Xen.
 
-### xkb
-Doesn't apply when building user emulation mode. Pass the `--enable-xkbcommon` option to the configure script. Build and install the `qemu-keymap` utility that uses `libxkbcommon` library to generate QEMU reverse keymaps from xkb keymaps which can be used with the QEMU's `-k` command line option.
-
-It is safe to disable this flag, unless there is a need to use custom keymap with QEMU.
-
 ### xfs
 Doesn't apply when building user emulation mode. Pass the `--enable-xfsctl` option to the configure script. Enable improved support for the XFS filesystem, e.g. `xfsctl()` notification and synchronizing data for virtual disks located on the XFS volumes.
 
 It is highly recommended to enable this flag if there is a need to use virtual disk images stored on the XFS to avoid data corruption, otherwise it should be disabled.
+
+### xkb
+Doesn't apply when building user emulation mode. Pass the `--enable-xkbcommon` option to the configure script. Build and install the `qemu-keymap` utility that uses `libxkbcommon` library to generate QEMU reverse keymaps from xkb keymaps which can be used with the QEMU's `-k` command line option.
+
+It is safe to disable this flag, unless there is a need to use custom keymap with QEMU.
 
 ### zstd
 Doesn't apply when building qemu in user emulation mode. Pass the `--enable-zstd` option to the configure script. Enable support for compressing qcow images using zstd (in addition to `zlib`), which significantly reduces cluster compression time, provides better compression performance maintaining the same level of compression ratio compared to zlib.
