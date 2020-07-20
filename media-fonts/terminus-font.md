@@ -15,6 +15,11 @@ Apply a patch to change the lowercase letter `L` to be distinct from digit `1`.
 
 It is safe to disable the flag.
 
+### otf
+Use the FontForge tool to combine BDF (Glyph Bitmap Distribution Format) files provided by the package into a single OTB (OpenType Bitmap) font and install it into the system.
+
+It is safe to disable this flag.
+
 ### pcf
 Execute the `make pcf pcf-8bit` command to build fonts in the PCF (Portable Compiled Format) for various encodings, then the `make install-pcf` command to install them.
 
