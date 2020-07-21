@@ -104,6 +104,11 @@ Pull in a [sec-policy/selinux-samba](../sec-policy/selinux-samba.md) package as 
 
 This flag should only be ever toggled system-wide, i.e. as part of a SELinux-enabled portage profile.
 
+### snapper
+Pass the `--enable-snapper` option to the WAF configure script. Build and install the `vfs_snapper` VFS module that exposes snapshots managed by snapper (snapshot tool) for use by Samba. This provides the ability for remote SMB clients to access shadow-copies via Windows Explorer using the "previous versions" dialog.
+
+It is safe to disable this flag.
+
 ### syslog
 Pass a `--with-syslog` option to a WAF configure script. Allow to send Samba messages to a Unix system logger instead of or in addition to standard Samba logging file. Provide support for a `syslog` configuration option to control log level sent to syslog.
 
