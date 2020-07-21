@@ -10,6 +10,11 @@ Pass the `--enable-pinentry-emacs` option to the configure script. Use the Emacs
 
 This option should be disabled as it has security issues, e.g. it can expose recently typed keystrokes and therefore entered passphrase.
 
+### fltk
+Pass the `--enable-pinentry-fltk` option to the configure script. Build and install the `pinentry-fltk` program that uses the FLTK (DescriptionFast Light ToolKit) to display a dialog for secure PIN or passphrase entry.
+
+This flag can be safely disabled, unless there is a need to use FLTK pinentry dialog.
+
 ### gnome-keyring
 Pass the `--enable-libsecret` and the `--enable-pinentry-gnome3` options to the configure script. Provide an ability to cache an entered passphrases in a GNOME keyring providing an appropriate checkbox in UI. Build and install the `pinentry-gnome3` program - a graphical, GTK3 based dialog to allow secure entry of PINs and passphrases.
 
