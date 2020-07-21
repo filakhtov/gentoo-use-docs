@@ -25,10 +25,20 @@ Pass the `enable_hangout_services_extension=true` option to the `gn gen` command
 
 It is safe to disable the flag.
 
+### headless
+Only works if the `ozone` flag is enabled. Pass the `ozone_platform_headless=true`, `ozone_platform=headless` to the `gn gen` command. Enable support for headless Ozone platform, where any graphical output will be written into a PNG image. This platform does not support hardware acceleration and performs software rendering only. This feature can be used for automation, taking web page screenshots, etc.
+
+This flag should normally be disabled.
+
 ### kerberos
 Pass the `use_kerberos=true` option to the `gn gen` command. Enable support for the SPNEGO authentication mechanism (Simple and Protected GSS-API Negotiation), also known as "integrated authentication" or "negotiate authentication" to provide the concept of Single Sign-On (SSO) - having authenticated once at the start of a session, users can access network services throughout a Kerberos realm without authenticating again. Enable support for the `--auth-server-whitelist` runtime option that takes as its value a comma-separated list of permitted hostnames. Also enable the `--auth-negotiate-delegate-whitelist` runtime option to allow a network service to authenticate to other network services on users behalf.
 
 This flag should only be enabled if there is a need for Kerberos/SPNEGO authentication.
+
+### ozone
+Pass the `use_ozone=true`, `ozone_auto_platforms=false` and if the `headless` flag is disabled also `use_system_libdrm=true`, `ozone_platform_x11=true`, `ozone_platform_headless=true` and `ozone_platform="x11"` options to the `gn gen` command. Enable support for Ozone platform abstraction layer beneath the Aura window system that is used for low level input and graphics and is necessary for Wayland support as well as various embedded use-cases and other platform abstraction capabilities.
+
+It is recommended to enable this flag.
 
 ### pic
 Only makes sense on the `ia32` architecture when `system-ffmpeg` flag is disabled. Pass the `--disable-asm` option to the `chromium/scripts/build_ffmpeg.py` script. Disable optimized assembly code and use the non-optimized but PIC-friendly (Position-Independent Code) code instead.
@@ -74,6 +84,11 @@ It is recommended to disable this flag for maximum Chromium stability.
 Pass the `use_allocator="tcmalloc"` option to the `gn gen` command. Replace default allocator with the TCMalloc - a faster alternative that reduces lock contention for multi-threaded programs. For small objects, there is virtually zero contention. For large objects, TCMalloc tries to use fine grained and efficient spinlocks.
 
 It is recommended to enable this flag to improve memory allocation efficiency.
+
+### wayland
+Requires the `ozone` flag to be enabled. Pass the `ozone_platform_wayland=true`, `use_system_minigbm=true`, `use_xkbcommon=true` and `ozone_platform="wayland"` (instead of `ozone_platform="x11"`) options to the `gn gen` command. Enable native Wayland implementation for Ozone platform that does not require `XWayland` or any other intermediate layers.
+
+This flag should be enabled if the system using Wayland window server.
 
 ### widevine
 Pass the `enable_widevine=true` option to the `gn gen` command. Build Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix.
