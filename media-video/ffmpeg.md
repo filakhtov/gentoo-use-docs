@@ -161,7 +161,7 @@ Pass the `--enable-libdc1394` option to the configure script. Use the `libdc1394
 This flag should only be enabled if there is a need to access IIDC/DCAM cameras.
 
 ### jack
-When disabled, pass the `--disable-indev=jack` option to the configure script. Use the `libjack` library to provide the `JACK` input device that creates one or more JACK writable clients (one for each audio channel) that will send the acquired data to the FFmpeg input device. These clients can be used to connect JACK readable clients via usual means, for example using the `jack_connect` and `jack_disconnect` programs.
+Pass the `--enable-libjack` option to the configure script. Use the `libjack` library to provide the `JACK` input device that creates one or more JACK writable clients (one for each audio channel) that will send the acquired data to the FFmpeg input device. These clients can be used to connect JACK readable clients via usual means, for example using the `jack_connect` and `jack_disconnect` programs. When disabled, pass the `--disable-indev=jack` option to the configure script.
 
 It is recommended to enable this flag only if there is a need to use the FFmpeg library with the JACK audio system.
 
