@@ -5,6 +5,11 @@ Pass the `-Denable-docs=true` option to the meson build script. Generate and API
 
 It is safe to disable the flag.
 
+### static-libs
+Pass the `-Ddefault_library=both` (instead of `shared`) option to the meson build script. Build and install a statically linked version of the `libxkbcommon` (and `libxkbcommon-x11` if the `X` flag is enabled) library.
+
+This flag should only ever be enabled if there is a need for static libraries.
+
 ### test
 Execute the `meson test` command after the main build is complete to run the test suite provided with the source code and check for regressions. This will extend a build time.
 
