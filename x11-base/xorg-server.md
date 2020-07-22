@@ -16,7 +16,7 @@ Pass the `--with-doxygen` and the `--with-xmlto` options to the configure script
 It is safe to disable the flag.
 
 ### elogind
-This flag is incompatible with the `systemd` flag. Pull in the [sys-auth/elogind](../sys-auth/elogind.md) and other relevant packages as dependencies and pass the `--enable-systemd-logind` option to the configure flag. Enable integration with the elogind daemon to provide an ability to run Xorg from an unprivileged user and provide necessary access to various devices.
+This flag is incompatible with the `systemd` flag. Pull in the [sys-auth/elogind](../sys-auth/elogind.md) and other relevant packages as dependencies and pass the `--enable-systemd-logind` and `--disable-install-setuid` options to the configure script. Enable integration with the elogind daemon to provide an ability to run Xorg from an unprivileged user and provide necessary access to various devices.
 
 This flag should be normally disabled, unless there is a need to use elogind with Xorg, for example when running the GNOME desktop environment without SystemD.
 
@@ -41,7 +41,7 @@ Use the LibreSSL library instead of the OpenSSL library.
 This flag should only ever be toggled system-wide, because two libraries cant be installed at the same time.
 
 ### minimal
-Pass the `--disable-record`, `--disable-xfree86-utils`, `--disable-dri`, `--disable-dri2` and the `--disable-glx` options to the configure script. Build a minimal version of the X server without the Record, DRI (Direct Rendering Infrastructure), DRI2 and GLX (OpenGL Extension to the X Window System) extensions. Also, do not build the `gtf` tool to calculate VESA GTF mode lines and the `cvt` tool to calculate VESA CVT mode lines.
+Pass the `--disable-record`, `--disable-xfree86-utils`, `--disable-dri`, `--disable-dri2`, `--disable-dri3`, `--disable-glamor` and the `--disable-glx` options to the configure script. Build a minimal version of the X server without the Record, DRI (Direct Rendering Infrastructure), DRI2, DRI3, Glamor and GLX (OpenGL Extension to the X Window System) extensions. Also, do not build the `gtf` tool to calculate VESA GTF mode lines and the `cvt` tool to calculate VESA CVT mode lines. Note, that Wayland without Glamor will not have a hardware acceleration support and may cause unacceptable performance issues.
 
 This flag should normally be disabled, unless there is an explicit need for the very minimal X server build.
 
@@ -56,19 +56,14 @@ Remove a `-Wl,-Bdirect` option from a `CFLAGS`, `CPPFLAGS`, `CXXFLAGS`, `CCASFLA
 This flag should normally be disabled, unless there is an explicit need for static libraries.
 
 ### suid
-Pass the `--enable-install-setuid` option to the configure script. Set the `suid` bit on the `/usr/bin/Xorg` binary so that it is executed as root. Disabling this flag will increase security by allowing X server to run from an unprivileged user, however requires additional special workarounds, as none of login managers are currently capable of doing necessary permission handling. See [Gentoo Wiki](https://wiki.gentoo.org/wiki/Non_root_Xorg) for details.
+Pass the `--enable-install-setuid` option to the configure script if the `systemd` and `elogind` flags are disabled, and if one of them is enabled then pass the `--enable-suid-wrapper` instead. The former option will set the `suid` bit on the `/usr/bin/Xorg` binary so that it is executed with root privileges even by the unprivileged users. The latter, will install a wrapper with `suid` bit set that will launch actual processes with root privileges if the system does not supports KMS or KMS drivers are not properly loaded, otherwise it will drop privileges and start an unprivileged `Xorg` process.
 
-This flag should normally be disabled, however can be enabled if increased security is a priority.
+This flag should normally be disabled, to increase security and remove unnecessary privileges, unless on the non-KMS compatible system.
 
 ### systemd
-Pass the `--with-systemd-daemon` and the `--enable-systemd-logind` options to the configure script. Integrate with the SystemD's logind daemon to provide an ability to be run from within a systemd user service as an unprivileged X server, delegating device management to logind, and also can be made into a socket activated service.
+Pass the `--with-systemd-daemon`, `--disable-install-setuid` and the `--enable-systemd-logind` options to the configure script. Integrate with the SystemD's logind daemon to provide an ability to be run from within a systemd user service as an unprivileged X server, delegating device management to logind, and also can be made into a socket activated service.
 
 This flag should be enabled if there is a desire to run X server from within the user session.
-
-### tslib
-The flag only makes sense if the `kdrive` flag is also enabled. Pass the `--enable-tslib` option to the configure script. Build and install the touchscreen driver for the KDrive server that uses `tslib` library to provide an access to touch-enabled input devices. Note, that servers flavors other than KDrive should use the [x11-drivers/xf86-input-tslib](../x11-drivers/xf86-input-tslib.md) package instead.
-
-This flag should only be enabled if there is a need to use touchscreen devices with the KDrive X server.
 
 ### udev
 Pass the `--enable-config-udev` option to the configure script. Build and install the Udev backend to handle hotplugged input devices. Upon startup the X server queries this backend for the list of input devices and initializes them accordingly and when a new device is added at runtime, the server is notified and adds it at runtime.
