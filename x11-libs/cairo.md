@@ -46,9 +46,10 @@ Pass the `--enable-valgrind` option to the configure script. Enable and build ad
 This flag should normally be disabled.
 
 ### X
-Pass the `--with-x`, `--enable-xlib`, `--enable-xlib-xrender` and the `--enable-tee` options to the configure script. When disabled, patch the `Makefile.am` file to exclude the `boilerplate`, `test` and `perf` directories from being build.
+Pass the `--with-x`, `--enable-xlib`, `--enable-xlib-xrender`, `--enable-xcb`, `--enable-xcb-shm` and the `--enable-tee` options to the configure script. When disabled, patch the `Makefile.am` file to exclude the `boilerplate`, `test` and `perf` directories from being build.
 
 - Enable the XLib surface to render cairo graphics to X Window System windows and pixmaps using the XLib and Xrender libraries.
 - Provide support for the tee surface backend that multiplexes all operations performed on it to the one or more underlying surfaces, mainly used by Mozilla applications.
+- Enable the XCB surface that can be used to render cairo graphics to X Window System windows and pixmaps using the XCB library.
 
 It is safe to disable this flag.
