@@ -5,11 +5,6 @@ Passes the `--enable-libgdbm-compat` option to the configure script. Builds `lib
 
 It is recommended to keep this flag enabled so applications that can utilize Berkeley DB API are able to use GNU dbm instead.
 
-### exporter
-The flag passes the `--enable-gdbm-export` option to the configure script. Build and install `gdbmexport` tool that can convert gdbm database from old format into the new flat format.
-
-This flag can be safely disabled, unless there is a need to convert GNU dbm databases from old format.
-
 ### nls
 Passes the `--enable-nls` option to the configure script. Enables a support to display program messages in a different language.
 
