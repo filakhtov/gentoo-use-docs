@@ -10,6 +10,11 @@ The ClearType LCD filtering is patented by several Microsoft patents and therefo
 
 This flag should be disabled if there is a need to redistribute compiled binaries.
 
+### brotli
+Pass the `--with-brotli` option to the configure script. Enable support for WOFF 2 (Web Open Font Format version 2) fonts, which has been a W3C recommendation since early 2018 as a successor to the older WOFF format and makes use of the Brotli compression algorithm and other improvements leading to smaller font files.
+
+This flag can be safely disabled.
+
 ### bzip2
 Pass the `--with-bzip2` option to the configure script. Use the `libbz2` library to provide support for BZip2 compressed fonts. This is mainly used to parse compressed PCF (portable compiled format) fonts.
 
