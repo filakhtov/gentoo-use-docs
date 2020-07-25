@@ -1,10 +1,5 @@
 # sci-libs/fftw
 
-### altivec
-Pass the `--enable-altivec` option to the configure script. Use an assembly code to utilize the AltiVec (aka VMX - Vector Multimedia Extension, aka Velocity Engine) SIMD instruction set on supported PowerPC processors to improve computational performance.
-
-It is recommended to enable this flag on PowerPC platforms with the AltiVec SIMD support.
-
 ### doc
 Install additional documentation in an HTML and PDF formats into the `/usr/share/doc/fftw-<VERSION>` directory. Documentation includes F.A.Q., detailed description of the library and examples of how to use it, etc.
 
@@ -39,9 +34,9 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 This flag should only be enabled if there is an explicit need for the static libraries.
 
 ### test
-For each library variant build execute the `make smallcheck` command from the `tests` source subdirectory. Run a test suite provided with the source code. This will significantly increase the build time.
+For each library variant build execute the `make smallcheck` command from the `tests` source subdirectory. Run a test suite provided with the source code and check for regressions. This will increase the build time.
 
-This flag should normally be disabled as it is mainly used by the developers, testers or the Gentoo team.
+This flag should normally be disabled as it is mainly used by the developers, testers or maintainers.
 
 ### threads
 Pass the `--enable-threads` option to the configure script. Build and install the `libfftw3_threads`, `libfftw3l_threads` and `libfftw3f_threads` libraries which provides a simple interface to parallel transforms for SMP (Symmetric MultiProcessing) systems.
