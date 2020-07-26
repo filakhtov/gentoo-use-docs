@@ -1,10 +1,5 @@
 # dev-libs/json-c
 
-### cpu-flags-x86-rdrand
-Pass the `-DENABLE_RDRAND=true` option to the cmake command. Provide an ability to generate random numbers using the `RDRAND` instruction using the on-chip hardware number generator. JSON-C library requires random numbers for hashing object field keys.
-
-This flag should normally be disabled, especially because it is known to cause issues on some Ryzen-based systems.
-
 ### doc
 Pass the `-DBUILD_DOCUMENTATION=true` option to the cmake command. Use the Doxygen tool to generate the documentation in the HTML format from the annotations in the source files and install it into the system.
 
