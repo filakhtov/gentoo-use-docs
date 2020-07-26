@@ -103,6 +103,11 @@ Doesn't apply when building user emulation mode. Pass the `--enable-lzo` option 
 
 This flag should only be enabled if there is a need to dump virtual machine memory for debugging purposes and LZO compression is desired.
 
+### multipath
+Doesn't apply when building user emulation mode. Pass the `--enable-mpath` option to the configure script. Makes the `qemu-pr-helper` (persistent reservation helper) binary detect multipath devices and, when one is found, delegate the operation to the `libmpathpersist` library provided by the device mapper. This is necessary for the proper support of persistent reservation for multipath devices, because it requires communication with the multipath daemon, so that the reservation is registered and applied when a path comes up.
+
+It is safe to disable this flag, unless there is a need to use multipath devices.
+
 ### ncurses
 Doesn't apply when building user emulation mode. Pass the `--enable-curses` option to the configure script. Use the `libncursesw` library to display VGA output when in text mode using a (n)curses interface, instead of using SDL or other graphical libraries. Enable support for the `-curses` command line option.
 
