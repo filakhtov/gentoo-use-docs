@@ -1,8 +1,12 @@
 # sys-auth/pambase
 
+### caps
+Pass the `LIBCAP=yes` variable to the make command. Add the `pam_cap` module as an `optional` component into the `auth` interface for `system-auth` stack.
+
+This flag can be safely disabled, unless there is a need to set the inheritable capabilities for users based on the `/etc/security/capability.conf` configuration file.
+
 ### consolekit
-Pass the `CONSOLEKIT=yes` variable to the make command. Add a `pam_ck_connector` module
-as an `optional` into a `session` interface for `system-login` stack.
+Pass the `CONSOLEKIT=yes` variable to the make command. Add a `pam_ck_connector` module as an `optional` into a `session` interface for `system-login` stack.
 
 This flag should be enabled for multi-user setup with session management done by ConsoleKit. It is safe to disable otherwise.
 
