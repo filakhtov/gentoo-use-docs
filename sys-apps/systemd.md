@@ -57,10 +57,20 @@ This flag passes the `-Dgnu-efi=true` option to the Meson build script and enabl
 
 This flag should be enabled on UEFI systems to use the `systemd-boot` bootloader.
 
+### homed
+Pass the `-Dhomed=true` option to the Meson build script. Build and install the `systemd-homed` daemon, associated service and the `homectl` utility, that can be used to create, remove or inspect home areas, such as directories and network mounts. It supports LUKS2-encrypted per-user partitions (possibly on removable media) and `fscrypt` encrypted directories, as well as `btrfs` per-user subvolumes without encryption, regular directories, or Windows share (CIFS) volumes.
+
+It is safe to disable this flag.
+
 ### http
 Passes the `-Dmicrohttpd=true` option to the Meson build script. This builds and installs a `systemd-remote-journal` - a server (receiving) part of a remote journalling support. A `ssl` flag has to be enabled too in order to support an HTTPS protocol.
 
 This flag is only required if there is a need for a remote journal collection on the target system.
+
+### hwdb
+Pass the `-Dhwdb=true` option to the Meson build script. Build and install the `systemd-hwdb` hardware database management utility that can be used to query and update information in the binary hwdb database, and the `systemd-hwdb-update.service` that will run and add new `.hwdb` entries from the `/etc/udev/hwdb.d` directories into the binary database.
+
+It is recommended to enable this flag.
 
 ### idn
 This flag passes the `-Dlibidn=true` option to the Meson build script. Enabling it will build the `systemd-networkd` and the `systemd-resolved` daemons with the IDN support using the `libidn2` library.
@@ -104,15 +114,30 @@ This flag passes `-Dpcre2=true` option to the Meson build script. Enable the `-g
 
 This flag can be safely disabled if no pattern matching is required for `journalctl`.
 
+### pkcs11
+Pass the `-Dp11kit=true` option to the Meson build script. Enable support for PKCS#11 cryptographic API in the `systemd-homed` and `systemd-cryptsetup` utilities and provide an ability to use hardware security modules (HSM), smart cards and USB keys to obtain cryptographic tokens for decrypting encrypted partitions.
+
+It is safe to disable this flag.
+
 ### policykit
 Passes the `-Dpolkit=true` option to the Meson build script. The flag enables the Polkit support. It provides an ability to ask for elevated permissions via the Polkit framework for various tools, e.g. `hostnamectl`, `localectl`, `timedatectl`, etc.
 
 This flag is recommended for systems with a graphical desktop environment.
 
+### pwquality
+Pass the `-Dpwquality=true` option to the Meson build script. Use the `libpwquality` library and provide the `homectl` and `systemd-homed` utilities with an ability to check for password quality, its strength and against the common passwords list.
+
+This flag should be enabled to improve password security for system users.
+
 ### qrcode
 The flag passes the `-Dqrencode=true` option to the Meson build script. It will enable an ability to generate a QR-code during FSS configuration using `journalctl` to simplify verification keys transfer.
 
 This flag can be safely disabled, because verification keys can simply be typed or copied away.
+
+# repart
+Pass the `-Drepart=true` option to the Meson build script. Build and install the `systemd-repart` tool that can be used to grow and add partitions to a partition table, based on the configuration files described in `repart.d`.
+
+It is safe to disable this flag.
 
 ### resolvconf
 The resolvectl/systemd-resolve tool provides `resolvconf` compatibility mode. Enabling this flag will install symlink under the `resolvconf` name, in which case it will take arguments and input compatible with the Debian and FreeBSD resolvconf tool.
