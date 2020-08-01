@@ -5,11 +5,6 @@ Pass the `--enable-tracing` option to the configure script. Produce an additiona
 
 This flag should be disabled, unless there is a need to debug and trace the problem with Plymouth.
 
-### gdm
-Pass the `--enable-gdm-transition` option to the configure script. Enable deprecated support for smooth transition between boot animation and GDM display manager.
-
-The flag should be disabled, because the feature it enables is deprecated.
-
 ### gtk
 Pass the `--enable-gtk` option to the configure script. Enable the GTK renderer that allows executing plymouth inside a running X11 window session without booting the system.
 
