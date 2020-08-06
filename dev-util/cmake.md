@@ -20,12 +20,7 @@ Pass the `-DBUILD_QtDialog=ON` and the `-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=
 
 It is safe to disable this flag.
 
-### server
-Pass the `-DCMake_ENABLE_SERVER_MODE` and the `-DCMAKE_USE_LIBUV` options to a `cmake` command. Enable a server-mode for CMake (accessed via `-E server` runtime option). In this mode CMake starts a long running process that can provide semantic information about the code it executes to generate a buildsystem (in JSON format).
-
-This flag can be safely disabled.
-
 ### test
-Execute a `bin/ctest` binary inside of the build directory when the main build is complete. Execute a test suite provided with a source code. This will extend a build time.
+Pass the `-DBUILD_TESTING=yes` option to the `cmake` command. Execute the `bin/ctest` binary inside of the build directory when the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend a build time.
 
-This flag should normally be disabled as it is mainly useful for the Gentoo team, testers or developers.
+This flag should normally be disabled as it is mainly useful for the maintainers, testers or developers.
