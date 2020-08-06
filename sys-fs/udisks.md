@@ -5,6 +5,11 @@ Pass the `--enable-acl` option to the configure script. Set the ACL (Access Cont
 
 It is recommended to enable this flag if the filesystem that hosts mount point supports ACLs.
 
+### daemon
+Pass the `--enable-daemon` option to the configure script. Build and install the `udisksd` daemon and the `umount.udisks2` utility. The daemon provides the `org.freedesktop.UDisks2` name on the system message bus and provides interfaces to enumerate and perform operations on disks and storage devices. This daemon is intended to be started by the `dbus-daemon` or `systemd`. The `umount.udisks2` utility is a helper for the `umount` and is designed to clean up automatically created directories created at file system mount-time.
+
+This flag should be enabled to support modern desktop environments.
+
 ### debug
 Pass the `--enable-debug` option to the configure script. Enable printing of the additional debugging messages at runtime.
 
