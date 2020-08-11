@@ -30,11 +30,6 @@ Normally, all custom user-supplied compiler optimization flags are removed from 
 
 It is recommended to keep this flag disabled for overall stability.
 
-### debug
-This flag only makes sense if `hardened` flag is also enabled. Patch Makefile to allow core dump on SIGABRT signal on hardened systems or when debug mode is requested (append a `-DSSP_SMASH_DUMPS_CORE` option to the compiler flags when building an SSP source).
-
-This flag can safely be disabled unless there is a need to debug application in regards to SSP, e.g. during development routines.
-
 ### doc
 Execute `makeinfo` command to build additional documentation and install it into a `/usr/share/doc/glibc-<VERSION>/` directory.
 
@@ -44,11 +39,6 @@ It is safe to disable this flag.
 Pass the `--with-gd` option to the configure script. Build and install a `memusagestat` - a utility to generate graphic (PNG images) from memory profiling data.
 
 This flag can be safely disabled.
-
-### hardened
-Install a hardened Gentoo SSP and FORTIFY_SOURCE handlers. These handlers change an output produced during an application crash due to violation. Normally, a backtrace and a list of symbols is generated. When this flag is enabled an output is very terse - it only states that a crash happened.
-
-This flag should only ever be toggled system-wide, e.g. as part of a Hardened Portage profile, because it has a lot of implications.
 
 ### headers-only
 This flag only makes sense under the cross-compilation. When enabled ignores a [sys-devel/binutils](../sys-devel/binutils.md) and a [sys-devel/gcc](../sys-devel/gcc.md) dependencies, because they are provided by cross-compiler on the host system.
@@ -85,8 +75,13 @@ Normally, a static version of glibc-provided libraries are built and installed i
 
 It is recommended to keep this flag enabled, because a lot of other packages require static libraries.
 
+### static-pie
+Pass the `--enable-static-pie` option to the configure script. Enable support for static PIE (position independent executable), allowing static libraries to be loaded at any address without help from a dynamic linker and the resulting library can be used with `-static-pie` GCC option available with GCC version 8 or above. This also implies, that glibc programs and tests are created as dynamic position independent executables.
+
+It is recommended to enable this flag to improve security and reduce ROP (Return Oriented Programming) attack vector.
+
 ### ssp
-Pass the `--enable-stack-protector=all` (`no` when the flag is disabled) option to the configure script. Build all glibc libraries using the GCCs stack protection features to detect and prevent stack overruns.
+Pass the `--enable-stack-protector=strong` (`no` when the flag is disabled) option to the configure script. Build all glibc libraries using the GCCs stack protection features to detect and prevent stack overruns.
 
 It is recommended to enable this flag for improved protection, especially because it has minimal performance overhead.
 
