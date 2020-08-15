@@ -18,7 +18,7 @@ This flag passes the `--with-icu` option to the configure script. By default, a 
 It is safe to disable the flag as it is only required for dealing with XML documents encoded with unusual character sets.
 
 ### ipv6
-Passes the `--enable-ipv6` option to the configure script. This provides the support for fetching a DTD and an XSD schemas over IPv6 protocol.
+Passes the `--enable-ipv6` option to the configure script. This provides the support for fetching a DTD (Document type definition) and an XSD (XML Schema Definition) schemas over the IPv6 protocol.
 
 This flag is only necessary for systems that participate in IPv6 capable networks.
 
@@ -43,6 +43,6 @@ Passes the `--enable-static` option to the configure script. This will produce s
 This flag should normally be disabled and might only be necessary for certain developers.
 
 ### test
-Execute built-in test suite for the library by calling `make check`. If `python` flag is enabled, additionally execute Python bindings related test suite for every enabled Python target by running a `make test` command for each. This will extend the build time.
+Execute the test suite provided with the library by calling the `make check` command when the main build is completed to check for any regressions. If `python` flag is enabled, additionally execute Python bindings related test suite for every enabled Python target by running a `make test` command for each enabled Python target. This will extend the build time.
 
-This flag should be disabled. It is only necessary for the Gentoo team, developers and testers.
+This flag should be disabled. It is primarily oriented towards the maintainers, developers and testers.
