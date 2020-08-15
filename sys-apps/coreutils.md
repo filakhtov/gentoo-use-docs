@@ -51,9 +51,9 @@ Append `-static` option to the `LDFLAGS` variable. Patch `configure` script to s
 This flag should normally be disabled, unless there is an explicit need for static binaries (usually used together with multicall binary).
 
 ### test
-Execute a `make check` command during a build. Run a test suite provided together with source files. This will extend a build time.
+Execute the `make check` command after the main bulid is completed to run the test suite provided with the source code and check for any regressions. This will extend a build time.
 
-The flag should normally be disabled as it is only required by the Gentoo team, developers or testers.
+The flag should normally be disabled as it is primarily used by the maintainers, developers or testers.
 
 ### vanilla
 Skip applying any Gentoo patches.
