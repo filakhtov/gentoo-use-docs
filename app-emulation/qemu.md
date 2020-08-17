@@ -198,6 +198,11 @@ Pull the [sec-policy/selinux-qemu](../sec-policy/selinux-qemu.md) package as a d
 
 This flag should only ever be toggled system-wide, i.e. as part of the SELinux-enabled Portage profile.
 
+### slirp
+Doesn't apply when building user emulation mode. Pass the `--enable-slirp=system` option to the configure script. Use the `libslirp` library to enable support for emulated user-mode networking which provides a full TCP/IP stack within QEMU and implements a virtual NATed network.
+
+This flag can be safely disabled, however it allows unprivileged users to provide network and internet access for virtual machine.
+
 ### smartcard
 Doesn't apply when building user emulation mode. Pass the `--enable-smartcard` option to the configure script. Use the `libcacard` library to provide support for smart cards. Make two additional devices available:
 
