@@ -1,7 +1,7 @@
 # sys-devel/bc
 
 ### readline
-Only works if the `libedit` flag is disabled. Pass the `--with-readline` and the `--without-libedit` options to the configure script. Use the `libreadline` library to provide editing, history and autocompletion features for an interactive mode. Provide the `history` command for the interactive mode to show or change a number of history entries remembered.
+This flag overrides (disables) the `libedit`. Pass the `--with-readline` and the `--without-libedit` options to the configure script. Use the `libreadline` library to provide editing, history and autocompletion features for an interactive mode. Provide the `history` command for the interactive mode to show or change a number of history entries remembered.
 
 This flag should be enabled if there is a need to use an interactive mode.
 
