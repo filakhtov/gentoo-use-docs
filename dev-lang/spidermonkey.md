@@ -36,6 +36,6 @@ Pass the `--with-system-icu` option to the configure script. Link against the `l
 This flag should be enabled if the target system has the `libicu` library installed as it will help keeping it up to date and security patched, however can be disabled to avoid external dependency.
 
 ### test
-Pass the `--enable-tests` option to the configure script. Disable an MPROTECT and a RANDMMAP PaX flags for `jsapi-tests` binary and execute a `make check` command. Run test suite provided with a source code.
+Pass the `--enable-tests` option to the configure script. Disable an MPROTECT and a RANDMMAP PaX flags for `jsapi-tests` binary and execute a `make check` command after the main build is completed to run the test suite provided with a source code and check for any regressions. This will extend the build time.
 
-This flag should normally be disabled as it is mainly useful for the Gentoo team, testers and developers.
+This flag should normally be disabled as it is mainly useful for the maintainers, testers and developers.
