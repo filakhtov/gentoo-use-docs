@@ -11,6 +11,6 @@ Pass the `--enable-perl-regexp` option to the configure script. Export a `ac_cv_
 It is safe to disable this flag unless there is a need to use PCRE with grep.
 
 ### static
-Append a `-static` option to the `LDFLAGS` option for a duration of the build. Build and install statically linked `grep`, `egrep` and `fgrep` binaries.
+Append a `-static` option to the `LDFLAGS` option for a duration of the build. Build and install statically linked version of the `grep`, `egrep` and `fgrep` binaries.
 
 This flag should only be enabled if there is an explicit need for the static binaries.
