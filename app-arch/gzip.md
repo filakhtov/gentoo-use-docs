@@ -6,6 +6,6 @@ Export a `DEFS` variable with a `NO_ASM` value for the configure script. Disable
 Enabling this flag improves security, but disabling it improves performance.
 
 ### static
-Append a `-static` option to the `CFLAGS`, `CXXFLAGS`, `FFLAGS`, `FCFLAGS` variables for a duration of the build. Build and install statically linked binaries.
+Append a `-static` option to the `CFLAGS`, `CXXFLAGS`, `FFLAGS`, `FCFLAGS` variables for a duration of the build. Build and install a statically linked version of the `gzip`, `gunzip`, `zcat`, `uncompress`, `gzexe`, `zcmp`, `zdiff` and other binaries.
 
 This flag should only be enabled if there is a need for static binaries.
