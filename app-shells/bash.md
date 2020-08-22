@@ -36,6 +36,6 @@ Append a `-Wl,-rpath,/usr/lib64/bash` (`lib32` or `lib` for other targets) to th
 This flag should normally be disabled, unless there is a need to support loadable bash plugins or use one of the loadable built-ins mentioned above.
 
 ### readline
-Pass the `--enable-readline`, the `--enable-history` and the `--enable-bash-history` options to the configure script. When disabled, patch a global `bashrc` and a skeleton `.bashrc` files to disable a `histappend` option and colorization. Provide a tab-completion, history, line editing, proper colorization, screen clearing (e.g. via ctrl+l), etc features.
+Pass the `--enable-readline`, the `--enable-history` and the `--enable-bang-history` options to the configure script. Provide a tab-completion, history, line editing, proper colorization, screen clearing (e.g. via ctrl+l), etc features. When disabled, patch a global `bashrc` and a skeleton `.bashrc` files to disable a `histappend` option and colorization.
 
 It is highly recommended to enable this flag, especially if bash to be used as an interactive shell.
