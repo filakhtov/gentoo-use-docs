@@ -1,10 +1,5 @@
 # www-client/chromium
 
-### closure-compile
-Pass the `closure_compile=true` option to the `gn gen` command. Run a closure compiler during the build to analyze JavaScript source code of Chromium and check for syntax errors, variable references and other common JavaScript mistakes. This however will require JRE (Java Runtime Environment) to be available on the build system.
-
-It is recommended to enable this flag for extra type safety, but can be disabled if there is no desire to deal with JRE.
-
 ### component-build
 Pass the `is_component_build=true` option to the `gn gen` command. Normally, one executable is compiled and a couple of shared libraries (depending on the platform), producing efficient runtime binary, but can take a long time to link because so much code goes into a single binary. This flag switches to a component build, where many smaller shared libraries will be generated. This speeds up link times, and means that many changes only require that the local shared library be linked rather than the full executable, but at the expense of program load-time performance.
 
@@ -29,6 +24,11 @@ It is safe to disable the flag.
 Only works if the `ozone` flag is enabled. Pass the `ozone_platform_headless=true`, `ozone_platform=headless` to the `gn gen` command. Enable support for headless Ozone platform, where any graphical output will be written into a PNG image. This platform does not support hardware acceleration and performs software rendering only. This feature can be used for automation, taking web page screenshots, etc.
 
 This flag should normally be disabled.
+
+### js-type-check
+Pass the `enable_js_type_check=true` option to the `gn gen` command. Run a closure compiler during the build to analyze JavaScript source code of Chromium and check for syntax errors, variable references and other common JavaScript mistakes. This however will require JRE (Java Runtime Environment) to be available on the build system.
+
+This flag can be safely disabled because such analysis is normally performed by the developers, not end users.
 
 ### kerberos
 Pass the `use_kerberos=true` option to the `gn gen` command. Enable support for the SPNEGO authentication mechanism (Simple and Protected GSS-API Negotiation), also known as "integrated authentication" or "negotiate authentication" to provide the concept of Single Sign-On (SSO) - having authenticated once at the start of a session, users can access network services throughout a Kerberos realm without authenticating again. Enable support for the `--auth-server-whitelist` runtime option that takes as its value a comma-separated list of permitted hostnames. Also enable the `--auth-negotiate-delegate-whitelist` runtime option to allow a network service to authenticate to other network services on users behalf.
