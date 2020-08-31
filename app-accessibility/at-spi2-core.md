@@ -11,7 +11,7 @@ Pass the `-Dintrospection=true` (`false` when the flag is disabled) option to th
 It is safe to disable the flag.
 
 ### test
-Start a new Xvfb session and execute the `ninja test` command inside of it. Run the test suite provided with the source code to check for regressions when the main build is completed. This will extend a build time.
+Start a new Xvfb session with D-Bus and execute the `meson test` command inside of it when the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend a build time.
 
 This flag should normally be disabled, as it is primarily used by the package developers and maintainers.
 
