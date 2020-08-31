@@ -10,10 +10,20 @@ Pass the `-Ddebugg=true` option to the meson build command. Enable extra debuggi
 
 This flag should only be enabled if there is a need to debug the library.
 
+### icu
+Pass the `-Dicu=true` option to the meson build script. Link against the ICU (International Components for Unicode) library to enable legacy charset support, i.e. to convert character sets from processes for presentation and vice versa.
+
+This flag can be safely disabled on modern systems that use UTF-8 encoding systemwide.
+
 ### introspection
 Pass the `-Dgir=true` option to the meson build command. Generate and install the `Vte-2.91.gir` GIR metadata file to provide bindings for the `libvte` library to languages other than C using the GObject Introspection framework.
 
 This flag can be safely disabled.
+
+### systemd
+Pass the `-D_systemd=true` option to the meson build script. Enable support for SystemD, for example to allow creating a separate SystemD scopes for vte child processes.
+
+This flag should be enabled if the target system uses SystemD as init daemon, and can be safely disabled otherwise.
 
 ### vala
 Prepare environment for the configure script to find an appropriate version of vala files. Pass the `-Dvapi=true` option to the meson build command. Generate and install the `vte-2.91.vapi` Vala bindings file for the `libvte` library.
