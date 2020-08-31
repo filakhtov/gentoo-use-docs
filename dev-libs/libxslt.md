@@ -17,11 +17,6 @@ Install Python code examples how to use `libxslt` into a `/usr/share/doc/libxslt
 
 It is safe to disable the flag.
 
-### python
-For each enabled Python target run configure script with the `--with-python` option followed by `make`. Build and install Python bindings (`libxslt` module) for each individual version of the Python interpreter.
-
-This flag can be safely disabled.
-
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libxslt` library.
 
