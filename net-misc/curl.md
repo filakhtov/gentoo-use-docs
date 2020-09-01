@@ -20,6 +20,11 @@ Pass the `--enable-ftp` option to the configure script. Enable support for the F
 
 It is recommended to keep this flag enabled, as the FTP protocol is quite widespread.
 
+### gnutls
+Pass the `--with-gnutls` and `--with-nettle` options to the configure script. Provide an ability to use the GnuTLS (GnuTLS Transport Layer Security Library) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+
+It is safe to disable this flag if a different backed is preferred.
+
 ### gopher
 Pass the `--enable-gopher` option to the configure script. Enable support for Gopher - a protocol designed for distributed document search and retrieval using the `gopher://` scheme.
 
@@ -55,6 +60,16 @@ Pass the `--enable-ldap` and the `--enable-ldaps` options to the configure scrip
 
 This flag should normally be disabled unless there is a need to access LDAP servers using cURL.
 
+### libressl
+Pass the `--with-mbedtls` option to the configure script. Provide an ability to use the LibreSSL (modernized fork of OpenSSL) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+
+It is safe to disable this flag if a different backed is preferred, and it should only ever be enabled system-wide, because OpenSSL can't be installed at the same time as LibreSSL on the same system.
+
+### mbedtls
+Pass the `--with-ssl` option to the configure script. Provide an ability to use the Mbed TLS library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+
+This flag should normally be disabled, unless strictly required, e.g. when building for an embedded system.
+
 ### metalink
 Pass the `--with-libmetalink` option to the configure script. Enable a Metalink support - an extensible metadata format for downloading files that provides file verification, data corruption recovery and alternate download sources.
 
@@ -64,6 +79,16 @@ It is safe to disable this flag unless there is a need to download files using M
 Pass the `--with-nghttp3` and `--with-ngtcp2` options to the configure script. Enable support for the QUIC protocol using the `ngtcp2` library to implement the HTTP/3 protocol on top of it using the `nghttp3` library and enable the `--http3` runtime option to access this feature.
 
 This flag should normally be disabled, because HTTP/3 support is considered experimental at this stage.
+
+### nss
+Pass the `--with-nss` option to the configure script. Provide an ability to use the NSS (Mozilla Network Security Services) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+
+It is safe to disable this flag if a different backed is preferred.
+
+### openssl
+Pass the `--with-ssl` option to the configure script. Provide an ability to use the OpenSSL (cryptography and SSL/TLS toolkit) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+
+It is safe to disable this flag if a different backed is preferred.
 
 ### pop3
 Pass the `--enable-pop3` option to the configure script. Enable support for the POP3 (Post Office Protocol 3) protocol and provide an ability to list, download or delete email messages using the `pop3://` scheme.
@@ -129,3 +154,8 @@ The flag can be safely disabled.
 Pass the `--enable-threaded-resolver` and the `--enable-pthreads` options to the configure script. Enable cURL's builtin threaded DNS resolver (built on top of POSIX threads or Windows threads). Switch to non-blocking name resolution and prevent timeouts during resolution.
 
 This flag can be safely disabled, however it is enabled by default by upstream nowadays and can help avoid timeouts with a slow DNS.
+
+### winssl
+Pass the `--with-winssl` option to the configure script. Provide an ability to use the WinSSL (Windows SSL/TLS) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+
+This flag should normally be disabled, because it is only useful on the Windows platform.
