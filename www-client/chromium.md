@@ -40,6 +40,11 @@ Pass the `use_ozone=true`, `ozone_auto_platforms=false` and if the `headless` fl
 
 It is recommended to enable this flag.
 
+### ozone-wayland
+Requires the `ozone` flag to be enabled. Pass the `ozone_platform_wayland=true`, `use_system_minigbm=true`, `use_xkbcommon=true` and `ozone_platform="wayland"` (instead of `ozone_platform="x11"`) options to the `gn gen` command. Enable native Wayland implementation for Ozone platform that does not require `XWayland` or any other intermediate layers.
+
+This flag should be enabled if the system using Wayland window server.
+
 ### pic
 Only makes sense on the `ia32` architecture when `system-ffmpeg` flag is disabled. Pass the `--disable-asm` option to the `chromium/scripts/build_ffmpeg.py` script. Disable optimized assembly code and use the non-optimized but PIC-friendly (Position-Independent Code) code instead.
 
@@ -84,11 +89,6 @@ It is recommended to disable this flag for maximum Chromium stability.
 Pass the `use_allocator="tcmalloc"` option to the `gn gen` command. Replace default allocator with the TCMalloc - a faster alternative that reduces lock contention for multi-threaded programs. For small objects, there is virtually zero contention. For large objects, TCMalloc tries to use fine grained and efficient spinlocks.
 
 It is recommended to enable this flag to improve memory allocation efficiency.
-
-### wayland
-Requires the `ozone` flag to be enabled. Pass the `ozone_platform_wayland=true`, `use_system_minigbm=true`, `use_xkbcommon=true` and `ozone_platform="wayland"` (instead of `ozone_platform="x11"`) options to the `gn gen` command. Enable native Wayland implementation for Ozone platform that does not require `XWayland` or any other intermediate layers.
-
-This flag should be enabled if the system using Wayland window server.
 
 ### widevine
 Pass the `enable_widevine=true` option to the `gn gen` command. Build Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix.
