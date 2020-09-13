@@ -38,6 +38,11 @@ Pull in the [sys-libs/libselinux](../sys-libs/libselinux.md) package as a depend
 
 This flag should only be ever toggled system-wide, e.g. as part of SELinux-enabled Portage profile.
 
+### test
+Execute the `setup.py test` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because it is mainly oriented towards the developers, maintainers and testers.
+
 ### xattr
 Enable `xattr` Portage feature by default (but only on Linux system). Ensure that all portage operations are handling XATTRs (eXtended ATTRibutes) properly, e.g. `tar` archives are extracted using a `--xattrs` option.
 
