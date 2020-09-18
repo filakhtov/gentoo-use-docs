@@ -16,7 +16,7 @@ Pass the `--with-libffi` option to the configure script. Use a `libffi` library 
 It is recommended to enable this module.
 
 ### systemd
-Pass the `--with-systemd` option to the configure script. Install the SystemD service file to run a server process that exposes PKCS#11 module remotely, i.e. to allow an access to the locally attached Smart Card from the remote system.
+Pass the `--with-systemd` option to the configure script. Install the SystemD service file to run a server process that exposes PKCS#11 module remotely and enable some code for socket-based activation. This allows an access to the locally attached Smart Card from the remote system.
 
 This flag should normally be disabled.
 
