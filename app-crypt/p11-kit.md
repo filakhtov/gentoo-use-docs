@@ -15,6 +15,11 @@ Pass the `--with-libffi` option to the configure script. Use a `libffi` library 
 
 It is recommended to enable this module.
 
+### systemd
+Pass the `--with-systemd` option to the configure script. Install the SystemD service file to run a server process that exposes PKCS#11 module remotely, i.e. to allow an access to the locally attached Smart Card from the remote system.
+
+This flag should normally be disabled.
+
 ### trust
 Pass the `--enable-trust-module` and the `--with=trust-paths=/etc/ssl/certs/ca-certificates.crt` options to the configure script. Build and install the `p11-kit-trust` library - a trust module that provides system certificate anchors, blacklists and other trust policy to crypto libraries and applications.
 
