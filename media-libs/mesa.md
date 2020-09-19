@@ -101,7 +101,7 @@ This feature only works for one of the `r300`, `r600`, `radeonsi` and `nouveau` 
 It is recommended to enable this flag if there is a need to deal with video files encoding and decoding using a compatible GPU, e.g. Nvidia with Nouveau driver.
 
 ### vulkan
-Pass the `-Dvulkan-drivers=` option with a list of supported drivers enabled via `VIDEO_CARDS` to the build command. Build and install drivers that utilize Vulkan API - a new generation graphics and compute API that provides high-efficiency, cross-platform access to modern GPUs used in a wide variety of devices. Currently only modern AMD and Intel GPUs are supported.
+Pass the `-Dvulkan-device-select-layer=true` option and `-Dvulkan-drivers=` with a list of supported drivers enabled via `VIDEO_CARDS` to the meson build command. Build and install drivers that utilize Vulkan API - a new generation graphics and compute API that provides high-efficiency, cross-platform access to modern GPUs used in a wide variety of devices. Currently only modern AMD and Intel GPUs are supported.
 
 It is highly recommended to enable this flag if the target system has the AMD or Intel GPU.
 
