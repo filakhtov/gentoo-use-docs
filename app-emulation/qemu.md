@@ -88,6 +88,11 @@ Doesn't apply when building user emulation mode. Pass the `--enable-libiscsi` op
 
 This flag should be enabled if there is a need to use iSCSI volumes as block devices for the virtual machines.
 
+### jack
+Append `jack` to the `--audio-drv-list=` option that is passed to the configure script. Provide an ability to use the JACK (JACK Audio Connection Kit) audio server for capturing and playing sound inside of a virtual machine through an emulated sound card. JACK backend can be selected at runtime by setting the `QEMU_AUDIO_DRV` environment variable to `jack`.
+
+This flag should be enabled if there is a need to use JACK for handling virtual machine audio.
+
 ### jemalloc
 Doesn't apply when building user emulation mode. Pass the `--enable-jemalloc` option to the configure script. Use the `jemalloc` library to perform heap memory allocation, instead of using the built-in glibc or `tcmalloc` allocators. This can provide better performance under certain circumstances, such as using a lot of disks and iothreads.
 
