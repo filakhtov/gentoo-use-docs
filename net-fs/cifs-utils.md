@@ -24,3 +24,8 @@ This flag should be enabled if there is a need for the `cifcreds` tool.
 Pass a `--enable-pam` option to a configure script. Build and install a `pam_cifscreds` PAM module to automatically add credentials (username and password) to kernel keyring at login for mounts with the `multiuser` that don't use krb5 authentication.
 
 This flag should be enabled if there is a need to use `multiuser` CIFS mounts without a Kerberos authentication.
+
+### systemd
+Pass the `--enable-systemd` option to the configure script. Enable systemd specific behavior for the `mount.cifs` program, such as asking the login passphrase using the `systemd-ask-password`.
+
+This flag should only be enabled on systems that mount CIFS via systemd.
