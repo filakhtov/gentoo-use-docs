@@ -9,8 +9,3 @@ It is safe to disable this flag.
 Passes the `--enable-O-flag-munging` option to the configure script. This option modifies compiler flags to set a lower optimization mode for some very complex code in order to prevent breaking a build. It is not necessary in most cases.
 
 This flag should only be enabled if there are any problems compiling the library.
-
-### static-libs
-The flag passes the `--enable-static` option to the configure script. Installed libraries will be statically linked.
-
-This flag should normally be disabled, unless static libraries are required for development or other purposes.
