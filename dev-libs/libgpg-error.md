@@ -9,8 +9,3 @@ It is safe to disable this flag as it is only necessary for running or developin
 Pass the `--enable-nls` option to the configure script. Install a translation and a localization support for messages displayed by the library.
 
 This flag should be enabled if there is a need to display messages in non-English languages. It is safe to disable the flag otherwise.
-
-### static-libs
-Pass the `--enable-static` option to the configure script. Build and install statically linked libraries.
-
-It is safe to disable the flag unless there is an explicit need for static libraries, e.g. for development.
