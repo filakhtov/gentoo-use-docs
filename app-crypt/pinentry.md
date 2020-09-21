@@ -34,8 +34,3 @@ It is safe to disable the flag. It can be enabled together with other graphical 
 Pass the `--enable-pinentry-qt` option to the configure script. Build and install the `pinentry-qt` program - a graphical, QT-based dialog to allow secure entry of PINs and passphrases.
 
 This flag should be enabled if the target system runs a KDE based Desktop Environment.
-
-### static
-Append the `-static` option to the `LDFLAGS` variable for the duration of a build. Build and install statically linked pinentry binaries.
-
-This flag should only ever be enabled if there is a need for the static binaries.
