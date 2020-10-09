@@ -1,7 +1,7 @@
 # media-libs/lcms
 
 ### doc
-Install additional developer and API documentation in a PDF format into the `/usr/share/doc/lcms-<VERSION>/pdf` directory.
+Install additional developer and API documentation in the ODT (Open Document Type) format into the `/usr/share/doc/lcms-<VERSION>/` directory.
 
 It is safe to disable the flag.
 
