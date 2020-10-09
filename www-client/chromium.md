@@ -35,6 +35,11 @@ Pass the `use_kerberos=true` option to the `gn gen` command. Enable support for 
 
 This flag should only be enabled if there is a need for Kerberos/SPNEGO authentication.
 
+### official
+Pass the `is_official_build=true` and `is_cfi=false` options to the `gn gen` command. First flag is responsible for a set of optimization flags that are enabled by the official Chrome builds, while the second disables CFI (Control Flow Integrity) for virtual calls, indirect calls and bad casts, because it is unsupported on GCC compiler. Enabling this flag slows down the build process but should have advantages during the runtime.
+
+It is safe to disable this flag.
+
 ### ozone
 Pass the `use_ozone=true`, `ozone_auto_platforms=false` and if the `headless` flag is disabled also `use_system_libdrm=true`, `ozone_platform_x11=true`, `ozone_platform_headless=true` and `ozone_platform="x11"` options to the `gn gen` command. Enable support for Ozone platform abstraction layer beneath the Aura window system that is used for low level input and graphics and is necessary for Wayland support as well as various embedded use-cases and other platform abstraction capabilities.
 
