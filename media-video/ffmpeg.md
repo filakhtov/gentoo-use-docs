@@ -335,6 +335,11 @@ Pass the `--enable-libpulse` option to the configure script. Enable the `pulse` 
 
 This flag should be enabled if the target system uses the PulseAudio sound server.
 
+### rav1e
+Only works when the `encode` flag is enabled. Pass the `--enable-librav1e` option to the configure script. Provide an ability to create (encode) files in the AV1 format using the `librav1e` library - the fastest and safest AV1 encoder that is suitable for cases where the reference encoder library (`libaom`) is too slow.
+
+This flag can be safely disabled.
+
 ### rubberband
 Pass the `--enable-librubberband` option to the configure script. Enable the `rubberband` audio filter that uses the `librubberband` library to allow to change the tempo and pitch of an audio recording independently of one another.
 
@@ -440,6 +445,11 @@ It is recommended to enable this flag if there is a need to encode or decode the
 Pass the `--enable-libvpx` option to the configure script. Use the `libvpx` library to enable support for decoding and encoding VP8 and VP9 video compression formats. Provides two video codecs - `libvpx` and `libvpx-v9` for VP8 and VP9 formats respectively.
 
 This flag should be enabled if there is a need to create WebM media format.
+
+### vulkan
+Pass the `--enable-vulkan` option to the configure script. Enable support for Vulkan API to offload video processing to the GPU and also enable support for AMD AMF (Advanced Media Framework)/VCE (Video Coding Engine) encoder.
+
+This flag should be enabled on systems that have compatible AMD GPU to enable hardware-accelerated decoding.
 
 ### wavpack
 Only works if the `encode` flag is enabled. Pass the `--enable-libwavpack` option to the configure script. Use the `libwavpack` library to provide support for encoding audio in WavPack format. Only lossy or lossless mode is supported, i.e. no encoding in hybrid mode currently possible.
