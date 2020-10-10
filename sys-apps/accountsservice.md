@@ -1,10 +1,5 @@
 # sys-apps/accountsservice
 
-### consolekit
-Pull in the [sys-auth/consolekit](../sys-auth/consolekit.md) package as a dependency. Use ConsoleKit to query and manage login sessionos and seats.
-
-This flag should only be enabled on systems that use ConsoleKit for user session management.
-
 ### doc
 Pass the `-Ddocbook=true` option to the meson build script. Use the xmlto utility to generate additional documentation in an HTML format that provides D-Bus API documentation for `AccountsService` service.
 
