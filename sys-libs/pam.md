@@ -10,11 +10,6 @@ The flag passes the `--enable-db` option to the configure script. This will buil
 
 This flag can be safely disabled.
 
-### cracklib
-Passes the `--enable-cracklib` option to the configure script. Provides the `pam_cracklib` module that can enforce a password complexity and verify passwords against a dictionary attack.
-
-It is safe to disable this flag.
-
 ### debug
 This flag passes the `--enable-debug` to the configure script. Provides the `pam_debug` module that is useful for PAM stack debugging.
 
@@ -44,9 +39,3 @@ This flag should only be enabled systemwide as part of the selinux-enabled Gento
 If the flag is enabled all produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
 
 This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
-
-### static-libs
-
-Pass the `--enable-static` option to the configure script. Build and install a statically linked version of all the libraries, including `libpam`, `libpamc` and `libpam_misc`, as well as various modules, such as `pam_unix`, `pam_wheel`, `pam_nologin` and so on.
-
-This flag should only ever be enabled if there is an explicit need for the statically linked libraries.
