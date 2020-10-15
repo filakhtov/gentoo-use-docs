@@ -185,3 +185,8 @@ This flag should normally be disabled.
 The flag passes the `-Dxkbcommon=true` option to the Meson build script. If enabled, the `localed` daemon will be able to change a keyboard layout for the Xorg server via the X Keyboard Extension (aka XKB). Executing the `localectl set-keymap` command will not only change a console input but also a graphical interface input as well.
 
 This flag is recommended for desktop systems with a desktop environment.
+
+### zstd
+Pass the `-Dzstd=true` option to the Meson build script. Provide an ability to compress journald files when writing and decompress them when reading using the zstd (Zstandard) compression algorithm.
+
+It is safe to disable this flag.
