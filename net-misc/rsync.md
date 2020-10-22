@@ -35,11 +35,6 @@ Pass the `--enable-openssl` option to the configure script. Install the `rsync-s
 
 This flag should normally be disabled, unless there is an explicit need to connect to the rsync daemon over SSL.
 
-### static
-Append a `-static` option to the `LDFLAGS` variable for the duration of a build. This will build and install statically linked `rsync` binary.
-
-This flag should normally be disabled, unless there is an explicit need for a static binary.
-
 ### stunnel
 Execute a `make install-ssl-client` and a `make install-ssl-daemon` commands during a build. Install a `rsync-ssl` and a `stunnel-rsync` scripts. Allow tunneling rsync traffic via TLS encrypted connection using stunnel.
 
