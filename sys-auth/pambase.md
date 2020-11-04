@@ -1,7 +1,7 @@
 # sys-auth/pambase
 
 ### caps
-Pass the `--libcap` option to the `pambase.py` build script. Add the `pam_cap` module as an `optional` component into the `auth` interface for `system-auth` stack.
+Pass the `--caps` option to the `pambase.py` build script. Add the `pam_cap` module as an `optional` component into the `auth` interface for `system-auth` stack.
 
 This flag can be safely disabled, unless there is a need to set the inheritable capabilities for users based on the `/etc/security/capability.conf` configuration file.
 
