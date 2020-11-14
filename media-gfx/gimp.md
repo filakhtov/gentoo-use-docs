@@ -55,11 +55,6 @@ Pass the `--with-gs` option to the configure script. Use the Ghostscript interpr
 
 This flag can be safely disabled.
 
-### python
-Prepare the build environment to find suitable Python interpreter version. Pass the `--enable-python` option to the configure script. Generate and install GIMP-Python set of modules that act as a wrapper to the `libgimp` library and can be used to create GIMP plugins using the Python interpreter with the full set of Python extension modules.
-
-This flag should normally be disabled.
-
 ### test
 Start a new Xvfb session and execute the `make check` command inside of it when the main build is completed. Run the test suite provided with the source code to check for regressions. This will extend a build time.
 
