@@ -24,8 +24,3 @@ It is safe to disable the flag.
 Pass the `--enable-selinux` option to the configure script. Link the `libparted` library against the `libselinux` and the `libsepol` libraries.
 
 This flag should only ever be toggled system-wide, e.g. as part of a SELinux-enabled Portage profile.
-
-### static-libs
-Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libparted` library.
-
-This flag should only be enabled if there is a need for the static library.
