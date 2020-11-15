@@ -5,11 +5,6 @@ Apply a patch to enable support for the APNG (Animated Portable Network Graphics
 
 It is safe to disable this flag.
 
-### neon
-This flag is only available on ARM platform. Pass the `--enable-arm-neon=yes` option to the configure script. Enable optimized Assembly code with support for the NEON instruction set to improve image decoding performance up to ~30%.
-
-It is recommended to enable this flag on ARM platforms with NEON support.
-
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install a statically linked verion of the `libpng` library.
 
