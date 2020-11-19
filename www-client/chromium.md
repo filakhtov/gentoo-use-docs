@@ -21,7 +21,7 @@ Pass the `enable_hangout_services_extension=true` option to the `gn gen` command
 It is safe to disable the flag.
 
 ### headless
-Only works if the `ozone` flag is enabled. Pass the `ozone_platform_headless=true`, `ozone_platform=headless` to the `gn gen` command. Enable support for headless Ozone platform, where any graphical output will be written into a PNG image. This platform does not support hardware acceleration and performs software rendering only. This feature can be used for automation, taking web page screenshots, etc.
+Pass the `ozone_platform="headless"` and `use_x11=false` options to the `gn gen` command. Enable support for headless Ozone platform, where any graphical output will be written into a PNG image. This platform does not support hardware acceleration and performs software rendering only. This feature can be used for automation, taking web page screenshots, etc.
 
 This flag should normally be disabled.
 
@@ -39,16 +39,6 @@ This flag should only be enabled if there is a need for Kerberos/SPNEGO authenti
 Pass the `is_official_build=true` and `is_cfi=false` options to the `gn gen` command. First flag is responsible for a set of optimization flags that are enabled by the official Chrome builds, while the second disables CFI (Control Flow Integrity) for virtual calls, indirect calls and bad casts, because it is unsupported on GCC compiler. Enabling this flag slows down the build process but should have advantages during the runtime.
 
 It is safe to disable this flag.
-
-### ozone
-Pass the `use_ozone=true`, `ozone_auto_platforms=false` and if the `headless` flag is disabled also `use_system_libdrm=true`, `ozone_platform_x11=true`, `ozone_platform_headless=true` and `ozone_platform="x11"` options to the `gn gen` command. Enable support for Ozone platform abstraction layer beneath the Aura window system that is used for low level input and graphics and is necessary for Wayland support as well as various embedded use-cases and other platform abstraction capabilities.
-
-It is recommended to enable this flag.
-
-### ozone-wayland
-Requires the `ozone` flag to be enabled. Pass the `ozone_platform_wayland=true`, `use_system_minigbm=true`, `use_xkbcommon=true` and `ozone_platform="wayland"` (instead of `ozone_platform="x11"`) options to the `gn gen` command. Enable native Wayland implementation for Ozone platform that does not require `XWayland` or any other intermediate layers.
-
-This flag should be enabled if the system using Wayland window server.
 
 ### pic
 Only makes sense on the `ia32` architecture when `system-ffmpeg` flag is disabled. Pass the `--disable-asm` option to the `chromium/scripts/build_ffmpeg.py` script. Disable optimized assembly code and use the non-optimized but PIC-friendly (Position-Independent Code) code instead.
@@ -85,15 +75,20 @@ Pass the `icu` parameter to the `--system-libraries` option for the `build/linux
 
 It is recommended to disable this flag for maximum Chromium stability.
 
-### system-libvpx
-Pass the `libvpx` parameter to the `--system-libraries` option for the `build/linux/unbundle/replace_gn_files.py` script to replace bundled `libvpx` library with the system-wide version to link against.
-
-It is recommended to disable this flag for maximum Chromium stability.
-
 ### tcmalloc
 Pass the `use_allocator="tcmalloc"` option to the `gn gen` command. Replace default allocator with the TCMalloc - a faster alternative that reduces lock contention for multi-threaded programs. For small objects, there is virtually zero contention. For large objects, TCMalloc tries to use fine grained and efficient spinlocks.
 
 It is recommended to enable this flag to improve memory allocation efficiency.
+
+### vaapi
+Pass the `use_vaapi=true` option to the `gn gen` command. Enable support for VA-API (Video Acceleration API) hardware accelerated video decoding using a compatible graphics adapter. Note: VA-API is not officially supported on Linux and is disabled at runtime, so it is necessary to enable it via the `enable-accelerated-video-decode` flag.
+
+It is safe to disable this flag.
+
+### wayland
+Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
+
+This flag should be enabled if the system using Wayland window server.
 
 ### widevine
 Pass the `enable_widevine=true` option to the `gn gen` command. Build Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix.
