@@ -55,6 +55,11 @@ Set the `link-shared` option to `true` in the `llvm` section, `lld` option to `f
 
 It is recommended to disable this flag, simply because an LLVM version provided with Rust includes many patches, which system version would not have and thus can cause variety of compilation issues.
 
+### test
+Execute the `x.py test` script when the main build is completed to run the test suite provided with the source code and check for any regressions in the compiler code. This will extend the overall build time.
+
+This flag should normally be disabled, because these tests are primarily oriented towards the maintainers, developers and testers.
+
 ### wasm
 Append the `wasm32-unknown-unknown` to the `target` option in the `llvm` section of the `config.toml` build configuration file, also set `lld` option in the `rust` section to `true`, but only if the `system-llvm` flag is disabled, and additionally, append a new `target.wasm32-unknown-unknown` target section and set the `linker` option to `rust-lld` (or `lld` if the `system-llvm` flag is enabled). Enable support for compiling code that can be executed in the Wasm (WebAssembly) virtual machine.
 
