@@ -16,12 +16,12 @@ If the `llvm` flag is enabled, ensure that [sys-devel/llvm](../sys-devel/llvm.md
 This flag should only be enabled if there is a need to debug the Mesa libraries/drivers or applications linked against them.
 
 ### dri3
-Pass the `-Ddri3=true` option to the meson build command. Enable support for the DRI3 (Direct Rendering Infrastructure 3) extension that utilizes the DMA-BUF (Direct Memory Access Buffer Sharing API) feature to pass buffer objects between X Server and DRI client using file descriptors over the old and insecure GEM (Graphics Execution Manager) buffer sharing mechanism.
+Pass the `-Ddri3=enabled` option to the meson build command. Enable support for the DRI3 (Direct Rendering Infrastructure 3) extension that utilizes the DMA-BUF (Direct Memory Access Buffer Sharing API) feature to pass buffer objects between X Server and DRI client using file descriptors over the old and insecure GEM (Graphics Execution Manager) buffer sharing mechanism.
 
 This flag should be enabled if target systems runs the X Server.
 
 ### egl
-Pass the `-Degl=true` option to the meson build script. Build and install the `libEGL` library that provides the EGL API entry points and helper functions for use by the drivers. EGL API handles graphics context management, surface/buffer binding, and rendering synchronization and enables high-performance, accelerated, mixed-mode 2D and 3D rendering for the Embedded-System Graphics. This feature is formerly known as Eagle.
+Pass the `-Degl=enabled` and `-Dglvnd=true` options to the meson build script. Build and install the `libEGL` library that provides the EGL API entry points and helper functions for use by the drivers. EGL API handles graphics context management, surface/buffer binding, and rendering synchronization and enables high-performance, accelerated, mixed-mode 2D and 3D rendering for the Embedded-System Graphics. This feature is formerly known as Eagle.
 
 This flag should be enabled on embedded systems that support Khronos rendering APIs, such as OpenGL ES or OpenVG.
 
@@ -31,17 +31,17 @@ Pass the `-Dgallium-drivers=swrast` option (and others depending on the video ca
 This flag should only be enabled as a dependency of one or more video card drivers and other Mesa features or if there is an explicit need for the `Gallium3D` backend, e.g. for software rendering using LLVM without hardware acceleration.
 
 ### gbm
-Append the `drm` value to the `-Dplatforms=` option and pass it together with the `-Dgbm=true` option to the meson build command. Build and install a `libgbm.so` library that provides a graphics buffer manager (aka GBM) - an abstraction of the graphics driver specific buffer management APIs (for instance the various `libdrm_*` libraries), implemented internally by calling into the Mesa GPU drivers.
+Append the `drm` value to the `-Dplatforms=` option and pass it together with the `-Dgbm=enabled` option to the meson build command. Build and install a `libgbm.so` library that provides a graphics buffer manager (aka GBM) - an abstraction of the graphics driver specific buffer management APIs (for instance the various `libdrm_*` libraries), implemented internally by calling into the Mesa GPU drivers.
 
 This flag should only be enabled as a dependency of the graphics driver, or if the target system runs the Wayland display server.
 
 ### gles1
-Pass the `-Dgles1=true` option to the meson build command. Build and install the `libGLESv1_CM` library that provides support for the OpenGL ES 1.1 API - a royalty-free, cross-platform API for rendering advanced 2D and 3D graphics on embedded and mobile systems - including consoles, phones, appliances and vehicles. OpenGL ES depends on a working EGL implementation.
+Pass the `-Dgles1=enabled` option to the meson build command. Build and install the `libGLESv1_CM` library that provides support for the OpenGL ES 1.1 API - a royalty-free, cross-platform API for rendering advanced 2D and 3D graphics on embedded and mobile systems - including consoles, phones, appliances and vehicles. OpenGL ES depends on a working EGL implementation.
 
 This flag should be enabled on the embedded systems that support OpenGL ES 1.1 API.
 
 ### gles2
-Pass the `-Dgles2=true` option to the meson build command. Build and install the `libGLESv2` library that provides support for the OpenGL ES 2.0 API - a royalty-free, cross-platform API for rendering advanced 2D and 3D graphics on embedded and mobile systems - including consoles, phones, appliances and vehicles. OpenGL ES depends on a working EGL implementation.
+Pass the `-Dgles2=enabled` option to the meson build command. Build and install the `libGLESv2` library that provides support for the OpenGL ES 2.0 API - a royalty-free, cross-platform API for rendering advanced 2D and 3D graphics on embedded and mobile systems - including consoles, phones, appliances and vehicles. OpenGL ES depends on a working EGL implementation.
 
 This flag should be enabled on the embedded systems that support OpenGL ES 2.0 API.
 
@@ -51,12 +51,12 @@ Pass the `-Dglvnd=true` option to the meson build command. Use the `libgvnd` lib
 This flag can be safely disabled, but it is recommended to enable it on systems with multiple GPUs from different vendors.
 
 ### llvm
-This flag only works if the `gallium` flag is enabled. Prepare build environment by detecting a latest installed version of the LLVM package and appending it to the `PATH` variable. Pass the `-Dllvm=true` option to the meson build command. Build and install the Gallium llvmpipe driver - a software rasterizer that uses LLVM to do runtime code generation. Shaders, point/line/triangle rasterization and vertex processing are implemented with LLVM IR which is translated to x86, x86-64, or ppc64le machine code. Also, the driver is multithreaded to take advantage of multiple CPU cores (up to 8 at this time). It's the fastest software rasterizer for Mesa.
+This flag only works if the `gallium` flag is enabled. Prepare build environment by detecting a latest installed version of the LLVM package and appending it to the `PATH` variable. Pass the `-Dllvm=enabled` option to the meson build command. Build and install the Gallium llvmpipe driver - a software rasterizer that uses LLVM to do runtime code generation. Shaders, point/line/triangle rasterization and vertex processing are implemented with LLVM IR which is translated to x86, x86-64, or ppc64le machine code. Also, the driver is multithreaded to take advantage of multiple CPU cores (up to 8 at this time). It's the fastest software rasterizer for Mesa.
 
 This flag should only be enabled as a dependency of a Gallium3D driver or when software rendering without hardware acceleration is necessary.
 
 ### lm-sensors
-Only works when the `gallium` flag is enabled. Passe the `-Dlmsensors=true` option to the meson build script. Use the `libsensors` library to provide an ability to display temperature, fan speed and other information from the lm_sensors in the Gallium HUD (head-up display).
+Only works when the `gallium` flag is enabled. Passe the `-Dlmsensors=enabled` option to the meson build script. Use the `libsensors` library to provide an ability to display temperature, fan speed and other information from the lm_sensors in the Gallium HUD (head-up display).
 
 It is safe to disable the flag.
 
@@ -81,12 +81,12 @@ Pass the `-Dbuild-tests=true` option to the meson build command. Execute the `ni
 This flag should normally be disabled, as it is mainly used by the Gentoo team, testers and developers.
 
 ### unwind
-Only works if the `gallium` flag is enabled. Pass the `-Dlibunwind=true` option to the meson build command. Use the `libunwind` library to generate backtraces for debugging messages.
+Only works if the `gallium` flag is enabled. Pass the `-Dlibunwind=enabled` option to the meson build command. Use the `libunwind` library to generate backtraces for debugging messages.
 
 This flag should normally be disabled and is only useful for debugging purposes.
 
 ### vaapi
-This feature only works with one of the `r600`, `radeonsi` and `nouveau` Gallium3D driver and therefore requires the `gallium` flag to be enabled. Pass the `-Dgallium-va=true` and the `-Dva-libs-path=/usr/lib/va/drivers` options to the meson build command. Enable support for the VA API (Video-Acceleration API) via the `libva` library to gain an access to graphics hardware acceleration capabilities for video processing. Support accelerated encoding and decoding of the MPEG2, VC-1, H.264/AVC, etc. video codecs.
+This feature only works with one of the `r600`, `radeonsi` and `nouveau` Gallium3D driver and therefore requires the `gallium` flag to be enabled. Pass the `-Dgallium-va=enabled` and the `-Dva-libs-path=/usr/lib/va/drivers` options to the meson build command. Enable support for the VA API (Video-Acceleration API) via the `libva` library to gain an access to graphics hardware acceleration capabilities for video processing. Support accelerated encoding and decoding of the MPEG2, VC-1, H.264/AVC, etc. video codecs.
 
 It is recommended to enable this flag if there is a need to deal with encoding and decoding video files using a compatible GPU, e.g. AMD.
 
@@ -96,7 +96,7 @@ Pass the `-Dvalgrind=auto` option to the meson build command. Build mesa with Va
 This flag should only be enabled if there is a need to run Valgrind tool on the application linked against mesa libraries.
 
 ### vdpau
-This feature only works for one of the `r300`, `r600`, `radeonsi` and `nouveau` Gallium3D driver and therefore requires the `gallium` flag to be enabled. Pass the `-Dgallium-vdpau=true` option to the meson build command. Enable support for VDPAU (Video Decode and Presentation API) via the `libvdpau` library to access video decoding acceleration and presentation hardware present in modern GPUs. Support accelerated encoding and decoding of the MPEG-1, MPEG-2, MPEG-4 part 2, H.264, VC-1 and DivX video codecs.
+This feature only works for one of the `r300`, `r600`, `radeonsi` and `nouveau` Gallium3D driver and therefore requires the `gallium` flag to be enabled. Pass the `-Dgallium-vdpau=enabled` option to the meson build command. Enable support for VDPAU (Video Decode and Presentation API) via the `libvdpau` library to access video decoding acceleration and presentation hardware present in modern GPUs. Support accelerated encoding and decoding of the MPEG-1, MPEG-2, MPEG-4 part 2, H.264, VC-1 and DivX video codecs.
 
 It is recommended to enable this flag if there is a need to deal with video files encoding and decoding using a compatible GPU, e.g. Nvidia with Nouveau driver.
 
@@ -116,21 +116,26 @@ The Wayland server requires the EGL implementation and GBM support to work. Appe
 This flag should only be enabled if there is a need to run Wayland server on the target system.
 
 ### X
-Append the `x11` value to the `-Dplatforms=` option and pass it to the meson build command. Enable support for X11 (X Windows System, aka X) platform for various Mesa drivers to allow indirect GLX rendering, DRI or DRM within X server applications (depending on enabled backends and drivers).
+Append the `x11` value to the `-Dplatforms=` option and pass it together with `-Dglvnd=true` option to the meson build command. Enable support for X11 (X Windows System, aka X) platform for various Mesa drivers to allow indirect GLX rendering, DRI or DRM within X server applications (depending on enabled backends and drivers).
 
 This flag should be enabled if the target system runs X11.
 
 ### xa
-This feature only works for the `freedreno`, `nouveau` and `vmware` Gallium3D drivers and therefor requires the `gallium` flag to be enabled. Pass the `-Dgallium-xa=true` option to the meson build script. Build and install the XA (X.Org Acceleration) state tracker developed by VMWare. It provides versioning support, surface functionality, and YUV blits for textured X-Video, Solid fills without ROP functionality, Copies with format conversion and reinterpretation but without ROP, Xrender-type compositing for general acceleration. It is primarily designed for use by the `vmwgfx` on VMware-virtualized guest operating systems. The Freedreno driver uses XA for accelerating 2D with open-source, reverse-engineered Qualcomm graphics driver.
+This feature only works for the `freedreno`, `nouveau` and `vmware` Gallium3D drivers and therefor requires the `gallium` flag to be enabled. Pass the `-Dgallium-xa=enabled` option to the meson build script. Build and install the XA (X.Org Acceleration) state tracker developed by VMWare. It provides versioning support, surface functionality, and YUV blits for textured X-Video, Solid fills without ROP functionality, Copies with format conversion and reinterpretation but without ROP, Xrender-type compositing for general acceleration. It is primarily designed for use by the `vmwgfx` on VMware-virtualized guest operating systems. The Freedreno driver uses XA for accelerating 2D with open-source, reverse-engineered Qualcomm graphics driver.
 
 This flag should only be enabled if the target system runs inside of VMWare machine or runs on Adreno GPU with Freedreno driver.
 
 ### xvmc
-The feature only works with the `r600` or `nouveau` Gallium3D driver and requires `gallium` flag to be enabled. Pass the `-Dgallium-xvmc=true` option to the configure script. Enable the XvMC (X-Video Motion Compensation) API support - an X.Org Server extension that allows video programs to offload portions of the video decoding process to the GPU video-hardware. It is old and outdated extension that is currently obsolete by VA-API and VDPAU and is disabled by default in Mesa.
+The feature only works with the `r600` or `nouveau` Gallium3D driver and requires `gallium` flag to be enabled. Pass the `-Dgallium-xvmc=enabled` option to the configure script. Enable the XvMC (X-Video Motion Compensation) API support - an X.Org Server extension that allows video programs to offload portions of the video decoding process to the GPU video-hardware. It is old and outdated extension that is currently obsolete by VA-API and VDPAU and is disabled by default in Mesa.
 
 This flag should normally be disabled and VA-API or VDPAU should be used instead. However it can be used for old hardware that has no such capabilities.
 
+### zink
+Append `zink` to the `-Dgallium-drivers=` option and pass it to the meson build script. Build and install the Zink Gallium driver that emits Vulkan API calls instead of targeting a specific GPU architecture. This can be used to get full desktop OpenGL support on devices that only support Vulkan. This is a very early stage development.
+
+This flag should normally be disabled.
+
 ### zstd
-Pass the `-Dzstd=true` option to the meson build script. Use the `libzstd` library to compress the shader cache using the ZSTD compression algorithm instead of the ZLIB, which is both faster and provides better compression.
+Pass the `-Dzstd=enabled` option to the meson build script. Use the `libzstd` library to compress the shader cache using the ZSTD compression algorithm instead of the ZLIB, which is both faster and provides better compression.
 
 This flag can be safely disabled.
