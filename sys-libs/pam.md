@@ -25,11 +25,6 @@ Passes the `--enable-nis` option to the configure script. Enables a NIS (Network
 
 This flag should generally be disabled, because nowadays a LDAP is preferred over NIS.
 
-### pie
-Passes the `--enable-pie` option to the configure script. Appends a `-fpie` option to the `CFLAGS` and a `-pie` to the `LDFLAGS` to produce PIE (Position Independent Executables) libraries and binaries. This is also used as a security feature.
-
-It is recommended to keep this flag enabled.
-
 ### selinux
 The flag passes the `--enable-selinux` option to the configure script. Provides a SELinux support for a PAM stack. Enables reporting via the Kernel Audit Subsystem for SELinux restrictions if `audit` flag is also enabled.
 
