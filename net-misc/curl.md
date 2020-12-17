@@ -30,6 +30,11 @@ Pass the `--enable-gopher` option to the configure script. Enable support for Go
 
 This flag should normally be disabled, as Gopher is ancient and is almost dead today.
 
+### hsts
+Pass the `--enable-hsts` option to the configure script. Enable support for HSTS (HTTP Strict Transport Security) standard. cURL will parse `Strict-Transport-Security` header sent by the server and save HSTS information into the cache file that can be specified via the `--hsts` option on the initial request, then cURL can load this same cache and avoid clear text HTTP requests for as long as the server indicated.
+
+It is recommended to diable this flag - it is currently considered to be experimental.
+
 ### http2
 Pass the `--with-nghttp2` option to the configure script. Modify a pkg-config `libcurl.pc` file to remove `-lnghttp2` option from a `Libs.private` keyword and append a `libnghttp2` value to a `Requires.private` keyword. Provides support for an HTTP/2 protocol using a `nghttp2` library.
 
@@ -159,3 +164,8 @@ This flag can be safely disabled, however it is enabled by default by upstream n
 Pass the `--with-winssl` option to the configure script. Provide an ability to use the WinSSL (Windows SSL/TLS) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
 
 This flag should normally be disabled, because it is only useful on the Windows platform.
+
+### zstd
+Pass the `--with-zstd` option to the configure script. Enable support for ZSTD compressed content data sent over the HTTP, so that cURL can automatically decompress such data on the fly.
+
+It is safe to disable this flag.
