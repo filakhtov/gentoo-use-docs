@@ -1,12 +1,12 @@
 # dev-libs/elfutils
 
 ### bzip2
-This enables `--with-bzlib` configure option. Doing so will compile `libdwfl` with BZip2 compression support. This is required for dealing with kernel and modules compressed using bz2.
+This enables `--with-bzlib` configure option. Doing so will compile `libdwfl` with BZip2 compression support. This is required for dealing with kernel image and modules compressed using bz2.
 
 This flag can be safely disabled if kernel or modules aren't compressed using aforementioned formats.
 
 ### lzma
-This flag enables `--with-lzma` configure option. Doing so will compile `libdwfl` with LZMA compression support. This is required for dealing with kernel and modules compressed using LZMA or XZ.
+This flag enables `--with-lzma` configure option. Doing so will compile `libdwfl` with LZMA compression support. This is required for dealing with kernel image and modules compressed using LZMA or XZ.
 
 This flag can be safely disabled if kernel or modules aren't compressed using aforementioned formats.
 
@@ -48,3 +48,8 @@ This flag can be safely disabled, because no packages in portage tree dependent 
 Pass the `--enable-valgrind` option to the configure script. This only makes sense if the `test` flag is also enabled and will run the test suite using the valgrind to additionally check for any memory leaks.
 
 This flag should normally be disabled.
+
+### zstd
+Pass the `--with-zstd` option to the configure script. Doing so will compile `libdwfl` with ZSTD compression algorithm support. This is required for dealing with kernel images and modules compressed using ZSTD.
+
+It is safe to disable this flag.
