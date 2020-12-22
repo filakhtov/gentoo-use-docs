@@ -1,5 +1,10 @@
 # dev-lang/spidermonkey
 
+### clang
+Use the Clang compiler instead of GCC.
+
+It is safe to disable this flag.
+
 ### debug
 Pass the `--enable-debug` option to the configure script. Build a JS engine with developer debug info, enable assertions to allow for easier debugging of linked programs.
 
@@ -11,7 +16,7 @@ Pass the `--enable-ion` option to the configure script. Enable the IonMonkey Jav
 This flag should be enabled for platforms that support JIT compilation to improve performance.
 
 ### lto
-Pass the `--enable-lto` option to the configure script. Enable link-time optimization (LTO) to run additional compiler routines to improve performance of the resulting binaries and libraries, however this will make it impossible to step through the code using the debugger.
+Pass the `--enable-lto` option and `--enable-linker=lld`, if the `clang` flag is enabled, or `--enable-linkerd=gold`, if it is not, to the configure script. Enable link-time optimization (LTO) to run additional compiler routines to improve performance of the resulting binaries and libraries, however this will make it impossible to step through the code using the debugger. Requires `ld.lld` or `ld.gold` linker to perform optimization.
 
 It is recommended to enable this flag, unless there is a need to debug the resulting binaries.
 
