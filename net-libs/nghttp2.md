@@ -41,7 +41,7 @@ Pass the `--enable-threads` option to the configure script. Use the pthreads lib
 It is recommended to enable this flag.
 
 ### utils
-Pass the `--enable-app` option to the configure script. Build and install tools in addition to library: the `nghttp` - a simple HTTP/2 client, the `nghttpd` - a simple HTTP/2 server, the `nghttpx` - a reverse proxy for HTTP/2, and HTTP/1, and the `h2load` - a benchmarking tool for HTTP/2 servers.
+Pass the `--enable-app` option to the configure script. Build and install tools in addition to library: the `nghttp` - a simple HTTP/2 client, the `nghttpd` - a simple HTTP/2 server, the `nghttpx` - a reverse proxy for HTTP/2 and HTTP/1, and the `h2load` - a benchmarking tool for HTTP/2 servers.
 
 It is safe to disable the flag.
 
