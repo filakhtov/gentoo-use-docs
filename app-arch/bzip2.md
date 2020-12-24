@@ -11,6 +11,6 @@ Pass the `-static` option to the `make` command. Build and install statically li
 This flag should normally be disabled unless there is a need for static binaries.
 
 ### static-libs
-Build and install statically linked `libbz2.a` library.
+Build and install a statically linked version of the `libbz2.a` library.
 
 This flag should be disabled unless there is a need for static library.
