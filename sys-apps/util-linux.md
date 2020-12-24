@@ -112,7 +112,9 @@ Enable `--with-sytemd` and pass `--with-systemdsystemunitdir` options to configu
 Enable this flag if system is using [sys-apps/systemd](systemd.md) as init daemon.
 
 ### test
-This flag will execute built-in test suite by running `make check`. This will extend build time and is not necessary for average user.
+Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because these tests are primarily useful for the developers, testers or maintainers.
 
 ### tty-helpers
 This flag passes `--enable-mesg`, `--enable-wall` and `--enable-write` options to configure, resulting in `mesg`, `wall` and `write` binaries being built and installed.
