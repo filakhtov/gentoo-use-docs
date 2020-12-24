@@ -69,10 +69,20 @@ Pass the `--with-pie` option to the configure script. Append an `-fPIE` option t
 
 It is recommended to keep this flag enabled.
 
+### scp
+By default, OpenSSH comes with the `scp` tool that allows to securely copy files between hosts on the network providing the same authentication and security as SSH, so when this flag is enabled nothing will be done and this tool will be installed into the system. When disabled, the `scp` tool and its manual page will be removed from the build image before installation.
+
+This flag can be safely disabled if the `scp` tool is not needed.
+
 ### sctp
 Apply SCTP (Stream Control Transmission Protocol) patches to a source code before compiling it. Pass the `--with-sctp` option to the configure script. Provide support for an SCTP protocol for the client and the server.
 
 It is safe to disable this flag as it is only ever necessary for systems that are using SCTP.
+
+### security-key
+This flag can not be enabled together with the `X509` flag. Pass the `--with-security-key-builtin` option to the configure script. Enable support for FIDO/U2F protocol to allow to configure a hardware security key when authenticating via SSH on a remote server. After a user logs into a server by using their regular credentials, they'll be required to present a FIDO/U2F-based security key (USB, Bluetooth, NFC, etc) as a second proof-of-identity.
+
+This flag can be safely disabled, however is very useful for security-conscious users.
 
 ### selinux
 Pass the `--with-selinux` option to the configure script. Enable SELinux support for OpenSSH - checking if SELinux is enabled and changing a processes context as necessary.
