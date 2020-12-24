@@ -47,7 +47,7 @@ If the flag is enabled some of the produced libraries will be installed into the
 This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
 
 ### static-libs
-This flag will instruct ebuild to preserve statically linked libraries. Normally, these libraries are removed by ebuild.
+This flag will instruct ebuild to preserve statically linked version of various ncurses libraries, such as `libncurses.a`, `libform.a`, `libmenu.a` and others depending on the build configuration. With this flag disabled, these static libraries are removed by the ebuild before installation.
 
 This is not an option that is normally needed by regular user and is mostly oriented for development purposes.
 
