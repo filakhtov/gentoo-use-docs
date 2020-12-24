@@ -3,7 +3,7 @@
 ### cxx
 Pass the `--enable-asio-lib` option to the configure script. Build and install the `libnghttp2_asio` library - a C++ wrapper built on top of `libnghttp2` library that provides high level abstraction API to build HTTP/2 applications. It depends on `Boost::ASIO` and `OpenSSL` libraries and provides server and client side API.
 
-It is safe to disable the flag, unless there is a need to use the library with C++ applications.
+It is safe to disable the flag, unless there is a need to use the library with Boost-based C++ applications.
 
 ### debug
 Pass the `--enable-debug` option to the configure script. Enable debugging build that enables extended logging at runtime and provides an ability to register debugging callbacks for different improtant lifecycle events.
