@@ -3,7 +3,7 @@
 ### ada
 Enables `--with-ada` configure option. This will instruct make to build and install bindings and expample program for Ada95 programming language. When disabled, pass the `--enable-warnings` option to the configure script, which turns on all GCC compiler warnings.
 
-It is not usual to find a program written in Ada in general, let alone the one that is using ncurses, so for the average user it is safe to disable this flag.
+It is unusual to find a program written in Ada in general, let alone the one that is using ncurses, so for the average user it is safe to disable this flag.
 
 ### cxx
 Enables `--with-cxx` and `--with-cxx-binding` configure options.
