@@ -48,7 +48,7 @@ Executes `make -j1 test` after the build is finished. This will run a test suite
 The flag should be disabled. It is mainly useful for Gentoo developers and testers.
 
 ### tls-heartbeat
-This flag passes the `enable-heartbeats` argument to the `Configure` script. Enables the TLS Heartbeat protocol to keep an encrypted connection alive without performing a renegotiation.
+This flag passes the `enable-heartbeats` argument to the `Configure` script. Enables the TLS Heartbeat protocol support as described in the RFC6520 to keep an encrypted connection alive without performing a renegotiation.
 
 The flag can be safely disabled. It might be necessary to enable it under certain network setups, e.g. where a firewall eagerly closes inactive connections.
 
