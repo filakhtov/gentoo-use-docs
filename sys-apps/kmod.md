@@ -21,7 +21,7 @@ Pass the `--with-xz` option to the configure script. Provide support for modules
 This flag can be safely disabled unless kernel modules are compressed in `LZMA` or `LZMA2` format.
 
 ### pkcs7
-Pass the `--with-openssl` option to the configure script. Use the OpenSSL library to display module signature information, such as key fingerprint, hashing algorithm and so forth. If the flag is disabled, hashing algorithm always will be "unknown".
+Pass the `--with-openssl` option to the configure script. Use the OpenSSL library to display module signature information, such as key fingerprint, hashing algorithm and so forth. If the flag is disabled, hashing algorithm will always be displayed as "unknown".
 
 This flag can be safely disabled, unless there is a need to deal with signed kernel modules.
 
