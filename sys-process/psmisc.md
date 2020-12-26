@@ -1,6 +1,7 @@
 # sys-process/psmisc
+
 ### ipv6
-Pass the `--enable-ipv6` option to the configure script. Enable a `-4`, a `-6`, a `--ipv4` and a `--ipv6` runtime options for `fuser` tool. Provide an ability to look for IPv6 sockets.
+Pass the `--enable-ipv6` option to the configure script. Enable support for the `-4`, `-6`, `--ipv4` and `--ipv6` runtime options for `fuser` tool. Provide an ability to look for IPv6 sockets.
 
 This flag can be safely disabled. It should be enabled if the system to be participating in IPv6 capable networks.
 
