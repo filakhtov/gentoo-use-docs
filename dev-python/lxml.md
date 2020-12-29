@@ -1,7 +1,7 @@
 # dev-python/lxml
 
 ### doc
-Install additional documentation in TXT and HTML format into the `/usr/share/doc/lxml-<VERSION>/` directory.
+Run the `make html` command to generate API documentation using Sphinx, build additional documentation using the Docutil, and install all the build docs into the `/usr/share/doc/lxml-<VERSION>/` directory.
 
 This flag can be safely disabled.
 
