@@ -16,6 +16,6 @@ Pass the `--with-gtk` option to the configure script. Enable support for the GTK
 This flag should be enabled if there are any apps that use Cjs to create GTK+ GUIs.
 
 ### test
-Start a new Xvfb session and execute the `make check` command inside of it when the main build is completed. Run the test suite provided with the source code. This will extend a build time.
+Start a new Xvfb session and execute the `make check` command inside of it when the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend a build time.
 
-This flag should normally be disabled as it is primarily used by the Gentoo team, testers and developers.
+This flag should normally be disabled as it is primarily used by the maintainers, testers and developers.
