@@ -6,9 +6,9 @@ Pass a `--enable-introspection` option to a configure script. Generate and insta
 It is safe to disable the flag.
 
 ### test
-Execute the `make check` command after the main build is completed. Run a test suite provided by the source code. This will extend a build time.
+Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend a build time.
 
-This flag should normally be disabled as it is mainly useful for the Gentoo team, testers and developers.
+This flag should normally be disabled as it is mainly useful for the maintainers, testers and developers.
 
 ### xinerama
 Pass a `--enable-xinerama` option to a configure script. Use a Xinerama API to query a multi-monitor geometry and provide a proper window positioning and sizing for screens that are configured using the Xinerama X extension.
