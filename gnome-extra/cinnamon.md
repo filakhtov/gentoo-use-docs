@@ -1,5 +1,10 @@
 # gnome-extra/cinnamon
 
+### gtk-doc
+Pass the `--enable-gtk-doc` option to the configure script. Use the Gtk-Doc tool to generate documentation in the HTLM format and install it into system.
+
+This flag can be safely disabled.
+
 ### networkmanager
 Pass a `--enable-networkmanager` option to a configure script. Build and install a `network@cinnamon.org` Cinnamon applet that is based on a NetworkManager's nm-applet to provide network management UI.
 
