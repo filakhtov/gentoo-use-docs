@@ -23,7 +23,7 @@ This flag should only ever be enabled if there is an explicit need for the stati
 ### systemd
 Pass the `--with-libsystemd` option to the configure script and pass the `--with-systemdsystemunitdir=` option pointing to the system directory with unit files. Use the `Type=notify` in the `smartd` unit file and enable the code that notifies SystemD when the daemon has fully started.
 
-This flag should be enabled if the target system uses SystemD.
+This flag should be enabled if the target system uses the systemd init system and the `daemon` flag is enabled.
 
 ### update_drivedb
 Pass the `--with-gnupg` and `--with-update-smart-drivedb` options to the configure script. Install the initial drive database for smartmontools, the `update-smart-drivedb` script that is responsible for this database and a monthly cron job to do so automatically.
