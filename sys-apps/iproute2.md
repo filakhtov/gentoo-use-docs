@@ -26,7 +26,7 @@ Add a `TC_CONFIG_XT := y` (`n` when disabled) and a `TC_CONFIG_NO_XT := n` (`y` 
 This flag can be safely disabled.
 
 ### ipv6
-IPv6 protocol support is enabled by default. When disabled, apply a patch to disable IPv6 support.
+IPv6 protocol support is enabled by default, so nothing is done when this flag is enabled. If disabled, apply a patch to disable the IPv6 support.
 
 It is recommended to enable this flag if the target system to be participating in IPv6-capable network. Otherwise it can be safely disabled.
 
