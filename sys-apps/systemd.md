@@ -105,9 +105,9 @@ The `nspawn`, for example, will support the `--port` option. Enabling this flag 
 This flag can be safely disabled unless one or more features described above are required.
 
 ### pam
-The flag will pass `-Dpam=true` option to the Meson build script. This will install the `systemd-user-sessions` binary and the associated `.service` file. It will also install the PAM module for SystemD (`pam_systemd.so`) for integrating with `systemd-logind`.
+The flag will pass `-Dpam=true` option to the Meson build script. This will install the `systemd-user-sessions` binary and the associated `.service` file. It will also install the PAM module for SystemD (`pam_systemd.so`) for integrating with `systemd-logind` and registering the user session with systemd control group hierarchy. The module also applies various resource management and runtime parameters to the new session, as configured in the JSON User Record of the user, when one is defined.
 
-This flag is recommended for systems with a graphical desktop environment.
+This flag is recommended for systems that use the PAM (Pluggable Authentication Module) stack or a graphical desktop environment.
 
 ### pcre
 This flag passes `-Dpcre2=true` option to the Meson build script. Enable the `-g` and the `--case-sensitive=` options support for `journalctl`, allowing to search for journal entries using PCRE expressions.
