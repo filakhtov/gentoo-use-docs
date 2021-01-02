@@ -187,6 +187,6 @@ The flag passes the `-Dxkbcommon=true` option to the Meson build script. If enab
 This flag is recommended for desktop systems with a desktop environment.
 
 ### zstd
-Pass the `-Dzstd=true` option to the Meson build script. Provide an ability to compress journald files when writing and decompress them when reading using the zstd (Zstandard) compression algorithm.
+Pass the `-Dzstd=true` option to the Meson build script. Provide an ability to compress journald files when writing and decompress them when reading using the zstd (Zstandard) compression algorithm, and allow `systemd-coredump` to compress core dump files using zstd.
 
 It is safe to disable this flag.
