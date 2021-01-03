@@ -6,9 +6,9 @@ Enabling this flag will pass the `-Dacl=true` to the Meson build script. This in
 It is recommended to enable this flag if an ACL is enabled in any other parts of the system. On modern systems ACLs are usually set on `/dev/dri/*` devices to grant unprivileged users access to the GPU acceleration.
 
 ### apparmor
-Enabling this flag will pass the `-Dapparmor=true` to the Meson build script. This allows SystemD and all its subsystems to properly operate under the AppArmor security framework restrictions by applying appropriate profiles.
+Enabling this flag will pass the `-Dapparmor=true` to the Meson build script. This allows systemd and all its subsystems to properly operate under the AppArmor security framework restrictions by applying appropriate profiles.
 
-This flag must be enabled if SystemD will run on an AppArmor-enabled kernel, otherwise it is not recommended.
+This flag must be enabled if systemd will run on an AppArmor-enabled kernel, otherwise it is not recommended.
 
 ### audit
 Enabling this flag will pass the `-Daudit=true` to the Meson build script. This enables the auditing support for logging to the Linux Auditing System and can be useful for debugging SELinux or AppArmor profiles.
@@ -28,12 +28,12 @@ It is preferable to disable this flag on the modern system that require no suppo
 ### cryptsetup
 Passes the `-Dlibcryptsetup=true` to the Meson build script enabling support for encrypted file-systems. This will build and install a set of binaries to deal with `cryptsetup` partitions and associated `.service` files.
 
-The `systemd-cryptsetup-generator` is provided to automatically convert `/etc/crypttab` into SystemD service files on boot.
+The `systemd-cryptsetup-generator` is provided to automatically convert `/etc/crypttab` into systemd service files on boot.
 
 This flag is recommended if support for encrypted partitions using the cryptsetup is necessary.
 
 ### curl
-This flag passes the `-Dlibcurl=true` option to the Meson build script. cURL dependency is necessary for a SystemD remote journal uploading via the `systemd-journal-upload` and for downloading machine images using the `systemd-importd`.
+This flag passes the `-Dlibcurl=true` option to the Meson build script. cURL dependency is necessary for a systemd remote journal uploading via the `systemd-journal-upload` and for downloading machine images using the `systemd-importd`.
 
 This flag can be safely disabled if an `importd` functionality is not desired.
 
@@ -43,7 +43,7 @@ Pass the `-Ddns-over-tls=true` to the Meson build script. Enable DoT (DNS over T
 It is recommended to enable this flag if the system uses a DNS server that supports encrypted connections to improve privacy.
 
 ### elfutils
-This flag is passing the `-Delfutils=true` option to the Meson build script. Resulting SystemD binaries will be linked against the `libdw` library (from a [dev-libs/elfutils](../dev-libs/elfutils.md) package) to allow them to obtain and include stack traces into the coredump files generated during a crash handling routine.
+This flag is passing the `-Delfutils=true` option to the Meson build script. Resulting systemd binaries will be linked against the `libdw` library (from a [dev-libs/elfutils](../dev-libs/elfutils.md) package) to allow them to obtain and include stack traces into the coredump files processed by the `systemd-coredump` during a crash handling routine and when saving Kernel pstore using the `systemd-pstore`.
 
 This flag should normally be disabled, and can be enabled for debugging purposes, when there is a need to obtain stack traces.
 
@@ -53,7 +53,7 @@ Passes the `-Dgcrypt=true` to the Meson build script. This flag enables support 
 It is safe to disable the flag, unless there is a need to seal a journal or support the DNSSEC downgrading mode.
 
 ### gnuefi
-This flag passes the `-Dgnu-efi=true` option to the Meson build script and enables compilation and installation of a `systemd-boot` - a SystemD EFI boot manager. The `systemd-boot` can be used as a lightweight replacement for a GRUB bootloader on systems that support the UEFI.
+This flag passes the `-Dgnu-efi=true` option to the Meson build script and enables compilation and installation of a `systemd-boot` - a systemd EFI boot manager. The `systemd-boot` can be used as a lightweight replacement for a GRUB bootloader on systems that support the UEFI.
 
 This flag should be enabled on UEFI systems to use the `systemd-boot` bootloader.
 
@@ -105,7 +105,7 @@ The `nspawn`, for example, will support the `--port` option. Enabling this flag 
 This flag can be safely disabled unless one or more features described above are required.
 
 ### pam
-The flag will pass `-Dpam=true` option to the Meson build script. This will install the `systemd-user-sessions` binary and the associated `.service` file. It will also install the PAM module for SystemD (`pam_systemd.so`) for integrating with `systemd-logind` and registering the user session with systemd control group hierarchy. The module also applies various resource management and runtime parameters to the new session, as configured in the JSON User Record of the user, when one is defined.
+The flag will pass `-Dpam=true` option to the Meson build script. This will install the `systemd-user-sessions` binary and the associated `.service` file. It will also install the PAM module for systemd (`pam_systemd.so`) for integrating with `systemd-logind` and registering the user session with systemd control group hierarchy. The module also applies various resource management and runtime parameters to the new session, as configured in the JSON User Record of the user, when one is defined.
 
 This flag is recommended for systems that use the PAM (Pluggable Authentication Module) stack or a graphical desktop environment.
 
@@ -145,19 +145,19 @@ The resolvectl/systemd-resolve tool provides `resolvconf` compatibility mode. En
 This flag can be enabled to support resolvconf compatibility mode.
 
 ### seccomp
-Passes the `-Dseccomp=true` option to the Meson build script. This builds variety of the SystemD tools with the `seccomp` filtering framework support. A Kernel has to be compiled with the `seccomp` support for this feature to work properly.
+Passes the `-Dseccomp=true` option to the Meson build script. This builds variety of the systemd tools with the `seccomp` filtering framework support. A Kernel has to be compiled with the `seccomp` support for this feature to work properly.
 
 It is a security feature and should generally be enabled.
 
 ### selinux
 This flag passes the `-Dselinux=true` option to the Meson build script. Doing so will ensure that resulting binaries can properly operate with the SELinux enabled.
 
-For example, various SystemD daemons will try to load SELinux policies and check/report permissions denial, they will also manage appropriate xattr labels for various files and the `nspawn-mount` will provide the `/sys/fs/selinux` mount inside of containers.
+For example, various systemd daemons will try to load SELinux policies and check/report permissions denial, they will also manage appropriate xattr labels for various files and the `nspawn-mount` will provide the `/sys/fs/selinux` mount inside of containers.
 
 The flag can only be enabled as a part of the Gentoo `selinux` profile.
 
 ### split-usr
-The flag will change an installation prefix for the SystemD from the default `/usr` location to the `/`. This is only necessary if the system has the separate `/usr` partition, because it requires mounting a device that might not be available during early boot stages.
+The flag will change an installation prefix for the systemd from the default `/usr` location to the `/`. This is only necessary if the system has the separate `/usr` partition, because it requires mounting a device that might not be available during early boot stages.
 
 The flag should not be enabled if the system has the `/usr` directory located on the same partition as `/`.
 
@@ -167,9 +167,9 @@ Pass the `-Dstatic-libsystemd=true` and `-Dstatic-libudev=true` options to the M
 This flag should only ever be enabled if there is an explicit need for these static libraries.
 
 ### sysv-utils
-The flag controls whether commands like `halt`, `init`, `poweroff` that are necessary for the SysV compatibility are symlinked to various SystemD tools.
+The flag controls whether commands like `halt`, `init`, `poweroff` that are necessary for the SysV compatibility are symlinked to various systemd tools.
 
-It is recommended to enable the flag. A system built with this flag disabled will need to provide the aforementioned tools via the [sys-apps/sysvinit](sysvinit.md) package that isn't aware of the SystemD, might cause various compatibility issues and results in additional dependency being installed.
+It is recommended to enable the flag. A system built with this flag disabled will need to provide the aforementioned tools via the [sys-apps/sysvinit](sysvinit.md) package that isn't aware of the systemd, might cause various compatibility issues and results in additional dependency being installed.
 
 ### test
 Passes the `-Ddbus=true` option to the Meson build script that is only necessary for running tests. The flag will execute a test suite that is provided with the source code. This will increase the build time.
@@ -177,7 +177,7 @@ Passes the `-Ddbus=true` option to the Meson build script that is only necessary
 This flag should only be used for testing and is not recommended for regular system.
 
 ### vanilla
-This flag will skip applying Gentoo-specific pathces to the SystemD source. It will also ignore the [sys-apps/gentoo-systemd-integration](gentoo-systemd-integration.md) dependency.
+This flag will skip applying Gentoo-specific pathces to the systemd source. It will also ignore the [sys-apps/gentoo-systemd-integration](gentoo-systemd-integration.md) dependency.
 
 This flag should normally be disabled.
 
