@@ -49,3 +49,8 @@ This flag should be enabled if the target system uses SystemD as an init system.
 Pass the `--enable-vdo` option to the configure script. Build and install the `libudisks2_vdo` library that provides an ability to create new and activate or start existing VDO (Virtual Data Optimizer) compressed volumes.
 
 This flag should normally be disabled, unless there is an explicit need to manage VDO volumes.
+
+### zram
+Requires the `systemd` flag to be enabled. Pass the `--enable-zram` option to the configure script. Install appropriate Udev and systemd init scripts to enable support for Udisks2-managed zram devices - compressed RAM-based block devices that can be used for swap or general purpose RAM disks.
+
+It is safe to disable this flag.
