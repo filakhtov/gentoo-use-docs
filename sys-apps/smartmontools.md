@@ -25,7 +25,7 @@ Pass the `--with-libsystemd` option to the configure script and pass the `--with
 
 This flag should be enabled if the target system uses the systemd init system and the `daemon` flag is enabled.
 
-### update_drivedb
+### update-drivedb
 Pass the `--with-gnupg` and `--with-update-smart-drivedb` options to the configure script. Install the initial drive database for smartmontools, the `update-smart-drivedb` script that is responsible for this database and a monthly cron job to do so automatically.
 
 This flag can be disabled if there is no need for database updates, e.g. all current drives are already in the database and there is no plan to update hardware.
