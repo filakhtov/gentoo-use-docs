@@ -1,4 +1,5 @@
 # app-arch/tar
+
 ### acl
 Pass the `--with-posix-acls` option to the configure script. Enable the `--acl` runtime option support. Allow `tar` to store ACL permissions while creating an archive and restore them when extracting one.
 
@@ -18,11 +19,6 @@ It is safe to disable the flag, unless there is a need for a non-English languag
 Pass the `--with-selinux` option to the configure script. Enable the `--selinux` runtime option support. Allow `tar` to backup and restore a SELinux context while archiving and unarchiving files.
 
 This flag should be only ever toggled system-wide, e.g. as part of a SELinux enabled Portage profile.
-
-### static
-Append a `-static` option to the `LDFLAGS`. Build and install statically linked binaries.
-
-The flag should normally be disabled.
 
 ### xattr
 Pass the `--with-xattrs` option to the configure script. Enable the `--xattrs`, the `--xattrs-exclude` and the `--xattrs-include` runtime options support. Provide an ability to store xattr (eXtended ATTRibutes) in archive when creating one and restore them when extracting.
