@@ -124,7 +124,7 @@ Doesn't apply when building user emulation mode. Pass the `--enable-libnfs` opti
 This flag should only be enabled if there is a need to use NFS exports as guest block devices.
 
 ### nls
-Install translation po files for all available locales and provide an ability to translate programs messages and output into different languages based on system locale settings. When disabled, remove all locale files making English the only available language for QEMU.
+Pass the `--enable-gettext` option to the configure script. Install translation po files for all available locales and provide an ability to translate programs messages and output into different languages based on system locale settings.
 
 This flag can be safely disabled if there is no need to use QEMU in a non-English language.
 
@@ -251,6 +251,11 @@ Disable PaX MPROTECT restrictions by setting an `m` flag on the `qemu-system-*` 
 
 This flag should normally be disabled as it is primarily used by the Gentoo team, testers and developers.
 
+### udev
+Doesn't apply when building user emulation mode. Pass the `--enable-libudev` option to the configure script. Use the libudev library to enumerate host devices, e.g. when using host connected USB device pass-through to the guest virtual machine.
+
+It is safe to disable this flag if there is no need for device passthrough.
+
 ### usb
 Doesn't apply when building user emulation mode. Pass the `--enable-libusb` option to the configure script. Use the `libusb` library to support host usb devices redirection and provide an ability to detach actual USB devices connected to the host machine and connect them to the guest machine, aka USB pass-through. Enable support for the `usb-host` parameter of the `-device` command line option to achieve this.
 
@@ -272,7 +277,7 @@ Doesn't apply when building user emulation mode. Pass the `--enable-vhost-net` o
 This flag can be enabled to improve network performance (up to 8x faster than normal virtio), however might have issues with some DHCP clients.
 
 ### vhost-user-fs
-Doesn't apply when building user emulation mode. Pass the `--enable-vhost-user-fs` option to the configure script. Enable support for the Vhost user filesystem VirtIO device that can be enabled using the `-device vhost-user-fs-pci` argument. This device allows shared access to host filesystem from inside a guest machine.
+Doesn't apply when building user emulation mode. Pass the `--enable-vhost-user-fs` and `--enable-virtiofsd` options to the configure script. Enable support for the Vhost user filesystem VirtIO device that can be enabled using the `-device vhost-user-fs-pci` argument. This device allows shared access to host filesystem from inside a guest machine. Build and install the `virtiofsd` daemon that runs on the hypervisor to handle filesystem requests from guests.
 
 This flag can be safely disabled.
 
@@ -310,11 +315,6 @@ This flag should only be enabled if there is a need to use QEMU with Xen.
 Doesn't apply when building user emulation mode. Pass the `--enable-xfsctl` option to the configure script. Enable improved support for the XFS filesystem, e.g. `xfsctl()` notification and synchronizing data for virtual disks located on the XFS volumes.
 
 It is highly recommended to enable this flag if there is a need to use virtual disk images stored on the XFS to avoid data corruption, otherwise it should be disabled.
-
-### xkb
-Doesn't apply when building user emulation mode. Pass the `--enable-xkbcommon` option to the configure script. Build and install the `qemu-keymap` utility that uses `libxkbcommon` library to generate QEMU reverse keymaps from xkb keymaps which can be used with the QEMU's `-k` command line option.
-
-It is safe to disable this flag, unless there is a need to use custom keymap with QEMU.
 
 ### zstd
 Doesn't apply when building qemu in user emulation mode. Pass the `--enable-zstd` option to the configure script. Enable support for compressing qcow images using zstd (in addition to `zlib`), which significantly reduces cluster compression time, provides better compression performance maintaining the same level of compression ratio compared to zlib.
