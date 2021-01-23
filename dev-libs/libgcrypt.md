@@ -1,5 +1,10 @@
 # dev-libs/libgcrypt
 
+### asm
+By default, libgcrypt will be built with assembler optimizations, i.e. using the manually optimized assembler code for MPI (multi-precision-integers) and cipher calculations instead of relying on compiler optimizations. When this flag is disabled, pass the `--disable-asm` option to the configure script to disable these optimizations.
+
+It is recommended to enable this flag for perfomance improvements.
+
 ### doc
 Invokes the `make -C doc gcrypt.pdf` build command. This produces a PDF documentation file that will be installed into the `/usr/share/doc/libgcrypt-<VERSION>` directory. The `virtual/texi2dvi` package will be pulled in as a dependency and is required for building the documentation.
 
