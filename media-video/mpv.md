@@ -116,11 +116,6 @@ Requires the `opengl` flag to be enabled. Pass the `--enable-lcms2` option to th
 
 This flag should be enabled if there is a need to apply color profile when watching videos.
 
-### libass
-Pass the `--enable-libass` and `--enable-libass-osd` options to the waf build script. Use the `libass` library to provide an ability to read and display SSA (SubStation Alpha) and ASS (Advanced SSA) subtitles. Enable the pseudo-GUI mode that also uses the `libass` to provide OSC (on-screen controls) that allows to perform simple operations, such as play, pause, switching tracks, controlling volume, entering and leaving full-screen mode, etc.
-
-This flag should be enabled if there is a need to read and render subtitles, or support for graphical user interface controls.
-
 ### libcaca
 Pass the `--enable-caca` option to the waf build script. Build and install the `caca` video output driver, that uses the `libcaca` library to render video frames as a color ASCII art and can display them on a text console.
 
@@ -136,11 +131,6 @@ Pass the `--enable-lua` option to the waf build script. Allow to load and execut
 
 This flag should be enabled if there is a need to use Lua scripting to control the player.
 
-### luajit
-Requires the `lua` flag to be enabled. Pass the `--lua=luajit` option to the waf build script. Use the LuaJIT - a Just-in-Time compiler for Lua, instead of standard interpreter to improve Lua code performance. See the `lua` flag for more information.
-
-It is recommended to enable this flag if Lua scripting is necessary and the target platform supports a JIT compiler.
-
 ### openal
 Pass the `--enable-openal` option to the waf build script. Build and install the `openal` audio output driver that can utilize the OpenAL API to play sound, usually multichannel three-dimensional positional audio.
 
@@ -150,11 +140,6 @@ This flag should normally be disabled, unless there is a need to play 3D audio.
 Requires either one of the `aqua`, `egl`, `X`, `raspberry-pi` flags to be enabled or the `cli` flag to be disabled. Provide an ability to use the OpenGL API to render decoded video frames into the specified output. See the `aqua`, `X`, `wayland`, `vaapi` and `vdpau` flags for more information on how the OpenGL API is used in different scenarios. When disabled, pass the `--disable-gl` option to the waf build script to disable OpenGL rendering.
 
 It is recommended to enable this flag together with an appropriate video output flag to perform accelerated video rendering.
-
-### oss
-Pass the `--enable-oss-audio` option to the waf build script. Build and install the `oss` audio driver, that can be used to output sound through the audio devices, exposed via the OSS (Open Sound System) interface.
-
-This flag should normally be disabled, as the OSS is deprecated by the Kernel maintainers.
 
 ### pulseaudio
 Pass the `--enable-pulse` option to the waf build script. Build the `pulse` audio driver, that can be used to play audio through a PulseAudio server.
@@ -170,11 +155,6 @@ This flag should only be enabled on Raspberry-PI hardware.
 Pass the `--enable-rubberband` option to the waf build script. Build and install the `rubberband` filter that uses the Rubber Band audio time-stretching and pitch shifting library to allow to dynamically change tempo and pitch of an audio stream.
 
 This flag should normally be disabled, unless there is an explicit need to apply this filter.
-
-### samba
-Pass the `--enable-libsmbclient` option to the waf build script. Use the `libsmbclient` library to access media located on Windows (and Samba) network shares over the SMB (Server Message Block) protocol, e.g. on NAS (Network-Attached Storage) devices, network routers with external HDD support, etc.
-
-This flag should be enabled if there is a need to access network shares.
 
 ### sdl
 Pass the `--enable-sdl2` option to the waf build script. Provide an ability to render video frames and audio output using the SDL2 (Simple DirectMedia Layer, version 2) library, that works on systems with and without hardware acceleration.
