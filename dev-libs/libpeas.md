@@ -16,14 +16,9 @@ Pass the `-Dgtk_doc=true` option to the meson build command. Use the `Gtk-Doc` t
 It is safe to disable this flag.
 
 ### lua
-Pass the `-Dlua51=enabled` option to the meson build command. Build and install the `liblua51loader` library - a LUA loader to provide support for plugins written using the LUA scripting language.
+Pass the `-Dlua51=enabled` (or `-Dluajit=enabled` if the JIT target is enabled) option to the meson build command. Build and install the `liblua51loader` library - a LUA loader to provide support for plugins written using the LUA scripting language.
 
 This flag should be enabled if there is a need to run LUA based plugins.
-
-### luajit
-This flag only works together with the `lua` flag. Pass the `-Dluajit=enabled` flag to the meson build command. Use the LuaJIT (LUA Just-In-Time Compiler) interpreter instead of standard one.
-
-It is recommended to enable this flag on platforms that support JIT compilation.
 
 ### python
 Prepare environment for the configure script to find an appropriate version of the Python interpreter. Pass the `-Dpython3=true` option to the meson build command. Build and install the `libpython3loader` library - a Python 3 loader to provide support for pluggins written using the Python scripting language.
