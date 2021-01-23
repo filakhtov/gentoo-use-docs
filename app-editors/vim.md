@@ -25,11 +25,6 @@ Pass the `--enable-luainterp` and the `--with-lua-prefix=${EPREFIX}/usr` options
 
 It is safe to disable this flag if there is no need for LUA scripting support.
 
-### luajit
-Pass the `--enable-luajit` option to the configure script. Only makes sense if the `lua` flag is enabled. Change interpreter from Lua to LuaJIT (a Just-In-Time compiler for Lua).
-
-It is recommended to enable this flag together with the `lua` flag as it provides performance benefits. Otherwise, it should be disabled.
-
 ### minimal
 Change a value of the `--with-features` option from a `huge` to a `tiny`. Ignore all other flags and disable them by default. Build a very minimalistic `vim` version.
 
@@ -46,7 +41,7 @@ Pass the `--enable-perlinterp` option to the configure script. Enable a built-in
 This flag should be enabled if there is a need for Perl interpreter. It is safe to disable it otherwise.
 
 ### python
-Pass the `--enable-pythoninterp`, the `--enable-python3interp` options to the configure script. Enable Python 2 and 3 interpreters. Provide a `:py` and a `:python` commands. Enable support for a VIM scripting using a Python programming language.
+Pass the `--enable-python3interp` and `--with-python3-command` options to the configure script. Enable Python 3 interpreter support. Provide a `:py` and a `:python` commands and enable support for a VIM scripting using a Python programming language.
 
 This flag should be disabled unless there is a need for Python interpreter.
 
