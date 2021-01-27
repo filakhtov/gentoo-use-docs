@@ -65,6 +65,11 @@ Enables the `_tkinter` and the dependent Python modules. This module provides an
 
 This flag can be safely disabled.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### wininst
 Enabling the flag will install a set of Windows binaries (`wininst-*.exe`) that are necessary to build self-extracting installers for Windows machines using, for example `python setup.py bdist_wininst`.
 
