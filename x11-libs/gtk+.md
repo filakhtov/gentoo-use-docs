@@ -41,7 +41,7 @@ Pass the `--enable-introspection` option to the configure script. Generate GIR m
 This flag can be safely disabled.
 
 ### sysprof
-Pass the `--enable-profiler` option to the configure script. Enable profiling support and provide an ability to generate syscap files by passing the `GTK_TRACE=1` environment variable to the GTK-based applications, that subsequently can be loaded into the sysprof for analysis.
+Pass the `--enable-profiler` option to the configure script. Enable profiling support and provide an ability to generate syscap files, by passing the `GTK_TRACE=1` environment variable to any GTK-based application, that subsequently can be loaded into the sysprof for analysis.
 
 This flag should normally be disabled.
 
