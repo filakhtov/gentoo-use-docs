@@ -40,6 +40,11 @@ Pass the `--enable-introspection` option to the configure script. Generate GIR m
 
 This flag can be safely disabled.
 
+### sysprof
+Pass the `--enable-profiler` option to the configure script. Enable profiling support and provide an ability to generate syscap files by passing the `GTK_TRACE=1` environment variable to the GTK-based applications, that subsequently can be loaded into the sysprof for analysis.
+
+This flag should normally be disabled.
+
 ### test
 Test code is built by default so disabling this flag removes `Makefile` files from the `testsuite` directory to avoid building unused code and speed-up a build. Start a new Xvfb session and execute the `make check` command inside of it when the main build is completed. Run a test suite provided with the source code. This will extend a build time.
 
