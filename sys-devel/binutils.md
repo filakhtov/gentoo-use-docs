@@ -35,6 +35,11 @@ Pass the `--enable-static` option to the configure script. Build and install sta
 
 It is recommended to disable this flag unless there is a need for static libraries, e.g. for specific development purposes.
 
+### vanilla
+When this flag is disabled, a set of additional patches will be applied to the source prior to building. These patches include some Gentoo-specific fixes and enhancements. With this flag enabled, patches won't be applied and "vanilla" upstream sources will be used to build the binaries and libraries, and this might result in unexpected behavior on Gentoo system.
+
+This flag should be disabled, unless there is an explicit need for unpatched version, e.g. when reporting the bug to an upstream.
+
 ### test
 Execute `make -k check` after the build is complete. Run test suites provided with a source code. This will extend a build time.
 
