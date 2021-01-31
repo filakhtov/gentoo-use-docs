@@ -36,7 +36,7 @@ Pass the `--enable-static` option to the configure script. Build and install sta
 It is recommended to disable this flag unless there is a need for static libraries, e.g. for specific development purposes.
 
 ### vanilla
-When this flag is disabled, a set of additional patches will be applied to the source prior to building. These patches include some Gentoo-specific fixes and enhancements. With this flag enabled, patches won't be applied and "vanilla" upstream sources will be used to build the binaries and libraries, and this might result in unexpected behavior on Gentoo system.
+When this flag is disabled, a set of additional patches, that include some Gentoo-specific fixes and enhancements, are applied to the source code prior to building the package. If this flag enabled, the aforementioned patches won't be applied and "vanilla" upstream sources will be used to build the binaries and libraries instead, and this might result in an unexpected behavior on a Gentoo system.
 
 This flag should be disabled, unless there is an explicit need for unpatched version, e.g. when reporting the bug to an upstream.
 
