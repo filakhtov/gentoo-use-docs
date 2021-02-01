@@ -131,7 +131,7 @@ Pass the `--enable-openssl` option to the configure script. Build and install th
 This flag should only be enabled if there is a need to use RAOP protocol.
 
 ### system-wide
-Create the `pulse` user and the `pulse` and `pulse-access` groups. Install an `init.d` startup script and the SystemD service for the PulseAudio server. Enable the system mode for usage on thin client or embedded setups, where no real local user exists, where access is exclusively via the network, and where state data is flushed on each session termination.
+Install an `init.d` startup script and the SystemD service for the PulseAudio server. Enable the system mode for usage on thin client or embedded setups, where no real local user exists, where access is exclusively via the network, and where state data is flushed on each session termination.
 
 This flag should normally be disabled.
 
