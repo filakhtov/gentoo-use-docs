@@ -26,9 +26,7 @@ Set the `CAP_NET_RAW` capability on `ping`, `arping` and `clockdiff` binaries. D
 It is recommended to enable this flag so regular (non-root) users can use aforementioned tools.
 
 ### gcrypt
-Pass the `-DUSE_CRYPTO=gcrypt` option to the meson build command. Use the libgcrypt library for Encryption and Authentication features of the IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
-
-This flag conflicts with `openssl`, `libressl` and `nettle`, because only one SSL backend can be used at a time.
+This flag does nothing.
 
 ### idn
 Pass the `-DUSE_IDN=true` option to the meson build command. Use the `libidn2` library to enable support for IDN (Internationalized Domain Names), i.e. domain names written using non-latin scripts.
@@ -41,14 +39,10 @@ Enable IPv6 protocol support in tools that can use it (e.g. `tracepath` and `pin
 This flag is recommended if target system is to be participating in IPv6 capable network(s), otherwise it can safely be disabled.
 
 ### libressl
-Pass the `-DUSE_CRYPTO=openssl` option to the meson build script. Use the `libressl` library for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
-
-This flag conflicts with `openssl`, `nettle` and `gcrypt`, because only one SSL backend can be used at a time.
+This flag does nothing.
 
 ### nettle
-Pass the `-DUSE_CRYPTO=nettle` option to the meson build script. Use the `nettle` library for Encryption and Authentication features of IPv6 stack for `ping6` tool. This flag does not make any changes if `ipv6` or `ssl` flags are disabled.
-
-This flag conflicts with `openssl`, `libressl` and `gcrypt`, because only one SSL backend can be used at a time.
+This flag does nothing.
 
 ### nls
 Pass the `-DUSE_GETTEXT=true` option to the meson build command. Use the gettext library to provide localization support, e.g. display output in a native language based on the system locale, instead of using English.
@@ -65,21 +59,8 @@ Pass the `-DBUILD_RDISC=true` and `-DENABLE_RDISC_SERVER=true` options to the me
 
 This flag is only necessary if system to be part of RDISC capable network(s). Otherwise it is completely safe to disable.
 
-### SECURITY_HAZARD
-Enabling this flag will apply patch that allows unprivileged users to use flood ping. As flag name indicates this is a security problem, especially on multi-user systems with untrusted access.
-
-This flag should normally be disabled.
-
 ### ssl
-Enable Encryption and Authentication features of IPv6 protocol for `ping6` tool. This flag does not make any changes if `ipv6` flag is disabled.
-
-Enabling this flag will require to enable one of the available SSL backends: `openssl`, `gcrypt`, `nettle` or `libressl`.
-
-If `ping6` tool returns a following message:
-
-> ping6: function not available; crypto disabled
-
-for some or all hosts, it means that `ssl` flag must be enabled in order to make it work.
+This flag does nothing.
 
 ### static
 This flag will append `-static` option to `LDFLAGS` for building statically linked binaries.
