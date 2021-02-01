@@ -16,7 +16,7 @@ Pass the `-DBUILD_CursesDialog=yes` option to a `cmake` command. Build and insta
 The flag can be safely disabled.
 
 ### qt5
-Pass the `-DBUILD_QtDialog=ON` and the `-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=ON` options to a `cmake` command. Update an icon cache and an XDG database to pick up new launchers installed by CMake. Build and install a `cmake-gui` - QT-based graphical interface for CMake used to interactively configure project build settings.
+Pass the `-DBUILD_QtDialog=ON` and option to the `cmake` command. Update an icon cache and an XDG database to pick up new launchers installed by CMake. Build and install a `cmake-gui` - QT-based graphical interface for CMake used to interactively configure project build settings.
 
 It is safe to disable this flag.
 
