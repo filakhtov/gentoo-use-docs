@@ -44,3 +44,8 @@ This flag should normally be enabled as these tools are useful for management of
 Pass the `--with-zlib` option to the configure script. Enable support for Gzip compressed modules.
 
 This flag should be enabled if Kernel modules of the target system are compressed using gzip.
+
+### zstd
+Pass the `--with-zstd` option to the configure script. Enable support for kernel modules compressed using Zstd algorithm.
+
+This flag should be enabled if Kernel modules of the target system are compressed using Zstd.
