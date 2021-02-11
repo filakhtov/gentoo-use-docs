@@ -20,11 +20,6 @@ This flag only works if an `openssl` flag is also enabled. Pass the `--with-cryp
 
 This flag should only ever be toggled system-wide, because a LibreSSL and an OpenSSL libraries can't be installed at the same time.
 
-### luks1_default
-Pass the `--with-default-luks-format=LUKS2` (`LUKS1` if the flag is disabled) option to the configure script. Ensure that cryptsetup uses LUKS2 header format by default for all operations.
-
-It is recommended to disable this flag for any new installations, but it is necessary for backwards compatibility with old installs.
-
 ### nettle
 Pass the `--with-crypto_backend=nettle` option to the configure script. Use a Nettle library as a backend for an encryption and a decryption operations. This is a fastest backend according to benchmarks. It does not support `whirlpool` hash function.
 
