@@ -15,23 +15,10 @@ Pass the `--enable-mpi` option to the configure script. Build and install the `l
 
 This flag should normally be disabled and should only be enabled if there is a need for massive computations.
 
-### neon
-Pass the `--enable-neon` option to the configure script. This flag only works on ARM platform that support NEON SIMD instructions. Use an optimized assembly code instead of C for utilizing NEON extensions efficently and improve computational performance.
-
-It is recommended to enable this flag on an ARM platform with NEON instructions support.
-
 ### openmp
 Pass the `--enable-openmp` option to the configure script. Build and install the `libfftw3_omp`, `libfftw3f_omp` and `libfftw3l_omp` libraries to enable support for multi-threading computations using OpenMP compiler directives in order to induce parallelism rather than spawning its own threads directly
 
 This flag should be enabled if the target system has multiple cores or processors and there is a need to perform heavy transformations that would benefit from parallelization.
-
-### quad
-Pass the `--enable-quad-precision` option to the configure script. Build and install the `libfftw3q_` family of libraries that use the nonstandard `__float128` quadruple-precision type, provided by recent versions of GCC (4.6 or later) on 32- and 64-bit x86 hardware (x86, amd64, Itanium), instead of regular lower precision types.
-
-### static-libs
-Pass the `--enable-static` option to the configure script. Build and install a statically linked version of all `libfftw3` libraries based on enabled use flags.
-
-This flag should only be enabled if there is an explicit need for the static libraries.
 
 ### test
 For each library variant build execute the `make smallcheck` command from the `tests` source subdirectory. Run a test suite provided with the source code and check for regressions. This will increase the build time.
