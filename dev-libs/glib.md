@@ -35,6 +35,11 @@ Pass the `-Ddefault_library=both` (`shared` when the flag is disabled) option to
 
 It is recommended to disable this flag, unless statically linked libraries are explicitly required for a development or other purposes.
 
+### sysprof
+Pass the `-Dsysprof=enabled` option to the meson build script. Enable support for sending profiling data to sysprof, e.g. from `Gsource.dispatch` events, D-Bus reads and writes, idle callbacks, etc,
+
+This flag should only be enabled if there is a need to profile GLib based applications.
+
 ### systemtap
 Passes the `-Ddtrace=true` and the `-Dsystemtap=true` options to the meson build script. First option enables static `dtrace` probes in compiled libraries, while second one enables `systemtap`. Tracing with the `systemtap` and the `dtrace` can provide a decent overview of the memory and the performance footprints for applications linked againts the GLib.
 
