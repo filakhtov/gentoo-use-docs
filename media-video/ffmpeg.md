@@ -365,6 +365,11 @@ Only works when the `encode` flag is enabled. Pass the `--enable-libsnappy` opti
 
 The flag can be safely disabled, unless there is a need to encode videos using the HAP format.
 
+### sndio
+Provide an ability to capture and playback audio via the sndio audio and MIDI framework and enable support for the `sndio` value of the `-f` runtime option. When disabled, pass the `--disable-indev=sndio` and `--disable-outdev=sndio` options to the configure script to disable sndio support.
+
+This flag should normally be disabled, because sndio has originated from UNIX and there are other ways to access audio hardware on Linux systems.
+
 ### speex
 Pass the `--enable-libspeex` option to the configure script. Use the `libspeex` library to enable encoding and decoding audio in the Speex format - patent-free audio compression format designed for speech, which is commonly used for VoIP applications, speech recorders, FLV files, etc. The SRT encrypts video streams, recovers from severe packet loss and dynamically adapts to changing network conditions.
 
@@ -450,11 +455,6 @@ This flag should be enabled if there is a need to create WebM media format.
 Pass the `--enable-vulkan` option to the configure script. Enable support for Vulkan API to offload video processing to the GPU and also enable support for AMD AMF (Advanced Media Framework)/VCE (Video Coding Engine) encoder.
 
 This flag should be enabled on systems that have compatible AMD GPU to enable hardware-accelerated decoding.
-
-### wavpack
-Only works if the `encode` flag is enabled. Pass the `--enable-libwavpack` option to the configure script. Use the `libwavpack` library to provide support for encoding audio in WavPack format. Only lossy or lossless mode is supported, i.e. no encoding in hybrid mode currently possible.
-
-This flag should only be enabled if there is a need to perform encoding in the WavPack audio format.
 
 ### webp
 Requires the `encode` flag to be enabled. Pass the `--enable-libwebp` option to the configure script. Use the `libwebp` library to provide an ability to encode images in WebP format, create animated WebP sequences, including converting any supported video format into a WebP animation and extracting video frames in the WebP format.
