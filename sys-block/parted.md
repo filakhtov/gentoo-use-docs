@@ -20,7 +20,7 @@ Pass the `--with-readline` option to the configure script. Use the `libreadline`
 
 It is safe to disable the flag.
 
-### selinux
-Pass the `--enable-selinux` option to the configure script. Link the `libparted` library against the `libselinux` and the `libsepol` libraries.
+### verify-sig
+Download the digital signature file provided with the source code and use it to verify the integrity of the source code archive before extracting it and building the package.
 
-This flag should only ever be toggled system-wide, e.g. as part of a SELinux-enabled Portage profile.
+It is safe to disable this flag, and it can be useful for security-oriented users.
