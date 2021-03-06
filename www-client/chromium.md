@@ -55,6 +55,11 @@ Pass the `use_pulseaudio=true` option to the `gn gen` command. Enable the PulseA
 
 This flag should be enabled if the target system runs the PulseAudio sound system.
 
+### screencast
+Requires `wayland` flag to be enabled. Pass the `rtc_use_pipewire=true` option to the `gn gen` command. Use the PipeWire server to enable screen and audio capture in Chromium to allow screencast functionality on Wayland.
+
+It is safe to disable this flag.
+
 ### selinux
 Pull in the [sec-policy/selinux-chromium](../sec-policy/selinux-chromium.md) package as a dependency that provides SELinux policies required for Chromium to properly operate under a SELinux-restricted kernel.
 
