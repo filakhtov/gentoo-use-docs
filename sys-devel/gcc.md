@@ -5,11 +5,6 @@ Append `ada` to the `--enable-languages` option and pass it to the configure scr
 
 This flag should only be enabled if there is a need for
 
-### altivec
-Only available on PowerPC family of processors. Pass the `--enable-altivec` option to the configure script. Enable `AltiVec` operations and provide appropriate runtime options a `-maltivec` and a `-mabi=altivec`.
-
-This flag should only be ever enabled on PowerPC platform with AltiVec support.
-
 ### cxx
 Append `c++` to the `--enable-languages` option and pass the `--enable-libstdcxx-time` option to the configure script. When disabled pass the `--disable-build-with-cxx`, `--disable-build-poststage1-with-cxx` options to the configure script.
 
@@ -160,3 +155,8 @@ This flag should be disabled.
 Pass the `--enable-vtable-verify` option to the configure script. Enable a vtable verification feature that causes libstdc++ to be built with its virtual calls in verifiable mode. Build and install a `libvtv.so` runtime library to support this feature. If disabled, pass the `--disable-libvtv` option to disable the feature.
 
 It is recommended to enable this flag as it provides an additional safety net.
+
+### zstd
+Pass the `--with-zstd` option to the configure script. Enable support for Zstd-compressed LTO (Link Time Optimization) bytecode. Using Zstd in the tests by the GCC developers there were a little bit smaller LTO ELF (Executable Linux Format) files while being four to eight times faster than Zlib at compression and the decompression speed of Zstd in this use-case was comparable to Zlib.
+
+It is safe to disable this flag.
