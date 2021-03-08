@@ -16,7 +16,7 @@ Apply a patch to change the lowercase letter `L` to be distinct from digit `1`.
 It is safe to disable the flag.
 
 ### otf
-Use the FontForge tool to combine BDF (Glyph Bitmap Distribution Format) files provided by the package into a single OTB (OpenType Bitmap) font and install it into the system.
+Execute the `make otb` command to combine BDF (Glyph Bitmap Distribution Format) files provided by the package into a single OTB (OpenType Bitmap) font and execute the `make install-otb` command to install it into the system.
 
 It is safe to disable this flag.
 
