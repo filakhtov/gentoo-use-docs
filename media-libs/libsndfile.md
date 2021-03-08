@@ -15,11 +15,6 @@ Pass the `--enable-sqlite` option to the configure script. Build additional regr
 
 This flag should normally be disabled, and should only be enabled with the `test` flag, if regression tests are needed.
 
-### static-libs
-Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libsndfile` library.
-
-This flag should only be enabled if there is an explicit need for the static library.
-
 ### test
 Prepare Python environment for running tests. Execute the `make check` command, to run a test suite provided with the source code, after the main build is completed. This will extend a build time.
 
