@@ -6,7 +6,7 @@ Pass in the `-Degl=yes` option to the configure script. Enable support for the E
 This flag should normally be disabled, unless there is a need to use the EGL stack, e.g. under Wayland.
 
 ### test
-Execute the `ninja test` command to run a test suite provided with the source code. This will extend a build time.
+Start a new Xvfb session (Virtual X server environment) and execute the `ninja test` command inside of it after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
 
 It is recommended to disable the flag as it is mainly useful for the Gentoo team, developers or testers.
 
