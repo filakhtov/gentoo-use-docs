@@ -60,6 +60,11 @@ Pass the `--with-systemd-daemon`, `--disable-install-setuid` and the `--enable-s
 
 This flag should be enabled if there is a desire to run X server from within the user session.
 
+### test
+Pass the `--enable-unit-tests` option to the configure script. Build a test suite provided with the source code and run it after the main build is completed to check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because these tests are primarily useful for the maintainers, developers and testers.
+
 ### udev
 Pass the `--enable-config-udev` option to the configure script. Build and install the Udev backend to handle hotplugged input devices. Upon startup the X server queries this backend for the list of input devices and initializes them accordingly and when a new device is added at runtime, the server is notified and adds it at runtime.
 
