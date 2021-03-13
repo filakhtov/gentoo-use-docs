@@ -1,7 +1,7 @@
 # dev-python/pygobject
 
 ### cairo
-Pass the `-Dpycairo=true` (`false` if the flag is disabled) option to the meson build command. Provide special cairo integration through the Pycairo module despite cairo library itself not being a GObject based. Provide an ability to load Cairo interface using the `gi.require_foreign("cairo")` call.
+Pass the `-Dpycairo=enabled` (`disabled` if the flag is disabled) option to the meson build command. Provide special cairo integration through the Pycairo module despite cairo library itself not being a GObject based. Provide an ability to load Cairo interface using the `gi.require_foreign("cairo")` call.
 
 This flag should only be enabled if there is a need to use Python GObject bindings for the Cairo library.
 
