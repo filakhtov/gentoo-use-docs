@@ -28,7 +28,7 @@ The flag passes the `--with-lzma` option to the configure script. This provides 
 This flag can be safely disabled unless there is a need for a compressed input or output.
 
 ### python
-Builds Python bindings for `libxml2`. It is done by separately invoking the configure script and passing in the `--with-python` flag for every enabled Python target.
+Builds Python bindings for `libxml2`. It is done by separately invoking the `configure` script with the `--with-python` flag and the `make` command for every enabled Python target.
 
 The flag can be safely disabled unless there is a need to run Python scripts that are dependent on the `libxml2` Python module.
 
