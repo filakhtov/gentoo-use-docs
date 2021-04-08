@@ -10,12 +10,17 @@ Build library with assertions enabled. When disabled, append the `-DNDEBUG` opti
 
 This flag should normally be disabled, unless there is a need to debug the library or develop against it.
 
+### doc
+Run the `cmake docs` command to build the documentation in HTML format from source code annotations using the Doxygen tool.
+
+This flag can be safely disabled.
+
 ### examples
 Pass the `-DBUILD_EXAMPLES=true` (`false` when the flag is disabled) to the `cmake` command. Build and install a set of small example programs that demonstrate the usega of the `libtag` libraries, including `tagreader` - to read and print tags from the media file; `tagreader_c` - same as `tagreader`, but written in C, instead of C++; `tagwriter` - writing tags into the media file; `framelist` - for identifying ID3v1, ID3v2 or APE tags and printing them; `strip-id3v1` - for removing any tags from the media file.
 
 It is safe to disable the flag.
 
 ### test
-Pass the `-DBUILD_TESTS=true` (`false` if the flag is disabled) to the `cmake` command. Build a test suite and run the `make check` command when the main build is completed to run the test suite provided with the source code. This will extend the build time.
+Pass the `-DBUILD_TESTS=true` (`false` if the flag is disabled) to the `cmake` command. Build a test suite and run the `ninja check` command when the main build is completed to run the test suite provided with the source code and check for regressions. This will extend the build time.
 
-This flag should normally be disabled, as it is primarily oriented towards developers, testers and the Gentoo team.
+This flag should normally be disabled, as it is primarily oriented towards the developers, testers and maintainers.
