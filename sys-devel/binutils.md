@@ -1,5 +1,10 @@
 # sys-devel/binutils
 
+### cet
+Pass the `--enable-cet` option to the configure script. Enable support for CET (Intel's Control-Flow Enforcement Technology) - the Intel feature for helping prevent ROP (Return-Oriented Programming) and COP/JOP (Call/Jump Oriented Programming) style attacks via indirect branch tracking and a shadow stack.
+
+It is safe to disable this flag, however it will be beneficial to enable it on compatible systems for improved security.
+
 ### default-gold
 Requires the `gold` flag to be enabled. Pass the `--enable-gold=default` option to the configure script. Ensure that the `ld.gold` linker is used by default, instead of the `ld.bfd` one, by installing it as the `ld` binary.
 
