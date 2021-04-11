@@ -5,6 +5,11 @@ Pass the `--enable-64-bit-bfd` option to the configure script. This option is al
 
 This flag should normally be disabled, unless it is explicitly required.
 
+### cet
+Pass the `--enable-cet` option to the configure script. Enable support for CET (Intel's Control-Flow Enforcement Technology) - the Intel feature for helping prevent ROP (Return-Oriented Programming) and COP/JOP (Call/Jump Oriented Programming) style attacks via indirect branch tracking and a shadow stack.
+
+It is safe to disable this flag, however it will be beneficial to enable it on compatible systems for improved security.
+
 ### multitarget
 Pass the `--enable-targets=all` and the `--enable-64-bit-bfd` options to the configure script. Provide a 64-bit support on hosts with narrower word sizes and enable all supported targets (not only natively supported targets) for cross-compiling.
 
