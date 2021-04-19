@@ -41,19 +41,24 @@ Pass the `--enable-logger` option to the configure script to build and install t
 It is safe to disable this flag.
 
 ### kill
-This passes `--enable-kill` option to configure script. This will build and install `kill` tool responsible for terminating a running process.
+This passes `--enable-kill` option to the configure script. This will build and install `kill` tool responsible for terminating a running process.
 
 Multiple packages in Portage tree provide `kill` binary and therefore `kill` flag can't be enabled on more than one of them at a time.
 
+### magic
+Only works if the `ncurses` flag is enabled. Pass the `--with-libmagic` option to the configure script. Use the `libmagic` library to detect file type based on file signatures, aka "magic numbers" (or magic bytes), when trying to view the file contents using the `more` utility.
+
+This flag can be safely disabled.
+
 ### ncurses
-This flag will pass `--with-ncursesw` (if `unicode` flag is set too) or `--with-ncurses` (if `unicode` flag is disabled). If disabled `--without-tinfo` flag will be passed instead.
+This flag will pass `--with-ncursesw` (if `unicode` flag is set too) or `--with-ncurses` (if `unicode` flag is disabled) to the configure script. If disabled `--without-tinfo` option will be passed instead.
 
 This flag enables handling terminal output using ncurses library and colorized output for various tools (e.g. green header in `fdisk` or white background for current day in `cal`, etc).
 
 This flag is safe to disable if colored output is not required.
 
 ### nls
-This passes `--enable-nls` option to configure script. As a result translation files will be processed and installed, allowing various tools to show localized messages and formats.
+This passes `--enable-nls` option to the configure script. As a result translation files will be processed and installed, allowing various tools to show localized messages and formats.
 
 This flag can be safely disabled if the only language necessary is English.
 
