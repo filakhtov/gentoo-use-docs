@@ -29,3 +29,8 @@ This flag should be enabled if there is a need to use the library with threaded 
 Pass a `--with-tiff` option to a configure script. Build and install a `tificc` tool that provides an ability to apply an ICC (International Color Consortium) color profile to an image stored in a TIFF (Tagged Image File Format) format for color correction.
 
 It is safe to disable the flag.
+
+### zlib
+Only makes sense if the `tiff` flag is enabled. Pass the `--with-zlib` option to the configure script. Enable support for compressed TIFF images in `tificc` tool. See `tiff` flag for details.
+
+This flag can be safely disabled.
