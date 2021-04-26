@@ -1,13 +1,12 @@
 # dev-libs/libusb
 
-### udev
-Pass the `--enable-udev` option to the configure script.
-
 ### debug
-Pass the `--enable-debug-log` option to the configure script.
+Pass the `--enable-debug-log` option to the configure script. Unconditionally set `libusb` logging level to `DEBUG` so that all `INFO`, `WARNING` and `ERROR` messages will be printed. Note: it is NOT possible to request `DEBUG` level messages, despite there being a logging level for it. The author of libusb seems to consider this broken behaviour to be a feature.
+
+This flag should normally be disabled.
 
 ### doc
-Execute the `make docs` command from the `doc` source subdirectory. Generate additional API documentation in an HTML format using the Doxygen tool and install it into the `/usr/share/doc/libusb-<VERSION>/html` directory.
+Execute the `make` command from the `doc` source subdirectory. Generate additional API documentation in an HTML format using the Doxygen tool and install it into the `/usr/share/doc/libusb-<VERSION>/html` directory.
 
 This flag can be safely disabled.
 
@@ -30,3 +29,8 @@ This flag should only be enabled if there is an explicit need for the static lib
 Build and install additional test tools. Execute the `make check` command to run a test suite provided with the source code, then execute `stress` command from the `tests` source subdirectory to perform simple stress tests. This will extend a build time.
 
 This flag should normally be disabled as it is primarily used by the Gentoo team, testers and developers.
+
+### udev
+Pass the `--enable-udev` option to the configure script. Integrate with udev device manager to enable support for monitoring and handling device events, hot plugging, and provide an ability to obtain additional device information fro udev.
+
+It is recommended to enable this flag on modern systems that use the udev device manager.
