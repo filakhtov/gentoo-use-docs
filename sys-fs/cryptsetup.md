@@ -1,7 +1,7 @@
 # sys-fs/cryptsetup
 
 ### argon2
-Pass the `--enable-libargon2` option to the configure script. Use the `libargon2` library to provide an ability to use the Argon2 key derivation function for PBKDF (Password-Based Key Derivation Function) available in LUKS2 header format.
+Pass the `--enable-libargon2` and `--with-luks2-pbkdf=pbkdf2` options to the configure script. Use the `libargon2` library to provide an ability to use the Argon2 key derivation function for PBKDF (Password-Based Key Derivation Function) available in LUKS2 header format.
 
 This flag should only be enabled if there is a need to use Argon2 key derivation algorithm.
 
