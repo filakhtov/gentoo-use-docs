@@ -1,10 +1,5 @@
 # dev-python/cryptography
 
-### idna
-Pull in the [dev-python/idna](../dev-python/idna.md) package as a dependency to provide support for the IDNA (Internationalized Domain Names in Applications) protocol, i.e. written using a language-specific script or alphabet, such as Arabic, Chinese, Cyrillic, Devanagari, Hebrew or the Latin alphabet-based characters with diacritics or ligatures, such as French.
-
-This flag can be safely disabled if there is no need to access domain names written in non-Latin alphabet.
-
 ### libressl
 Normally, this package uses the `OpenSSL` library as an underlying backend for cryptographic operations. Enabling this flag would allow to use the `LibreSSL` library instead.
 
