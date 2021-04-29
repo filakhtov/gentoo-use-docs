@@ -59,6 +59,11 @@ Pass a `--with-fam` option to a WAF configure script. Build a `vfs_notify_fam` -
 
 This flag should only be enabled if the target systems supports FAM and there is a need to support client notification.
 
+### glusterfs
+Pass the `--enable-glusterfs` option to the WAF configure script. Build and install the `vfs_glusterfs` VFS (Virtual File-System) module provides an alternative, and superior way to access a Gluster filesystem from Samba for sharing. It does not require a Gluster FUSE mount but directly accesses the GlusterFS daemon through its library libgfapi, thereby omitting the expensive kernel-userspace context switches and taking advantage of some of the more advanced features of GlusterFS.
+
+This flag should only be enabled if there is a need to use GlusterFS for Samba shares.
+
 ### gpg
 Pass a `--with-gpgme` option to a WAF configure script. Provide an ability to store cleartext passwords in a PGP/OpenGPG encrypted form by configuring the new "password hash gpg key ids" option.
 
@@ -78,6 +83,11 @@ It is safe to disable the flag.
 Pass a `--with-ldap` option to a WAF configure script. Provide an ability to use a LDAP directory to provide an authentication layer in addition to containing the user, group, and machine account information. Build and install various `smbldap-*` utilities, e.g. `smbldap-groupadd`, `smbldap-useradd`, `smbldap-passwd`, `smbldap-userinfo` and others.
 
 This flag should only be enabled if integration with LDAP is desired.
+
+### ntvfs
+Pass the `--with-ntvfs-fileserver` option to the WAF configure script. Enable support for NTVFS file server backend that was introduced during the Samba AD (Active Directory) development but never provided the same features and quality as s3fs (Samba 3 File Server) and was later abandoned.
+
+This flag should almost always be disabled.
 
 ### pam
 Pass a `--with-pam` and a `--with-pammodulesdir=/lib/security` options to a WAF configure script. Build and install a `pam_winbind` module to integrate Samba with a PAM (Pluggable Authentication Modules) infrastructure. This module can authenticate users against the local domain by talking to the Winbind daemon.
@@ -99,6 +109,11 @@ Pass a `--with-quotas` option to a WAF configure script. Enable support for file
 
 This flag should only be enabled if there is a need to use disk quotas.
 
+### regedit
+Pass the `--with-regedit` option to the WAF configure script. Build and install the `samba-regedit` - an ncurses based tool to manage the Samba registry and can be used to show and edit registry keys, subkeys and their values.
+
+It is safe to disable this flag.
+
 ### selinux
 Pull in a [sec-policy/selinux-samba](../sec-policy/selinux-samba.md) package as a dependency that provides SELinux policies required for a proper Samba operation under a SELinux restricted kernel.
 
@@ -108,6 +123,11 @@ This flag should only be ever toggled system-wide, i.e. as part of a SELinux-ena
 Pass the `--enable-snapper` option to the WAF configure script. Build and install the `vfs_snapper` VFS module that exposes snapshots managed by snapper (snapshot tool) for use by Samba. This provides the ability for remote SMB clients to access shadow-copies via Windows Explorer using the "previous versions" dialog.
 
 It is safe to disable this flag.
+
+### spotlight
+Pass the `--with-spotlight` option to the WAF configure script. Enable support for macOS Spotlight support, i.e. provide an ability to index files located on a Samba share server-side in the Elasticsearch or Gnome Tracker backend and expose a way for clients to search through the indexed data.
+
+This flag should only be enabled if there is a need to serve macOS clients that use Spotlight.
 
 ### syslog
 Pass a `--with-syslog` option to a WAF configure script. Allow to send Samba messages to a Unix system logger instead of or in addition to standard Samba logging file. Provide support for a `syslog` configuration option to control log level sent to syslog.
