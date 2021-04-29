@@ -30,6 +30,11 @@ IPv6 protocol support is enabled by default, so nothing is done when this flag i
 
 It is recommended to enable this flag if the target system to be participating in IPv6-capable network. Otherwise it can be safely disabled.
 
+### libbsd
+Add the `HAVE_LIBBSD := y` (`n` when disabled) option to the `config.mk` build configuration file. When enabled, the `libbsd` library will be used to provide the `strlcpy()` and `strlcat()` functions, instead of falling back to shorter and simpler implementation provided with the `iproute2` source code.
+
+It is safe to disable this flag.
+
 ### minimal
 Patch a `Makefile` to build only a `tc`, `lib` and `ip` directories. Add a `HAVE_MNL := n` and a `HAVE_ELF := n` options (both with `y` value when flag is disabled) to the build configuration file `config.mk`. This will only build and install a `tc` and an `ip` commands without eBPF (extended Berkeley Packet Filter) support. A `bridge`, `genl`, `tipc`, `devlink` and `rdma` commands won't be available. Man pages also won't be built and installed.
 
