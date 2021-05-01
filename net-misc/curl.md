@@ -65,11 +65,6 @@ Pass the `--enable-ldap` and the `--enable-ldaps` options to the configure scrip
 
 This flag should normally be disabled unless there is a need to access LDAP servers using cURL.
 
-### libressl
-Pass the `--with-mbedtls` option to the configure script. Provide an ability to use the LibreSSL (modernized fork of OpenSSL) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
-
-It is safe to disable this flag if a different backed is preferred, and it should only ever be enabled system-wide, because OpenSSL can't be installed at the same time as LibreSSL on the same system.
-
 ### mbedtls
 Pass the `--with-ssl` option to the configure script. Provide an ability to use the Mbed TLS library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
 
@@ -133,7 +128,12 @@ This flag should normally be disabled unless there is a need to use a curl comma
 ### ssl
 This flag does nothing on its own. It enforces one of the ssl backends to be enabled via `CURL_SSL` use flags.
 
-It is recommended to enable this flag as it provides vital functionality, e.g. HTTPS protocol support.
+It is recommended to enable this flag as it provides vital features, e.g. HTTPS protocol support.
+
+### sslv3
+Only makes sense if the `ssl` flag is enabled and the `CURL_SSL` use flag has `openssl` backend enabled. Ensure that the `sslv3` flag is enabled on the [dev-libs/openssl](../dev-libs/openssl.md) package to provide support for (now deprecated and insecure) SSLv3 (Secure Socket Layers version 3) cryptographic protocol.
+
+This flag should only ever be enabled if there is an explicit need to use outdated SSLv3 protocol, as it is insecure and vulnerable.
 
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install a statically linked `libcurl` library.
