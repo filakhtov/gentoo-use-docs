@@ -30,11 +30,6 @@ Pass the `--with-iconv` option to the configure script. Enable a character set c
 
 It is recommended to enable this flag. Disabling it might lead to corrupted filenames to be extracted from archives created using a different character set.
 
-### libressl
-Use a LibreSSL library instead of an OpenSSL one.
-
-This flag should only be toggled system-wide, because only one of an OpenSSL or a LibreSSL library can be installed at the same time.
-
 ### lz4
 Pass the `--with-lz4` option to the configure script. Provide an ability to compress and decompress archives in LZ4 format using a `liblz4` library.
 
