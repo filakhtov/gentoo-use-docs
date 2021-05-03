@@ -1,10 +1,5 @@
 # app-portage/portage-utils
 
-### libressl
-Allow using the `libressl` library instead of the `openssl` library for cryptographic computations (hashing and signature verification).
-
-This flag should only ever be toggled system-wide, because OpenSSL and LibreSSL can't be simultaneously installed on the same system.
-
 ### nls
 This flag does nothing.
 
