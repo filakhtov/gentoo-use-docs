@@ -20,11 +20,6 @@ Pass the `--enable-ipv6` option to the configure script. Enable IPv6 protocol su
 
 This flag should be enabled if the target system to be a part of an IPv6-capable network. Otherwise, it is safe to disable.
 
-### libressl
-Only works if the `ssl` flag is also enabled. Allow using the LibreSSH library instead of OpenSSL for cryptographic operations.
-
-This flag should normally be disabled and only ever be toggled system-wide, because only one of the libraries can be installed on the same system at a time.
-
 ### lz4
 Pass the `--enable-lz4` option to the configure script. Provide an ability to use the LZ4 compression algorithm when doing file transfer by passing the `--compress-choice=lz4` (or `--zc=lz4`) option to the `rsync` command.
 
