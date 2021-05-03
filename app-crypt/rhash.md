@@ -5,11 +5,6 @@ Append the `-DNDEBUG` option to the `ADDCFLAGS` variable and pass it to the `mak
 
 This flag should normally be disabled as it is only useful e.g. for debugging purposes.
 
-### libressl
-This flag only works if an `ssl` flag is enabled. Use LibreSSL library instead of default OpenSSL one.
-
-This flag should be toggled system-wide, as the only one of these libraries can be installed on the same system at a time.
-
 ### nls
 Append the `-DUSE_GETTEXT` option to the `ADDCFLAGS` variable and pass it to the `make` command. Execute a `make install-gmo` command. Provide an ability to translate programs messages into different languages using Gettext library and install translation files.
 
