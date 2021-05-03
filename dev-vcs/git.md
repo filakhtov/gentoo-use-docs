@@ -50,11 +50,6 @@ When disabled, pass the `NO_ICONV=YesPlease` variable to the `make` command. Use
 
 It is recommended to enable this flag to avoid issues with character encoding.
 
-### libressl
-Switch to use the LibreSSL library instead of the OpenSSL one to talk IMAP over SSL if there is no suitable cURL alternative. Also use it for SHA1 calculation if the `blksha1` flag is disabled.
-
-This flag should be toggled system-wide as two libraries can't be installed at the same time.
-
 ### mediawiki
 Run the `make` command inside of the `contrib/mw-to-git` source subdirectory. Build and install the Git-Mediawiki - a project which aims the creation of a gate between git and mediawiki, allowing git users to push and pull objects from mediawiki just as one would do with a classic git repository.
 
