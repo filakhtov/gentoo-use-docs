@@ -30,11 +30,6 @@ Passes the `--enable-ipv6` option to the configure script. This will enable IPv6
 
 The flag should only be enabled on systems that participate in IPv6-capable networks.
 
-### libressl
-The flag changes the SSL backend library used by the Python from the OpenSSL to the LibreSSL. This flag does nothing if the `ssl` flag is disabled.
-
-This flag must only ever be set system-wide, because it is impossible to have both the OpenSSL and the LibreSSL installed on the same system.
-
 ### ncurses
 Enables the `_curses`, the `_curses_panel` and the dependent Python modules. These modules provide an interface for portable advanced terminal handling using the `ncurses` library. They also provide window management like functionality in a terminal. If the flag is disabled, add these modules to the `PYTHON_DISABLE_MODULES` environment variable for the duration of the build to avoid installing them.
 
