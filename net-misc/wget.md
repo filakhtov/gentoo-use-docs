@@ -25,11 +25,6 @@ Passes the `--enable-ipv6` option to the configure script. This enables the IPv6
 
 The flag can safely be disabled unless the target system has to participate in the IPv6-enabled network.
 
-### libressl
-This flag replaces an SSL backend for handling HTTPS connections with the LibreSSL library instead of the OpenSSL one. Only has an effect if an `ssl` flag is enabled too.
-
-The flag should only be enabled systemwide, because the OpenSSL and the LibreSSL libraries can't be installed at the same time.
-
 ### metalink
 Pass the `--with-metalink` option to the configure script. Enable support for downloading files using the metalink extensible metadata file format, that provides a list of resources for a file (URLs for all the mirrors and P2P resources) along with checksums and other metadata.
 
