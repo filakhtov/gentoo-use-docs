@@ -49,11 +49,6 @@ Pass the `--with-libedit` option to the configure script. Provide a history and 
 
 This flag can be safely disabled.
 
-### libressl
-Only works together with an `ssl` flag. Use a LibreSSL library instead of an OpenSSL for various cryptographical operations.
-
-The flag should only ever be toggled system-wide, because OpenSSL and LibreSSL can not be installed on the target system at the same time.
-
 ### livecd
 Change the `PermitRootLogin` option to `Yes` in an `sshd_config` file.
 
