@@ -5,11 +5,6 @@ Install additional example files that show how to use the `Net::SSLeay` module f
 
 It is safe to disable the flag.
 
-### libressl
-Switch to use the LibreSSL library instead of the OpenSSL one to provide required C crypto code.
-
-This flag should be toggled system-wide as only one of the libraries can be installed at the same time.
-
 ### minimal
 Only makes sense if the `test` flag is also enabled. Skip some of the dependencies required for extended test suites and execute only limited minimal regression tests.
 
