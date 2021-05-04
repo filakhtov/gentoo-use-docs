@@ -38,9 +38,6 @@ Enable IPv6 protocol support in tools that can use it (e.g. `tracepath` and `pin
 
 This flag is recommended if target system is to be participating in IPv6 capable network(s), otherwise it can safely be disabled.
 
-### libressl
-This flag does nothing.
-
 ### nettle
 This flag does nothing.
 
