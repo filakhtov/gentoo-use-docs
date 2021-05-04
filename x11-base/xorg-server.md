@@ -30,11 +30,6 @@ Pass the `--enable-kdrive`, `--enable-kdrive-kbd`, `--enable-kdrive-mouse` and t
 
 This flag should only be enabled if the KDrive X server is necessary.
 
-### libressl
-Use the LibreSSL library instead of the OpenSSL library.
-
-This flag should only ever be toggled system-wide, because two libraries cant be installed at the same time.
-
 ### minimal
 Pass the `--disable-record`, `--disable-xfree86-utils`, `--disable-dri`, `--disable-dri2`, `--disable-dri3`, `--disable-glamor` and the `--disable-glx` options to the configure script. Build a minimal version of the X server without the Record, DRI (Direct Rendering Infrastructure), DRI2, DRI3, Glamor and GLX (OpenGL Extension to the X Window System) extensions. Also, do not build the `gtf` tool to calculate VESA GTF mode lines and the `cvt` tool to calculate VESA CVT mode lines. Note, that Wayland without Glamor will not have a hardware acceleration support and may cause unacceptable performance issues.
 
