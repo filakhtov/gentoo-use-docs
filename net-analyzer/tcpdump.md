@@ -5,11 +5,6 @@ Pass the `--with-cap-ng`, `--with-chroot=''`, and `--with-user=pcap` options to 
 
 It is recommended to enable this flag to improve security, especially if the `suid` flag is also enabled.
 
-### libressl
-Requires the `ssl` flag to be enabled. Use the LibreSSL library instead of OpenSSL. See the `ssl` flag for more details.
-
-This flag should only ever be toggled system-wide, because these SSL libraries can not be installed at the same time.
-
 ### samba
 Pass the `--enable-smb` option to the configure script. Build a fairly extensive SMB/CIFS/NBT packet decoding for data on UDP/137, UDP/138 and TCP/139, as well as some primitive decoding of IPX and NetBEUI SMB data.
 
