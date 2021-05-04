@@ -10,11 +10,6 @@ Run a `gtkdocize` on `libkmod/docs` directory of the source tree. Pass the `--en
 
 It is safe to disable this flag because it is only needed by developers who uses a `libkmod` library.
 
-### libressl
-Only works if the `pkcs7` flag is enabled. Use the LibreSSL library instead of the OpenSSL to obtain module signature information.
-
-This flag should normally be disabled and should only ever be toggled system-wide, because these SSL libraries can not be simultaneously installed into the same system.
-
 ### lzma
 Pass the `--with-xz` option to the configure script. Provide support for modules compressed using `LZMA`/`LZMA2` compression formats via xz utils.
 
