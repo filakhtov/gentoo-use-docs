@@ -25,11 +25,6 @@ Pass the `--enable-ipv6` option to the configure script. Enable support for the 
 
 This flag should be enabled if there is a need to access IPv6-enabled websites.
 
-### libressl
-This flag allows to use the LibreSSL library over the OpenSSL one to provide HTTPS connections support.
-
-This flag should be toggled systemwide, because only one of these libraries can be installed at the same time.
-
 ### nls
 Pass the `--enable-nls` option to the configure script. Use the Gettext library to provide an ability to translate programs messages into different languages based on the system locale settings.
 
