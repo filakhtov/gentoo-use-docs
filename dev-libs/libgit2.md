@@ -10,11 +10,6 @@ Pass the `-DUSE_GSSAPI=ON` option to the CMake build command. Link against the `
 
 This flag should normally be disabled, unless there is a need to use GSSAPI/SPNEGO protocols.
 
-### libressl
-Provide an ability to use the `libressl` library in place of the `openssl` for crypto operations.
-
-This flag should only ever be toggled system-wide, because these libraries can't be simultaneosly installed on a single system.
-
 ### ssh
 Pass the `-DUSE_SSH=ON` option to the CMake build command. Link agains the `LibSSH2` library to provide support for GIT over SSH (Secure Shell) transport protocol.
 
