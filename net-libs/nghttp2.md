@@ -20,11 +20,6 @@ Pass the `--with-jemalloc` option to the configure script. Replace the default m
 
 This flag should be enabled if the library to be used for server applications.
 
-### libressl
-Use the LibreSSL library instead of the OpenSSL one for handling an HTTPS (Secure HTTP) communication.
-
-This flag should be toggled system-wide, as both libraries can't be installed at the same time.
-
 ### static-libs
 Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libnghttp2` library.
 
