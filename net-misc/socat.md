@@ -10,11 +10,6 @@ Pass the `--enable-ip6` option to the configure script. Enable support for the I
 
 This flag should be enabled if there is a need to establish connections over an IPv6-enabled network.
 
-### libressl
-Only works when the `ssl` flag is enabled. Use the LibreSSL library instead of OpenSSL for cryptographic routines. See `ssl` flag for details.
-
-This flag should only be toggled system-wide as two libraries can't be installed simultaneously.
-
 ### readline
 Pass the `--enable-readline` option to the configure script. Use the `libreadline` library to provide an ability to track command history, improve command editing, and allow to search and recall previously entered commands. Enable support for the `READLINE` address type to enable aforementioned features.
 
