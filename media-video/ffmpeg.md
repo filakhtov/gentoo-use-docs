@@ -210,11 +210,6 @@ Pass the `--enable-libilbc` option to the configure script. Use the `libilbc` li
 
 It is safe to disable the flag unless there is a need to use software that requires iLBC decoding using the FFmpeg library.
 
-### libressl
-This flag conflicts with the `openssl` flag. Pass the `--disable-openssl`, `--disable-gnutls` and `--enable-libtls` flags to the configure script. Additionally pass the `--enable-nonfree` option if the `gpl` flag is enabled. Use the LibreSSL library to handle an HTTPS (Secure Hyper Text Transfer Protocol) connections.
-
-This flag should only be toggled system-wide, as OpenSSL and LibreSSL can't be installed on the same system.
-
 ### librtmp
 Pass the `--enable-librtmp` option to the configure script. Use the `librtmp` library to provide support for the Real-Time Messaging Protocol (RTMP) and its variants. Provides most client functions and a few server functions needed to support RTMP, RTMP tunneled in HTTP (RTMPT), encrypted RTMP (RTMPE), RTMP over SSL/TLS (RTMPS) and tunneled variants of these encrypted types (RTMPTE, RTMPTS). Enabling this flag will replace the native RTMP protocol implementation.
 
