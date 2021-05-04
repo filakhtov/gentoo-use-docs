@@ -70,11 +70,6 @@ Pass the `--enable-jack` option to the configure script. Build and install the `
 
 This flag should only be enabled if there is a need for PulseAudio to coexist with JACK on the same system.
 
-### libressl
-Only work if the `ssl` flag is also enabled. Allow to use the `LibreSSL` cryptographic library instead of the `OpenSSL`. For details see the `ssl` flag.
-
-This flag should only be toggled system-wide as these two libraries can not be installed at the same time.
-
 ### libsamplerate
 Pass the `--enable-samplerate` option to the configure script. Use the `libsamplerate` library to perform resampling instead of the default speex method.
 
