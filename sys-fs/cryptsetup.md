@@ -15,11 +15,6 @@ Pass the `--with-crypto_backend=kernel` option to the configure script. Use Kern
 
 This flag should be disabled unless the target system is an embedded system and provides no userspace cryptographic libraries.
 
-### libressl
-This flag only works if an `openssl` flag is also enabled. Pass the `--with-crypto_backend=openssl` option to the configure script. Use a LibreSSL library instead of an OpenSSL as a backend for an encryption and a decryption operations. It's performance is
-
-This flag should only ever be toggled system-wide, because a LibreSSL and an OpenSSL libraries can't be installed at the same time.
-
 ### nettle
 Pass the `--with-crypto_backend=nettle` option to the configure script. Use a Nettle library as a backend for an encryption and a decryption operations. This is a fastest backend according to benchmarks. It does not support `whirlpool` hash function.
 
