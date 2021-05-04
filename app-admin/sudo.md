@@ -10,11 +10,6 @@ Pass the `--with-ldap` and `--with-ldap_conf_file=/etc/ldap.conf.sudo` options t
 
 This flag should only be enabled if there is a need to use LDAP for storing and providing sudoers rules.
 
-### libressl
-Oly works if the `ssl` flag is enabled. Use the `LibreSSL` library instead of the `OpenSSL` one. See the `ssl` flag for more details.
-
-This flag should only be toggled system-wide, because these libraries can not be simultaneously installed on the same system.
-
 ### nls
 Pass the `--enable-nls` option to the configure script. Enable support for NLS (Native Language Support) to allow displaying informational, warning and error strings translated into the native language of the program's users, based on the system locale and configuration.
 
