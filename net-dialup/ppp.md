@@ -30,11 +30,6 @@ Patch the `Makefile.linux` file to uncomment the `HAVE_INET6` variable and add t
 
 This flag should only be enabled if there is a need to establish PPP connection with IPv6 protocol support.
 
-### libressl
-Allow using the LibreSSL library instead of the OpenSSL for cryptographic operations, i.e. password hashing, traffic encryption (i.e. for EAP - Extensible Authentication Protocol), and so on.
-
-This flag should only ever be toggled system-wide, because these libraries can't be simultaneously installed into the same system and are dependent upon by many packages.
-
 ### pam
 Patch the `Makefile.linux` file to uncomment the `USE_PAM=y` variable. Enable support for PAM stack to allow users to authenticate with their system credentials (username and password), and install the `/etc/pam.d/ppp` configuration file. As an example, this can be used in conjunction with LDAP (Lightweight Directory Access Protocol) user authentication.
 
