@@ -55,6 +55,11 @@ Execute the `x.py test` script when the main build is completed to run the test 
 
 This flag should normally be disabled, because these tests are primarily oriented towards the maintainers, developers and testers.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### wasm
 Append the `wasm32-unknown-unknown` to the `target` option in the `llvm` section of the `config.toml` build configuration file, also set `lld` option in the `rust` section to `true`, but only if the `system-llvm` flag is disabled, and additionally, append a new `target.wasm32-unknown-unknown` target section and set the `linker` option to `rust-lld` (or `lld` if the `system-llvm` flag is enabled). Enable support for compiling code that can be executed in the Wasm (WebAssembly) virtual machine.
 
