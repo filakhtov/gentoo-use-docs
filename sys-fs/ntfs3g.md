@@ -10,11 +10,6 @@ Pass the `--enable-debug` option to the configure script. Enable debugging code 
 
 The flag should normally be disabled, unless there is a need to perform debugging.
 
-### external-fuse
-Pass the `--with-fuse=external` (`internal` if the flag is disabled) option to the configure scrpit. Use an external (system) `libfuse` library, instead of embedded `fuse-lite` which is optimized for embedded Linux platforms.
-
-This flag should normally be enabled, except for embedded systems.
-
 ### ntfsdecrypt
 Pass the `--enable-crypto` option to the configure script. Build and install the `ntfsdecrypt` binary that allows to decrypt or update NTFS files encrypted according to EFS (Encrypting File System).
 
