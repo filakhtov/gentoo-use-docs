@@ -66,14 +66,9 @@ A Gettext library is used by default for localizing Git, e.g. providing an abili
 It is safe to disable the flag, unless there is a need to use a non-English language.
 
 ### pcre
-Pass the `USE_LIBPCRE1=YesPlease` and `NO_LIBPCRE1_JIT=YesPlease` variables to the `make` command. Use the `libpcre` library to provide support for Perl-compatible regular expressions for `git grep` command via the `-P` runtime switch. When disabled, GIT will respond with `fatal: cannot use Perl-compatible regexes when not compiled with USE_LIBPCRE` if trying to pass the `-P` flag.
+Pass the `USE_LIBPCRE2=YesPlease` variable to the `make` command. Use the `libpcre2` library to provide support for Perl-compatible regular expressions for `git grep` command via the `-P` runtime switch. When disabled, GIT will respond with `fatal: cannot use Perl-compatible regexes when not compiled with USE_LIBPCRE` if trying to pass the `-P` flag.
 
 It is safe to disable the flag.
-
-### pcre-jit
-Only works if `pcre` flag enabled. Pass the `USE_LIBPCRE2=YesPlease` variable to the `make` command instead of what is passed by the `pcre` flag. Use the `libpcre2` library to provide the JIT (Just-In-Time) compiled PCRE (Perl-Compatible Regular Expressions) support.
-
-This flag can be safely disabled.
 
 ### perforce
 Use the Python integration to provide an ability to import from and submit to Perforce repositories via the `git p4` command. When disabled, pass the `NO_PYTHON=YesPlease` variable to the `make` command.
@@ -91,7 +86,7 @@ Only works when the `blksha1` flag is disabled. Use the GIT's own SHA1 library (
 It is recommended to enable this flag on PowerPC platforms.
 
 ### subversion
-When disabled, pass the `NO_SVN_TESTS=YesPlease` variable to the `make` command. Execute the `make` command from the `contrib/svn-fe` source subdirectory. Install the `svn-fe` tool to convert an SVN "dumpfile" to a fast-import stream. Provide an ability to move changesets between Subverion and GIT repositories using the `git svn` command.
+When disabled, pass the `NO_SVN_TESTS=YesPlease` variable to the `make` command. Build and install the `svn-fe` tool to convert an SVN "dumpfile" to a fast-import stream. Provide an ability to move changesets between Subverion and GIT repositories using the `git svn` command.
 
 It is safe to disable the flag, unless there is a need to access SVN repositories with GIT.
 
