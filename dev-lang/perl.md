@@ -28,3 +28,8 @@ It is safe to disable the flag.
 Changing this flag will require rebuilding all installed Perl modules. Append a `-mutli` and a `-thread` prefixes to an installation paths. Pass `-Dusethreads` option to the configure script. Enable an ithreads (interpreter threads) support.
 
 It is recommended to disable the flag as interpreter threads are quite heavy-weight and aren't popular amongst a Perl community.
+
+### minimal
+Avoid pulling in the [app-admin/perl-cleaner](../app-admin/perl-cleaner.md), [virtual/perl-File-Temp](../virtual/perl-File-Temp.md), [virtual/perl-Data-Dumper](../virtual/perl-Data-Dumper.md) and [virtual/perl-Test-Harness](../virtual/perl-Test-Harness.md) dependencies.
+
+This flag can be disabled to save some space and shrink dependencies.
