@@ -11,9 +11,14 @@ Pass the `-Ddefault_library=both` (instead of `shared`) option to the meson buil
 This flag should only ever be enabled if there is a need for static libraries.
 
 ### test
-Execute the `meson test` command after the main build is complete to run the test suite provided with the source code and check for regressions. This will extend a build time.
+Start a new Xvfb session and execute the `meson test` command inside of it after the main build is completed to run the test suite provided with the source code and check for regressions. This will extend the build time.
 
 This flag should normally be disabled as it is mainly useful for maintainers, testers and developers.
+
+### wayland
+Pass the `-Denable-wayland=true` option to the meson build script. Enable support for interactive debugger for XKB keymaps for Wayland in the `xkbcli` utility.
+
+This flag should normally be disabled.
 
 ### X
 Pass the `-Denable-x11=true` option to the meson build script. Build and install a `libxkbcommon-x11` library and a `xkbcommon-x11.h` include file. Provide an ability to create and modify keymaps, e.g. change to special symbols when modifier key is pressed via an XKB X11 extension.
