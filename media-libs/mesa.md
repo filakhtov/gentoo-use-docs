@@ -66,7 +66,7 @@ This feature only works with the `r600` and `radeonsi` Gallium3D drivers and req
 This flag should only be enabled if there is a need to use the OpenCL API and the target system has supported AMD card.
 
 ### osmesa
-Pass the `-Dosmesa=classic` (or `gallium` if the `gallium` flag is enabled) option to the meson build command. Build and install the `libOSMesa` library - an off-screen interface for rendering into user-allocated memory without any sort of window system or operating system dependencies, meaning the GL_FRONT colorbuffer is actually a buffer in main memory, rather than a window on your display.
+Pass the `-Dosmesa=true` option to the meson build command. Build and install the `libOSMesa` library - an off-screen interface for rendering into user-allocated memory without any sort of window system or operating system dependencies, meaning the GL_FRONT colorbuffer is actually a buffer in main memory, rather than a window on a display.
 
 It is safe to disable this flag.
 
