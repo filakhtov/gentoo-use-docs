@@ -30,8 +30,13 @@ Ensure that the `ssl` flag is set on the [net-libs/glib-networking](../net-libs/
 
 This flag should be enabled if there are apps that use the `libsoup` library to connect or serve connections over an HTTPS protocol.
 
+### sysprof
+Pass the `-Dsysprof=enabled` (`disabled` when this flag is disabled) option to the meson build script. Enable support for sending profiling data to sysprof for all performed network requests.
+
+This flag should only be enabled if there is a need to perform application profiling using sysprof tool.
+
 ### test
-Execute the `meson test` command when the main build is completed to run a test suite provided with the source code. This will extend the build time. When disabled, patch the `Makefile.in` and `Makefile.am` files to skip building the test related code.
+Pass the `-Dtests=true` option to the meson build script. Execute the `meson test` command when the main build is completed to run a test suite provided with the source code. This will extend the build time. When disabled, patch the `Makefile.in` and `Makefile.am` files to skip building the test related code.
 
 This flag should normally be disabled as it is primarily used by the Gentoo team, testers or developers.
 
