@@ -16,6 +16,6 @@ Pull in the [app-misc/ca-certificates](../app-misc/ca-certificates.md) package a
 This flag should be enabled if there is a need to run applications that use the glib-networking to establish TLS-encrypted connections to public services.
 
 ### test
-Start a new Xvfb session and execute the `meson test` command inside of it when the main build is completed. Run a test suite provided with the source code to check against regressions. This will extend a build time.
+Start a new Xvfb session and execute the `meson test` command inside of it when the main build is completed. Run a test suite provided with the source code to check against regressions. This will extend a build time. When this flag is disabled patch the `meson.build` script to exclude the `tls/tests` directory in order to avoid installing the unnecessary [net-libs/gnutls](../net-libs/gnutls.md) dependency.
 
 This flag should normally be disabled as it is mainly useful for the Gentoo team, testers and developers.
