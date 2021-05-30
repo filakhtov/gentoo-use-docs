@@ -10,6 +10,11 @@ Append the `-DG_ENABLE_DEBUG` option to the `CFLAGS` variable for the duration o
 
 This flag should be disabled and is only useful for testers, developers or for collecting a debugging information to report bugs.
 
+### elf
+Pass the `-Dlibelf=enabled` option to the meson build script. Use the `libelf` to provide an ability for the `gresource` tool to list and extract resources that are compiled into an `elf` file (a binary or a shared library). If this flag is disabled the `gresource` would only support resource files and if trying to use it on an `elf` file it will report the `gresource is built without elf support` error.
+
+It is safe to disable this flag.
+
 ### fam
 This flag passes the `-Dfam=true` option to the meson build script. The FAM (aka File Alteration Monitor) is used for filesystem monitoring in GIO modules and allows applications to react to changes, additions or delitions of files in a VFS.
 
@@ -46,7 +51,7 @@ Passes the `-Ddtrace=true` and the `-Dsystemtap=true` options to the meson build
 Enabling tracing has a small runtime overhead, so it is recommended to disable this flag unless tracing GLib is required.
 
 ### test
-Executes a `meson test` command after the build is complete to run a built-in test suite and check for regressions. Additional test dependencies will be installed. This will extend build time.
+Pass the `-Dtests=true` option to the meson build script. Executes a `meson test` command after the build is complete to run a built-in test suite and check for regressions. Additional test dependencies will be installed. This will extend build time.
 
 This flag should be disabled as it is only useful for the Gentoo team, developers or testers.
 
