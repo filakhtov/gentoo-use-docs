@@ -1,7 +1,7 @@
 # media-libs/graphene
 
 ### introspection
-Pass the `-Dintrospection=true` (`false` if the flag is disabled) to the meson build script. Generate and install the `Graphene-1.0.gir` GIR metadata file to provide dynamic bindings for the `libgraphene` library to language other than C, using the GObject Introspection Framework.
+Pass the `-Dintrospection=enabled` (`disabled` if the flag is disabled) to the meson build script. Generate and install the `Graphene-1.0.gir` GIR metadata file to provide dynamic bindings for the `libgraphene` library to language other than C, using the GObject Introspection Framework.
 
 This flag can be safely disabled.
 
