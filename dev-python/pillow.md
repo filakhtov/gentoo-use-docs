@@ -31,7 +31,7 @@ Pass the `--enable-lcms` option to the configure script. Build and install the `
 This flag should be enabled if there is a need to work with color profiles.
 
 ### test
-Execute the `selftest.py --installed` command, then start the virtual Xvfb session and execute the `nosetests -vx Tests/test_*.py` command after the main build is completed. Run the test suite provided with the source code. This will extend a build time.
+Execute the `selftest.py --installed` command, then start the virtual Xvfb session and execute the `pytest` command after the main build is completed. Run the test suite provided with the source code. This will extend a build time.
 
 This flag should normally be disabled as it is mainly useful for developers, tester or the Gentoo team.
 
