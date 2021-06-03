@@ -20,6 +20,11 @@ Pass the `--gnome-keyring` option to the `pambase.py` build script. Add a `pam_g
 
 This flag should be enabled if there is a desire to use a GNOME Keyring and automatically unlock it at log-in. Otherwise this flag can be safely disabled.
 
+### homed
+Pass the `--homed` option to the `pambase.py` build script. Add the `pam_systemd_home` module into the `auth` interface of the `system-auth` stack and into the `session` interface of the `system-session` stack.
+
+This flag should only be enabled for system that use the `systemd-homed` service for managing human user accounts.
+
 ### minimal
 Pass the `--minimal` option to the `pambase.py` build script. Disable non-essential PAM modules: `pam_motd`, `pam_mail`, `pam_lastlog`, `pam_tally` (or `pam_tally2`) from the `system-login` stack.
 
