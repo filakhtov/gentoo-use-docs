@@ -176,6 +176,11 @@ Passes the `-Ddbus=true` option to the Meson build script that is only necessary
 
 This flag should only be used for testing and is not recommended for regular system.
 
+### tpm
+Pass the `-Dtpm2=true` option to the `meson` build script. Use the tpm2-tss (Trusted Computing Group's (TCG) TPM2 Software Stack (TSS) implementation) library to provide an ability for `systemd-cryptsetup` to unlock encrypted LUKS partitions using the TPM2 security chips (commonly found on non-budget PCs and laptops).
+
+It is safe to disable this flag.
+
 ### vanilla
 This flag will skip applying Gentoo-specific pathces to the systemd source. It will also ignore the [sys-apps/gentoo-systemd-integration](gentoo-systemd-integration.md) dependency.
 
