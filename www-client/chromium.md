@@ -80,11 +80,6 @@ Pass the `icu` parameter to the `--system-libraries` option for the `build/linux
 
 It is recommended to disable this flag for maximum Chromium stability.
 
-### tcmalloc
-Pass the `use_allocator="tcmalloc"` option to the `gn gen` command. Replace default allocator with the TCMalloc - a faster alternative that reduces lock contention for multi-threaded programs. For small objects, there is virtually zero contention. For large objects, TCMalloc tries to use fine grained and efficient spinlocks.
-
-It is recommended to enable this flag to improve memory allocation efficiency.
-
 ### vaapi
 Pass the `use_vaapi=true` option to the `gn gen` command. Enable support for VA-API (Video Acceleration API) hardware accelerated video decoding using a compatible graphics adapter. Note: VA-API is not officially supported on Linux and is disabled at runtime, so it is necessary to enable it via the `enable-accelerated-video-decode` flag.
 
