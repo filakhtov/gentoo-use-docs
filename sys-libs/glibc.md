@@ -51,9 +51,14 @@ Enable the GNU indirect function support (IFUNC) - a feature that allows a devel
 This flag should be enabled for multi-architecture builds, e.g. if there is a need to run 32-bit apps in a 64-bit OS or when cross-compiling.
 
 ### multilib
-Enable multilib support, e.g. both a 32-bit and a 64-bit libraries will be built and installed. This is usually necessary to run a 32-bit application on a 64-bit OS.
+Enable multilib support, e.g. both a 32-bit and a 64-bit libraries will be built and installed. This is usually necessary to build and run 32-bit applications on a 64-bit system.
 
 This flag should only be toggled system-wide, e.g. by multilib Portage profile as it requires tools that are capable of cross-compiling into different target.
+
+### multilib-bootstrap
+Download and use prebuilt multilib version of the `libgcc.a` and `crt*` runtime files when building glibc. This is necessary when switching from non-multilib ABI to multilib one in order to avoid bootstrapping cross-compilation environment from scratch.
+
+This flag should only ever be enabled when switching from non-multilib profile to multilib one.
 
 ### nscd
 Pass the `--enable-nscd` option to the configure script. Build and install a `nscd` - name service cache daemon and associated init/service files.
