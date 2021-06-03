@@ -6,7 +6,7 @@ Pass a `--enable-introspection` option to a configure script. Generate and insta
 It is safe to disable the flag.
 
 ### test
-Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend a build time.
+Start a new Xvfb session and execute the `make check` command inside of it after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
 
 This flag should normally be disabled as it is mainly useful for the maintainers, testers and developers.
 
