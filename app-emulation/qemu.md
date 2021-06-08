@@ -58,6 +58,11 @@ Set the `CAP_NET_ADMIN` capability on the `qemu-bridge-helper` binary before ins
 
 It is recommended to enabled this flag instead of the `caps` one when there is no need to use the `qemu-pr-helper`.
 
+### fuse
+Doesn't apply when building user emulation mode. Pass the `--enable-fuse` option to the configure script. Enable support for `--export fuse` options for the QEMU Storage Daemon (`qemu-storage-daemon` binary) to provide an ability to use FUSE (Filesystem in Userspace) exports as a backing storage for virtual machine disks.
+
+It is safe to disable this flag.
+
 ### glusterfs
 Doesn't apply when building user emulation mode. Pass the `--enable-glusterfs` option to the configure script. Enable the GlusterFS block driver that uses `libgfapi` library to avoid FUSE overhead when working with virtual machine images on gluster volumes. Provide support for the `gluster://` protocol for the `file=` parameter of the `-drive` command line option.
 
