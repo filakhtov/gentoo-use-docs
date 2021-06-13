@@ -1,7 +1,7 @@
 # dev-util/pkgconf
 
 ### pkg-config
-Creat conflict with other packages that provide `pkg-config` functionality and create a `/usr/bin/pkg-config` symlink that points to the `pkgconf` binary.
+Create a dependency conflict with other packages that provide `pkg-config` functionality and create a `/usr/bin/pkg-config` symlink that points to the `pkgconf` binary.
 
 This flag should normally be enabled to make `pkgconf` a system default implementation of the `pkg-config`.
 
