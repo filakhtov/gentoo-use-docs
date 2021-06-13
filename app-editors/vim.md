@@ -20,6 +20,11 @@ Pass the `--enable-gpm` option to the configure script. Enable mouse support in 
 
 This flag can be safely disabled.
 
+### ipv6
+IPv6 support is enabled in VIM by default, so nothing is done when the flag is enabled. This allows `vim` channels to use IPv6-enabled networks when communicating with other processes (see `:help channel` for more details). When the flag is disabled, pass the `vim_cv_ipv6_networking=no` argument to the configure script to disable support for IPv6.
+
+It is safe to disable this flag.
+
 ### lua
 Pass the `--enable-luainterp` and the `--with-lua-prefix=${EPREFIX}/usr` options to the configure script. Enable Lua scripting interpreter support that can be used for `.vimrc` configuration files or plugins written in Lua language or via a `:lua`, a `:luado`, etc. commands in editor.
 
