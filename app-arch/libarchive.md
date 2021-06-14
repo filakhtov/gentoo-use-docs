@@ -16,7 +16,7 @@ Pass the `--with-bz2lib` option to the configure script. Enable support for comp
 This flag can be safely disabled.
 
 ### e2fsprogs
-Export the `ac_cv_header_ext2fs_ext2_fs_h=yes` (`no` when disabled) variable for the configure script. See [Gentoo Bug 354923](https://bugs.gentoo.org/354923) for details.
+Export the `ac_cv_header_ext2fs_ext2_fs_h=yes` (`no` when disabled) variable for the configure script. See [Gentoo Bug 354923](https://bugs.gentoo.org/354923) for details. `libarchive`'s configure script looks for `ext2fs/ext2_fs.h` in order to use some defines for file attributes support (if headears are present), but doesn't link to any additional libraries.
 
 This flag can be disabled to avoid dependency on `e2fsprogs`.
 
