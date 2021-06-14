@@ -44,7 +44,7 @@ This flag is necessary to boot the system that has separated `/usr` partition, b
 Pass the `--enable-static` option to the configure script.
 
 ### unicode
-Pass the `--enable-unicode` option to the configure script. Enable support for Unicode and UTF encodings. As well as supporting UTF strings, Unicode support includes support for the \P, \p, and \X sequences that recognize Unicode character properties, but only the basic two-letter properties such as Lu are supported.
+Pass the `--enable-unicode` option to the configure script. Enable support for Unicode and UTF encodings. As well as supporting UTF strings, Unicode support includes support for the `\P`, `\p`, and `\X` sequences that recognize Unicode character properties, but only the basic two-letter properties such as `Lu` are supported.
 
 It is recommended to enable this flag as Unicode character set is everywhere nowadays.
 
