@@ -134,7 +134,7 @@ The flag passes the `-Dqrencode=true` option to the Meson build script. It will 
 
 This flag can be safely disabled, because verification keys can simply be typed or copied away.
 
-# repart
+### repart
 Pass the `-Drepart=true` option to the Meson build script. Build and install the `systemd-repart` tool that can be used to grow and add partitions to a partition table, based on the configuration files described in `repart.d`.
 
 It is safe to disable this flag.
