@@ -58,6 +58,6 @@ Pass the `--enable-udev` option to the configure script. Use a `libdevmapper`'s 
 It is recommended do enable this flag.
 
 ### urandom
-When disabled pass the `--enable-dev-random` option to the configure script. A `/dev/random` will be used for cryptographically secure random number generation. When enabled - use a `/dev/urandom` instead.
+When disabled pass the `--enable-dev-random` option to the configure script to use the `/dev/random` for cryptographically secure random number generation. When enabled - use a `/dev/urandom` instead.
 
-This flag should normally be disabled unless the target system has a limited entropy, e.g. on an embedded hardware. Enabling this flag reduces an encryption security.
+This flag should normally be enabled, because `/dev/urandom` is a preferred source of cryptographic randomness on modern UNIX-like systems. It should only be disabled on platforms and systems that have issues with `urandom`.
