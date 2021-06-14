@@ -11,7 +11,7 @@ Pass the `--enable-jit` and the `--enable-pcre2grep-jit` options to the configur
 It is recommended to enable this flag if platform supports the JIT compilation.
 
 ### libedit
-Pass the `--enable-pcre2test-libedit` option to the configure script. Link the `pcre2test` against the `libedit` library. Read terminal input using the `libedit` library to provide line editing and history facilities.
+Pass the `--enable-pcre2test-libreadline` option to the configure script. Link the `pcre2test` binary against the `libedit` library to allow reading terminal input using the `libedit` library and provide line editing and history facilities.
 
 This flag can be safely disabled.
 
