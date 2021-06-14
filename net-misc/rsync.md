@@ -48,7 +48,7 @@ It is recommended to toglle this flag system-wide, otherwise XATTRs might be los
 ### xxhash
 Pass the `--enable-xxhash` option to the configure script. Provide support for xxHash checksum support - fast non-cryptographic hash algorithm, including newest XXH3 and XXH128 hashing routines to verify hashes during file comparison and transfer.
 
-This flag should normally be enabled, as this feature is currently unstable and considered experimental.
+This flag should normally be disabled, as this feature is currently unstable and considered experimental.
 
 ### zstd
 Pass the `--enable-zstd` option to the configure script. Provide an ability to use the zstd compression algorithm when doing file transfer by passing the `--compress-choice=zstd` (or `--zc=zstd`) option to the `rsync` command.
