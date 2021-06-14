@@ -26,7 +26,7 @@ Pass the `--enable-pcre2-32` option to the configure script. Build and install a
 This flag can be safely disabled.
 
 ### readline
-Pass the `--enable-pcre2test-libreadline` option to the configure script. Link the `pcre2test` against the `libreadline` library. Read terminal input using the `libreadline` library to provide line editing and history facilities.
+Pass the `--enable-pcre2test-libreadline` option to the configure script. Link the `pcre2test` binary against the `libreadline` library to allow reading terminal input using the `libreadline` library and provide line editing and history facilities.
 
 This flag can be safely disabled.
 
