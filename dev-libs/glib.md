@@ -16,7 +16,7 @@ Pass the `-Dlibelf=enabled` option to the meson build script. Use the `libelf` t
 It is safe to disable this flag.
 
 ### fam
-This flag passes the `-Dfam=true` option to the meson build script. The FAM (aka File Alteration Monitor) is used for filesystem monitoring in GIO modules and allows applications to react to changes, additions or delitions of files in a VFS.
+This flag passes the `-Dfam=true` option to the meson build script. The FAM (aka File Alteration Monitor) is used for filesystem monitoring in GIO modules and allows applications to react to changes, additions or deletions of files in a VFS.
 
 This flag is not recommended on modern Kernels, because the same functionality is provided by the `inotify` nowadays.
 
