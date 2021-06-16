@@ -16,7 +16,7 @@ Pass the `-DLLVM_ENABLE_LIBPFM=on` (`off` if the flag is disabled) option to the
 This flag can be safely disabled.
 
 ### gold
-Ensure that the (sys-devel/binutils)[../sys-devel/binutils.md] package installed with the `cxx` flag enabled and pull in the `sys-devel/llvmgold` package as a dependency. Build and install the LLVMgold plugin that allows to use the `ld.gold` linker for LTO (link time optimization) to yield reduced code size and increased execution speed of the resulting binaries.
+Ensure that the [sys-devel/binutils](../sys-devel/binutils.md) package installed with the `cxx` flag enabled and pull in the `sys-devel/llvmgold` package as a dependency. Build and install the LLVMgold plugin that allows to use the `ld.gold` linker for LTO (link time optimization) to yield reduced code size and increased execution speed of the resulting binaries.
 
 This flag should normally be disabled, because it increases compile time and can cause some compatibility issues.
 
