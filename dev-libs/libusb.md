@@ -31,6 +31,6 @@ Build and install additional test tools. Execute the `make check` command to run
 This flag should normally be disabled as it is primarily used by the Gentoo team, testers and developers.
 
 ### udev
-Pass the `--enable-udev` option to the configure script. Integrate with udev device manager to enable support for monitoring and handling device events, hot plugging, and provide an ability to obtain additional device information fro udev.
+Pass the `--enable-udev` option to the configure script. Integrate with udev device manager to enable support for monitoring and handling device events, hot plugging, and provide an ability to obtain additional device information from udev.
 
 It is recommended to enable this flag on modern systems that use the udev device manager.
