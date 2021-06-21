@@ -1,12 +1,12 @@
 # dev-lang/rust
 
 ### clippy
-Append `clippy` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install `clippy-driver` and `cargo-clippy` linting tool that provide a collection of lints to catch common mistakes and improve the Rust code.
+Append `clippy` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install `clippy-driver` and `cargo-clippy` linting tools that provide a collection of lints to catch common mistakes and improve the Rust code.
 
 It is safe to disable this flag.
 
 ### debug
-Set the `optimize` option to `false`, `release-debuginfo` to `true`, `assertions` to `true` under the `llvm` section, and `optimize` to `false`, `debug` to `true`, `debug-assertions` to `true` under the `rust` section of the `config.toml` build configuration file. Produce the unoptimized, debug version of the rust toolchain, compiler and standard library, also enable LLVM, compiler and standard library assertions. This will take much more time to build the package and make it much slower to run.
+Set the `optimize` option to `false`, `release-debuginfo` to `true`, `assertions` to `true` under the `llvm` section, and `debug` to `true`, `debug-assertions` to `true`, `debug-assertions-std` to `true`, `debuginfo-level` to `2`, `debuginfo-level-rustc` to `2`, `debuginfo-level-std` to `2`, `debuginfo-level-tools` to `2` and `optimize-tests` to `false` under the `rust` section of the `config.toml` build configuration file. Produce the unoptimized, debug version of the rust toolchain, compiler and standard library, also enable LLVM, compiler and standard library assertions. This will take much more time to build the package and make it much slower to run.
 
 This flag should only ever be enabled if there is a need to debug toolchain, standard library or compiler components of rust.
 
