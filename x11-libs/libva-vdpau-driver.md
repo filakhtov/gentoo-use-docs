@@ -6,6 +6,6 @@ Pass the `--enable-debug` option to the configure script. Print additional debug
 It is safe to disable this flag, however it can be useful when troubleshooting.
 
 ### opengl
-Pass the `--enable-glx` option to the configure script. Enable support for accelerated rendering and scaling video output via OpenGL API using the GLX (OpenGL Extension to the X Window System).
+Pass the `--enable-glx` option to the configure script. Enable support for accelerated rendering and scaling video output via OpenGL API using the GLX (OpenGL Extension to the X Window System). It is worth noting that GLX part of the `libva` library is deprecated in favour of EGL.
 
 It is recommended to enable this flag on supported systems.
