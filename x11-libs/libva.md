@@ -6,7 +6,7 @@ Pass the `--enable-drm` option to the configure script. Build and install the `l
 This flag can be used for renderless processing, e.g. hardware-accelerated video processing on the server.
 
 ### opengl
-Requires the `X` flag to be enabled. Pass the `--enable-glx` option to the configure script. Build and install the `libva-glx` library that can render decoded and processed video frames as an OpenGL texture, using the GLX (OpenGL Extension to the X Window System). Note: actual backend driver has to support the OpenGL rendering too for this to work.
+Requires the `X` flag to be enabled. Pass the `--enable-glx` option to the configure script. Build and install the `libva-glx` library that can render decoded and processed video frames as an OpenGL texture, using the GLX (OpenGL Extension to the X Window System). Note: actual backend driver has to support the OpenGL rendering too for this to work. Also note that GLX support for `libva` is considered obsolete in favour of EGL.
 
 This flag should be enabled on systems running the X server with OpenGL extension support.
 
