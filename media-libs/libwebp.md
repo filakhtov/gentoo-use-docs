@@ -10,11 +10,6 @@ Pass the `--enable-jpeg` option to the configure script. Provide an ability to c
 
 It is safe to disable the flag.
 
-### neon
-Pass the `--enable-neon` option to the configure script. Use the optimized assembly code that utilizes NEON SIMD instruction set on supported ARM platforms to accelerate encoding and decoding procedures, including colorspace conversion, chroma strong-filtering, quantization, histogram collection, etc.
-
-This flag should be enabled on ARM platforms that support NEON SIMD instructions.
-
 ### opengl
 Pass the `--enable-gl` option to the configure script. Build and install the `vwebp` tool to decompresses a WebP file and display it in a window using the OpenGL API.
 
