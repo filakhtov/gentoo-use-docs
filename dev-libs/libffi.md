@@ -5,7 +5,7 @@ Pass the `--enable-debug` option to the configure script. Enable assertion macro
 
 This flag should be disabled. It is only necessary for debugging purposes.
 
-### pax_kernel
+### pax-kernel
 Pass the `--enable-pax_emutramp` option to the configure script. Provide an ability to run under PaX-restricted kernel. Memory pages, that contain a dynamically generated code will be marked with `PROT_EXEC` flag. This will ensure that program won't be terminated by the kernel when trying to run non-executable memory but will use "trampolines" that are safely handled by emulation in a PaX kernel (aka `EMUTRAMP`).
 
 This flash should only be enabled on the hardened systems or systems with a PaX-protected kernel.
