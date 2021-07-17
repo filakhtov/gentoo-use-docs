@@ -55,11 +55,6 @@ Pass the `--enable-static` option to the configure script. Build and install sta
 
 The flag should normally be disabled unless there is an explicit need to use static library, e.g. for development purposes.
 
-### threads
-This flag doesn't change anything in the library itself. It makes sure that all dependencies are thread safe.
-
-This flag can be disabled if there is no need to use the library in threaded applications.
-
 ### xattr
 Pass the `--enable-xattr` option to the configure script. Provide an ability to store and subsequently restore extended file attributes while creating and extracting archives for supported formats.
 
