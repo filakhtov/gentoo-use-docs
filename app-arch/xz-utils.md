@@ -21,8 +21,3 @@ This flag is necessary to boot the system that has separated `/usr` partition, b
 Pass the `--enable-static` option to the configure script. Build and install a statically linked `liblzma` library.
 
 This flag can be safely disabled, unless there is an explicit need for static library.
-
-### threads
-Pass the `--enable-threads` option to the configure script. Use a `pthread` threading library to parallelize compression and decompression tasks.
-
-It is safe to disable this flag, but it should be enabled on multi-core or multi-processor system to improve performance.
