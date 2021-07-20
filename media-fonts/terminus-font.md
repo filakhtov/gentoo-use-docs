@@ -20,13 +20,13 @@ Execute the `make otb` command to combine BDF (Glyph Bitmap Distribution Format)
 
 It is safe to disable this flag.
 
-### pcf
-Execute the `make pcf pcf-8bit` command to build fonts in the PCF (Portable Compiled Format) for various encodings, then the `make install-pcf` command to install them.
+### pcf-8bit
+Execute the `make pcf-8bit` command to build fonts in the PCF (Portable Compiled Format) for various encodings, then the `make install-pcf` command to install them.
 
 This flag should be enabled if there is a need for the PCF fonts, e.g. for use with the X Server.
 
-### pcf-unicode-only
-This flag only works if the `pcf` flag is enabled. It will remove PCF font files for all encodings but Unicode before installing the package.
+### pcf-unicode
+Execute the `make pcf` command to build fonts in the PCF (Portable Compiled Format) with unicode support, then the `make install-pcf` command to install them.
 
 This flag should normally be enabled, unless the target system uses non-Unicode locale settings.
 
