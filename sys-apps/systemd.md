@@ -162,7 +162,7 @@ The flag will change an installation prefix for the systemd from the default `/u
 The flag should not be enabled if the system has the `/usr` directory located on the same partition as `/`.
 
 ### static-libs
-Pass the `-Dstatic-libsystemd=true` and `-Dstatic-libudev=true` options to the Meson build script. Build a statically linked version of the `libsystemd` and `libudev` libraries.
+Pass the `-Dstatic-libudev=true` options to the Meson build script. Build a statically linked version of the `libudev` libraries.
 
 This flag should only ever be enabled if there is an explicit need for these static libraries.
 
