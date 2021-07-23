@@ -57,7 +57,7 @@ Enabling this flag will ensure that no Gentoo-specific patches are applied to th
 
 It is not recommended to enable the flag as it might result in a broken build or misbehaving binaries and libraries.
 
-### zlib
+### tls-compression
 Passes the `enable-zlib` argument to the `Configure` script. Enables support for a clear-text compression and decompression before the encryption and after the decryption using zlib library. Compression is enabled by default when this flag is enabled.
 
 It is safe to disable the flag unless there is a need to establish encrypted connections with a compression support.
