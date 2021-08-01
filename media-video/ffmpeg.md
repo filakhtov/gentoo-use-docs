@@ -136,7 +136,7 @@ Pass the `--enable-gpl` option to the configure script. Allow to use the code li
 This flag should be disabled if there is a need to use FFmpeg libraries for software with an incompatible license.
 
 ### gsm
-Pass the `--enable-libgsm` option to the configure script. Use the `libgsm` decoder library that allows libavcodec to decode the GSM full rate audio codec. Да supports both the ordinary GSM and the Microsoft variant.
+Pass the `--enable-libgsm` option to the configure script. Use the `libgsm` decoder library that allows libavcodec to decode the GSM full rate audio codec. It supports both the ordinary GSM and the Microsoft variant.
 
 This flag can be safely disabled, unless there is a need to playback GSM audio.
 
@@ -181,7 +181,7 @@ Pass the `--enable-ladspa` option to the configure script. Provide an ability to
 This flag should normally be disabled, unless there is a need to use LADSPA plugins.
 
 ### libaom
-Pass the `--enable-libaom` option to the configure script. Use the `libaom` library - an AOMedia video encoder for the AV1 video codec. `libaom` can save about 30% bitrate compared to VP9 and H.265 / HEVC, and about 50% over H.264, while retaining the same visual quality.
+Only works when the `encode` flag is enabled. Pass the `--enable-libaom` option to the configure script. Use the `libaom` library - an AOMedia video encoder for the AV1 video codec. `libaom` can save about 30% bitrate compared to VP9 and H.265 / HEVC, and about 50% over H.264, while retaining the same visual quality.
 
 This flag should be enabled if there is a need to create AV1 videos.
 
