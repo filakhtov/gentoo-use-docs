@@ -70,11 +70,6 @@ Pass the `--with-ssl` option to the configure script. Provide an ability to use 
 
 This flag should normally be disabled, unless strictly required, e.g. when building for an embedded system.
 
-### metalink
-Pass the `--with-libmetalink` option to the configure script. Enable a Metalink support - an extensible metadata format for downloading files that provides file verification, data corruption recovery and alternate download sources.
-
-It is safe to disable this flag unless there is a need to download files using Metalinks via cURL.
-
 ### nghttp3
 Pass the `--with-nghttp3` and `--with-ngtcp2` options to the configure script. Enable support for the QUIC protocol using the `ngtcp2` library to implement the HTTP/3 protocol on top of it using the `nghttp3` library and enable the `--http3` runtime option to access this feature.
 
