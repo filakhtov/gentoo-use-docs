@@ -13,7 +13,7 @@ This flag should normally be disabled as modern Linux kernels are handling ARP c
 ### bpf
 Set the `LIBBPF_FORCE` environment variable to `on` (`off` if the flag is disabled) before running the `configure` script. Use the `libbpf` library to interact with the BPF (Berkeley Packet Filter) in the `tc`, instead of using the older built-in code.
 
-It is generally safe and recommended to enable this flag, but it can cause incompatibility issues if the system `libbpf` library is too new or too old.
+It is generally safe and recommended to enable this flag if there is a need to use BPF filters with the `tc` tool, but it can cause incompatibility issues if the system `libbpf` library is too new or too old.
 
 ### caps
 Add a `HAVE_CAP := y` (`n` when disabled) option to the build configuration file `config.mk`. Enable support for Linux capabilities to provide an ability to drop elevated privileges and retrain only relevant capabilities to improve security, in particular prevent elevated privileges exploitation.
