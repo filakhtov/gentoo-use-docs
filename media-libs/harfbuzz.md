@@ -15,6 +15,11 @@ Pass the `-Ddocs=enabled` option to the meson build script. Use the Gtk-Doc tool
 
 This flag can be safely disabled.
 
+### experimental
+Pass the `-Dexperimental_api=true` option to the meson build script. Enable support for experimental API in various HarfBuzz libraries.
+
+This flag should normally be disabled, because the API is unstable and unreliable for any production use.
+
 ### glib
 Pass the `-Dglib=enabled` option to the meson build script. Use the `GLib` library for Unicode support, provide GObject introspection, build the `hb-view`, `hb-shape`, `hb-ot-shape-closure` and `hb-subset` tools and the `libharfbuzz-subset` and `libharfbuzz-gobject` libraries.
 
