@@ -70,11 +70,6 @@ Pass the `--enable-libunwind` option to the configure script. Use the `libunwind
 
 This flag can be enabled to assist in debuggin X server code.
 
-### wayland
-Pass the `--enable-xwayland` option to the configure script. Build a modified version of the Xorg server to use Wayland input devices for input and forward either the root window or individual top-level windows as Wayland surfaces. The server still runs the same 2D driver with the same acceleration code as it does when it runs natively, but Wayland handles presentation of the windows instead of KMS.
-
-This flag should be enabled if there is a need to run Wayland window system with X based applications.
-
 ### xcsecurity
 Pass the `--enable-xcsecurity` option to the configure script. Build the X Security Extension to allow distinguishing between trusted clients - that are permitted to use the entire X protocol, and untrusted clients - that are limited in what they do, e.g. they are prohibited from accessing window images of trusted clients. Enable support for runtime `-sp` option to specify a file that contains security policies.
 
