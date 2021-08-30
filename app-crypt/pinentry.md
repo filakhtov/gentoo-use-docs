@@ -5,6 +5,11 @@ Pass the `--with-libcap` option to the configure script. Use the `libcap` librar
 
 This flag should only be enabled on really old kernels or systems without `mlock` support.
 
+### efl
+Pass the `--enable-pinentry-efl` option to the configure script. Build and install the `pinentry-efl` binary - an Enlightenment Foundation Libraries-based graphical dialog for secure passphrase and PIN entry.
+
+This flag should only be enabled if the system to be running the Enlightenment desktop environment.
+
 ### emacs
 Pass the `--enable-pinentry-emacs` option to the configure script. Use the Emacs client to handle passphrase input via Emacs editor.
 
