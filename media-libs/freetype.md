@@ -20,7 +20,7 @@ Pass the `--with-bzip2` option to the configure script. Use the `libbz2` library
 
 It is safe to disable the flag.
 
-### cleartype_hinting
+### cleartype-hinting
 Patch the `ftoption.h` file to define the `TT_CONFIG_OPTION_SUBPIXEL_HINTING` macro and set its value to `2`. Enable subpixel hinting support for the TrueType driver. Use Infinality (v40) code base that was stripped to the bare minimum, all configurability removed in the name of the speed and simplicity. This mode applies minimal set of rules to all fonts indiscriminately so that modern fonts render well and legacy fonts render okay.
 
 It is recommended to enable this flag as it is default mode for the FreeType library.
