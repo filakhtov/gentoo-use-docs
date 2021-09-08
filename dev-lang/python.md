@@ -25,11 +25,6 @@ This flag replaces the `-O3` compiler optimization option with the `-O2`. The hi
 
 It is recommended to enable this flag on systems that have the `-O3` optimization option set in the `CFLAGS` and/or the `CXXFLAGS`. See the [Gentoo bug #50309](https://bugs.gentoo.org/50309) for more information.
 
-### ipv6
-Passes the `--enable-ipv6` option to the configure script. This will enable IPv6 protocol support in the Python networking code.
-
-The flag should only be enabled on systems that participate in IPv6-capable networks.
-
 ### ncurses
 Enables the `_curses`, the `_curses_panel` and the dependent Python modules. These modules provide an interface for portable advanced terminal handling using the `ncurses` library. They also provide window management like functionality in a terminal. If the flag is disabled, add these modules to the `PYTHON_DISABLE_MODULES` environment variable for the duration of the build to avoid installing them.
 
