@@ -25,11 +25,6 @@ Pass the `--with-readline` option to the configure script. Use the `libreadline`
 
 It is safe to disable the flag.
 
-### scd-shared-access
-Only makes sense if the `smartcard` flag is enabled. Apply a patch to add support to `scdaemon` for shared access mode, that is required when using both S/MIME and OpenPGP simultaneously with smartcard. Enables support for `shared-access` option in the `scdaemon.conf`. For some historical details see [this ticket](https://gpgtools.lighthouseapp.com/projects/66001/tickets/690-add-support-to-scdaemon-for-shared-access-mode).
-
-This flag should normally be disabled, as it adds some security flaws and is useful for some rare situations.
-
 ### selinux
 Pull the [sec-policy/selinux-gpg](../sec-policy/selinux-gpg.md) package as a dependency. Installed package provides necessary SELinux policies for GnuPG to properly operate under SELinux-restricted kernel.
 
