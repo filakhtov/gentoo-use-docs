@@ -47,6 +47,11 @@ This flag is passing the `-Delfutils=true` option to the Meson build script. Res
 
 This flag should normally be disabled, and can be enabled for debugging purposes, when there is a need to obtain stack traces.
 
+### fido2
+Pass the `-Dlibfido2=true` option to the Meson build script. Use the `libfido2` library to support unlocking LUKS2 volumes with a FIDO2 security token (e.g. YubiKey, Nitrokey FIDO2, AuthenTrend ATKey.Pro).
+
+It is safe to disable this flag.
+
 ### gcrypt
 Passes the `-Dgcrypt=true` to the Meson build script. This flag enables support for the `allow-downgrade` mode of a DNSSEC operation for the `systemd-resolved`. It also enables the FSS (Forward Secure Sealing) feature of the `systemd-journald`.
 
