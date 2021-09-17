@@ -6,7 +6,7 @@ Pass the `-Dnls=enabled` option to the Meson build script. Use the Gettext libra
 It is safe to disable the flag.
 
 ### orc
-Pull in the [dev-lang/orc](../dev-lang/orc.md) package as a dependency. The `liborc` library provides ORC (Optimized inner loops Runtime Compiler) that is used to map to SIMD instructions on various architectures for hardware acceleration.
+Pull in the [dev-lang/orc](../dev-lang/orc.md) package as a dependency. Pass the `-Dorc=enabled` option to the Meson build script. The `liborc` library provides ORC (Optimized inner loops Runtime Compiler) that is used to map to SIMD instructions on various architectures for hardware acceleration.
 
 This flag should normally be enabled to utilize hadware acceleration, howevere there is no support for the ARM64/AArch64 architecture at the moment.
 
