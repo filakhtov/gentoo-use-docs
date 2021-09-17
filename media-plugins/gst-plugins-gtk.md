@@ -15,6 +15,11 @@ Ensure that the `opengl` flag is enabled for the [media-libs/gst-plugins-base](.
 
 See [media-libs/gst-plugins-base](../media-libs/gst-plugins-base.md) for details.
 
+### test
+Pass the `-Dtests=enabled` option to the Meson build script. Build the test suite provided with the source code and execute the `ninja test` command inside of the virtual Xvfb session to run it after the main build is completed. This will extend a build time.
+
+This flag should normally be disabled as it is mainly useful for the maintainers, testers and developers.
+
 ### wayland
 Ensure that the `wayland` flag is enabled for the [media-libs/gst-plugins-base](../media-libs/gst-plugins-base.md) package to integrate with Wayland windowing system.
 
