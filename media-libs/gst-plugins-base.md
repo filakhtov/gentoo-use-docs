@@ -55,6 +55,11 @@ Pass the `-Dpango=enabled` option to the Meson build script. Build and install t
 
 This flag should be enabled if there is a need to handle text rendering.
 
+### test
+Pass the `-Dtests=enabled` option to the Meson build script. Build the test suite provided with the source code and execute the `ninja test` command inside of the virtual Xvfb session to run it after the main build is completed. This will extend a build time.
+
+This flag should normally be disabled as it is mainly useful for the maintainers, testers and developers.
+
 ### theora
 Pass the `-Dtheora=enabled` option to the Meson build script. Build and install the `libgsttheora` plugin that uses the `libtheora` library to parse raw theora streams, decode them into raw YUV video and encode raw YUV back to theora stream.
 
