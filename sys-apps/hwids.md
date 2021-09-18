@@ -10,6 +10,11 @@ Pass the `PCI=yes` (`no` if disabled) option to the `make` command. Install a `p
 
 This flag should be enabled if there is a need to use an `lspci` command from a [sys-apps/pciutils](pciutils.md) package. It can be safely disabled otherwise.
 
+### systemd
+Execute the `systemd-hwdb update` command after the main build is completed. Update binary hardware database based on the identification files installed by this package.
+
+It is recommended to enable this flag on systemd based systems, and should be disabled otherwise.
+
 ### udev
 Pass the `UDEV=yes` (`no` when disabled) option to the `make` command. Execute a `udevadm hwdb --update` command after the main build is complete. Install Udev hardware database files and generates `hwdb.bin`.
 
