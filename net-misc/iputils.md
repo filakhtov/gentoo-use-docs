@@ -64,6 +64,11 @@ This flag will append `-static` option to `LDFLAGS` for building statically link
 
 It is recommended to disable this flag for regular system.
 
+### test
+Pass the `-DSKIP_TESTS=false` (`true` if the flag is disabled) option to the Meson build script. Execute the `meson test` command after the main build is completed to run the test suite provided with the source code and check for any regressions.
+
+This flag should normally be disabled, because these tests are mainly used by the maintainers, testers and developers.
+
 ### tftpd
 Pass the `-DBUILD_TFTPD=true` option to the meson build commmand. Build and install the `tftpd` server component for TFTP (Trivial File Transfer Protocol) support, that is most commonly used for network boot (PXE).
 
