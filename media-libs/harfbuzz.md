@@ -40,11 +40,6 @@ Pass the `-Dgobject=enabled` and the `-Dintrospection=enabled` options to the me
 
 This flag can be safely disabled.
 
-### static-libs
-Pass the `-Dstatic=true` option to the meson build script. Build and install a statically linked version of the `libharfbuzz` library (also the `libharfbuzz-gobject` and the `libharfbuzz-subset` libraries if the `glib` flag is enabled and the `libharfbuzz-icu` library if the `icu` flag is enabled).
-
-The flag should only ever be enabled if there is a need for the static libraries.
-
 ### test
 Pass the `-Dtests=enabled` option to the meson build script. Prepare a Python environment to properly run the tests and execute the test suite provided with the source code during the build to check for any regressions. This will extend a build time.
 
