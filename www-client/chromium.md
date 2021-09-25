@@ -15,6 +15,11 @@ Normally, a number of different options are removed from the `CFLAGS` and `CXXFL
 
 It is recommended to disable this flag to avoid build issues.
 
+### debug
+Pass the `dcheck_always_on=true` and `dcheck_is_configurable=true` options to the `gn gen` command. Enable `DCHECK()` macroses that will check various conditions in the code and can be configured to be fatal, i.e. terminate the Chrome immediately if the condition is not met. This is normally used for debugging purposes and various bot configurations and is not intended for the end users.
+
+This flag should normally be disabled for production builds.
+
 ### hangouts
 Pass the `enable_hangout_services_extension=true` option to the `gn gen` command. Enable the Google Hangouts services that provide screensharing features for the Chromium browser.
 
@@ -72,6 +77,11 @@ This flag should be disabled as it is almost but not completely removed from Chr
 
 ### system-ffmpeg
 Pass the `ffmpeg` and `opus` parameters to the `--system-libraries` option for the `build/linux/unbundle/replace_gn_files.py` script to replace bundled FFmpeg library with the system-wide version to link against.
+
+It is recommended to disable this flag for maximum Chromium stability.
+
+### system-harfbuzz
+Pass the `use_system_harfbuzz=true` option to the `gn gen` command. Link against the system-wide version of the HarfBuzz text shaping library, instead of building and using the one bundled with the Chromium source code.
 
 It is recommended to disable this flag for maximum Chromium stability.
 
