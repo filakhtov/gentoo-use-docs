@@ -1,5 +1,10 @@
 # media-gfx/exiv2
 
+### bmff
+Pass the `-DEXIV2_ENABLE_BMFF=true` option to the cmake command. Enable support for BMFF (ISO/IEC 14496-12, ISO Base Media File Format) tagged files, such as HEIC, HEIF, AVIF, CR3, JXL/bmff.
+
+This flag can be safely disabled.
+
 ### doc
 Update Doxygen config and run the `ninja doc` command to generate additional C++ API documentation in the HTML format, including class and namespace references, class hierarchy, etc and install it into the `/usr/share/doc/exiv2-<VERSION>` directory.
 
