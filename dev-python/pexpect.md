@@ -1,7 +1,7 @@
 # dev-python/pexpect
 
 ### doc
-Execute the `make html` command in the `doc` source subdirectory to generate additional documentation in the HTML format and install it into the `/usr/share/doc/pexpect-<VERSION>/html` directory. Documentation includes developer docs, FAQ, common known issues, API reference, etc.
+Execute the `sphinx-build` command, telling it to use the `doc` source subdirectory, to generate additional documentation in the HTML format and install it into the `/usr/share/doc/pexpect-<VERSION>/html` directory. Documentation includes developer docs, FAQ, common known issues, API reference, etc.
 
 It is safe to disable the flag.
 
