@@ -5,6 +5,11 @@ Append `ada` to the `--enable-languages` option and pass it to the configure scr
 
 This flag should only be enabled if there is a need for
 
+### custom-cflags
+By default, when building GCC most of the custom flags are stripped out from the `CFLAGS` variable in order to avoid build failures related to over-zealous flags. When this flag is enabled, no flags will be stripped out.
+
+This flag should only be enabled by experienced users who are confident that their flags aren't going to cause issues with the build.
+
 ### cxx
 Append `c++` to the `--enable-languages` option and pass the `--enable-libstdcxx-time` option to the configure script. When disabled pass the `--disable-build-with-cxx`, `--disable-build-poststage1-with-cxx` options to the configure script.
 
