@@ -151,6 +151,11 @@ Install additional dependencies that will only be required to run the test suite
 
 It is recommended to keep this flag disabled as it is only useful for the Gentoo team, developers and testers.
 
+### valgrind
+Pass the `--enable-valgrind-annotations` option to the configure script. Specify that the compiler should interact with the valgrind runtime, where selected invalid memory reads are marked as false positives and garbage collected memory is properly marked for proper interaction.
+
+This flag should only be enabled by developers who are running GCC under the Valgrind instrumentation framework.
+
 ### vanilla
 Skip applying any patches. This means hardening features like SSP, PIE and others won't be available.
 
