@@ -20,11 +20,6 @@ Pass the `--enable-idna` option to the configure script. Use the `libidn` librar
 
 This flag should be enabled if there is a need to access IDN names.
 
-### ipv6
-Pass the `--enable-ipv6` option to the configure script. Enable support for the IPv6 protocol to provide an ability to access IPv6-enabled websites.
-
-This flag should be enabled if there is a need to access IPv6-enabled websites.
-
 ### nls
 Pass the `--enable-nls` option to the configure script. Use the Gettext library to provide an ability to translate programs messages into different languages based on the system locale settings.
 
@@ -34,8 +29,3 @@ This flag should be disabled, unless there is a need to use Lynx in a non-Englis
 Pass the `--with-ssl` option to the configure script. Use the OpenSSL library to provide support for HTTPS (Hyper Text Transfer Protocol Secure) connections.
 
 This flag should normally be enabled, otherwise no HTTPS connections will be possible.
-
-### unicode
-Pass the `--with-screen=ncursesw` option (instead of `ncurses`) to the configure script. Use the "wide" version of the ncurses library to support multibyte character encodings. Modify the `lynx.cfg` configuration file to set default character set to UTF-8.
-
-This flag should be normally enabled as the Unicode is mainstream nowadays.
