@@ -26,7 +26,7 @@ Pass the `enable_hangout_services_extension=true` option to the `gn gen` command
 It is safe to disable the flag.
 
 ### headless
-Pass the `ozone_platform="headless"` and `use_x11=false` options to the `gn gen` command. Enable support for headless Ozone platform, where any graphical output will be written into a PNG image. This platform does not support hardware acceleration and performs software rendering only. This feature can be used for automation, taking web page screenshots, etc.
+Pass the `ozone_platform="headless"`, `ozone_platform_x11=true` and `use_x11=false` options to the `gn gen` command. Enable support for headless Ozone platform, where any graphical output will be written into a PNG image. This platform does not support hardware acceleration and performs software rendering only. This feature can be used for automation, taking web page screenshots, etc.
 
 This flag should normally be disabled.
 
