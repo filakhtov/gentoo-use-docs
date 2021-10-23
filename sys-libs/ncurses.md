@@ -57,7 +57,7 @@ This USE flag tells configure to enable `--with-tests` option and execute regres
 This will take extra build time and output is not something that is easily understood or can be act upon by regular user, so this flag should be normally disabled.
 
 ### tinfo
-This flag enables `--with-termlib` flag and instructs build to produce separate low-level `tinfo` library that is otherwise embedded into ncurses library.
+Pass the `--with-termlib` flag to the configure script. Build a separate low-level `tinfo` library and its "wide" variant, `tinfow` (with Unicode character sets support), that are otherwise embedded into the ncurses library itself.
 
 This flag is forced by the Gentoo system and should remain enabled.
 
