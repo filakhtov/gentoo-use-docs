@@ -56,15 +56,10 @@ This USE flag tells configure to enable `--with-tests` option and execute regres
 
 This will take extra build time and output is not something that is easily understood or can be act upon by regular user, so this flag should be normally disabled.
 
-### threads
-Enables `--with-pthread` configure option and `ncursest` Makefile target. This will build thread-safe version of the curses library. Thread implementation is based on pthread (POSIX threads). This flag should be enabled if library to be used to compile threaded applications. There are no packages in portage tree that explicitly require threaded ncurses, so it can be safely disabled by most users.
-
-This flag can be combined with `unicode` and this will produce `ncursestw` library - wide, threaded variant.
-
 ### tinfo
-This flag enables `--with-termlib` flag and instructs build to produce separate low-level `tinfo` library that is otherwise embedded into ncurses library. This flag can be safely disabled unless you explicitly require `tinfo` library or install one of the portage packages that require it as a dependency (e.g. [nvidia-cuda-toolkit](../dev-util/nvidia-cuda-toolkit), [android-ndk](../dev-util/android-ndk), [android-studio](../dev-util/android-studio), etc).
+This flag enables `--with-termlib` flag and instructs build to produce separate low-level `tinfo` library that is otherwise embedded into ncurses library.
 
-This flag can be combined with `unicode` and this will produce `tinfow` library with "wide" character set support.
+This flag is forced by the Gentoo system and should remain enabled.
 
 ### trace
 This will enable `trace` configure option. This will add `-DTRACE` option to `CFLAGS` and add `trace()` function to all models of ncurses. Enabling trace will make your application creating trace files during runtime.
@@ -72,8 +67,3 @@ This will enable `trace` configure option. This will add `-DTRACE` option to `CF
 Normally tracing information is included only in debug libraries, however it is sometimes desirable to include tracing information into normal shared library. Enable this flag to achieve that.
 
 This flag should normally be disabled.
-
-### unicode
-This flag enables `ncursesw` Makefile target. W in `ncursesw` stands for "wide" and resulting library will be able to handle Unicode character sets.
-
-Normally users want to keep this flag enabled, because popular programs like `less`, `more` and `dmesg` will happily use "wide" version of ncurses! However it can be disabled if the target system is only ever dealing with English language.
