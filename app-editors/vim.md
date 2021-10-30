@@ -5,6 +5,11 @@ Pass the `--enable-acl` option to the configure script. Enable an ability to man
 
 It is recommended to toggle this flag system-wide to avoid losing ACL permissions. It is safe to disable it if the target system doesn't have to deal with ACLs.
 
+### crypt
+Pass the `--enable-libsodium` option to the configure script. Use the `libsodium` library to perform cryptographic operations, e.g. when encrypting and decrypting files (using the `:X` command) and provide more encryption methods (see `:setlocal cm?` to list available ones). When disabled, Vim will still support encrypted files, but will use weaker and less robust built-in crypto implementation.
+
+This flag should only be enabled if there is a need to deal with encrypted files directly from Vim.
+
 ### cscope
 Pass the `--enable-cscope` option to the configure script. If disabled, manually patch a `feature.h` to provide a dummy `FEAT_CSCOPE` macro. Enable a Cscope support to help navigate to various symbols definitions in C/C++/Java source files.
 
@@ -19,11 +24,6 @@ This flag should normally be disabled and is only required for debugging build.
 Pass the `--enable-gpm` option to the configure script. Enable mouse support in VIM to select (via visual mode), copy and paste text.
 
 This flag can be safely disabled.
-
-### ipv6
-IPv6 support is enabled in VIM by default, so nothing is done when the flag is enabled. This allows `vim` channels to use IPv6-enabled networks when communicating with other processes (see `:help channel` for more details). When the flag is disabled, pass the `vim_cv_ipv6_networking=no` argument to the configure script to disable support for IPv6.
-
-It is safe to disable this flag.
 
 ### lua
 Pass the `--enable-luainterp` and the `--with-lua-prefix=${EPREFIX}/usr` options to the configure script. Enable Lua scripting interpreter support that can be used for `.vimrc` configuration files or plugins written in Lua language or via a `:lua`, a `:luado`, etc. commands in editor.
