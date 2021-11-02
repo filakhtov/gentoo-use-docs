@@ -20,11 +20,6 @@ Normally, only locales that are specified in the `/etc/locale.gen` configuration
 
 It is recommended to disable the flag.
 
-### crypt
-Pass the `--enable-crypt` option to the configure script. Build and install the passphrase-hashing library `libcrypt`. However, `glibc` maintainers revealed _tentative_ plans to hand over maintenance of their encryption library to a separate project, in hopes that it will be able to better keep up with ever-changing passphrase-hashing algoritms. This flag exists to provide an ability to disable `libcrypt` installation and allow using a separate library instead.
-
-This flag should be enabled, at least for now, until a decent quality replacement library exists.
-
 ### custom-cflags
 Normally, all custom user-supplied compiler optimization flags are removed from `CFLAGS` variable and only `-O2` is passed in order to avoid bugs and problems that might be related to such optimizations. When this flag is enabled, all user-supplied optimization flags are preserved, however any bug reports agains `glibc` should be made with this flag disabled.
 
@@ -94,6 +89,11 @@ It is recommended to enable this flag for improved protection, especially becaus
 Normally, a `pt_chown` binary has a SUID flag. It is necessary to manipulate permissions on a `/dev/pts` tree. When disabled SUID bit will be removed from binary.
 
 This flag should be disabled because there are no permission issues on modern Linux systems with properly mounted `devpts`.
+
+### systemd
+Install custom `nsswitch.conf` configuration file pointing to the systemd for `group`, `gshadow`, `passwd` and `shadow` categories. If the `nscd` flag is enabled, also install the `nscd.service` systemd service file for running `nscd` daemon.
+
+This flag should only be enabled if the target system uses systemd as the init system.
 
 ### systemtap
 Pass the `--enable-systemtap` option to the configure script. Enable systemtap static probe points in C library to provide tracing support via SystemTap tool.
