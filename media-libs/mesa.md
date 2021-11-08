@@ -15,11 +15,6 @@ If the `llvm` flag is enabled, ensure that [sys-devel/llvm](../sys-devel/llvm.md
 
 This flag should only be enabled if there is a need to debug the Mesa libraries/drivers or applications linked against them.
 
-### dri3
-Pass the `-Ddri3=enabled` option to the meson build command. Enable support for the DRI3 (Direct Rendering Infrastructure 3) extension that utilizes the DMA-BUF (Direct Memory Access Buffer Sharing API) feature to pass buffer objects between X Server and DRI client using file descriptors over the old and insecure GEM (Graphics Execution Manager) buffer sharing mechanism.
-
-This flag should be enabled if target systems runs the X Server.
-
 ### egl
 Pass the `-Degl=enabled` and `-Dglvnd=true` options to the meson build script. Build and install the `libEGL` library that provides the EGL API entry points and helper functions for use by the drivers. EGL API handles graphics context management, surface/buffer binding, and rendering synchronization and enables high-performance, accelerated, mixed-mode 2D and 3D rendering for the Embedded-System Graphics. This feature is formerly known as Eagle.
 
@@ -91,7 +86,7 @@ This feature only works with one of the `r600`, `radeonsi` and `nouveau` Gallium
 It is recommended to enable this flag if there is a need to deal with encoding and decoding video files using a compatible GPU, e.g. AMD.
 
 ### valgrind
-Pass the `-Dvalgrind=auto` option to the meson build command. Build mesa with Valgrind support. Enable some sanitization and additional code to suppress false positive reports from Valgrind in various memory management routines and Kernel calls. This has a performance impact.
+Pass the `-Dvalgrind=auto` (`disabled` if the flag is disabled) option to the meson build command. Build mesa with Valgrind support. Enable some sanitization and additional code to suppress false positive reports from Valgrind in various memory management routines and Kernel calls. This has a performance impact.
 
 This flag should only be enabled if there is a need to run Valgrind tool on the application linked against mesa libraries.
 
