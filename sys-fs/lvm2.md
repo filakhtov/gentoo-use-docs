@@ -5,7 +5,7 @@ Pass the `--disable-udev-systemd-background-jobs` option to the configure script
 
 It is safe to disable this flag. It can be useful for embedded systems.
 
-### lvm2create_initrd
+### lvm2create-initrd
 Install an `lvm2create_initrd` tool - a tool to create initial ramdisk (initrd) image suitable for booting systems with a root partition on LVM.
 
 This flag should normally be disabled as it is obsolete and does not even work with Gentoo.
