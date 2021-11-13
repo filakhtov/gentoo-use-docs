@@ -31,9 +31,14 @@ Requires `nightly` flag to be enabled. Set the `parallel-compiler` to `true` in 
 This flag should normally be disabled as this feature is experimental.
 
 ### rls
-Append `rls`, `analysis`, `src` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install the RLS (Rust Language Server) component that provides IDEs, editors, and other tools with information about Rust programs, and supports `goto definition`, symbol search, reformatting, code completion as well as renaming and refactoring features.
+Append `rls` and `analysis` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install the RLS (Rust Language Server) component that provides IDEs, editors, and other tools with information about Rust programs, and supports `goto definition`, symbol search, reformatting, code completion as well as renaming and refactoring features.
 
 This flag can be safely disabled.
+
+### rust-src
+Append the `src` to the `tools` option in the `build` section of the `config.toml` build configuration file. Install the `rust-src` tool that is used to download a tarball of the Rust source code associated with the current version of the `rustc` compiler.
+
+It is safe to disable this flag.
 
 ### rustfmt
 Append `rustfmt` to the `tools` option in the `build` section of the `config.toml` build configuration file. Install the `rustfmt` tool that is used to format Rust code according to style guidelines.
