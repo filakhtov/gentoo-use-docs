@@ -41,7 +41,7 @@ Pass the `-DLLVM_BUILD_TESTS=on` (`off` if the flag is disabled) option to the c
 This flag should normally be disabled, because these tests are only used by developers and maintainers.
 
 ### xar
-Pass the `-DHAVE_LIBXAR=1` (`0` when the flag is disabled) option to the cmake command. Enable support for the `xar` (eXtensible ARchive) compressed object files for the `llvm-objdump` tool to provide an ability to print contents of object files and final linked images.
+Pass the `-DLLVM_HAVE_LIBXAR=1` (`0` when the flag is disabled) option to the cmake command. Enable support for the `xar` (eXtensible ARchive) compressed object files for the `llvm-objdump` tool to provide an ability to print contents of object files and final linked images.
 
 It is safe to disable the flag, unless there is a need to dump information about xar compressed object files and binary images.
 
