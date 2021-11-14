@@ -26,7 +26,7 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 It is safe to disable this flag unsless there is an explicit need for a static library.
 
 ### systemd
-Pass the `--enable-systemd` option to the configure script. Provide an integration with SystemD's logind to track user logins between different seats and consoles.
+Pass the `--enable-systemd` and `--enable-user-session` options to the configure script. Provide an integration with SystemD's logind to track user logins between different seats and consoles. Start a session-wide `dbus` systemd service and socket as part of the SystemD user instance that will be shared across different seats and consoles for the same user.
 
 The flag should only be enabled if the target system to be used with SystemD.
 
@@ -34,11 +34,6 @@ The flag should only be enabled if the target system to be used with SystemD.
 Run a configure script in designated test directory and pass the `--enable-asserts`, the `--enable-checks` and the `--enable-embedded-tests` options to it. Run a `make` command inside of the same directory afterwards. When a main build is completed, execute a `make check` command inside of the same directory. This will extend a build time.
 
 This flag should normally be disabled as it is only useful for the Gentoo team, testers and developers.
-
-### user-session
-Pass the `--enable-user-session` option to the configure script. This might break some dbus consumers that aren't prepared for the change, see [Gentoo Bug #576028](https://bugs.gentoo.org/576028) for details. Start a session-wide `dbus` systemd service and socket as part of the SystemD user instance that will be shared across different seats and consoles for the same user.
-
-It is recommended to enable this flag if the target system uses SystemD and there is a need to run a modern desktop environment.
 
 ### X
 Pass the `--with-x` option to the configure script. Install an `80-dbus` script into a system `xinitrc.d` directory that is responsible for automatically launching a session dbus instance as part of an X.org startup.
