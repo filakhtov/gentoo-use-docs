@@ -15,11 +15,6 @@ Pull in the [media-video/libva-utils](../media-video/libva-utils.md) package as 
 
 It is safe to disable the flag.
 
-### vdpau
-Pull in the [x11-libs/libva-vdpau-driver](../x11-libs/libva-vdpau-driver.md) package as a dependency that provides the VDPAU backend driver for VA-API - a thin wrapper to perform video processing on hardware that supports VDPAU (Video Decode and Presentation API for Unix), but not VA-API.
-
-This flag should only be enabled on systems with hardware that doesn't support VA-API natively but have VDPAU support (e.g. an Nvidia card with proprietary driver) and there is a need to use application that has VA-API support, but not VDPAU.
-
 ### wayland
 Pass the `--enable-wayland` option to the configure script. Build and install the `libva-wayland` library that provides an ability to render decoded and processed video frames onto a Wayland surface. Note: actual backend driver has to support the Wayland rendering too for this to work.
 
