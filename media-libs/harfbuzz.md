@@ -26,7 +26,7 @@ Pass the `-Dglib=enabled` option to the meson build script. Use the `GLib` libra
 It is recommended to enable this flag as many packages (e.g. the Pango library) depend on provided features.
 
 ### graphite
-Pass the `-Dgraphite=enabled` option to the meson build script script. Provide support for Graphite fonts - TrueType fonts with additional tables containing smart rendering information via the `libgraphite2` library.
+Pass the `-Dgraphite2=enabled` option to the meson build script script. Provide support for Graphite fonts - TrueType fonts with additional tables containing smart rendering information via the `libgraphite2` library.
 
 This flag should be enabled if there is a need to use Graphite fonts, e.g. for non-roman script languages.
 
