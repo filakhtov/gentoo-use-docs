@@ -25,10 +25,20 @@ This flag replaces the `-O3` compiler optimization option with the `-O2`. The hi
 
 It is recommended to enable this flag on systems that have the `-O3` optimization option set in the `CFLAGS` and/or the `CXXFLAGS`. See the [Gentoo bug #50309](https://bugs.gentoo.org/50309) for more information.
 
+### lto
+Pass the `--with-lto` option to the configure script to enable Link Time Optimization when building the package. This will produce a faster Python binary, but will extend the overall build time.
+
+It is safe to disable this flag.
+
 ### ncurses
 Enables the `_curses`, the `_curses_panel` and the dependent Python modules. These modules provide an interface for portable advanced terminal handling using the `ncurses` library. They also provide window management like functionality in a terminal. If the flag is disabled, add these modules to the `PYTHON_DISABLE_MODULES` environment variable for the duration of the build to avoid installing them.
 
 This flag is generally safe to disable. There are quite a few packages in the Portage tree that depend on it however.
+
+### pgo
+Pass the `--enable-optimizations` option to the configure script and export the `PROFILE_TASK` environment variable with profiler configuration. Use profiler-guided optimization when building, which results in a binary that is about 10% to 20% faster at executing the Python code, however this will increase the build time for about 20% to 40%.
+
+It is safe to disable this flag.
 
 ### readline
 This flag enables the `readline` Python module. This module influences how interactive input is handled by the Python interpreter and various built-in input related functions. Features include autocompletion and reading/writing of history files. Whe the flag is disabled, disable the module by adding it to the `PYTHON_DISABLE_MODULES` environment variable for the duration of the build.
