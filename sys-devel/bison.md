@@ -1,7 +1,7 @@
 # sys-devel/bison
 
 ### examples
-Pass the `--enable-examples` option to the configure script. Does nothing when enabled. If disabled, allow to ignore a dependency on Perl (which is only required for tests and examples) during configure step.
+Install example files into the `/usr/share/doc/bison-<VERSION>/examples` directory. When the flag is disabled, remove the `examples` directory from the built image before installing it into the system.
 
 It is safe to disable the flag.
 
