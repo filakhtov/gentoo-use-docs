@@ -72,11 +72,6 @@ Passes the `-Dmicrohttpd=true` option to the Meson build script. This builds and
 
 This flag is only required if there is a need for a remote journal collection on the target system.
 
-### hwdb
-Pass the `-Dhwdb=true` option to the Meson build script. Build and install the `systemd-hwdb` hardware database management utility that can be used to query and update information in the binary hwdb database, and the `systemd-hwdb-update.service` that will run and add new `.hwdb` entries from the `/etc/udev/hwdb.d` directories into the binary database.
-
-It is recommended to enable this flag.
-
 ### idn
 This flag passes the `-Dlibidn=true` option to the Meson build script. Enabling it will build the `systemd-networkd` and the `systemd-resolved` daemons with the IDN support using the `libidn2` library.
 
