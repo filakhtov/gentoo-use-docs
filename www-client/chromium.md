@@ -90,6 +90,11 @@ Pass the `icu` parameter to the `--system-libraries` option for the `build/linux
 
 It is recommended to disable this flag for maximum Chromium stability.
 
+### system-png
+Pass the `libpng` parameter to the `--system-libraries` option for the `build/linux/unbundle/replace_gn_files.py` script to replace bundled PNG library with the system-wide version to link against.
+
+It is recommended to disable this flag for maximum Chromium stability.
+
 ### vaapi
 Pass the `use_vaapi=true` option to the `gn gen` command. Enable support for VA-API (Video Acceleration API) hardware accelerated video decoding using a compatible graphics adapter. Note: VA-API is not officially supported on Linux and is disabled at runtime, so it is necessary to enable it via the `enable-accelerated-video-decode` flag.
 
