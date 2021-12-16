@@ -5,14 +5,6 @@ Pass the `--with-audit=linux` option to the configure script. Provide an ability
 
 It is safe to disable the flag. This flag is useful for environments where security auditing is necessary.
 
-### bindist
-This flag does nothing on its own.
-
-- When enabled together with a `ldns` flag - ensure that a [net-libs/ldns](../net-libs/ldns.md) package has `ecdsa` flag disabled.
-- When an `ssl` flag is enabled, while a `libressl` flag is disabled - ensure that a `bindist` flag of a [dev-libs/openssl](../dev-libs/openssl.md) package matches `bindist` on the openssh package.
-
-This flag must be disabled if there is a plan to distribute package in compiled form due to patent restrictions.
-
 ### debug
 Append the `-DSANDBOX_SECCOMP_FILTER_DEBUG` option to a `CPPFLAGS` variable. Changes seccomp denial method from a default `SECCOMP_RET_KILL` to a `SECCOMP_RET_TRAP` that provides additional information about the failed syscall.
 
