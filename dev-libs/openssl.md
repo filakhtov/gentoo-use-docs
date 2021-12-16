@@ -5,11 +5,6 @@ Passes the `enable-asm` argument to the `Configure` script. This uses an assembl
 
 It is recommended to enable this flag.
 
-### bindist
-There are licensing restrictions on binary distribution of the OpenSSL library compiled with ECC (Elliptic Curve Cryptography), such as SM2 (defined by the Chinese national standard GM/T 0003-2012). The flag is passing the `no-ec2m` and `no-sm2` arguments to the `Configure` script and this disables patented algorithms allowing the resulting binary package to be distributed. When disabled, passes the `enable-ec2m` and `enable-sm2` argument instead.
-
-This flag should normally be disabled as the ECC brings a lot of benefits. It should, however, be disabled if it is necessary to distribute compiled binaries.
-
 ### gmp
 The flag passes the `enable-gmp` and the `-lgmp` arguments to the `Configure` script. This will replace OpenSSL built-in RSA private key operations with GMP library routines.
 
