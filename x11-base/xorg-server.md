@@ -10,20 +10,10 @@ Pass the `--enable-dmx` option to the configure script. Build the DMX (Distribut
 
 This flag should only be enabled if there is a need to proxy X server from different machines.
 
-### doc
-Pass the `--with-doxygen` and the `--with-xmlto` options to the configure script. Generate additional documentation using the DocBook and xmlto tools and install it into the `/usr/share/doc/xorg-server-<VERSION>` directory.
-
-It is safe to disable the flag.
-
 ### elogind
 This flag is incompatible with the `systemd` flag. Pull in the [sys-auth/elogind](../sys-auth/elogind.md) and other relevant packages as dependencies and pass the `--enable-systemd-logind` and `--disable-install-setuid` options to the configure script. Enable integration with the elogind daemon to provide an ability to run Xorg from an unprivileged user and provide necessary access to various devices.
 
 This flag should be normally disabled, unless there is a need to use elogind with Xorg, for example when running the GNOME desktop environment without SystemD.
-
-### ipv6
-Pass the `--enable-ipv6` option to the configure script. Enable support for the IPv6 protocol in the Xorg networking code, e.g. for the XDMCP (X Display Manager Control Protocol).
-
-This flag should be enabled if there is a need to use an X Server remote functionality over an IPv6-capable network.
 
 ### kdrive
 Pass the `--enable-kdrive`, `--enable-kdrive-kbd`, `--enable-kdrive-mouse` and the `--enable-kdrive-evdev` options to the configure script. Build and install a KDrive X server (aka Tiny X, TinyX) that is designed for low memory environments that tends to avoid large memory allocations at runtime, and tries to perform operations "on the fly" whenever possible. It is completely self-contained: it does not require any configuration files or on-disk fonts and all configuration is done at compile time and through command-line flags.
