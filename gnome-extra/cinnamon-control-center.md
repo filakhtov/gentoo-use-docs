@@ -5,6 +5,11 @@ Pass the `-Dcolor=true` option to the `meson` build script. Build and install a 
 
 This flag should be enabled if there is a need to deal with color profiled devices.
 
+### gnome-online-accounts
+Pass the `-Donlineaccounts=true` option to the `meson` build script. Enable support for Gnome Online Accounts in Cinnamon settings, i.e. provide an ability to configure Google, Facebook, Twitter, ownCloud, Kerberos and other service credentials. These credentials then can be used by different applications, such as mounting a G.Drive in Nemo or syncing the Google Calendar with Evolution client.
+
+It is safe to disable this flag.
+
 ### modemmanager
 Pass the `-Dmodemmanager=true` option to the `meson` build script. Enable support for the ModemManager and provide an ability to manage modem devices in Cinnamon Control Center, e.g. checking the status, setting them up, etc.
 
@@ -24,4 +29,3 @@ This flag should be enabled if the target system uses systemd init daemon.
 Start a new Xvfb session and execute the `meson test` command inside of it when the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
 
 The flag should normally be disabled, as it is mainly targeted for the maintainers, testers and developers.
-
