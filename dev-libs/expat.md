@@ -10,9 +10,6 @@ Pass the `--enable-static` option to the configure script. A build will produce 
 
 It is recommended to disable this flag, unless there is an explicit need for statically liked libraries, e.g. for development purposes.
 
-### split-usr
-This flag does nothing.
-
 ### unicode
 After doing regular configure, adjust `Makefile` rules to build a `libexpatw.la` library and re-run configure again. Append a `-DXML_UNICODE` compiler flag. Produce and install "wide" library version that supports multi-byte Unicode character sets.
 
