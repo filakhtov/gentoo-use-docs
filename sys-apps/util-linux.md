@@ -79,6 +79,11 @@ This flag will pass `--with-readline` option to configure script, enabling suppo
 
 This flag can be disabled, but it will result degradation of usability in interactive tools.
 
+### rtas
+Export the `ac_cv_lib_rtas_rtas_get_sysparm=true` environment variable for the duration of the build. Enable support for RTAS (Run-Time Abstraction Services) calls which provide support for low-level system hardware configuration and operations, such as retrieving hardware sensor (temperature, fan speed, etc.) data, setting the operator panel LEDs, getting hardware error logs, injecting artificial hardware errors (for testing), getting VPD (Vital Product Data), and loading new firmware.
+
+This flag is only relevant for PowerPC 64 platform.
+
 ### selinux
 Enable `--with-selinux` option during configure. This will make sure that various tools behave properly with SElinux enabled. This includes access checking and reporting, manipulating contexts, etc.
 
