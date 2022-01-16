@@ -390,6 +390,11 @@ Pass the `--enable-librsvg` option to the configure script. Use the `librsvg` li
 
 This flag can be safely disabled, and is not normally necessary.
 
+### svt-av1
+Only works when the `encode` flag is enabled. Pass the `--enable-libsvtav1` option to the configure script. Enable support for an SVT-AV1 (Scalable Video Technology for AV1) work-in-progress encoder targeting performance levels applicable to both VOD and Live encoding / transcoding video applications.
+
+This flag should normally be disabled, as SVT-AV1 is in its early stages of development.
+
 ### test
 Configure the `LD_LIBRARY_PATH` environment variable and execute the `make fate` command when the main build is completed. Run the regression test suite provided with the source code. This will extend the build time.
 
