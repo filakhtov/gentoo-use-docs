@@ -1,6 +1,6 @@
 # net-misc/wget
 
-### cookie_check
+### cookie-check
 Pass the `--with-libpsl` option to the configure script. This provides an ability to check for valid cookie domains using a public suffix list.
 
 It is safe to disable this flag, however it can provide some security benefits if `wget` to be used with cookies.
