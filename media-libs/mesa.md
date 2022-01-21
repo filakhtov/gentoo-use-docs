@@ -15,20 +15,10 @@ If the `llvm` flag is enabled, ensure that [sys-devel/llvm](../sys-devel/llvm.md
 
 This flag should only be enabled if there is a need to debug the Mesa libraries/drivers or applications linked against them.
 
-### egl
-Pass the `-Degl=enabled` and `-Dglvnd=true` options to the meson build script. Build and install the `libEGL` library that provides the EGL API entry points and helper functions for use by the drivers. EGL API handles graphics context management, surface/buffer binding, and rendering synchronization and enables high-performance, accelerated, mixed-mode 2D and 3D rendering for the Embedded-System Graphics. This feature is formerly known as Eagle.
-
-This flag should be enabled on embedded systems that support Khronos rendering APIs, such as OpenGL ES or OpenVG.
-
 ### gallium
 Pass the `-Dgallium-drivers=swrast` option (and others depending on the video cards selection, e.g. `i915`, `vc4`, `r600`, `radeonsi`, etc) to the meson build command. Enable Gallium3D - a new architecture for building 3D graphics drivers that is designed to allow portability to all major operating systems and graphics interfaces. Build Gallium based `swrast_dri.so` library and other supported driver libraries (`*_dri.so`) enabled via the `VIDEO_CARDS` variable and install them into the `/usr/lib/dri` directory.
 
 This flag should only be enabled as a dependency of one or more video card drivers and other Mesa features or if there is an explicit need for the `Gallium3D` backend, e.g. for software rendering using LLVM without hardware acceleration.
-
-### gbm
-Append the `drm` value to the `-Dplatforms=` option and pass it together with the `-Dgbm=enabled` option to the meson build command. Build and install a `libgbm.so` library that provides a graphics buffer manager (aka GBM) - an abstraction of the graphics driver specific buffer management APIs (for instance the various `libdrm_*` libraries), implemented internally by calling into the Mesa GPU drivers.
-
-This flag should only be enabled as a dependency of the graphics driver, or if the target system runs the Wayland display server.
 
 ### gles1
 Pass the `-Dgles1=enabled` option to the meson build command. Build and install the `libGLESv1_CM` library that provides support for the OpenGL ES 1.1 API - a royalty-free, cross-platform API for rendering advanced 2D and 3D graphics on embedded and mobile systems - including consoles, phones, appliances and vehicles. OpenGL ES depends on a working EGL implementation.
@@ -39,11 +29,6 @@ This flag should be enabled on the embedded systems that support OpenGL ES 1.1 A
 Pass the `-Dgles2=enabled` option to the meson build command. Build and install the `libGLESv2` library that provides support for the OpenGL ES 2.0 API - a royalty-free, cross-platform API for rendering advanced 2D and 3D graphics on embedded and mobile systems - including consoles, phones, appliances and vehicles. OpenGL ES depends on a working EGL implementation.
 
 This flag should be enabled on the embedded systems that support OpenGL ES 2.0 API.
-
-### libglvnd
-Pass the `-Dglvnd=true` option to the meson build command. Use the `libgvnd` library - an OpenGL Neutral Dispatch Library led by NVIDIA, to replace the internal Mesa dispatcher implementation. This allows multiple OpenGL implementations from different vendors to coexist on the same system, without interfering with each other or requiring any manual configuration.
-
-This flag can be safely disabled, but it is recommended to enable it on systems with multiple GPUs from different vendors.
 
 ### llvm
 This flag only works if the `gallium` flag is enabled. Prepare build environment by detecting a latest installed version of the LLVM package and appending it to the `PATH` variable. Pass the `-Dllvm=enabled` option to the meson build command. Build and install the Gallium llvmpipe driver - a software rasterizer that uses LLVM to do runtime code generation. Shaders, point/line/triangle rasterization and vertex processing are implemented with LLVM IR which is translated to x86, x86-64, or ppc64le machine code. Also, the driver is multithreaded to take advantage of multiple CPU cores (up to 8 at this time). It's the fastest software rasterizer for Mesa.
@@ -111,7 +96,7 @@ The Wayland server requires the EGL implementation and GBM support to work. Appe
 This flag should only be enabled if there is a need to run Wayland server on the target system.
 
 ### X
-Append the `x11` value to the `-Dplatforms=` option and pass it together with `-Dglvnd=true` option to the meson build command. Enable support for X11 (X Windows System, aka X) platform for various Mesa drivers to allow indirect GLX rendering, DRI or DRM within X server applications (depending on enabled backends and drivers).
+Append the `x11` value to the `-Dplatforms=` option and pass it to the meson build command. Enable support for X11 (X Windows System, aka X) platform for various Mesa drivers to allow indirect GLX rendering, DRI or DRM within X server applications (depending on enabled backends and drivers).
 
 This flag should be enabled if the target system runs X11.
 
