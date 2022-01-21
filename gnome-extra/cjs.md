@@ -10,11 +10,6 @@ Install additional code examples written in the JavaScript language into the `/u
 
 It is safe to disable the flag.
 
-### gtk
-This flag is used only if the `test` flag is also enabled. Pull in the [x11-libs/gtk+](../x11-libs/gtk+.md) package as a dependency to provide an ability for tests to run the tests that use GTK+ toolkit.
-
-This flag should normally be disabled.
-
 ### readline
 Pass the `-Dreadline=enabled` option to the `meson` build script. Use the readline library to provide rich user input in the interactive shell and debugger.
 
