@@ -10,11 +10,6 @@ No additional options are passed if the flag is enabled. When disabled, pass a `
 
 This flag should only be enabled if there is a need to run a domain controller on top of Samba.
 
-### addns
-Pass a `--with-dnsupdate` option to a WAF configure script. Attempt to perform an update to a DNS entry after joining on a client (member server) via a `net ads join` command. Enable a `--no-dns-updates` runtime option for a `net` command to skip an update.
-
-This flag should only be enabled if there is a need to perform DNS updates when joining domain.
-
 ### ads
 Pass a `--with-ads` option to a WAF configure script. Enable integration with ADS (Active Directory Services) using the Kerberos 5 and LDAP protocols and provide an ability to join as a member of an Active Directory domain.
 
@@ -83,11 +78,6 @@ It is safe to disable the flag.
 Pass a `--with-ldap` option to a WAF configure script. Provide an ability to use a LDAP directory to provide an authentication layer in addition to containing the user, group, and machine account information. Build and install various `smbldap-*` utilities, e.g. `smbldap-groupadd`, `smbldap-useradd`, `smbldap-passwd`, `smbldap-userinfo` and others.
 
 This flag should only be enabled if integration with LDAP is desired.
-
-### ntvfs
-Pass the `--with-ntvfs-fileserver` option to the WAF configure script. Enable support for NTVFS file server backend that was introduced during the Samba AD (Active Directory) development but never provided the same features and quality as s3fs (Samba 3 File Server) and was later abandoned.
-
-This flag should almost always be disabled.
 
 ### pam
 Pass a `--with-pam` and a `--with-pammodulesdir=/lib/security` options to a WAF configure script. Build and install a `pam_winbind` module to integrate Samba with a PAM (Pluggable Authentication Modules) infrastructure. This module can authenticate users against the local domain by talking to the Winbind daemon.
