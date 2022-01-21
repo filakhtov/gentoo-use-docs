@@ -10,6 +10,11 @@ Set the `optimize` option to `false`, `release-debuginfo` to `true`, `assertions
 
 This flag should only ever be enabled if there is a need to debug toolchain, standard library or compiler components of rust.
 
+### dist
+Install dist tarballs that were used for bootstrapping the Rust compiler itself.
+
+This flag should normally be disabled.
+
 ### doc
 Set the `docs` and `compiler-docs` options to `true` in the `build` section of the `config.toml` build configuration file. Install standard library, facade crates and the compiler documentation, as well as the `rustdoc` tool, that allows to generate documentation from the source code.
 
