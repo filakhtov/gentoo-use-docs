@@ -42,15 +42,25 @@ Pass the `--enable-cryptsetup-reencrypt` option to the configure script. Build a
 
 It is safe to disable this flag unless there is a need to re-encrypt LUKS devices.
 
+### ssh
+Pass the `--enable-ssh-token` option to the configure script. Build and install the `cryptsetup-ssh` experimental cryptsetup plugin for unlocking LUKS2 devices with token connected to an SSH server.
+
+It is safe to disable this flag.
+
 ### static
 Pass the `--enable-static-cryptsetup` option to the configure script. Build and install statically linked binaries, e.g. a `cryptsetup`, a `veritysetup` and etc.
 
 This flag should normally be disabled unless there is an explicit need for static binaries.
 
 ### static-libs
-Pass the `--enable-static` option to the configure script. Build and install a statically linked `libcryptsetup` library.
+Pass the `--enable-static` option to the configure script. Build and install a statically linked `libcryptsetup` library. When this flag is disabled, pass the `--enable-external-tokens` option to the configure script to enable loading of plugins for external LUKS2 tokens.
 
 This flag should be normally disabled unless there is an explicit requirement for a static library.
+
+### test
+Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for regressions. This will extend overall build time.
+
+This flag should normally by disabled, because these tests are primarily oriented towards the developers, maintainers and testers.
 
 ### udev
 Pass the `--enable-udev` option to the configure script. Use a `libdevmapper`'s udev synchronisation to prevent DM and UDEV getting out of sync and leading to e.g. inaccessible device nodes.
