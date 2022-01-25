@@ -10,11 +10,6 @@ Pass the `--enable-broadway-backend` option to the configure script. Enable supp
 
 It is safe to disable the flag.
 
-### cloudprint
-Pass the `--enable-cloudprint` option to the configure script. Enable Google Cloud Print support for the GTK+ toolkit. Provide a native support for printing using cloud-shared printers and an ability to save to Google Drive from printing dialog.
-
-This flag can be safely disabled.
-
 ### colord
 Pass the `--enable-colord` option to the configure script. Enable a GTK+ support for the `colord` daemon to provide color management abilities. Allow to change and apply new profiles to the display. Provide an ability to associate color profiles with various devices such as monitors, printers or scanners and allow to calibrate these devices if they have necessary hadware or software suport.
 
