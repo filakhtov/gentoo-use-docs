@@ -63,7 +63,7 @@ This passes `--enable-nls` option to the configure script. As a result translati
 This flag can be safely disabled if the only language necessary is English.
 
 ### pam
-This flag tells ebuild to compile and install `runuser` binary and associated configuration files for PAM subsystem: `runuser` and `runuser-l`.
+This flag tells ebuild to compile and install `runuser` binary and associated configuration files for PAM subsystem: `runuser`, `runuser-l` and `su-1`.
 
 `runuser` command can be used by root user to execute a process using privileges of different user and group. It is similar to `su` command but has slightly lower overhead, because only `session` PAM modules are executed, while `auth` and `account` ones are skipped.
 
