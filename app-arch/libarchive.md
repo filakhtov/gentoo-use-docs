@@ -60,11 +60,6 @@ Pass the `--enable-xattr` option to the configure script. Provide an ability to 
 
 It is recommended to toggle this flag system-wide. Disabling this flag when it is enabled for other packages might and will result in losing XATTRs while handling archives.
 
-### zlib
-Pass the `--with-zlib` option to the configure script. Provide an ability to create and extract Gzip archives using a `libz` library.
-
-This flag can be safely disabled.
-
 ### zstd
 Pass the `--with-zstd` option to the conpigure script. Enable support for the zstandard lossless compression algorithm, both when creating and extracting archives.
 
