@@ -30,6 +30,11 @@ Pass the `--without-included-gettext` option to the configure script when flag i
 
 This flag should be enabled if there is a need for non-English CLI messages, otherwise it is safe to disable.
 
+### pgo
+Pass the `--enable-pgo-build=lto` option to the configure script. Enable PGO (Profile Guided Optimization) and LTO (Link Time Optimization) when building binutils. This produces a more performant binaries with the tradeoff of taking longer to build.
+
+It is recommended to enable this flag to improve performance.
+
 ### plugins
 Pass the `--enable-plugins` option to the configure script. Enable a plugin support provided by the `--plugin` runtime option for the linker tools, such as LLVM plugin.
 
