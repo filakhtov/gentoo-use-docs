@@ -1,14 +1,14 @@
 # gnome-extra/nemo
 
-### doc
-Pass the `-Dgtk_doc=true` option to the `meson` build script. Use the Gtk-Doc tool to generate the Nemo Extension Reference Manual from the source code annotations in the `libnemo-extension` library source code in the HTML format and install it into the system.
-
-It is safe to disable this flag.
-
 ### exif
 Pass the `-Dexif=true` option to the `meson` build script. Use the `libexif` library to read and decode an EXIF (EXchangeable Image Format) metadata tags from media files created by digital cameras, and display this information in a file properties dialog or as media columns in a table view of the files list.
 
 This flag should be enabled if there is a need to display EXIF metadata.
+
+### gtk-doc
+Pass the `-Dgtk_doc=true` option to the `meson` build script. Use the Gtk-Doc tool to generate the Nemo Extension Reference Manual from the source code annotations in the `libnemo-extension` library source code in the HTML format and install it into the system.
+
+It is safe to disable this flag.
 
 ### nls
 Pull in a [gnome-extra/cinnamon-translations](../gnome-extra/cinnamon-translations.md) package as a dependency to provide translations for Cinnamon ecosystem.
@@ -34,4 +34,3 @@ This flag should be enabled if there is a need to use Tracker features for searc
 Pass a `-Dxmp=true` option to the `meson` build script. Integrate with the `libexempi` library to read an XMP (Extensible Metadata Platform) image metadata, such as location, description, subject and others, and display this information in an image file properties dialog.
 
 This flag should be enabled if there is a need to display XMP metadata.
-
