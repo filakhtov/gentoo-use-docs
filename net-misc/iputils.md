@@ -33,11 +33,6 @@ Pass the `-DUSE_IDN=true` option to the meson build command. Use the `libidn2` l
 
 This flag can be safely disabled if there is no need to deal with non-English domain names.
 
-### ipv6
-Enable IPv6 protocol support in tools that can use it (e.g. `tracepath` and `ping`). Create the compatibility `ping6` symlink pointing to the `ping` binary.
-
-This flag is recommended if target system is to be participating in IPv6 capable network(s), otherwise it can safely be disabled.
-
 ### nettle
 This flag does nothing.
 
