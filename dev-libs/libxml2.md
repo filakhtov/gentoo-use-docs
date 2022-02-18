@@ -17,11 +17,6 @@ This flag passes the `--with-icu` option to the configure script. By default, a 
 
 It is safe to disable the flag as it is only required for dealing with XML documents encoded with unusual character sets.
 
-### ipv6
-Passes the `--enable-ipv6` option to the configure script. This provides the support for fetching a DTD (Document type definition) and an XSD (XML Schema Definition) schemas over the IPv6 protocol.
-
-This flag is only necessary for systems that participate in IPv6 capable networks.
-
 ### lzma
 The flag passes the `--with-lzma` option to the configure script. This provides support for a transparent LZMA compression at an I/O layer. E.g.  tools provided with the library will be able to process compressed XML (`.xml.lzma`) files directly, without prior decompression.
 
