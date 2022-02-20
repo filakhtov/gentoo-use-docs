@@ -5,6 +5,11 @@ Provide an ability to capture and playback audio via the ALSA system and enable 
 
 This flag should be enabled if there is a need to play or record audio through ALSA devices.
 
+### amf
+Pass the `--enable-amf` option to the configure script. Enable support for the AMD Advanced Media Framework (AMF) library for accelerated H.264 encoding on hardware with Video Coding Engine (VCE).
+
+It is safe to disable this flag, however it can be considered to improve performance at the cost of slightly reducing the encoding quality on the compatible AMD platforms.
+
 ### amr
 Pass the `--enable-version3`, `--enable-libopencore-amrwb` and `--enable-libopencore-amrnb` options to the configure script. Use the `libopencore-amrnb` and `libopencore-amrwb` libraries to perform AMR-NB (Adaptive Multi-Rate NarrowBand) and AMR-WB (Adaptive Multi-Rate WideBand) decoding instead of FFmpeg's native implementation. Resulting libraries will be licensed under (L)GPL version 3.
 
