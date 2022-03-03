@@ -21,8 +21,3 @@ It is safe to disable the flag.
 Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libxslt` library.
 
 The flag can safely be disabled unless there is an explicit need for statically linked libraries, e.g. for development purposes.
-
-### verify-sig
-Perform signature verification of the upstream source code archive before extracting it and building the package.
-
-It is safe to disable this flag.
