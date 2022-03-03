@@ -41,8 +41,3 @@ This flag should normally be disabled and might only be necessary for certain de
 Execute the test suite provided with the library by calling the `make check` command when the main build is completed to check for any regressions. If `python` flag is enabled, additionally execute Python bindings related test suite for every enabled Python target by running a `make test` command for each enabled Python target. This will extend the build time.
 
 This flag should be disabled. It is primarily oriented towards the maintainers, developers and testers.
-
-### verify-sig
-Perform signature verification of the upstream source code archive before extracting it and building the package.
-
-It is safe to disable this flag.
