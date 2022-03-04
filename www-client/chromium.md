@@ -6,7 +6,7 @@ Pass the `is_component_build=true` option to the `gn gen` command. Normally, one
 This flag should normally be disabled, because component build isn't generally intended for use by end users and is mostly useful for developement and debugging.
 
 ### cups
-Pass the `use_cups=true` option to the `gn gen` command. Link against the `libcups` library to enable printing support using CUPS (Common Unix Printing System), including both, remote and local printers.
+Can't be used together with the `headless` flag. Pass the `use_cups=true` option to the `gn gen` command. Link against the `libcups` library to enable printing support using CUPS (Common Unix Printing System), including both, remote and local printers.
 
 It is safe to disable the flag.
 
@@ -19,6 +19,11 @@ It is recommended to disable this flag to avoid build issues.
 Pass the `dcheck_always_on=true` and `dcheck_is_configurable=true` options to the `gn gen` command. Enable `DCHECK()` macroses that will check various conditions in the code and can be configured to be fatal, i.e. terminate the Chrome immediately if the condition is not met. This is normally used for debugging purposes and various bot configurations and is not intended for the end users.
 
 This flag should normally be disabled for production builds.
+
+### gtk4
+Pass the `gtk_version=4` option (instead of the `3`) option to the `gn gen` command. Build against GTK+ version 4 instead of default of version 3. Even with that, Chromium still prefers GTK version 3 at runtime, so the `--gtk-version=4` flag needs to be passed as a command line option to actually use GTK version 4.
+
+This flag should only be enabled on systems that are running GTK+ version 4 and newer.
 
 ### hangouts
 Pass the `enable_hangout_services_extension=true` option to the `gn gen` command. Enable the Google Hangouts services that provide screensharing features for the Chromium browser.
@@ -36,9 +41,14 @@ Pass the `enable_js_type_check=true` option to the `gn gen` command. Run a closu
 This flag can be safely disabled because such analysis is normally performed by the developers, not end users.
 
 ### kerberos
-Pass the `use_kerberos=true` option to the `gn gen` command. Enable support for the SPNEGO authentication mechanism (Simple and Protected GSS-API Negotiation), also known as "integrated authentication" or "negotiate authentication" to provide the concept of Single Sign-On (SSO) - having authenticated once at the start of a session, users can access network services throughout a Kerberos realm without authenticating again. Enable support for the `--auth-server-whitelist` runtime option that takes as its value a comma-separated list of permitted hostnames. Also enable the `--auth-negotiate-delegate-whitelist` runtime option to allow a network service to authenticate to other network services on users behalf.
+Can't be used together with the `headless` flag. Pass the `use_kerberos=true` option to the `gn gen` command. Enable support for the SPNEGO authentication mechanism (Simple and Protected GSS-API Negotiation), also known as "integrated authentication" or "negotiate authentication" to provide the concept of Single Sign-On (SSO) - having authenticated once at the start of a session, users can access network services throughout a Kerberos realm without authenticating again. Enable support for the `--auth-server-whitelist` runtime option that takes as its value a comma-separated list of permitted hostnames. Also enable the `--auth-negotiate-delegate-whitelist` runtime option to allow a network service to authenticate to other network services on users behalf.
 
 This flag should only be enabled if there is a need for Kerberos/SPNEGO authentication.
+
+### libcxx
+Pass the `use_custom_libcxx=true` option to the `gn gen` command. Use the bundled `libc++` library provided with the Chromium source, instead of using the system `libstdc++` one. This will require LLVM compiler, as the bundled library can't be built with GCC, will extend the overall build time, but will produce a more "stable" build, as the bundled library is the way official Chromium and Chrome binaries are built by the upstream.
+
+This flag can be safely disabled.
 
 ### official
 Pass the `is_official_build=true` and `is_cfi=false` options to the `gn gen` command. First flag is responsible for a set of optimization flags that are enabled by the official Chrome builds, while the second disables CFI (Control Flow Integrity) for virtual calls, indirect calls and bad casts, because it is unsupported on GCC compiler. Enabling this flag slows down the build process but should have advantages during the runtime.
@@ -56,7 +66,7 @@ Pass the `proprietary_codecs=true` and the `ffmpeg_branding=Chrome` (instead of 
 This flag should normally be enabled to prevent various issues with media playback.
 
 ### pulseaudio
-Pass the `use_pulseaudio=true` option to the `gn gen` command. Enable the PulseAudio backend for Chromium to provide an ability to play sound via the PulseAudio server instead of the default ALSA (Advanced Linux Sound Architecture) system.
+Can't be used together with the `headless` flag. Pass the `use_pulseaudio=true` option to the `gn gen` command. Enable the PulseAudio backend for Chromium to provide an ability to play sound via the PulseAudio server instead of the default ALSA (Advanced Linux Sound Architecture) system.
 
 This flag should be enabled if the target system runs the PulseAudio sound system.
 
@@ -96,12 +106,12 @@ Pass the `libpng` parameter to the `--system-libraries` option for the `build/li
 It is recommended to disable this flag for maximum Chromium stability.
 
 ### vaapi
-Pass the `use_vaapi=true` option to the `gn gen` command. Enable support for VA-API (Video Acceleration API) hardware accelerated video decoding using a compatible graphics adapter. Note: VA-API is not officially supported on Linux and is disabled at runtime, so it is necessary to enable it via the `enable-accelerated-video-decode` flag.
+Can't be used together with the `headless` flag. Pass the `use_vaapi=true` option to the `gn gen` command. Enable support for VA-API (Video Acceleration API) hardware accelerated video decoding using a compatible graphics adapter. Note: VA-API is not officially supported on Linux and is disabled at runtime, so it is necessary to enable it via the `enable-accelerated-video-decode` flag.
 
 It is safe to disable this flag.
 
 ### wayland
-Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
+Can't be used together with the `headless` flag. Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
 
 This flag should be enabled if the system using Wayland window server.
 
