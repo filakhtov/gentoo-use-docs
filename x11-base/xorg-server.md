@@ -16,7 +16,7 @@ Pass the `-Dglamor=false`, `-Dglx=false`, `-Ddri1=false`, `-Ddri2=false` and `-D
 This flag should normally be disabled, unless there is an explicit need for the very minimal X server build.
 
 ### selinux
-Pull in the [sec-policy/selinux-xserver](../sec-policy/selinux-xserver.md) package as a dependency to install SELinux policies that are necessary for X server to propely run under a SELinux-restricted kernel.
+Pull in the [sec-policy/selinux-xserver](../sec-policy/selinux-xserver.md) package as a dependency to install SELinux policies that are necessary for X server to propely run under a SELinux-restricted kernel. Pass the `-Dxselinux=true` option to the meson build script. Build and install the XSELinux extension that uses SELinux functionality to apply SELinux attributes to various X objects and then use those attributes when security decisions are made.
 
 This flag should only ever be toggled system wide, i.e. as part of the SELinux-enabled Portage profile.
 
