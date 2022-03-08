@@ -5,6 +5,11 @@ Append `ada` to the `--enable-languages` option and pass it to the configure scr
 
 This flag should only be enabled if there is a need for
 
+### cet
+Pass the `--enable-cet` option to the configure script. Enable support for Intel CET (Control-Flow Enforcement Technology) - a hardware assisted solution to help mitigate ROP (Return-Oriented Programming) and JOP (Jump-Oriented Programming) vulnerabilities.
+
+This flag should only be enabled on compatible Intel platforms.
+
 ### custom-cflags
 By default, when building GCC most of the custom flags are stripped out from the `CFLAGS` variable in order to avoid build failures related to over-zealous flags. When this flag is enabled, no flags will be stripped out.
 
