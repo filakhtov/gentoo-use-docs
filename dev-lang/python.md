@@ -25,6 +25,11 @@ This flag replaces the `-O3` compiler optimization option with the `-O2`. The hi
 
 It is recommended to enable this flag on systems that have the `-O3` optimization option set in the `CFLAGS` and/or the `CXXFLAGS`. See the [Gentoo bug #50309](https://bugs.gentoo.org/50309) for more information.
 
+### libedit
+Only works if the `readline` flag is enabled. This would do exactly the same as the `readline` flag, except it would use the `libedit` library under the hood instead.
+
+This flag should only be enabled if there is a need to use `libedit` over `readline`, e.g. for license compatibility issues.
+
 ### lto
 Pass the `--with-lto` option to the configure script to enable Link Time Optimization when building the package. This will produce a faster Python binary, but will extend the overall build time.
 
