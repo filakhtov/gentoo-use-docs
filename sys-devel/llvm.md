@@ -1,5 +1,10 @@
 # sys-devel/llvm
 
+### binutils-plugin
+Ensure that the [sys-devel/binutils](../sys-devel/binutils.md) package installed with the `cxx` flag enabled and pull in the `sys-devel/llvmgold` package as a dependency. Build and install the LLVMgold plugin that allows to use the `ld.gold` linker for LTO (link time optimization) to yield reduced code size and increased execution speed of the resulting binaries.
+
+This flag should normally be disabled, because it increases compile time and can cause some compatibility issues.
+
 ### debug
 Pass the `-DLLVM_ENABLE_ASSERTIONS=on` (`off` when the flag is disabled) to the cmake command. Enable runtime assertions, but only if the build type is `Debug`.
 
@@ -14,11 +19,6 @@ It is safe to disable the flag.
 Pass the `-DLLVM_ENABLE_LIBPFM=on` (`off` if the flag is disabled) option to the cmake command. Build and install the `llvm-exegesis` binary - a benchmarking tool that uses information available in LLVM to measure host machine instruction characteristics like latency, throughput, or port decomposition.
 
 This flag can be safely disabled.
-
-### gold
-Ensure that the [sys-devel/binutils](../sys-devel/binutils.md) package installed with the `cxx` flag enabled and pull in the `sys-devel/llvmgold` package as a dependency. Build and install the LLVMgold plugin that allows to use the `ld.gold` linker for LTO (link time optimization) to yield reduced code size and increased execution speed of the resulting binaries.
-
-This flag should normally be disabled, because it increases compile time and can cause some compatibility issues.
 
 ### libedit
 Pass the `-DLLVM_ENABLE_LIBEDIT=on` (`off` if the flag is disabled) option to the cmake command. Use the Line Editing library `libedit` to provide tab completion support that can be utilized by multiple clients, such as `clang-query` and `LLDB`.
