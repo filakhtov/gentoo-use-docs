@@ -20,6 +20,11 @@ Prepare a Python environment to properly run the tests. Start a new Xvfb session
 
 This flag should normally be disable as it is mainly useful for the maintainers, testers and developers.
 
+### tpm
+Pass the `-Dtpm2=true` option to the meson build script. Provide an ability to encrypt and decrypt stored secrets using the TPM module (Trusted Platform Module), in addition to using the user's login password.
+
+It is safe to disable this flag, but should be considered on platforms with TPM2 support for increased security.
+
 ### vala
 Prepare environment for the configure script to find an appropriate version of vala files. Pass the `-Dvapi=true` option to the meson build script. Generate the `libsecret-1.vapi` Vala language bindings for the `libsecret` library.
 
