@@ -43,11 +43,6 @@ Pass the `-Dnautilus=true` option to the meson build script. Build the `libevinc
 
 It is safe to disable the flag and should only be enabled if Nautilus file manager is used.
 
-### nsplugin
-Pass the `-Dbrowser_plugin=true` option to the meson build script. Build and install the `libevbrowserplugin` library that provides NPAPI (Netscape Plugin Application Programming Interface) plugin for displaying PDF documents inside of the browser. This extension can be used by the number of browsers, such as Basilisk, GNOME Web, Midori, Konqueror, etc. It is not supported by modern versions of Opera, Firefox or Chromium/Chrome.
-
-This flag can be safely disabled.
-
 ### postscript
 Pass the `-Dps=enabled` option to the meson build script. Build and install the `libpsdocument` library that uses the `libspectre` library to provide an ability to view documents in the Adobe PostScript format.
 
