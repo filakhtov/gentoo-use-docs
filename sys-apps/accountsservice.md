@@ -6,7 +6,7 @@ Pass the `-Ddocbook=true` option to the meson build script. Use the xmlto utilit
 It is safe to disable the flag.
 
 ### elogind
-Pass the `-Delogind=true` option to the meson build script. Integrate AccountsService with the elogind service to query and manage login sessions and seats.
+Can not be used together with the `systemd` flag. Pass the `-Delogind=true` option to the meson build script. Integrate AccountsService with the elogind service to query and manage login sessions and seats.
 
 This flag should be enabled if there is a need to run the AccountsService with elogind.
 
@@ -26,6 +26,6 @@ Pull the [sec-policy/selinux-accountsd](../sec-policy/selinux-accountsd.md) pack
 This flag should only ever be toggled system-wide, e.g. as part of the SELinux-enabled Portage profile.
 
 ### systemd
-Pass the `-Dsystemd=true` option to the meson build script. Integrate AccountsService with the SystemD LoginD to query and manage login sessions and seats.
+Can not be used together with the `elogind` flag. Integrate AccountsService with the SystemD LoginD to query and manage login sessions and seats.
 
-This flag should be enabled if there is a need to run the AccountsService with the SystemD init ecosystem.
+This flag should be enabled on systems that use systemd as their init system.
