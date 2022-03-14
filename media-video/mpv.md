@@ -131,6 +131,11 @@ Pass the `--enable-lua` option to the waf build script. Allow to load and execut
 
 This flag should be enabled if there is a need to use Lua scripting to control the player.
 
+### nvenc
+Pass the `--enable-cuda-hwaccel` and `--enable-cuda-interop` options to the waf build script. Enable support for hardware accelerate video decoding using compatible NVIDIA cards.
+
+It is safe to disable this flag, and should only be enabled on systems that use a supported NVIDIA gpu.
+
 ### openal
 Pass the `--enable-openal` option to the waf build script. Build and install the `openal` audio output driver that can utilize the OpenAL API to play sound, usually multichannel three-dimensional positional audio.
 
