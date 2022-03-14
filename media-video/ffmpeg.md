@@ -285,6 +285,11 @@ Pass the `--enable-network` option to the configure script. Enable support for n
 
 This flag should be enabled to support networking features.
 
+### nvenc
+Pass the `--enable-ffnvcodec` option to the configure script. Enable support for NVIDIA Decoder (NVDEC) API for hardware accelerated video decoding on NVIDIA cards.
+
+It is safe to disable this flag and it should only be enabled on compatible systems with an NVIDIA GPU.
+
 ### openal
 Pass the `--enable-openal` option to the configure script. Enable the OpenAL input device, that provides an ability to capture audio stream on all systems with a working OpenAL 1.1 implementation.
 
