@@ -93,6 +93,11 @@ Execute a test-suite provided together with a source code. This will extend a bu
 
 The flag should normally be disabled as it is only useful for the Gentoo team, developers or testers.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### X
 Pull a [x11-apps/xauth](../x11-auth/xauth.md) package as a dependency. It is necessary for `X11Forwarding` to securily access GUI on a remote server via SSH protocol.
 
