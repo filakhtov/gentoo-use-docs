@@ -52,6 +52,11 @@ Enabling this flag will ensure that no Gentoo-specific patches are applied to th
 
 It is not recommended to enable the flag as it might result in a broken build or misbehaving binaries and libraries.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### tls-compression
 Passes the `enable-zlib` argument to the `Configure` script. Enables support for a clear-text compression and decompression before the encryption and after the decryption using zlib library. Compression is enabled by default when this flag is enabled.
 
