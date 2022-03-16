@@ -451,6 +451,11 @@ Pass the `--enable-libvidstab` option to the configure script. Use the `vid.stab
 
 It is safe to disable this flag if there is no need to perform video stabilization.
 
+### vmaf
+Pass the `--enable-libvmaf` option to the configure script. Use the `libvmaf` library to provide an ability to obtain the VMAF (Video Multi-Method Assessment Fusion) score between two input videos. This will be available through the `-lavfi libvmaf` option at runtime.
+
+This flag can be safely disabled.
+
 ### vorbis
 Pass the `--enable-libvorbis` option to the configure script. Use the external `libvorbis` library for encoding and decoding audio in the Vorbis format, instead of built-in experimental implementation. This will produce much higher quality when encoding.
 
