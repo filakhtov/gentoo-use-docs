@@ -69,6 +69,11 @@ Pass the `--enable-run-gnupg-user-socket` option to the configure script. This o
 
 This flag should normally be disabled, unless there is a need to start GnuPG agent at the early stage, e.g. from the PAM stack.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### wks-server
 Pass the `--enable-wks-tools` option to the configure script. Build and install the `gpg-wks-server` - a server-side implementation of the Web Key Service that receives requests for publication, sends confirmation requests, receives confirmations, and publishes keys.
 
