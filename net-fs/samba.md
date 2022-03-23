@@ -44,11 +44,6 @@ Pass the `--with-lttng` option to the WAF configure script. Use the LTTng (Linux
 
 This flag should only be enabled for debugging purposes.
 
-### dmapi
-Pass a `--with-dmapi` option to a WAF configure script. Enable support for a Data Management API (DMAPI) interface for Hierarchical Storage Management (HSM) for an XFS filesystem.
-
-This flag should only be enabled if there is a need to run samba on an XFS filesystem.
-
 ### fam
 Pass a `--with-fam` option to a WAF configure script. Build a `vfs_notify_fam` - VFS (virtual file-system) Samba module that makes use of the system FAM (File Alteration Monitor) daemon to implement file change notifications for Windows clients. FAM is generally present only on IRIX and some BSD systems.
 
