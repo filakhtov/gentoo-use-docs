@@ -35,11 +35,6 @@ Pass the `--enable-pcretest-libreadline` option to the configure script. Use a `
 
 This flag can be safely disabled.
 
-### recursion-limit
-Pass the `--with-match-limit-recursion` option with value `8192` instead of `MATCH_LIMIT` to the configure script. Normally, recursive matching is done up until the maximum amount of stack (or heap) is used. Enabling this option will limit recursion to `8192` calls.
-
-This option should normally be enabled to cut execution early and save resources unless there is a specific need to deal with a recursive pattern matching that can hit this limit.
-
 ### split-usr
 If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
 
