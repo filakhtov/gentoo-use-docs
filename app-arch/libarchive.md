@@ -55,6 +55,11 @@ Pass the `--enable-static` option to the configure script. Build and install sta
 
 The flag should normally be disabled unless there is an explicit need to use static library, e.g. for development purposes.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### xattr
 Pass the `--enable-xattr` option to the configure script. Provide an ability to store and subsequently restore extended file attributes while creating and extracting archives for supported formats.
 
