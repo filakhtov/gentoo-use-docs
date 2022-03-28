@@ -14,3 +14,8 @@ This flag is necessary to boot the system that has separated `/usr` partition, b
 Pass the `--enable-static` option to the configure script. Build and install a statically linked `libmnl` library.
 
 The flag should only be enabled if there is a need for the static library.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
