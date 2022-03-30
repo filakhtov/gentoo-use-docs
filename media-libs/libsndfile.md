@@ -6,7 +6,7 @@ Pass the `--enable-alsa` option to the configure script. Build and install the `
 This flag can be safely disabled.
 
 ### minimal
-This flag does nothing if enabled. When disabled, pass the `--enable-external-libs` option to the configure script. Enable optional linking against the `libogg`, `libFLAC` and `libvorbis` libraries if they are available in the target system to support Ogg, FLAC and Vorbis audio formats accordingly.
+This flag does nothing if enabled. When disabled, pass the `--enable-external-libs` and `--enable-mpeg` options to the configure script. Enable optional linking against the `libogg`, `libFLAC`, `libvorbis`, `LAME` and `mpg123` libraries if they are available in the target system to support Ogg, FLAC, Vorbis and MPEG (MP3) audio formats accordingly.
 
 It is safe to disable the flag.
 
