@@ -40,6 +40,11 @@ Use the system zlib library instead of the one bundled with rsync sources for co
 
 This flag should normally be disabled, and the portage configuration needs to be changed to use `--new-compress` when this flag is enabled and there is a need to use compressed transfer for portage synchronization.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### xattr
 Pass the `--enable-xattr-support` option to the configure script. Provide a `-X`, a `--xattrs` and a `--fake-super` runtime options for rsync. Enable an ability to preserve eXtended ATTRibutes during a file transfer.
 
