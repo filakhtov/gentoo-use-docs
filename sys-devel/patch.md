@@ -10,6 +10,11 @@ Execute a `make check` command once the main build is completed. Run a test suit
 
 This flag should be disabled as it is only useful for the Gentoo team, testers and developers.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### xattr
 Pass the `--enable-xattr` option to the configure script. Provide an ability to copy eXtended ATTRibutes from an original files into a backup file.
 
