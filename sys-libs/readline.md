@@ -19,3 +19,8 @@ It is recommended to enable this flag to properly support characters from multib
 Run a configure script from `examples/rlfe` directory followed by the `make` command. Build and install an `rlfe` binary (ReadLine Front-End) that can execute an interactive program and let readline handle input line editing.
 
 This flag should be enabled if there is a need to use the Readline Front-End.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
