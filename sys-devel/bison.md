@@ -19,3 +19,8 @@ The flag should be disabled except if there is an explicit need for the static b
 Export the `ac_cv_path_PERL=true` variable for the `configure` script. Execute a `make check` command once a build is complete. Run a test suite provided with a soucre code.
 
 This flag should normally be disabled. It is primarily used by the Gentoo team, testers and developers.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
