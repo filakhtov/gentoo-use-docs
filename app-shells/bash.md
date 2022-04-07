@@ -39,3 +39,8 @@ This flag should normally be disabled, unless there is a need to support loadabl
 Pass the `--enable-readline`, the `--enable-history` and the `--enable-bang-history` options to the configure script. Provide a tab-completion, history, line editing, proper colorization, screen clearing (e.g. via ctrl+l), etc features. When disabled, patch a global `bashrc` and a skeleton `.bashrc` files to disable a `histappend` option and colorization.
 
 It is highly recommended to enable this flag, especially if bash to be used as an interactive shell.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
