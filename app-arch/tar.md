@@ -20,5 +20,10 @@ Pass the `--with-selinux` option to the configure script. Enable the `--selinux`
 
 This flag should be only ever toggled system-wide, e.g. as part of a SELinux enabled Portage profile.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### xattr
 Pass the `--with-xattrs` option to the configure script. Enable the `--xattrs`, the `--xattrs-exclude` and the `--xattrs-include` runtime options support. Provide an ability to store xattr (eXtended ATTRibutes) in archive when creating one and restore them when extracting.
