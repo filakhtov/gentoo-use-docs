@@ -14,3 +14,8 @@ This flag should normally be disabled unless there is a need for static binaries
 Build and install a statically linked version of the `libbz2.a` library.
 
 This flag should be disabled unless there is a need for static library.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
