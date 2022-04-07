@@ -54,3 +54,8 @@ This flag can be safely disabled. It is only necessary for developers or people 
 Passes the `--enable-static` option to the configure script. This will produce statically linked tools and libraries. If disabled, all libtool files `*.la` and static libraries `*.a` will are removed before installation.
 
 This flag should normally be disabled unless there is an explicit need for statically linked libraries.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
