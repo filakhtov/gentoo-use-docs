@@ -42,6 +42,11 @@ Executes `make -j1 test` after the build is finished. This will run a test suite
 
 The flag should be disabled. It is mainly useful for Gentoo developers and testers.
 
+### tls-compression
+Passes the `enable-zlib` argument to the `Configure` script. Enables support for a clear-text compression and decompression before the encryption and after the decryption using zlib library. Compression is enabled by default when this flag is enabled.
+
+It is safe to disable the flag unless there is a need to establish encrypted connections with a compression support.
+
 ### tls-heartbeat
 This flag passes the `enable-heartbeats` argument to the `Configure` script. Enables the TLS Heartbeat protocol support as described in the RFC6520 to keep an encrypted connection alive without performing a renegotiation.
 
@@ -57,7 +62,7 @@ Perform signature verification of the upstream source code archive before extrac
 
 It is safe to disable this flag.
 
-### tls-compression
-Passes the `enable-zlib` argument to the `Configure` script. Enables support for a clear-text compression and decompression before the encryption and after the decryption using zlib library. Compression is enabled by default when this flag is enabled.
+### weak-ssl-ciphers
+Pass the `enable-weak-ssl-ciphers` option to the `Configure` script. By default modern OpenSSL library is built without any "EXPORT" or "LOW" strength ciphers, as they are considered insecure. When this flag is enabled, support for these ciphers will be built into the resulting library.
 
-It is safe to disable the flag unless there is a need to establish encrypted connections with a compression support.
+It is recommended to disable this flag, unless there is an explicit need to use these insecure ciphers.
