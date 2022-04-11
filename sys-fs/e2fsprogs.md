@@ -34,3 +34,8 @@ It is safe to disable the flag unless there is an explicit need for statically l
 Pass the `--with-pthread` option to the configure script. Use the `libpthread` library to enable support for using multiple thread in various tools, e.g. allow reading bitmap blocks in parallel and speed up `dumpe2fs`, `e2fsck` and `debugfs` tools for very large file systems.
 
 This flag can be safely disabled.
+
+### tools
+Pass the `--enable-e2initrd-helper` option to the configure script. Build and install extfs tools, such as `mke2fs`, `e2fsck`, `tune2fs`, `e2label`, `dumpe2fs` and all others.
+
+This flag should normally be disabled, otherwise tools to create or manage ext2, ext3 or ext4 filesystems won't be available.
