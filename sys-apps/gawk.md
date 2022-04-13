@@ -14,3 +14,8 @@ This flag can be safely disabled unless there is a need for a non-English langua
 Pass the `--with-readline` option to the configure script. Enable completion and history support via a `libreadline` library. Support command names, source file names, non-numeric command arguments and variable names completion.
 
 It is safe to disable the flag.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
