@@ -15,7 +15,7 @@ Pass a `--enable-gstreamer` option to a configure script. Build and install a `l
 
 It is recommended to disable this flag and use other backend, such as ALSA or Pulseaudio if appropriate.
 
-### gtk
+### gtk2
 Pass a `--enable-gtk` option to a configure script. Build and install a `libcanberra-gtk` library that provides glue code to make it easier to use a `libcanberra` library from Gtk+ applications, and a `libcanberra-gtk-module` library - a Gtk+ module that uses the `libcanberra-gtk` library to trigger input feedback event sounds. Also build and install a `canberra-gtk-play` binary that plays sound events that are specified by the XDG Sound Theme and Name Specification.
 
 This flag should be enabled if there is a need to use the library with Gtk+ apps.
