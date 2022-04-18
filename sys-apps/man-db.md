@@ -1,15 +1,5 @@
 # sys-apps/man-db
 
-### berkdb
-Passes the `--with-db=db` option to the configure script, but only if a  `gdbm` flag is disabled. This will utilize the Berkeley DB database implementation for storing cache data.
-
-This flag is safe to disable. This flag should not be enabled if a `gdbm` flag is enabled. If disabled GNU dbm will be used instead.
-
-### gdbm
-Passes the `--with-db=gdbm` option to the configure script. Uses the GDBM (aka GNU dbm) database implementation for storing cache data. This flag takes precedence over `berkdb` and is enabled by default anyway if both the `gdbm` and the `berkdb` flags are disabled.
-
-It is recommended to enable this flag.
-
 ### manpager
 Pulls in the [app-text/manpager](../app-text/manpager.md) package as a dependency to enable man pages colorization.
 
