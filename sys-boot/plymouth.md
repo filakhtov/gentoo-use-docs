@@ -5,15 +5,15 @@ Pass the `--enable-tracing` option to the configure script. Produce an additiona
 
 This flag should be disabled, unless there is a need to debug and trace the problem with Plymouth.
 
+### drm
+Pass the `--enable-drm` option to the configure script. Enable support for the DRM (Direct Rendering Managerand) and KMS (Kernel modesetting) drivers to allow rendering graphical boot animations. When disabled, Plymouth will fall back to a text mode.
+
+The flag should be enabled if there is a need to display graphical boot animations.
+
 ### gtk
 Pass the `--enable-gtk` option to the configure script. Enable the GTK renderer that allows executing plymouth inside a running X11 window session without booting the system.
 
 This flag can be safely disabled.
-
-### libkms
-Pass the `--enable-drm` option to the configure script. Enable support for the DRM (Direct Rendering Managerand) and KMS (Kernel modesetting) drivers to allow rendering graphical boot animations. When disabled, Plymouth will fall back to a text mode.
-
-The flag should be enabled if there is a need to display graphical boot animations.
 
 ### pango
 Pass the `--enable-pango` option to the configure script. Enable support for displaying passphrase prompts, e.g. when asking a user to enther the key for an encrypted device.
