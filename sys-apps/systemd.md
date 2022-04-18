@@ -115,7 +115,7 @@ The `nspawn`, for example, will support the `--port` option. Enabling this flag 
 This flag can be safely disabled unless one or more features described above are required.
 
 ### openssl
-Pass the `-Dopenssl=true` option to the Meson build script. Use the OpenSSL library to enable support for DoT (DNS-over-TLS) in the `systemd-resolved` daemon.
+Pass the `-Dopenssl=true` option to the Meson build script. Use the OpenSSL library to enable support for DoT (DNS-over-TLS) in the `systemd-resolved` daemon and directory-based encryption in the `systemd-homed` daemon.
 
 It is safe to disable this flag.
 
