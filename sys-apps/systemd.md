@@ -62,10 +62,20 @@ This flag passes the `-Dgnu-efi=true` option to the Meson build script and enabl
 
 This flag should be enabled on UEFI systems to use the `systemd-boot` bootloader.
 
+### gnutls
+Pass the `-Dgnutls=true` option to the Meson build script. Use the GnuTLS crypto library to enable support for DoT (DNS-over-TLS) in the `systemd-resolved` daemon. Takes precedence over the `openssl` flag is both are enabled.
+
+It is safe to disable this flag, however GnuTLS is considered as a default TLS backend by systemd.
+
 ### homed
 Pass the `-Dhomed=true` option to the Meson build script. Build and install the `systemd-homed` daemon, associated service and the `homectl` utility, that can be used to create, remove or inspect home areas, such as directories and network mounts. It supports LUKS2-encrypted per-user partitions (possibly on removable media) and `fscrypt` encrypted directories, as well as `btrfs` per-user subvolumes without encryption, regular directories, or Windows share (CIFS) volumes.
 
 It is safe to disable this flag.
+
+### hostnamed-fallback
+Enable support for `systemd-networkd` and `systemd-hostnamed` to run without the PolKit daemon using the `dbus-broker.service` as a fallback service.
+
+This flag should normally be disabled, unless there is a need to run networkd/hostnamed outside of the PolKit infrastructure.
 
 ### http
 Passes the `-Dmicrohttpd=true` option to the Meson build script. This builds and installs a `systemd-remote-journal` - a server (receiving) part of a remote journalling support. A `ssl` flag has to be enabled too in order to support an HTTPS protocol.
@@ -104,6 +114,11 @@ The `nspawn`, for example, will support the `--port` option. Enabling this flag 
 
 This flag can be safely disabled unless one or more features described above are required.
 
+### openssl
+Pass the `-Dopenssl=true` option to the Meson build script. Use the OpenSSL library to enable support for DoT (DNS-over-TLS) in the `systemd-resolved` daemon.
+
+It is safe to disable this flag.
+
 ### pam
 The flag will pass `-Dpam=true` option to the Meson build script. This will install the `systemd-user-sessions` binary and the associated `.service` file. It will also install the PAM module for systemd (`pam_systemd.so`) for integrating with `systemd-logind` and registering the user session with systemd control group hierarchy. The module also applies various resource management and runtime parameters to the new session, as configured in the JSON User Record of the user, when one is defined.
 
@@ -133,11 +148,6 @@ This flag should be enabled to improve password security for system users.
 The flag passes the `-Dqrencode=true` option to the Meson build script. It will enable an ability to generate a QR-code during FSS configuration using `journalctl` to simplify verification keys transfer.
 
 This flag can be safely disabled, because verification keys can simply be typed or copied away.
-
-### repart
-Pass the `-Drepart=true` option to the Meson build script. Build and install the `systemd-repart` tool that can be used to grow and add partitions to a partition table, based on the configuration files described in `repart.d`.
-
-It is safe to disable this flag.
 
 ### resolvconf
 The resolvectl/systemd-resolve tool provides `resolvconf` compatibility mode. Enabling this flag will install symlink under the `resolvconf` name, in which case it will take arguments and input compatible with the Debian and FreeBSD resolvconf tool.
