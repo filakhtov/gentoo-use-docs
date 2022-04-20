@@ -35,6 +35,11 @@ Pass the `--with-pthread` option to the configure script. Use the `libpthread` l
 
 This flag can be safely disabled.
 
+### test
+Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because these tests are primarily oriented towards the developments, maintainers and testers.
+
 ### tools
 Pass the `--enable-e2initrd-helper` option to the configure script. Build and install extfs tools, such as `mke2fs`, `e2fsck`, `tune2fs`, `e2label`, `dumpe2fs` and all others.
 
