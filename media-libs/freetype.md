@@ -60,6 +60,11 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 
 This flag should only ever be enabled if there is a need for the static library.
 
+### svg
+Only works if the `utils` flag enabled. Pass the `--with-librsvg` option to the configure script. Enable support for OpenType SVG fonts in FreeType demo programs.
+
+This flag should normally be disabled.
+
 ### utils
 Download and unpack an additional `ft2demos` source code. Use this source to build and install additional binary tools:
 
