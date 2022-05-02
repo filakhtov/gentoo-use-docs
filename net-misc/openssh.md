@@ -77,7 +77,7 @@ Pass the `--with-selinux` option to the configure script. Enable SELinux support
 This flag should only ever be changed system-wide, e.g. by using SELinux-enabled Portage profile.
 
 ### ssl
-Modify configure scripts to provide an actual `libcrypto` library location obtained from pkg-config. Pass the `--with-openssl`, the `--with-md5-passwords` and the `--with-ssl-engine` options to the configure script.
+Modify configure scripts to provide an actual `libcrypto` library location obtained from pkg-config. Pass the `--with-openssl` and the `--with-ssl-engine` options to the configure script.
 
 If disabled, internal cryptographic routines will be used instead of OpenSSL. Support only AES-CTR and chacha20+poly1305 ciphers, ECDH/curve25519 key exchange and Ed25519 public keys.
 
