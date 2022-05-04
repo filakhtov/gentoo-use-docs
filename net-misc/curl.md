@@ -155,6 +155,11 @@ Pass the `--enable-threaded-resolver` and the `--enable-pthreads` options to the
 
 This flag can be safely disabled, however it is enabled by default by upstream nowadays and can help avoid timeouts with a slow DNS.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### winssl
 Pass the `--with-winssl` option to the configure script. Provide an ability to use the WinSSL (Windows SSL/TLS) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
 
