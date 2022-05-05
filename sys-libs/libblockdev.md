@@ -46,7 +46,7 @@ Pass the `--with-lvm` and the `--with-lvm-dbus` options to the configure script.
 This flag should be enabled if there is a need to deal with LVM devices.
 
 ### test
-Pass the `--enable-tests` option to the configure script. Execute the `make check` command after the main build is completed to run a test suite provided with the source code. This will extend a build time.
+Pass the `--enable-tests` option to the configure script. Execute the `make test` command after the main build is completed to run a test suite provided with the source code. This will extend a build time.
 
 This flag should normally be disabled, it is mainly used by the Gentoo team, testers and developers.
 
