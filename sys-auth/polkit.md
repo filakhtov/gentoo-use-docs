@@ -1,5 +1,10 @@
 # sys-auth/polkit
 
+### duktape
+Pass the `-Djs_engine=duktape` (instead of the default `mozjs` one) to the Meson build script. Use the Duktape embeddable Javascript engine instead of the SpiderMonkey (Mozilla's JavaScript engine). Duktape is lighter weight and does not depend on outdated Python 2.7 interpreter.
+
+It is recommended to enable this flag.
+
 ### examples
 Install code examples into a `/usr/share/doc/polkit-<VERSION>/examples` directory. Examples include a C and a Python code.
 
