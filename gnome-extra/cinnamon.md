@@ -1,5 +1,10 @@
 # gnome-extra/cinnamon
 
+### eds
+Pull in the [gnome-extra/evolution-data-server](../gnome-extra/evolution-data-server.md) package as a dependency. Gentoo provides a patch that dynamically detects Evolution Data Server availability at runtime, and when available, the Cinnamon Calendar applet will display events from the Evolution personal information management.
+
+This flag can be safely disabled.
+
 ### gstreamer
 Pass the `-Dbuild_recorder=true` option to the `meson` build script. Build and install the `cinnamon-recorder` binary - a Cinnamon built-in screen recording utility.
 
@@ -19,4 +24,3 @@ It is safe to disable the flag.
 Pull in a [gnome-extra/cinnamon-translations](../gnome-extra/cinnamon-translations.md) package as a dependency to provide translations for Cinnamon desktop environment.
 
 This flag should be enabled if there is a need to use Cinnamon in a non-English language.
-
