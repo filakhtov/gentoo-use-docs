@@ -15,6 +15,11 @@ Start a new Xvfb session and execute the `meson test` command inside of it after
 
 This flag should normally be disabled as it is mainly useful for maintainers, testers and developers.
 
+### tools
+Pass the `-Denable-tools=true` option to the Meson build script. Build and install additional tools, such as `xkbcli`, `compile-keymap`, `compose`, `xkbcli-how-to-type`, `xkbcli-interactive-evdev`, `xkbcli-interactive-x11` (when the `X` flag is enabled) and `xkbcli-interactive-wayland` (if the `wayland` flag is also enabled).
+
+It is safe to disable this flag, if none of these tools are needed.
+
 ### wayland
 Pass the `-Denable-wayland=true` option to the meson build script. Enable support for interactive debugger for XKB keymaps for Wayland in the `xkbcli` utility.
 
