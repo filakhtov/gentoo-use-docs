@@ -15,6 +15,11 @@ Pass the `--enable-cet` option to the configure script. Enable support for Intel
 
 This flag should only be enabled on supported CPUs.
 
+### clone3
+Append the `-DGENTOO_USE_CLONE3` flag to the `CFLAGS` environment variable for the duration of the build. Enable the `clone3` syscall which allows to create child processes in a more precisely controlled maner compared to `fork` and replaces older `clone` and `__clone2` implementations.
+
+This flag should normally be enabled, unless it causes issues with some apps, such as apps that are running on the older Electron version, e.g. Discord.
+
 ### compile-locales
 Normally, only locales that are specified in the `/etc/locale.gen` configuration file are generated after the package is installed. Enabling this flag will ignore the aforementioned config and generate all available locales. This will extend the build time and is generally used for building stage images and bootstrapping.
 
