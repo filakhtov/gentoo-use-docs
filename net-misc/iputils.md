@@ -25,16 +25,10 @@ Set the `CAP_NET_RAW` capability on `ping`, `arping` and `clockdiff` binaries. D
 
 It is recommended to enable this flag so regular (non-root) users can use aforementioned tools.
 
-### gcrypt
-This flag does nothing.
-
 ### idn
 Pass the `-DUSE_IDN=true` option to the meson build command. Use the `libidn2` library to enable support for IDN (Internationalized Domain Names), i.e. domain names written using non-latin scripts.
 
 This flag can be safely disabled if there is no need to deal with non-English domain names.
-
-### nettle
-This flag does nothing.
 
 ### nls
 Pass the `-DUSE_GETTEXT=true` option to the meson build command. Use the gettext library to provide localization support, e.g. display output in a native language based on the system locale, instead of using English.
@@ -50,9 +44,6 @@ RARP is an older alternative to DHCP and is not recommended nowadays, so it is s
 Pass the `-DBUILD_RDISC=true` and `-DENABLE_RDISC_SERVER=true` options to the meson build command. Build and install the `rdisc` binary - a tool that implements both a client and a server side parts of the ICMP router discovery protocol, allowing a system to ask for and accept routing tables from routers, as well as respond to queries.
 
 This flag is only necessary if system to be part of RDISC capable network(s). Otherwise it is completely safe to disable.
-
-### ssl
-This flag does nothing.
 
 ### static
 This flag will append `-static` option to `LDFLAGS` for building statically linked binaries.
