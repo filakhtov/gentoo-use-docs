@@ -67,3 +67,8 @@ This will enable `trace` configure option. This will add `-DTRACE` option to `CF
 Normally tracing information is included only in debug libraries, however it is sometimes desirable to include tracing information into normal shared library. Enable this flag to achieve that.
 
 This flag should normally be disabled.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
