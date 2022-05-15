@@ -20,7 +20,7 @@ Pass the `--enable-introspection` option to the configure script. Build and inst
 
 It is safe to disable the flag.
 
-### non_root
+### non-root
 Add the `lightdm` user to the `video` group to be able to run greeter as an unprivileged user.
 
 It is recommended to enable this flag.
