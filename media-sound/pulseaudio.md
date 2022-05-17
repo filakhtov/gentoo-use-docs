@@ -10,6 +10,11 @@ Only works if the `alsa` flag is also enabled. Pull the [media-plugins/alsa-plug
 
 This flag is recommended for the regular desktop system.
 
+### aptx
+Only works if the `daemon`, `bluetooth` and `gstreamer` flags are enabled. Pull in the [media-plugins/gst-plugins-openaptx](../media-plugins/gst-plugins-openaptx.md) package as a dependency. Enable support for AptX and AptX HD Bluetooth codecs to achieve "CD-like" (16-bit/44.1kHz) audio streaming quality for supported devices. It is "CD-like" and not "CD-quality" because it is not lossless and uses compression (to reduce audio-coding delays and minimise latency issues).
+
+It is safe to disable this flag, but it is heavily recommended if there is a need to use Bluetooth headsets with AptX support.
+
 ### asyncns
 Pass the `-Dasyncns=enabled` option to the meson build script. Use the `libasyncns` library for asynchronous name resolution when connecting to a network sink.
 
@@ -56,7 +61,9 @@ Pass the `-Dglib=enabled` and the `--Dgsettings=enabled` options to the meson bu
 This flag is recommended for regular desktop systems.
 
 ### gstreamer
-Pass the `-Dgstreamer=enabled` option to the meson build script. Use GStream-based RTP implementation, instead of PulseAudio-provided one to enable support for more advanced features like RTCP, non-PCM audio, and opening up the door to synchronized playback.
+Pass additional options to the Meson build script:
+- the `-Dgstreamer=enabled` to use the GStream-based RTP implementation, instead of PulseAudio-provided one to enable support for more advanced features like RTCP, non-PCM audio, and opening up the door to synchronized playback;
+- the `-Dbluez5-gstreamer=enabled` to enable AptX and AptX HD Bluetooth codecs support.
 
 This flag should only be enabled if there is a need to use RTP with PulseAudio.
 
@@ -74,6 +81,11 @@ This flag should be enabled if there is a need to use PulseAudio network functio
 Pass the `-Djack=enabled` option to the meson build script. Build and install the `module-jack-sink` and `module-jack-source` (also `module-jackdbus-detect` if the `dbus` flag is also enabled) PulseAudio plugins that allow to use JACK (JACK Audio Connection Kit) subsystem for audio output.
 
 This flag should only be enabled if there is a need for PulseAudio to coexist with JACK on the same system.
+
+### ldac
+Only works if the `daemon`, `bluetooth` and `gstreamer` flags are enabled. Pull in the [media-plugins/gst-plugins-ldac](../media-plugins/gst-plugins-ldac.md) package as a dependency. Enable support for Sony's "hi-res" wireless audio codec - LDAC, that allows to stream high-resolution audio up to 32-bit/96kHz over Bluetooth at up to 990kbps.
+
+This flag can be safely disabled, but it is highly recommended to enable this flag if there is a need to use LDAC-enabled bluetooth devices.
 
 ### lirc
 Pass the `-Dlirc=enabled` option to the meson build script. Build and install the `module-lirc` plugin to provide an ability to adjust the volume of a sink when the volume buttons of an infrared remote control are pressed (through LIRC - Linux Infrared Remote Control).
