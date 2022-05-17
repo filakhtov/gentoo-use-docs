@@ -83,11 +83,6 @@ Pull in the [media-plugins/gst-plugins-libvisual](../media-plugins/gst-plugins-l
 
 This flag should be enabled if there is a need to render music visualizations.
 
-### mms
-Pull in the [media-plugins/gst-plugins-libmms](../media-plugins/gst-plugins-libmms.md) package as a dependency to provide the `libgstmms` library from the `gst-plugins-bad` upstream package, that can be used to access multimedia streamed through the Microsoft Multi Media Server protocol.
-
-It is safe to disable the flag, unless there is a need to access MMS media streams.
-
 ### modplug
 Pull in the [media-libs/gst-plugins-ugly](../media-libs/gst-plugins-ugly.md) and [media-plugins/gst-plugins-modplug](../media-plugins/gst-plugins-modplug.md) packages as dependencies to provide the `libgstmodplug` library from the `gst-plugins-bad` upstream package, that can be used to decode module audio files (.MOD) using the `libmodplug` library based on the ModPlug sound engine.
 
