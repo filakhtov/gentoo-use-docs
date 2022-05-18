@@ -76,7 +76,7 @@ Pass the `--with-nghttp3` and `--with-ngtcp2` options to the configure script. E
 This flag should normally be disabled, because HTTP/3 support is considered experimental at this stage.
 
 ### nss
-Pass the `--with-nss` option to the configure script. Provide an ability to use the NSS (Mozilla Network Security Services) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+Pass the `--with-nss` and `--with-nss-deprecated` options to the configure script. Provide an ability to use the NSS (Mozilla Network Security Services) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
 
 It is safe to disable this flag if a different backed is preferred.
 
@@ -159,11 +159,6 @@ This flag can be safely disabled, however it is enabled by default by upstream n
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
 It is safe to disable this flag.
-
-### winssl
-Pass the `--with-winssl` option to the configure script. Provide an ability to use the WinSSL (Windows SSL/TLS) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
-
-This flag should normally be disabled, because it is only useful on the Windows platform.
 
 ### zstd
 Pass the `--with-zstd` option to the configure script. Enable support for ZSTD compressed content data sent over the HTTP, so that cURL can automatically decompress such data on the fly.
