@@ -36,12 +36,19 @@ If the flag is enabled some of the produced libraries will be installed into the
 This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
 
 ### static-libs
-Pass the `--enable-static` option to the configure script.
+Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libpcre2` library.
+
+The flag should normally be disabled unless there is an explicit need to use static library, e.g. for development purposes.
 
 ### unicode
 Pass the `--enable-unicode` option to the configure script. Enable support for Unicode and UTF encodings. As well as supporting UTF strings, Unicode support includes support for the `\P`, `\p`, and `\X` sequences that recognize Unicode character properties, but only the basic two-letter properties such as `Lu` are supported.
 
 It is recommended to enable this flag as Unicode character set is everywhere nowadays.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
 
 ### zlib
 Pass the `--enable-pcre2grep-libz` option to the configure script. Link the `pcre2grep` tool against the `libz` library to handle files compressed with zlib algorithm.
