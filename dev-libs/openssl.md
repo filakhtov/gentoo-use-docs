@@ -38,7 +38,7 @@ Static libraries (`*.a` files) are built by default but are removed by an ebuild
 This flag should be disabled unless there is a specific need for static libraries, e.g. for development purposes.
 
 ### test
-Executes `make -j1 test` after the build is finished. This will run a test suite provided with OpenSSL sources. Enabling this flag will increase a build time.
+Build the test suite provided with the source code and executes the `make -j1 test` command after the main build is completed to run it and check for any regressions. This will extend the build time. When this flag is disabled, pass the `no-tests` option to the `Configure` script to avoid building the test suite.
 
 The flag should be disabled. It is mainly useful for Gentoo developers and testers.
 
