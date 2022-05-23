@@ -19,3 +19,8 @@ It is safe to disable the flag.
 Passes the `--enable-static` option to the configure script. This will produce statically linked libraries. If disabled, `.la` files will be removed from build tree before a package is installed.
 
 It is recommended to disable this flag unless there is an explicit need for static GNU dbm libraries, e.g. for development purposes.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
