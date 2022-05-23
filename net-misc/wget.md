@@ -16,7 +16,7 @@ This flag only has an effect if an `ssl` flag is enabled too. Passes the `--with
 It is safe to disable this flag.
 
 ### idn
-The flag passes the `--with-idn` and the `--enable-iri` options to the configure script. Enables support for the IRI (Internationalized Resource Identifier, RFC 3987) protocol.
+Pass the `--enable-iri` option to the configure script. Enables support for the IRI (Internationalized Resource Identifier, RFC 3987) protocol.
 
 This flag can safely be disabled if there is no need to deal with internationalized domain names (ones that have non-English characters in them).
 
@@ -64,6 +64,11 @@ This flag should be disabled and is only useful for the Gentoo team, developers 
 The flag passes the `--with-libuuid` option to the configure script. This will use the `libuuid` to generate UUIDs required for `WARC-Record-Id` header when saving a request and a response data in the WARC (Web ARChive) file format. Disabling this flag will use a fallback mechanim to generate UUID formatted strings based on random numbers.
 
 Disabling this flag is safe, but is not recommended if there is a need to save data in WARC format.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
 
 ### zlib
 Passes the `--with-zlib` option to the configure script. Enables support for compressing resulting WARC archives. With this flag a compression is enabled by default and the `--no-warc-compression` runtime option will be provided to disable it.
