@@ -19,3 +19,8 @@ It is safe to disable the flag, unless there is an explicit need for static bina
 Execute a `make check` command during the build. Run a test suite provided with a source code. This will extend a build time.
 
 This flag should normally be disabled as it is mainly used by the Gentoo team, testers and developers.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
