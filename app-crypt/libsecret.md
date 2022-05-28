@@ -16,7 +16,7 @@ Pass the `-Dintrospection=true` option to the meson build script. Generate the G
 The flag can be safely disabled.
 
 ### test
-Prepare a Python environment to properly run the tests. Start a new Xvfb session and execute the `meson tests` command inside of it to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+Prepare a Python environment to properly run the tests. Start a new D-Bus session inside of the virtual Xvfb session and execute the `meson tests` command (using the tpm2 emulation if the `tpm` flag is enabled) inside of it to run the test suite provided with the source code and check for any regressions. This will extend the build time.
 
 This flag should normally be disable as it is mainly useful for the maintainers, testers and developers.
 
