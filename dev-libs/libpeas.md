@@ -11,7 +11,7 @@ Pass the `-Dwidgetry=true` (`false` when the flag is disabled) option to the mes
 This flag should be enabled if there is a need for plugin management UI.
 
 ### gtk-doc
-Pass the `-Dgtk_doc=true` option to the meson build command. Use the `Gtk-Doc` tool to generate and install the API reference documentation for the `libpeas` library.
+Pass the `-Dgtk_doc=true` option to the meson build command. Use the `Gtk-Doc` tool to generate the API reference documentation in the HTML format for the `libpeas` library and install it into the `/usr/share/gtk-doc/html/libpeas` directory.
 
 It is safe to disable this flag.
 
@@ -31,6 +31,6 @@ Start a new Xvfb session and execute the `meson test` command inside of it after
 This flag should be disabled as it is primarily useful for maintainers, testers or developers.
 
 ### vala
-Pass the `-Dvapi=true` option to the meson build command. Generate and install the `libpeas-1.0.vapi` (and `libpeas-gtk-1.0.vapi` if the `gtk` flag is enabled) Vala language bindings for `libpeas` libraries.
+Prepare environment with the appropriate version of vala runtime. Pass the `-Dvapi=true` option to the meson build command. Generate and install the `libpeas-1.0.vapi` (and `libpeas-gtk-1.0.vapi` if the `gtk` flag is enabled) Vala language bindings for `libpeas` libraries.
 
 It is safe to disable this flag.
