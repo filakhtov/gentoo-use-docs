@@ -1,5 +1,10 @@
 # gnome-base/librsvg
 
+### gtk-doc
+Pass the `--enable-gtk-doc` option to the configure script. Use the Gtk-Doc tool to extract annotations from the source code to generate developer documentation in the HTML format and install it into the `/usr/share/gtk-doc/html/librsvg~` directory.
+
+It is safe to disable this flag.
+
 ### introspection
 Pass the `--enable-introspection` option to the configure script. Generate GIR metadata `Rsvg-2.0.gir` file and generate a typelib from it during a build time to provide dynamic bindings support for languages other than C.
 
