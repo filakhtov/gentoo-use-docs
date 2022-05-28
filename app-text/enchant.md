@@ -10,6 +10,11 @@ Pass the `--with-hunspell` option to the configure script. Enable Hunspell (form
 
 This flag should normally be enabled, because Hunspell is widespread and well supported library.
 
+### nuspell
+Pass the `--with-nuspell` option to the configure script. Enable Nuspell spell-checking backend - a fast and safe spelling checker designed for languages with rich morphology and complex word compounding which supports Hunspell dictionaries.
+
+It is safe to disable this flag.
+
 ### test
 Pass the `--enable-relocatable` option to the configure script. Execute the `make check` command after the main build is completed to run the test suite provided with the source code to check for any regressions. This will extend the build time.
 
