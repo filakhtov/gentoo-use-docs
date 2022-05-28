@@ -53,11 +53,6 @@ Pass the `-Dgspell=enabled` option to the meson build script. Use the gspell lib
 
 This flag can be safely disabled.
 
-### t1lib
-Only makes sense when the `dvi` flag is enabled. Pass the `-Dt1lib=enabled` option to the meson build script. Link the `libdvidocument` library against the `t1lib` library to provide support for the scalable Adobe Type 1 (aka PostScript Type 1) fonts to improve font rendering quality.
-
-It is recommended to enable this flag, otherwise rendered fonts in DVI document might look poorly.
-
 ### tiff
 Pass the `-Dtiff=enabled` option to the meson build script. Build and install the `libtiffdocument` library that uses the `libtiff` library and provides an ability to view multi-page TIFF documents.
 
