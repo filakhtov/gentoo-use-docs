@@ -6,7 +6,7 @@ Pass the `--enable-introspection` option to the configure script. Generate and i
 It is safe to disable the flag.
 
 ### test
-Start a new Xvfb session and execute the `make check` command inside of it when the main build is completed to run a test suite provided with the source code. This will extend a build time.
+Start a new D-Bus session inside of the virtual Xvfb session and execute the `make check` command inside of it when the main build is completed to run a test suite provided with the source code. This will extend a build time.
 
 The flag should normally be disabled. It is mainly targeted for the Gentoo team, testers and developers.
 
