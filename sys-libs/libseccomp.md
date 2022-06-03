@@ -1,5 +1,10 @@
 # sys-libs/libseccomp
 
+### experimental-loong
+Apply an experimental patch to support 64-bit LoongArch compatible RISC microprocessors (starting from Loongson 3 5000 series).
+
+This flag should only be enabled on systems running on compatible Loongson processors.
+
 ### python
 Run the `setup.py` script from the `src/python` subdirectory to configure the Python bindings for `libseccomp` library, then run `make` to build and `make install` to install the `seccomp` Python module that provides an API for the Linux Kernel's syscall filtering capability, seccomp.
 
