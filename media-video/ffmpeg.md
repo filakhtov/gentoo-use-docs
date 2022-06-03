@@ -446,6 +446,11 @@ Pass the `--enable-vdpau` option to the configure script. Use the `libvdpau` lib
 
 This flag should be enabled on systems with old NVIDIA GPUs, and for newer cards `cuda` should be used instead.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### vidstab
 Pass the `--enable-libvidstab` option to the configure script. Use the `vid.stab` library to enable support for the `vidstabdetect` video filter to analyze shaky and unstable videos and apply compensatory transformations using the `vidstabtransform` video stabilization filter.
 
