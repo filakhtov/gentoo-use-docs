@@ -55,17 +55,7 @@ Pass the `-DSKIP_TESTS=false` (`true` if the flag is disabled) option to the Mes
 
 This flag should normally be disabled, because these tests are mainly used by the maintainers, testers and developers.
 
-### tftpd
-Pass the `-DBUILD_TFTPD=true` option to the meson build commmand. Build and install the `tftpd` server component for TFTP (Trivial File Transfer Protocol) support, that is most commonly used for network boot (PXE).
-
-This flag can safely be disabled unless TFTP server is required (e.g. to run PXE booting server or flashing firmware into certain routers).
-
 ### tracepath
 Pass the `-DBUILD_TRACEPATH=true` option to the meson build commmand. Build and install the `tracepath` tool. If `ipv6` flag is also enabled tracepath will be built with IPv6 protocol support and the `tracepath6` compatibility link will be created.
 
 This flag can safely be disabled if `tracepath` tool is not required (e.g. for network diagnostics/debugging).
-
-### traceroute6
-Only works if the `ipv6` flag is enabled. Pass the `-DBUILD_TRACEROUTE6=true` option to the meson build command. Build and install the `traceroute6` tool. This flag conflicts with [net-analyzer/traceroute](../../net-analyzer/traceroute.md).
-
-This flag is not recommended because it only installs IPv6 protocol oriented tool and does not work for IPv4 protocol. It is necessary to install `traceroute` via standalone package if IPv4 protocol support is desired.
