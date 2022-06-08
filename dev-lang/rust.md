@@ -35,6 +35,11 @@ Requires `nightly` flag to be enabled. Set the `parallel-compiler` to `true` in 
 
 This flag should normally be disabled as this feature is experimental.
 
+### profiler
+Append `rust-demangler` to the `tools` option and set the `profiler` to `true` in the `build` section of the `config.toml` build configuration file. Build and install the `rust-demangler` "extended tool" that can be used to perform Rust-specific symbol demangling and build the profiler runtime that enables profiling instrumentation (and profile-guided optimization) and code coverage support.
+
+It is safe to disable this flag.
+
 ### rls
 Append `rls` and `analysis` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install the RLS (Rust Language Server) component that provides IDEs, editors, and other tools with information about Rust programs, and supports `goto definition`, symbol search, reformatting, code completion as well as renaming and refactoring features.
 
