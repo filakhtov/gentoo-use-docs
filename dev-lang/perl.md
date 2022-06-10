@@ -33,3 +33,8 @@ It is recommended to disable the flag as interpreter threads are quite heavy-wei
 Avoid pulling in the [app-admin/perl-cleaner](../app-admin/perl-cleaner.md), [virtual/perl-File-Temp](../virtual/perl-File-Temp.md), [virtual/perl-Data-Dumper](../virtual/perl-Data-Dumper.md) and [virtual/perl-Test-Harness](../virtual/perl-Test-Harness.md) dependencies.
 
 This flag can be disabled to save some space and shrink dependencies.
+
+### quadmath
+Changing this flag will require rebuilding all installed Perl modules. Append a `-quadmath` prefix to an installation paths. Pass `-Dusequadmath` option to the configure script. Use the GCC `libquadmath` library that provides software implementation for 128-bit (113 bits of mantissa) IEEE 754 quadruple precision floats.
+
+It is safe to disable this flag.
