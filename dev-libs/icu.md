@@ -19,3 +19,13 @@ This flag can be safely disabled.
 Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libicudata`, `libicui18n`, `libicuio`, `libicutest`, `libicutu` and the `libicuuc` libraries.
 
 This flag should only be enabled if there is an explicit need for the static libraries.
+
+### test
+Pass the `--enable-tests` option to the configure script. Build the test suite provided with the source code and execute the `make check` command after the main build is completed to run it and test for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because these tests are primarily used by the maintainers, developers and testers.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
