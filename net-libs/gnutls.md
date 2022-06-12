@@ -1,5 +1,10 @@
 # net-libs/gnutls
 
+### brotli
+Pass the `--with-brotli` option to the configure script. Use the `libbrotli` library to enable certificate and record layer compression using the Google's Brotli algorithm.
+
+It is safe to disable this flag.
+
 ### cxx
 Pass the `--enable-cxx` option to the configure script. Build and install the `libgnutlsxx` library that provides a C++ interface to the GnuTLS library routines. The interface provides the `gnutls` namespace with a set of classes to handle SSL and TLS encrypted connections.
 
@@ -97,3 +102,18 @@ Pass the `--enable-tools` option to the configure script. Install various tools:
 This flag is only working together with the `test` flag. Pass the `--enable-valgrind-tests` option to the configure script. Build and execute additional tests that are using the Valgrind tool to test GnuTLS for memory errors.
 
 As with the `test` flag, this one should normally be disabled.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
+### zlib
+Pass the `--with-zlib` option to the configure script. Use the `libz` library to enable certificate and record layer compression using the Zlib algorithm.
+
+It is safe to disable this flag.
+
+### zstd
+Pass the `--with-zstd` option to the configure script. Use the `libzstd` library to enable certificate and record layer compression using the Facebook's Zstd algorithm.
+
+It is safe to disable this flag.
