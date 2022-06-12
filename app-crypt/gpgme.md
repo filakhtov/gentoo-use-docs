@@ -25,6 +25,11 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 
 This flag should only be enabled if there is an explicit need for the static libraries.
 
+### test
+Execute the `make check` command (and additional `make check` for every enable Python version) after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because it is primarily oriented towards the developers, maintainers and testers.
+
 ### verify-sig
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
