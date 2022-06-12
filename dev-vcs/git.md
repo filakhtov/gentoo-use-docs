@@ -25,11 +25,6 @@ Download an archive with documentation sources, unpack it into the `Documentatio
 
 It is safe to disable the flag.
 
-### emacs
-Byte-compile and install the `git.el` Emacs module - a wrapper for `git status` that provided access to other GIT commands, and the `git-blame.el` - a wrapper for `git blame` written before Emacs's own `vc-annotate` mode learned to invoke `git-blame`.
-
-This flag should be disabled, because Emac's own modes are now better than modules provided with GIT.
-
 ### gnome-keyring
 Execute the `make` command from the `contrib/credential/libsecret` subdirectory to build the `git-credential-libsecret` binary to handle storing and providing usernames and passwords to Git using the `libsecret` library.
 
@@ -84,6 +79,11 @@ It is safe to disable the flag.
 Only works when the `blksha1` flag is disabled. Use the GIT's own SHA1 library (inspired by Mozilla's) and optimized for the PowerPC platform, instead of relying on the OpenSSL library to calculate SHA1 hashes.
 
 It is recommended to enable this flag on PowerPC platforms.
+
+### selinux
+Pull in the [sec-policy/selinux-git](../sec-policy/selinux-git.md) package as a dependency to provide necessary SELinux policies for git to properly operate under a SELinux-restricted kernel.
+
+This flag should only ever be toggled system-wide, e.g. as part of the SELinux-enabled Portage profile.
 
 ### subversion
 When disabled, pass the `NO_SVN_TESTS=YesPlease` variable to the `make` command. Build and install the `svn-fe` tool to convert an SVN "dumpfile" to a fast-import stream. Provide an ability to move changesets between Subverion and GIT repositories using the `git svn` command.
