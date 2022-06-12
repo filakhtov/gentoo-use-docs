@@ -23,7 +23,7 @@ This flag is recommended for regular desktop systems.
 ### gtk
 Pass the `-Dgtk=enabled` option to the meson build script. Enable integration with the GTK+3 toolkit. Provide an ability to obtain application icon and X11 display the client application belongs to.
 
-This flag should be disabled.
+It is safe to disable this flag.
 
 ### selinux
 Pull in the [sec-policy/selinux-pulseaudio](../sec-policy/selinux-pulseaudio.md) package as a dependency. Install SELinux policies to allow PulseAudio to properly run under a SELinux-restricted kernel.
