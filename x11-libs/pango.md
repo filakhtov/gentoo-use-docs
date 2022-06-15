@@ -15,6 +15,11 @@ Pass the `-Dsysprof=enabled` option to the meson build script. Enable tracing su
 
 This flag should only be enabled if there is a need to use sysprof tool to profile font rendering.
 
+### test
+Execute the `meson test` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+
+This flag should be disabled, because these tests are primarily oriented towards the developers, maintainers and testers.
+
 ### X
 Pass the `-Dxft=enabled` option to the meson build script. Enable support for rendering fonts using the Xft (X FreeType) backend.
 
