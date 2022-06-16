@@ -14,3 +14,8 @@ This flag should be enabled if there is a need to display messages in non-Englis
 Pass the `--enable-static` option to the configure script. Build and install a statically linked version of the `libgpg-error` library.
 
 This flag should only be enabled if there is an explicit need for this static library, e.g. for development purposes.
+
+### test
+Pass the `--enable-tests` option to the configure script. Build the test suite provided with the source code and execute the `make check` command to run it after the main build is completed and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because these tests are primarily used by the developers, maintainers and testers.
