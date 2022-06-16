@@ -40,6 +40,11 @@ Pass the `--enable-gnutls` option to the configure script. Provide support for a
 
 The flag must be enabled if there is a need to send and receive keys over TLS encrypted connections.
 
+### test
+Pass the `--enable-tests` and `--enable-all-tests` options to the configure script. Build the test suite provided with the source code and execute the `make check` command after the main build is completed to run it and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because it is primarily oriented towards the developers, maintainers and testers.
+
 ### tofu
 Pass the `--enable-tofu` option to the configure script. Enable a TOFU (Trust on First Use) trust model. GnuPG will try to look up the identifier in its local trust database. If no identifier exists yet for the endpoint it will prompt the user to determine if the client should trust the identifier and record the trust relationship into its trust database.
 
