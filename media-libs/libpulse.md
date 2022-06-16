@@ -35,11 +35,6 @@ Pass the `-Dsystemd=enabled` option to the meson build script. Enable integratio
 
 This flag should be enabled on the systems that use the SystemD init daemon.
 
-### tcpd
-Pass the `-Dtcpwrap=enabled` option to the meson build script. Enable support for the TCP wrappers (aka `tcpd`) tool to provide fine-grained control over network connections established to the PulseAudio server via an ACL system.
-
-This flag should normally be disabled as TCP wrappers is obsolete and unmaintained.
-
 ### test
 Pass the `-Dtests=true` option to the meson build script. Build the test suite provided with the source code and execute the `meson test` command after the main build is completed to run it and check for any regressions. This will extend the build time.
 
