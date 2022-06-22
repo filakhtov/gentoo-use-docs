@@ -25,11 +25,6 @@ Start a new Xvfb session and execute the `meson test` command inside of it when 
 
 The flag should normally be disabled, as it is mainly targeted for the maintainers, testers and developers.
 
-### tracker
-Pass the `-Dtracker=true` option to the `meson` build script. Integrate Nemo's file searching feature with Tracker indexing tool to provide an ability to lookup files using their contents and metadata, such as the artist of a song or the author of a document.
-
-This flag should be enabled if there is a need to use Tracker features for searching.
-
 ### xmp
 Pass a `-Dxmp=true` option to the `meson` build script. Integrate with the `libexempi` library to read an XMP (Extensible Metadata Platform) image metadata, such as location, description, subject and others, and display this information in an image file properties dialog.
 
