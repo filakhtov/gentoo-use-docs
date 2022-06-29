@@ -31,7 +31,7 @@ Pass the `enable_hangout_services_extension=true` option to the `gn gen` command
 It is safe to disable the flag.
 
 ### headless
-Pass the `ozone_platform="headless"`, `ozone_platform_x11=true` and `use_x11=false` options to the `gn gen` command. Enable support for headless Ozone platform, where any graphical output will be written into a PNG image. This platform does not support hardware acceleration and performs software rendering only. This feature can be used for automation, taking web page screenshots, etc.
+Pass the `ozone_platform="headless"`, `use_xkbcommon=false`, `use_gtk=false`, `use_glib=false`, `use_gio=false`, `use_pangocairo=false`, `use_alsa=false`, `use_libpci=false`, `use_udev=false`, `enable_print_preview=false` and `enable_remoting=false` options to the `gn gen` command. Enable support for headless Ozone platform, where any graphical output will be written into a PNG image. This platform does not support hardware acceleration and performs software rendering only. This feature can be used for automation, taking web page screenshots, etc.
 
 This flag should normally be disabled.
 
@@ -49,6 +49,11 @@ This flag should only be enabled if there is a need for Kerberos/SPNEGO authenti
 Pass the `use_custom_libcxx=true` option to the `gn gen` command. Use the bundled `libc++` library provided with the Chromium source, instead of using the system `libstdc++` one. This will require LLVM compiler, as the bundled library can't be built with GCC, will extend the overall build time, but will produce a more "stable" build, as the bundled library is the way official Chromium and Chrome binaries are built by the upstream.
 
 This flag can be safely disabled.
+
+### lto
+Only works with the Clang compiler. Pass the `use_lld=true` and `use_thin_lto=true` options to the `gn gen` command. Use the `lld` linker from the LLVM project to perform linking during the build. Perform additional link time optimization to improve runtime performance.
+
+It is safe to disable this flag.
 
 ### official
 Pass the `is_official_build=true` and `is_cfi=false` options to the `gn gen` command. First flag is responsible for a set of optimization flags that are enabled by the official Chrome builds, while the second disables CFI (Control Flow Integrity) for virtual calls, indirect calls and bad casts, because it is unsupported on GCC compiler. Enabling this flag slows down the build process but should have advantages during the runtime.
@@ -119,3 +124,8 @@ This flag should be enabled if the system using Wayland window server.
 Pass the `enable_widevine=true` option to the `gn gen` command. Build Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix.
 
 It is safe to disable the flag.
+
+### X
+Pass the `ozone_platform_x11=true` option to the `gn gen` command. Enable support for running Chromium with the X Window System (aka X11, or simply X).
+
+This flag should normally be enabled, unless headless mode is required or the system is running Wayland instead of X.
