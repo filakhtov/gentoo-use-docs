@@ -30,6 +30,11 @@ Execute the `make check` command after the main build is completed to run the re
 
 This flag should normally be disabled, because it is primarily oriented towards the Gentoo team, testers and developers.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### webp
 Pass the `--enable-webp` option to the configure script. Use the `libwebp` library to provide an ability to read (decode) and write (encode) TIFF images using the WebP compression format.
 
