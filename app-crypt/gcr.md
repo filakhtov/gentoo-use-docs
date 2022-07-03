@@ -16,7 +16,7 @@ Pass the `-Dintrospection` option to the meson build command. Generate and insta
 This flag can be safely disabled.
 
 ### systemd
-Pass the `-Dsystemd=enabled` option to the meson build command. Install the systemd `.service` and `.socket` files for the `gcr-ssh-agent` daemon to allow socket-based agent activation.
+Pass the `-Dsystemd=enabled` option to the meson build command. Install the systemd `.service` and `.socket` files for the `gcr-ssh-agent` daemon to allow socket-based agent activation and enable additional code in the daemon itself to properly support this mode of operation.
 
 This flag should only be enabled on systems that use systemd init daemon.
 
