@@ -15,6 +15,11 @@ Pass the `--enable-ssh-agent` option to the configure script. Build and install 
 
 It is safe to disable the flag, however SSH key management abilities of the Gnome keyring will be lost.
 
+### systemd
+Pass the `--with-systemd` option to the configure script. Enable additional code in the `gnome-keyring-daemon` to support systemd socket-based activation and install corresponding systemd `.service` and `.socket` units.
+
+This flag should only be enabled on systems using systemd as their init daemon.
+
 ### test
 Prepare a Python environment to properly run tests. Compile GSettings XML schemas necessary for running test. Start a new Xvfb session and execute the `make check` command inside of it. Run a test suite provided with the source code. This will extend a build time.
 
