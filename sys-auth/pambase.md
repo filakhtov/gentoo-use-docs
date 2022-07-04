@@ -84,3 +84,8 @@ It is recommended to enable this flag to improve hashing algorithm.
 Pass the `--systemd` option to `pambase.py` build script. Add a `pam_systemd` module as an `optional` component of a `session` interface of a system-auth stack.
 
 This flag should be toggled system-wide, e.g. as part of a SystemD-enabled Portage profile.
+
+### yescrypt
+Pass the `--yescrypt` option to the `pambase.py` build script. Switch `pam_unix` module to use yescrypt KDF (password-based key derivation function) for storing passwords instead of MD5.
+
+It is recommended to enable this flag to improve password storage encryption, but can cause compatibility issues with older systems.
