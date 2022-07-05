@@ -92,6 +92,13 @@ Passes the `-Dimportd=true`, the `-Dbzip2=true` and the `-Dzlib=true` options to
 
 The flag can be safely disabled if there is no need to run containerized environment or managing system images.
 
+### iptables
+This flag will pass `-Dlibiptc=true` to the Meson build script. Doing so provides support of netfilter for number of tools.
+
+The `nspawn`, for example, will support the `--port` option. Enabling this flag together with the `kmod` flag will ensure that the `ip_tables` Kernel module is automatically loaded on boot. The `networkd` daemon will gain support for the `IPMasquerade` and the `IPForward` options.
+
+This flag can be safely disabled unless one or more features described above are required.
+
 ### kmod
 The flag passes `-Dkmod=true` option to the Meson build script. This will build and install a `systemd-modules-load` - a tool responsible for loading kernel modules during a boot process.
 
@@ -106,13 +113,6 @@ The flag can be disabled if no journal compression is required.
 This flag passes `-Dxz=true` option to the Meson build scrpit. XZ algorithm can be used by the `journald` to compress journal files.
 
 The flag can be disabled if no compression for journal files is desired.
-
-### nat
-This flag will pass `-Dlibiptc=true` to the Meson build script. Doing so provides support of netfilter for number of tools.
-
-The `nspawn`, for example, will support the `--port` option. Enabling this flag together with the `kmod` flag will ensure that the `ip_tables` Kernel module is automatically loaded on boot. The `networkd` daemon will gain support for the `IPMasquerade` and the `IPForward` options.
-
-This flag can be safely disabled unless one or more features described above are required.
 
 ### openssl
 Pass the `-Dopenssl=true` option to the Meson build script. Use the OpenSSL library to enable support for DoT (DNS-over-TLS) in the `systemd-resolved` daemon and directory-based encryption in the `systemd-homed` daemon.
