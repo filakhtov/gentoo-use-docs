@@ -72,11 +72,6 @@ Pass the `-Dhomed=true` option to the Meson build script. Build and install the 
 
 It is safe to disable this flag.
 
-### hostnamed-fallback
-Enable support for `systemd-networkd` and `systemd-hostnamed` to run without the PolKit daemon using the `dbus-broker.service` as a fallback service.
-
-This flag should normally be disabled, unless there is a need to run networkd/hostnamed outside of the PolKit infrastructure.
-
 ### http
 Passes the `-Dmicrohttpd=true` option to the Meson build script. This builds and installs a `systemd-remote-journal` - a server (receiving) part of a remote journalling support. A `ssl` flag has to be enabled too in order to support an HTTPS protocol.
 
