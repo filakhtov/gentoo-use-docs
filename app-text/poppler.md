@@ -73,6 +73,11 @@ Pass the `-DWITH_TIFF=true` (`false` if disabled) option to the `cmake` command.
 
 This flag should be enabled if there is a need to produce TIFF output images.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### utils
 Pass the `-DENABLE_UTILS=true` (`false` when disabled) option to the `cmake` command. Build and install the following tools:
 
