@@ -60,16 +60,6 @@ Pass the `-Dgstreamer=enabled` option to the meson build script. Provide an abil
 
 This flag should only be enabled if there is a need to use RTP with PulseAudio.
 
-### gtk
-Pass the `-Dgtk=enabled` option to the meson build script. Enable integration with the GTK+3 toolkit to provide an ability to obtain application icon and X11 display the client application belongs to.
-
-It is safe to disable this flag.
-
-### ipv6
-Pass the `-Dipv6=true` option to the meson build script. Enable the IPv6 protocol support in the PulseAudio server to provide an ability to connect to and accept connections from IPv6 clients and servers.
-
-This flag should be enabled if there is a need to use PulseAudio network functionality on the IPv6 enabled network.
-
 ### jack
 Pass the `-Djack=enabled` option to the meson build script. Build and install the `module-jack-sink` and `module-jack-source` (also `module-jackdbus-detect` if the `dbus` flag is also enabled) PulseAudio plugins that allow to use JACK (JACK Audio Connection Kit) subsystem for audio output.
 
