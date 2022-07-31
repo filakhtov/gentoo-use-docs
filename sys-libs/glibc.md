@@ -35,6 +35,11 @@ Execute `makeinfo` command to build additional documentation and install it into
 
 It is safe to disable this flag.
 
+### experimental-loong
+Apply an experimental patch to support 64-bit LoongArch compatible RISC microprocessors (starting from Loongson 3 5000 series).
+
+This flag should only be enabled on systems running on compatible Loongson processors.
+
 ### gd
 Pass the `--with-gd` option to the configure script. Build and install a `memusagestat` - a utility to generate graphic (PNG images) from memory profiling data.
 
@@ -80,15 +85,15 @@ Normally, a static version of glibc-provided libraries are built and installed i
 
 It is recommended to keep this flag enabled, because a lot of other packages require static libraries.
 
-### static-pie
-Pass the `--enable-static-pie` option to the configure script. Enable support for static PIE (position independent executable), allowing static libraries to be loaded at any address without help from a dynamic linker and the resulting library can be used with `-static-pie` GCC option available with GCC version 8 or above. This also implies, that glibc programs and tests are created as dynamic position independent executables.
-
-It is recommended to enable this flag to improve security and reduce ROP (Return Oriented Programming) attack vector.
-
 ### ssp
 Pass the `--enable-stack-protector=strong` (`no` when the flag is disabled) option to the configure script. Build all glibc libraries using the GCCs stack protection features to detect and prevent stack overruns.
 
 It is recommended to enable this flag for improved protection, especially because it has minimal performance overhead.
+
+### stack-realign
+Pass the `-mstackrealign` option to the `CFLAGS` environment variable for the duration of the build. Realign the stack in the 32-bit build for compatibility with older binaries at some performance cost. This supports mixing legacy codes that keep a 4-byte aligned stack with modern codes that keep a 16-byte stack for SSE compatibility.
+
+This flag should only ever be enabled if there is a need to run legacy binaries with modern glibc version.
 
 ### suid
 Normally, a `pt_chown` binary has a SUID flag. It is necessary to manipulate permissions on a `/dev/pts` tree. When disabled SUID bit will be removed from binary.
