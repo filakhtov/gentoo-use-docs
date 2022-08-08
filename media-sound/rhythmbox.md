@@ -1,12 +1,12 @@
 # media-sound/rhythmbox
 
 ### cdr
-Pass the `--with-brasero` option to the configure script. Build and install the Audio CD Recorder plugin that uses the `libbrasero` library to rip Audio CDs from media library playlists.
+Pass the `-Dbrasero=enabled` option to the Meson build script. Build and install the Audio CD Recorder plugin that uses the `libbrasero` library to rip Audio CDs from media library playlists.
 
 It is safe to disable the flag.
 
 ### daap
-Pass the `--enable-daap` option to the configure script. Build and install the DAAP Music Sharing plugin that uses the `libdmapsharing` library to share music and play shared music on a local network over the DAAP (Digital Audio Access Protocol) protocol.
+Pass the `-Ddaap=enabled` option to the Meson build script. Build and install the DAAP Music Sharing plugin that uses the `libdmapsharing` library to share music and play shared music on a local network over the DAAP (Digital Audio Access Protocol) protocol.
 
 This flag should be enabled if there is a need to access music shared over the DAAP protocol, e.g. from Apple iTunes.
 
@@ -16,32 +16,37 @@ Pull in the [sys-apps/dbus](../sys-apps/dbus.md) package as a dependency. D-Bus 
 This flag should be enabled to provide an ability to interact with Rhythmbox over the D-Bus interface.
 
 ### gnome-keyring
-Pass the `--with-libsecret` option to the configure script. Use the `libsecret` library to provide an ability to access GNOME keyring to store and obtain authentication information when accessing media over the DAAP protocol.
+Pass the `-Dlibsecret=enabled` option to the Meson build script. Use the `libsecret` library to provide an ability to access GNOME keyring to store and obtain authentication information when accessing media over the DAAP protocol.
 
 This flag should only be enabled together with the `daap` flag and if there is a need to save passwords for protected DAAP shares.
 
+### gtk-doc
+Pass the `-Dgtk_doc=true` option to the Meson build script. Use the Gtk-Doc tool to extract annotations from the source code to generate developer documentation in the HTML format and install it into the `/usr/share/gtk-doc/html/rhythmbox` directory.
+
+It is safe to disable this flag.
+
 ### ipod
-Pass the `--with-ipod` option to the configure script. Build and install the `Portable Players - iPod` plugin that uses the `libgpod` library to enable support for Apple iPod or iPhone devices, e.g. transfer media to a player, display a content on a device, play music from device, etc. Note: support is very limited and newer iOS versions might not be properly supported.
+Pass the `-Dipod=enabled` option to the Meson build script. Build and install the `Portable Players - iPod` plugin that uses the `libgpod` library to enable support for Apple iPod or iPhone devices, e.g. transfer media to a player, display a content on a device, play music from device, etc. Note: support is very limited and newer iOS versions might not be properly supported.
 
 This flag should only be enabled if there is a need to access Apple devices.
 
 ### libnotify
-Pass the `--enable-libnotify` option to the configure script. Build and install the `Notification` plugin that uses the `libnotify` library to enable notification popups, such as playback start, stop, pause, etc.
+Pass the `-Dlibnotify=enabled` option to the Meson build script. Build and install the `Notification` plugin that uses the `libnotify` library to enable notification popups, such as playback start, stop, pause, etc.
 
 It is safe to disable the flag.
 
 ### lirc
-Pass the `--enable-lirc` option to the configure script. Build and install the `LIRC` plugin, that allows to control Rhythmbox using an infrared remote control using the LIRC (Linux Infra-red Remote Control) library.
+Pass the `-Dlirc=enabled` option to the Meson build script. Build and install the `LIRC` plugin, that allows to control Rhythmbox using an infrared remote control using the LIRC (Linux Infra-red Remote Control) library.
 
 This flag should only be enabled if there is a need to use infrared remote controls to control the player.
 
 ### mtp
-Pass the `--enable-mtp` option to the configure script. Build and install the `Portable Players - MTP` plugin, that uses the `libmtp` library to enable support for MTP devices, e.g. show the content, transfer, play from device, and so forth.
+Pass the `-Dmtp=enabled` option to the Meson build script. Build and install the `Portable Players - MTP` plugin, that uses the `libmtp` library to enable support for MTP devices, e.g. show the content, transfer, play from device, and so forth.
 
 This flag should be enabled if there is a need to support MTP devices through Rhythmbox.
 
 ### python
-Prepare Python environment for the configure script to pick up the correct version. Pass the `--enable-python` option to the configure script. Build and install the following Python-based plugins:
+Prepare Python environment for the Meson build script to pick up the correct version. Pass the `-Dplugins_python=enabled` option to the Meson build script. Build and install the following Python-based plugins:
 
 - `Context Pane` that shows information related to the currently playing artist and song;
 - `Web remote control` that provides an ability to control Rhythmbox remotely from a web browser;
@@ -58,16 +63,16 @@ Prepare Python environment for the configure script to pick up the correct versi
 This flag should be enabled if any of the aforementioned plugins is needed. Unnecessary plugins can be easily disabled through the "Plugins" menu of the Rhythmbox.
 
 ### test
-Compile GSettings XML schemas necessary for running test. Start a new Xvfb session and execute the `make check` command inside of it. Run the test suite provided with the source code. This will extend a build time.
+Start a new Xvfb session and execute the `meson test` command inside of it to run the test suite provided with the source code and check for regressions. This will extend a build time.
 
 This flag should normally be disabled. It is oriented to the Gentoo team, testers and developers.
 
 ### udev
-Pass the `--with-gudev` option to the configure script. Use the `libgudev` library to access the Udev device manager to detect and identify audio player devices (Apple iPod/iPhone and MTP devices), and build and install the `Android devices` plugin, that provides an Android 4.0 (and later) specific device handling via the MTP protocol.
+Pass the `-Dgudev=enabled` option to the Meson build script. Use the `libgudev` library to access the Udev device manager to detect and identify audio player devices (Apple iPod/iPhone and MTP devices), and build and install the `Android devices` plugin, that provides an Android 4.0 (and later) specific device handling via the MTP protocol.
 
 This flag should be enabled if there is a need to access audio players and mobile devices.
 
 ### upnp-av
-Pass the `--enable-grilo` option to the configure script. Build and install the `Grilo media browser` plugin that uses the Grilo UPnP AV plugin to provide an ability to browse various local and Internet media sources, including uPnP/DLNA media servers.
+Pass the `-Dgrilo=true` option to the Meson build script. Build and install the `Grilo media browser` plugin that uses the Grilo UPnP AV plugin to provide an ability to browse various local and Internet media sources, including uPnP/DLNA media servers.
 
 This flag should be enabled if there is a need to browse and access UPnP AV servers.
