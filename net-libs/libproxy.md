@@ -1,5 +1,10 @@
 # net-libs/libproxy
 
+### duktape
+Pass the `-DWITH_DUKTAPE=yes` option to the CMake command. Build and install `pacrunner_duktape` library - a `libproxy` module that contains the plugin to allow libproxy to interpret PAC (Proxy Auto-Configuration) files using the Duktape embeddable JavaScript engine.
+
+It is safe to disable this flag.
+
 ### gnome
 Pass the `-DWITH_GNOME3=yes` option to the CMake command. Build and install the `pxgsettings` binary that is used to query GSettings configuration backend for proxy settings. When disabled, build and install the `pxgconf` instead to query GConf backend (but only if GConf library is found).
 
@@ -31,6 +36,6 @@ Pass the `-DBUILD_TESTING=yes` option to the CMake command. Build test suite pro
 This flag should normally be disabled as it is mainly useful for testers, developers or the Gentoo team.
 
 ### webkit
-Pass the `-DWITH_WEBKIT3=yes` option to the CMake command. Build and install the `pacrunner_webkit` library - a `libproxy` module that contains the plugin to allow libproxy to interpret PAC (Proxy Auto-Configuration) files using GTK+ webkit engine.
+Pass the `-DWITH_WEBKIT=yes` and `-DWITH_WEBKIT3=yes` option to the CMake command. Build and install the `pacrunner_webkit` library - a `libproxy` module that contains the plugin to allow libproxy to interpret PAC (Proxy Auto-Configuration) files using GTK+ webkit engine.
 
 It is safe to disable the flag.
