@@ -60,6 +60,11 @@ Pass the `is_official_build=true` and `is_cfi=false` options to the `gn gen` com
 
 It is safe to disable this flag.
 
+### pgo
+Only works with the Clang compiler. Pass the `use_lld=true` option to the `gn gen` command and perform the build twice: first time passing the `chrome_pgo_phase=1` option to the `gn gen` command to produce unoptimized version, then use profiler to determine various optimizations that can be performed, and finally perform a second build passing the `chrome_pgo_phase=2` option this time applying the determined optimizations and producing a final version. Enabling this flag will significantly increase the build time and slightly improve the runtime performance.
+
+This flag can be safely disabled.
+
 ### pic
 Only makes sense on the `ia32` architecture when `system-ffmpeg` flag is disabled. Pass the `--disable-asm` option to the `chromium/scripts/build_ffmpeg.py` script. Disable optimized assembly code and use the non-optimized but PIC-friendly (Position-Independent Code) code instead.
 
