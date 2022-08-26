@@ -10,6 +10,11 @@ This flag is used by the Gentoo team for building early stage images and bootstr
 
 The flag should normally be disabled.
 
+### ensurepip
+When this flag is enabled the `ensurepip` module will be installed, which can be used to bootstrap `pip` and `setuptools` using the bundled wheels. When this flag is disabled, the module will be removed from the resulting image before installation.
+
+It is safe to disable this flag, however `venv` will only work with `--without-pip` flag.
+
 ### examples
 Enabling this flag will install example Python code that comes together with the source code into `/usr/share/doc/python-<VERSION>/examples`.
 
@@ -61,9 +66,9 @@ Python has an SSL support enabled by default. Disabling this flag will export th
 This flag should be enabled as it is required by the Portage to work properly.
 
 ### test
-Skip some tests with known problems, by moving them out of the test directory. Execute the test suite provided with sources after the build is completed to check for regressions. Running tests will extend build time.
+Skip some tests with known problems, by moving them out of the test directory. Execute the `make test` command after the main build is completed to run the test suite provided with the source code and check for regressions. Running tests will extend the build time.
 
-This flag should normally be disabled.
+This flag should normally be disabled, because these tests are primarily useful for the developers, testers and maintainers.
 
 ### tk
 Enables the `_tkinter` and the dependent Python modules. This module provides an ability to render GUIs from Python scripts using the Tcl/Tk widget toolkit.
@@ -74,11 +79,6 @@ This flag can be safely disabled.
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
 It is safe to disable this flag.
-
-### wininst
-Enabling the flag will install a set of Windows binaries (`wininst-*.exe`) that are necessary to build self-extracting installers for Windows machines using, for example `python setup.py bdist_wininst`.
-
-This flag can be safely disabled unless aforementioned behavior is required.
 
 ### xml
 Enables the `_elementtree`, the `pyexpat` and the dependent Python modules. This provides an ability to handle XML files in Python scripts.
