@@ -24,3 +24,8 @@ It is safe to disable this flag.
 Pass the `-DBUILD_TESTING=yes` option to the `cmake` command. Execute the `bin/ctest` binary inside of the build directory when the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend a build time.
 
 This flag should normally be disabled as it is mainly useful for the maintainers, testers or developers.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
