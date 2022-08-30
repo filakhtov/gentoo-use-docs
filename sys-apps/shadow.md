@@ -52,6 +52,11 @@ Pass the `--with-su` option to the configure script. Build and install the `su` 
 
 This flag should normally be enabled, however it can be disabled if there is no need to run privileged commands as regular users or alternative mechanisms exist to run such commands.
 
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
+
 ### xattr
 Pass the `--with-attr` option to the configure script. Provide an ability for a `useradd` and a `usermod` commands to copy eXtended ATTRibutes from source files into destination when creating a user home directory from skeleton files or moving home directory to different place. Enable an additional logic to exclude ACLs when copying XATTRs to avoid an unexpected permissions result while copying files between filesystems with and without an ACL support.
 
