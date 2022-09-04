@@ -14,3 +14,8 @@ This flag should normally be disabled as it is primarily oriented towards tester
 Pass the `--enable-valgrind-tests` option to the configure script. Use the Valgrind tool when running a test suite.
 
 This flag should be disabled because tests are never executed for this package.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
