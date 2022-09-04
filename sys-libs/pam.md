@@ -29,3 +29,8 @@ This flag should generally be disabled, because nowadays a LDAP is preferred ove
 The flag passes the `--enable-selinux` option to the configure script. Provides a SELinux support for a PAM stack. Enables reporting via the Kernel Audit Subsystem for SELinux restrictions if `audit` flag is also enabled.
 
 This flag should only be enabled systemwide as part of the selinux-enabled Gentoo profile.
+
+### split-usr
+If the flag is enabled all produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+
+This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
