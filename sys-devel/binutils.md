@@ -15,11 +15,6 @@ Run `make info` during a build to produce info pages. They will be installed int
 
 It is safe to disable this flag.
 
-### emacs
-Compile and install Emacs major mode `dwarf-mode.el` to enable pretty display of DWARF (debugging with attributed record formats) with some linking to make navigation easier.
-
-This flag can be safely disabled.
-
 ### gold
 Pass the `--enable-gold` option to the configure script. Build and install the `ld.gold` linker - a faster replacement for a default `ld.bfd` that doesn't use BFD library for processing object files, and is especially useful for large C++ applications. Note that this linker can only process object file formats into the ELF (Executable Linux Format) binary format. The `ld.bfd` linker will still be used by default.
 
