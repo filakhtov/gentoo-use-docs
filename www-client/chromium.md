@@ -121,7 +121,7 @@ Can't be used together with the `headless` flag. Pass the `use_vaapi=true` optio
 It is safe to disable this flag.
 
 ### wayland
-Can't be used together with the `headless` flag. Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
+Can't be used together with the `headless` flag. Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true`, `use_system_wayland_scanner=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
 
 This flag should be enabled if the system using Wayland window server.
 
