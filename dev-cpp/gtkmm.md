@@ -5,7 +5,7 @@ Make sure that [x11-libs/gtk+](../x11-libs/gtk+.md) package has the `aqua` flag 
 
 This flag only makes sense on macOS and should be disabled otherwise.
 
-### doc
+### gtk-doc
 Pass the `-Dbuild-documentation=true` option to the meson build script. Use the Doxygen tool to generate an API documentation in the HTML format, that describes library components, including modules, namespaces, classes, provides class relationship diagrams, etc, and install it into the `/usr/share/doc/gtkmm-<VERSION>` directory.
 
 It is safe to disable the flag.
