@@ -5,7 +5,7 @@ Pass the `-Ddebug-refcounting=true` option to the meson build script script. Def
 
 This flag should only be enabled for debugging purposes.
 
-### doc
+### gtk-doc
 Pass the `-Dbuild-documentation=true` option to the meson build script. Generate documentation in the HTML format using the Doxygen tool, including an API documentation, description of the modules, namespaces, classes and their inheritance diagrams, etc, and install it into the `/usr/share/doc/glibmm-<VERSION>` directory and install example C++ source code into the `examples` subdirectory that shows how to use the glibmm library for variety of different use cases.
 
 It is safe to disable the flag.
