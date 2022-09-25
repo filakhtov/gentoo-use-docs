@@ -34,3 +34,8 @@ It is safe to disable the flag. It can be enabled together with other graphical 
 Pass the `--enable-pinentry-qt` option to the configure script. Build and install the `pinentry-qt` program - a graphical, QT-based dialog to allow secure entry of PINs and passphrases.
 
 This flag should be enabled if the target system runs a KDE based Desktop Environment.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
