@@ -74,6 +74,11 @@ Pass a `--with-ldap` option to a WAF configure script. Provide an ability to use
 
 This flag should only be enabled if integration with LDAP is desired.
 
+### llvm-libunwind
+Only works if the `unwind` flag is enabled. Use the [sys-libs/llvm-libunwind](../sys-libs/llvm-libunwind.md) library, that provides support for platforms that do not have a system unwinder, instead of the [sys-libs/libunwind](../sys-libs/libunwind.md) library.
+
+It is safe to disable this flag.
+
 ### pam
 Pass a `--with-pam` and a `--with-pammodulesdir=/lib/security` options to a WAF configure script. Build and install a `pam_winbind` module to integrate Samba with a PAM (Pluggable Authentication Modules) infrastructure. This module can authenticate users against the local domain by talking to the Winbind daemon.
 
@@ -138,6 +143,11 @@ It is recommended to toggle this flag system-wide, e.g. as part of a SystemD Por
 Pass a `--enable-selftest` option to a WAF configure script. Execute a `waf test` command after a main build is completed to run a test suite provided with a source code. The test suite is broken and does not run properly as part of the emerge.
 
 This flag should be disabled, as it will fail a build.
+
+### unwind
+Pass the `--with-libunwind` option to the WAF configure script. Use the `libunwind` library to report backtraces when an exception occurs at runtime.
+
+It is safe to disable this flag.
 
 ### winbind
 Pass a `--with-winbind` option to a WAF configure script. Build and install a `winbindd` daemon that provides an ability to deploy a Samba server with no preexisting Unix account infrastructure, i.e. the Winbind acts as an intermediary between Unix services and Windows domain controllers, offers a means to manage domain users and groups without the overhead of local accounts.
