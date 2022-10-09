@@ -12,6 +12,11 @@ Normally the ebuild is removing example source code files that are provided with
 
 It is safe to disable the flag.
 
+### ftp
+Pass the `--with-ftp` option to the configure script. Enable support for the FTP (File Transform Protocol), allowing to use DTD (Document Type Definition) hosted on the FTP servers.
+
+This flag can be safely disabled.
+
 ### icu
 This flag passes the `--with-icu` option to the configure script. By default, a limited set of the character set encodings is supported. Everything else has to be converted to the UTF-8 before being passed to the parser.
 
@@ -38,6 +43,6 @@ Passes the `--enable-static` option to the configure script. This will produce s
 This flag should normally be disabled and might only be necessary for certain developers.
 
 ### test
-Execute the test suite provided with the library by calling the `make check` command when the main build is completed to check for any regressions. If `python` flag is enabled, additionally execute Python bindings related test suite for every enabled Python target by running a `make test` command for each enabled Python target. This will extend the build time.
+Execute the test suite provided with the library by calling the `make check` command when the main build is completed to check for any regressions. If `python` flag is enabled, additionally execute Python bindings related test suite for every enabled Python target by running a `make check` command for each enabled Python target. This will extend the build time.
 
 This flag should be disabled. It is primarily oriented towards the maintainers, developers and testers.
