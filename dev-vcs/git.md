@@ -80,6 +80,11 @@ Only works when the `blksha1` flag is disabled. Use the GIT's own SHA1 library (
 
 It is recommended to enable this flag on PowerPC platforms.
 
+### safe-directory
+When this flag is disabled, apply the patch that disables git `safe.directory` check, i.e. allows to use directories that are owned by a different user when the `GIT_TEST_ASSUME_DIFFERENT_OWNER` environment variable is set.
+
+This flag should be enabled.
+
 ### selinux
 Pull in the [sec-policy/selinux-git](../sec-policy/selinux-git.md) package as a dependency to provide necessary SELinux policies for git to properly operate under a SELinux-restricted kernel.
 
@@ -94,11 +99,6 @@ It is safe to disable the flag, unless there is a need to access SVN repositorie
 Decide which tests to disable based on the enabled flags and append the `.DISABLED` prefix to their file names to skip. Execute the `make clean`, `make test` and `make aggregate-results` commands to run the test suite provided with the source code and collect results after the main build is completed. This will extend a build time.
 
 This flag should normally be disabled, because it is mainly useful for the Gentoo team, testers or developers.
-
-### threads
-Pass the `THREADED_DELTA_SEARCH=YesPlease` variable to the `make` command. Compile the `git-pack-objects` tool with pthreads library to run multiple threads while searching for best delta matches. Number of threads can be controlled by the `pack.threads` option. When disabled, pass the `NO_PTHREADS=YesPlease` variable instead.
-
-This flag should be enabled on multiprocessor machines to improve packing performance.
 
 ### tk
 Build the portable graphical interface to Git that uses the Tcl/Tk toolkit and can be accesse via the `git gui` command, allowing users to make changes to their repository by making new commits, amending existing ones, creating branches, performing local merges, and fetching/pushing to remote repositories. When disabled, pass the `NO_TCLTK=YesPlease` variable to the `make` command to disable GUI.
