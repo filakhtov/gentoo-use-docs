@@ -15,11 +15,6 @@ Build and execute test suite provided with a source code. This will extend a bui
 
 The flag should normally be disabled as it is only useful for the Gentoo team, testers or developers.
 
-### vim-syntax
-Install a `/usr/share/vim/vimfiles/syntax/ninja-<VERSION>.vim` and a `/usr/share/vim/vimfiles/ftdetect/ninja-<VERSION>.vim` files. Enable a syntax highlighting for `.ninja` files for the Vim editor.
-
-It is safe to disable this flag, unless there is a need to edit Ninja files using Vim.
-
 ### zsh-completion
 Install a `_ninja` ZSH script into a `/usr/share/zsh/site-functions` directory. Enable a ZSH completion support for the `ninja` command.
 
