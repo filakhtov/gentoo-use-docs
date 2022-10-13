@@ -20,6 +20,11 @@ Set the `docs` and `compiler-docs` options to `true` in the `build` section of t
 
 It is safe to disable the flag.
 
+### llvm-libunwind
+Set the `llvm-libunwind` option in the `config.toml` build configuration file to either `system` or `in-tree`, depending if the `system-llvm` flag is enabled or disabled. When this flag is disabled, set the `llvm-libunwind` option to `no`. Link against LLVM's `libunwind` library instead of the GCC one to generate backtraces on panics.
+
+This flag can be safely disabled.
+
 ### miri
 Requires the `nightly` flag to be enabled. Append `miri` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install the `miri` tool - an experimental interpreter for Rust's mid-level intermediate representation (MIR). It can run binaries and test suites of cargo projects and detect certain classes of undefined behavior.
 
@@ -44,6 +49,11 @@ It is safe to disable this flag.
 Append `rls` and `analysis` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install the RLS (Rust Language Server) component that provides IDEs, editors, and other tools with information about Rust programs, and supports `goto definition`, symbol search, reformatting, code completion as well as renaming and refactoring features.
 
 This flag can be safely disabled.
+
+### rust-analyzer
+Append `rust-analyzer` to the `tools` option in the `build` section of the `config.toml` build configuration file. Install the `rust-analyzer` - a modular compiler frontend for the Rust language that is used by IDEs (Integrated Development Environment) to create better support for Rust language.
+
+It is safe to disable this flag.
 
 ### rust-src
 Append the `src` to the `tools` option in the `build` section of the `config.toml` build configuration file. Install the `rust-src` tool that is used to download a tarball of the Rust source code associated with the current version of the `rustc` compiler.
