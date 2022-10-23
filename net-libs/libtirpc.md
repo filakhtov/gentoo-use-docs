@@ -1,10 +1,5 @@
 # net-libs/libtirpc
 
-### ipv6
-Pass a `--enable-ipv6` option to a configure script. Enable support for an IPv6 protocol to allow a `libtirpc` library to issue RPC calls to IPv6 hosts.
-
-It is recommended to enable this flag if the target system to be participating in IPv6-capable networks.
-
 ### kerberos
 Pass a `--enable-gssapi` option to a configure script. Enable support of GSS-API (Generic Security Service Application Program Interface) for RPC calls authentication.
 
