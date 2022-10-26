@@ -5,6 +5,11 @@ Pass the `--enable-libargon2` and `--with-luks2-pbkdf=pbkdf2` options to the con
 
 This flag should only be enabled if there is a need to use Argon2 key derivation algorithm.
 
+### fips
+Pass the `--enable-fips` option to the configure script. Only works with `libgcrypt` backend. Enable support for FIPS (Federal Information Processing Standards) mode (`fips=1` kernel command line) which provides library and binary integrity verification with `libfipscheck` and uses FIPS approved RNG (Random Number Generator).
+
+This flag can be enabled to support FIPS-compliant mode, however it should be noted that `cryptsetup` itself is not (yet?) certified.
+
 ### gcrypt
 Pull a [dev-libs/libgcrypt](../dev-libs/libgcrypt.md) package as a dependency. Pass the `--with-crypto_backend=gcrypt` option to the configure script. Use a libgcrypt library as an encryption and a decryption backend. A Libgcrypt built with threads can't be used while statically linking (`static` flag, see [Gentoo bug #496612](https://bugs.gentoo.org/496612)).
 
