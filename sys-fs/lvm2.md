@@ -1,9 +1,9 @@
 # sys-fs/lvm2
 
-### device-mapper-only
-Pass the `--disable-udev-systemd-background-jobs` option to the configure script. Pass a `none` value to the `--with-mirrors` and the `--with-snapshots` options. Build a package using a `make device-mapper` command and only install device-mapper binary. Do not install init scripts and configuration files.
+### lvm
+Pass the `--enable-dmfilemapd`, `--enable-dmeventd`, `--enable-cmdlib`, `--enable-fsadm`, `--enable-lvmpolld`, `--with-mirrors=internal` and `--with-snapshots=internal` options to the configure script. Build and install all the daemons and command line tools to support LVM (Logical Volume Manager) volumes. When this flag is disabled, pass the `--disable-udev-systemd-background-jobs`, `--with-mirrors=none` and `--with-snapshots=none` options to the configure script to build a minimal package with device mapper support only without LVM, init scripts and configs.
 
-It is safe to disable this flag. It can be useful for embedded systems.
+This flag should normally be enabled to provide support for LVM. Disabling it generally only make sense for embedded systems.
 
 ### lvm2create-initrd
 Install an `lvm2create_initrd` tool - a tool to create initial ramdisk (initrd) image suitable for booting systems with a root partition on LVM.
