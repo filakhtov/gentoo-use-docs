@@ -20,6 +20,11 @@ Passes the `--enable-static` option to the configure script. This will produce s
 
 It is recommended to disable this flag unless there is an explicit need for static GNU dbm libraries, e.g. for development purposes.
 
+### test
+Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because these tests are primarily oriented towards the developers, maintainers and testers.
+
 ### verify-sig
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
