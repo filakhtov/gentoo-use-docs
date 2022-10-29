@@ -15,6 +15,11 @@ Pass the `--enable-selinux` option to the configure script. Enable `-Z` option r
 
 This flag should only ever be toggled system-wide, e.g. as part of a SELinux-enabled Portage profile.
 
+### test
+Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because these tests are primarily oriented towards the developers, maintainers and testers.
+
 ### X
 Install a `pstree.x11` symlink to a `pstree` program. When `pstree` is executed via this symlink it will wait for a keypress before exiting (so that terminal window will stay open to read an output).
 
