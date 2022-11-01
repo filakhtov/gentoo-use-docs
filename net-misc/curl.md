@@ -150,11 +150,6 @@ Pass the `--enable-tftp` option to the configure script. Enable support for the 
 
 The flag can be safely disabled.
 
-### threads
-Pass the `--enable-threaded-resolver` and the `--enable-pthreads` options to the configure script. Enable cURL's builtin threaded DNS resolver (built on top of POSIX threads or Windows threads). Switch to non-blocking name resolution and prevent timeouts during resolution.
-
-This flag can be safely disabled, however it is enabled by default by upstream nowadays and can help avoid timeouts with a slow DNS.
-
 ### verify-sig
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
