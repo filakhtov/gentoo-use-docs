@@ -34,3 +34,8 @@ It is safe to disable this flag.
 Pass the `--enable-zlib` option to the configure script. Provide an ability to look inside of the Zlib compressed archives using the `-z` option instead of just reporting the archive type. If the flag is disabled, trying to use the `file -z` on the GZip compressed archive will produce the `Bad system call` message.
 
 It is safe to disable this flag.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
