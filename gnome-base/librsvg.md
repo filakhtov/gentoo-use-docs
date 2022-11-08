@@ -1,5 +1,10 @@
 # gnome-base/librsvg
 
+### debug
+Build the debug version of the `librsvg` library. When this flag is disabled, pass the `--release` flag to the `cargo build` command to produce production optimized version instead.
+
+This flag should only be enabled if there is a need to debug the library itself or a linked binary.
+
 ### gtk-doc
 Pass the `--enable-gtk-doc` option to the configure script. Use the Gtk-Doc tool to extract annotations from the source code to generate developer documentation in the HTML format and install it into the `/usr/share/gtk-doc/html/librsvg~` directory.
 
