@@ -15,6 +15,11 @@ Pass the `-Djpeg=enabled` (`disabled` when the flag is disabled) option to the M
 
 This flag should be enabled to provide support for loading JPEG images via GDK-PixBuf library.
 
+### test
+Pass the `-Dtests=true` (`false` when the flag is disabled) option to the Meson bulid script. Build a test suite provided with the source code and execute the `meson test` command after the main build is completed to run the suite and check for regressions.
+
+This flag should normally be disabled, because these tests are primarily oriented towards the developers, maintainers and testers.
+
 ### tiff
 Pass the `-Dtiff=enabled` (`disabled` when the flag is disabled) option to the Meson build script. Build and install the `libpixbufloader-tiff` library - a progressive loader for TIFF image format.
 
