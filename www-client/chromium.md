@@ -80,6 +80,11 @@ Can't be used together with the `headless` flag. Pass the `use_pulseaudio=true` 
 
 This flag should be enabled if the target system runs the PulseAudio sound system.
 
+### qt5
+Only works if the `headless` flag is disabled. Pass the `use_qt=true` option to the `gn gen` command. Enable support for the QT toolkit for Chromium to enable better integration with the KDE and other QT-based desktop environments.
+
+This flag should only be enabled when running Chromium on QT-based platform.
+
 ### screencast
 Requires `wayland` flag to be enabled. Pass the `rtc_use_pipewire=true` option to the `gn gen` command. Use the PipeWire server to enable screen and audio capture in Chromium to allow screencast functionality on Wayland.
 
@@ -94,6 +99,11 @@ This flag should only ever be toggled system-wide, i.e. as part of the SELinux-e
 Run the `ninja chrome_sandbox` command during the build and install produced binary into the `/usr/bin/chrome-sandbox` location with SUID bit set. This is a special helper binary that is used to launch the zygote process, and once started it will create a new network and PID namespace, as well as `chroot()` the process to an empty directory on request.
 
 This flag should be disabled as it is almost but not completely removed from Chromium and replaced with user namespaces sandbox.
+
+### system-av1
+Pass the `dav1d` and `libaom` values to the `--system-libraries` option of the `build/linux/unbundle/replace_gn_files.py` script to replace the bundled `libaom` and `libdav1d` libraries with system-wide versions to link against.
+
+It is recommended to disable this flag for maximum Chromium stability.
 
 ### system-ffmpeg
 Pass the `ffmpeg` and `opus` parameters to the `--system-libraries` option for the `build/linux/unbundle/replace_gn_files.py` script to replace bundled FFmpeg library with the system-wide version to link against.
@@ -121,7 +131,7 @@ Can't be used together with the `headless` flag. Pass the `use_vaapi=true` optio
 It is safe to disable this flag.
 
 ### wayland
-Can't be used together with the `headless` flag. Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true`, `use_system_wayland_scanner=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
+Can't be used together with the `headless` flag. Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true`, `use_system_wayland_scanner=true`, `use_system_libwayland_server=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
 
 This flag should be enabled if the system using Wayland window server.
 
