@@ -6,7 +6,7 @@ Pass the `-Dgnome_proxy=enabled` (`disabled` if the flag is disabled) option to 
 This flag should be enabled if building glib-networking in a GNOME 3 environment.
 
 ### libproxy
-Pass the `-Dlibproxy=enabled` (`disabled` when the flag is disabled) option to the meson build script. Use a D-Bus service provided by the libproxy backend to provide PAC/WPAD auto-configuration support.
+Pass the `-Dlibproxy=enabled` (`disabled` when the flag is disabled) option to the meson build script. Use a D-Bus service provided by the libproxy backend to provide PAC/WPAD auto-configuration support. When the flag is disabled, pass the `-Denvironment_proxy=enabled` (`disabled` if the flag is disabled) option to the Meson build script to use simplified environment variable based proxy configuration instead.
 
 This flag should be enabled if there is a need to use proxy auto-configuration.
 
