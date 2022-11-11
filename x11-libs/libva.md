@@ -1,8 +1,5 @@
 # x11-libs/libva
 
-### drm
-DRM support is enabled by default and this flag does nothing at the moment.
-
 ### opengl
 OpenGL support is enabled by default and this flag does nothing at the moment.
 
