@@ -15,15 +15,15 @@ Pass the `--enable-cet` option to the configure script. Enable support for Intel
 
 This flag should only be enabled on supported CPUs.
 
-### clone3
-Append the `-DGENTOO_USE_CLONE3` flag to the `CFLAGS` environment variable for the duration of the build. Enable the `clone3` syscall which allows to create child processes in a more precisely controlled maner compared to `fork` and replaces older `clone` and `__clone2` implementations.
-
-This flag should normally be enabled, unless it causes issues with some apps, such as apps that are running on the older Electron version, e.g. Discord.
-
 ### compile-locales
 Normally, only locales that are specified in the `/etc/locale.gen` configuration file are generated after the package is installed. Enabling this flag will ignore the aforementioned config and generate all available locales. This will extend the build time and is generally used for building stage images and bootstrapping.
 
 It is recommended to disable the flag.
+
+### crypt
+Pass the `--enable-crypt` option to the configure script. Build and install the `libcrypt` library and its associated header `crypt.h` that provides password hashing routines.
+
+This flag should normally disabled, because these days `libxcrypt` is a modern replacement with better capabilities.
 
 ### custom-cflags
 Normally, all custom user-supplied compiler optimization flags are removed from `CFLAGS` variable and only `-O2` is passed in order to avoid bugs and problems that might be related to such optimizations. When this flag is enabled, all user-supplied optimization flags are preserved, however any bug reports agains `glibc` should be made with this flag disabled.
@@ -35,15 +35,15 @@ Execute `makeinfo` command to build additional documentation and install it into
 
 It is safe to disable this flag.
 
-### experimental-loong
-Apply an experimental patch to support 64-bit LoongArch compatible RISC microprocessors (starting from Loongson 3 5000 series).
-
-This flag should only be enabled on systems running on compatible Loongson processors.
-
 ### gd
 Pass the `--with-gd` option to the configure script. Build and install a `memusagestat` - a utility to generate graphic (PNG images) from memory profiling data.
 
 This flag can be safely disabled.
+
+### hash-sysv-compat
+Append the `-Wl,--hash-style=both` option to the `LDFLAGS` environment variable for the duration of the build. Enable support for multiple static hash tables - classic ELF ".hash" section and a new style GNU ".gnu.hash" section.
+
+This flag should normally be disabled, unless there are any executables that rely on the classic ELF format.
 
 ### headers-only
 This flag only makes sense under the cross-compilation. When enabled ignores a [sys-devel/binutils](../sys-devel/binutils.md) and a [sys-devel/gcc](../sys-devel/gcc.md) dependencies, because they are provided by cross-compiler on the host system.
