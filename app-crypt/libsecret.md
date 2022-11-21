@@ -20,6 +20,9 @@ Prepare a Python environment to properly run the tests. Start a new D-Bus sessio
 
 This flag should normally be disable as it is mainly useful for the maintainers, testers and developers.
 
+### test-rust
+This flag does nothing and should be disabled.
+
 ### tpm
 Pass the `-Dtpm2=true` option to the meson build script. Provide an ability to encrypt and decrypt stored secrets using the TPM module (Trusted Platform Module), in addition to using the user's login password.
 
