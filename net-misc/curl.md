@@ -155,6 +155,11 @@ Perform signature verification of the upstream source code archive before extrac
 
 It is safe to disable this flag.
 
+### websockets
+Pass the `--enable-websockets` option to the configure script. Enable support for WebSocket communication (`ws://` and `wss://` protocols). Currently WebSockets are only supported by the library, command line support is not available yet.
+
+It is safe to disable this flag.
+
 ### zstd
 Pass the `--with-zstd` option to the configure script. Enable support for ZSTD compressed content data sent over the HTTP, so that cURL can automatically decompress such data on the fly.
 
