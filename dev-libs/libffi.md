@@ -10,11 +10,6 @@ Pass the `--enable-exec-static-tramp` option to the configure script. Don't rely
 
 This flag is experimental, and although it improves security it should be handled with extra care.
 
-### experimental-loong
-Apply an experimental patch to support 64-bit LoongArch compatible RISC microprocessors (starting from Loongson 3 5000 series).
-
-This flag should only be enabled on systems running on compatible Loongson processors.
-
 ### pax-kernel
 Pass the `--enable-pax_emutramp` option to the configure script. Provide an ability to run under PaX-restricted kernel. Memory pages, that contain a dynamically generated code will be marked with `PROT_EXEC` flag. This will ensure that program won't be terminated by the kernel when trying to run non-executable memory but will use "trampolines" that are safely handled by emulation in a PaX kernel (aka `EMUTRAMP`).
 
