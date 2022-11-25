@@ -75,6 +75,11 @@ Enables the `_tkinter` and the dependent Python modules. This module provides an
 
 This flag can be safely disabled.
 
+### valgrind
+Pass the `--with-valgrind` option to the configure script. This would ensure that many false positive reports produced by running Python under the Valgrind profiler will be correctly supressed. It is also recommended to disable Python's custom memory allocator PyMalloc to catch even more memory leaks.
+
+This flag should normally be disabled.
+
 ### verify-sig
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
