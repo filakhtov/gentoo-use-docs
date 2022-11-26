@@ -45,13 +45,8 @@ Append `rust-demangler` to the `tools` option and set the `profiler` to `true` i
 
 It is safe to disable this flag.
 
-### rls
-Append `rls` and `analysis` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install the RLS (Rust Language Server) component that provides IDEs, editors, and other tools with information about Rust programs, and supports `goto definition`, symbol search, reformatting, code completion as well as renaming and refactoring features.
-
-This flag can be safely disabled.
-
 ### rust-analyzer
-Append `rust-analyzer` to the `tools` option in the `build` section of the `config.toml` build configuration file. Install the `rust-analyzer` - a modular compiler frontend for the Rust language that is used by IDEs (Integrated Development Environment) to create better support for Rust language.
+Append the `rust-analyzer` and `analysis` to the `tools` option in the `build` section of the `config.toml` build configuration file. Install the `rust-analyzer` - a modular compiler frontend for the Rust language that is used by IDEs (Integrated Development Environment) to create better support for Rust language.
 
 It is safe to disable this flag.
 
