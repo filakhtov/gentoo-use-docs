@@ -24,3 +24,8 @@ The flag should only be enabled if the static libraries are required.
 Execute the `make check` command after the main build is completed. Run a test suite provided with the source code. This will extend a build time. When disabled, patch the `Makefile.in` file to exclude the `testsuite` and `examples` directories from being built to shrink the build time.
 
 This flag should normally be disabled as it is mainly used by the Gentoo team, testers and developers.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
