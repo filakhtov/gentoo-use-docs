@@ -11,7 +11,7 @@ When disabled, pass the `--disable-libcap` option to the configure script. Does 
 This flag can be safely disabled unless there is a need to deal with files that have capabilities set.
 
 ### gmp
-Pass the `--with-gmp` option to the configure script. Provide an ability for a `factor` command to handle "big numbers", i.e. with precision higher than a native processor can handle using a GMP library.
+Pass the `--with-libgmp` option to the configure script. Provide an ability for a `factor` command to handle "big numbers", i.e. with precision higher than a native processor can handle using a GMP library.
 
 This flag can be safely disabled.
 
@@ -59,6 +59,11 @@ The flag should normally be disabled as it is primarily used by the maintainers,
 Skip applying any Gentoo patches.
 
 This flag should be disabled. It might be useful for testing regressions or reporting issues to upstream.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
 
 ### xattr
 Pass the `--enable-xattr` option to the configure script. Provide an ability to preserve eXtended ATTRibutes for a `cp`, an `mv` and other commands.
