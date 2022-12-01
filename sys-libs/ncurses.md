@@ -46,6 +46,11 @@ If the flag is enabled some of the produced libraries will be installed into the
 
 This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
 
+### stack-realign
+Add the `-mstackrealign` option to the `CFLAGS`/`CXXFLAGS`/etc environment variable for the duration of the build. Realign the stack in the 32-bit build for compatibility with older binaries at some performance cost to avoid crashes in older 32-bit binaries.
+
+This should only be enabled for x86/32-bit multilib builds on amd64 systems if there is a need to interact with older binaries.
+
 ### static-libs
 This flag will instruct ebuild to preserve statically linked version of various ncurses libraries, such as `libncurses.a`, `libform.a`, `libmenu.a` and others depending on the build configuration. With this flag disabled, these static libraries are removed by the ebuild before installation.
 
