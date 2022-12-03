@@ -40,6 +40,11 @@ Pass the `-Dosmesa=true` option to the meson build command. Build and install th
 
 It is safe to disable this flag.
 
+### proprietary-codecs
+Pass the `-Dvideo-codecs="h264dec,h264enc,h265dec,h265enc,vc1dec"` option to the Meson build script. Enable support for hardware accelerated video encoding and decoding of H.264, H.265 and decoding of VC1 proprietary codecs through the Mesa library.
+
+This flag can be disabled to turn off proprietary video codecs to avoid patent and licensing issues.
+
 ### selinux
 Pass the `-Dselinux=true` option to the meson build command. Use the `libselinux` library to check if the SELinux restricts executable code in the heap memory and avoids using it for executable section allocation if it is restricted. This is necessary when running under the SELinux-restricted kernel.
 
@@ -56,7 +61,7 @@ Only works if the `gallium` flag is enabled. Pass the `-Dlibunwind=enabled` opti
 This flag should normally be disabled and is only useful for debugging purposes.
 
 ### vaapi
-This feature only works with the `r600`, `radeonsi` or `nouveau` Gallium3D driver. Pass the `-Dgallium-va=enabled` and the `-Dva-libs-path=/usr/lib/va/drivers` options to the meson build command. Enable support for the VA API (Video-Acceleration API) via the `libva` library to gain an access to graphics hardware acceleration capabilities for video processing. Support accelerated encoding and decoding of the MPEG2, VC-1, H.264/AVC, etc. video codecs.
+This feature only works with the `d3d12`, `r600`, `radeonsi` or `nouveau` Gallium3D driver. Pass the `-Dgallium-va=enabled`, `-Dva-libs-path=/usr/lib/va/drivers` and, if `d3d12` video driver is enabled, the `-Dgallium-d3d12-video=enabled` options to the meson build command. Enable support for the VA API (Video-Acceleration API) via the `libva` library to gain an access to graphics hardware acceleration capabilities for video processing. Support accelerated encoding and decoding of the MPEG2, VC-1, H.264/AVC, etc. video codecs.
 
 It is recommended to enable this flag if there is a need to deal with encoding and decoding video files using a compatible GPU, e.g. AMD.
 
@@ -66,12 +71,12 @@ Pass the `-Dvalgrind=auto` (`disabled` if the flag is disabled) option to the me
 This flag should only be enabled if there is a need to run Valgrind tool on the application linked against mesa libraries.
 
 ### vdpau
-This feature only works with one of the `r300`, `r600`, `radeonsi` or `nouveau` drivers. Pass the `-Dgallium-vdpau=enabled` option to the meson build command. Enable support for VDPAU (Video Decode and Presentation API) via the `libvdpau` library to access video decoding acceleration and presentation hardware present in modern GPUs. Support accelerated encoding and decoding of the MPEG-1, MPEG-2, MPEG-4 part 2, H.264, VC-1 and DivX video codecs.
+This feature only works with one of the `d3d12`, `r300`, `r600`, `radeonsi` or `nouveau` drivers. Pass the `-Dgallium-vdpau=enabled` option to the meson build command. Enable support for VDPAU (Video Decode and Presentation API) via the `libvdpau` library to access video decoding acceleration and presentation hardware present in modern GPUs. Support accelerated encoding and decoding of the MPEG-1, MPEG-2, MPEG-4 part 2, H.264, VC-1 and DivX video codecs.
 
 It is recommended to enable this flag if there is a need to deal with video files encoding and decoding using a compatible GPU, e.g. Nvidia with Nouveau driver.
 
 ### vulkan
-This feature only works with one of the `intel`, `freedreno`, `radeonsi` or `v3d` video drivers. Append the `device-select` value to the `-Dvulkan-layers=true` option and pass it together with the `-Dvulkan-drivers=` option set to a list of supported drivers enabled via `VIDEO_CARDS` to the meson build command. Build and install drivers that utilize Vulkan API - a new generation graphics and compute API that provides high-efficiency, cross-platform access to modern GPUs used in a wide variety of devices. Currently only modern AMD and Intel GPUs are supported.
+This feature only works with one of the `d3d12`, `intel`, `freedreno`, `radeonsi` or `v3d` video drivers. Append the `device-select` value to the `-Dvulkan-layers=true` option and pass it together with the `-Dvulkan-drivers=` option set to a list of supported drivers enabled via `VIDEO_CARDS` to the meson build command. Build and install drivers that utilize Vulkan API - a new generation graphics and compute API that provides high-efficiency, cross-platform access to modern GPUs used in a wide variety of devices. Currently only modern AMD and Intel GPUs are supported.
 
 It is highly recommended to enable this flag if the target system has the AMD or Intel GPU.
 
