@@ -5,11 +5,6 @@ Enable support for the L2CAP, RFCOMM, HCI and SCO Bluetooth protocols in the Soc
 
 This flag should be enabled if there is a need for the Bluetooth protocol.
 
-### build
-This flag is used by the Gentoo team for building early stage images and bootstrapping. This will ignore the [app-misc/mime-types](../app-misc/mime-types.md) package dependency.
-
-The flag should normally be disabled.
-
 ### ensurepip
 When this flag is enabled the `ensurepip` module will be installed, which can be used to bootstrap `pip` and `setuptools` using the bundled wheels. When this flag is disabled, the module will be removed from the resulting image before installation.
 
