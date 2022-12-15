@@ -38,6 +38,11 @@ Pass the `-Dorc=enabled` option to the Meson build script. Use the `liborc` libr
 
 It is recommended to enable this flag if the target system supports ORC to improve performance.
 
+### qsv
+Pass the `-Dmsdk=enabled` and `-Dmfx_api=oneVPL` options to the Meson build script. Use the oneVPL (Intel® oneAPI Video Processing Library) to enable a new implementation of Intel Quick Sync Video encoder with support for H.264, HEVC and VP9.
+
+It is safe to disable this flag.
+
 ### test
 Pass the `-Dtests=enabled` option to the Meson build script. Build the test suite provided with the source code and execute the `ninja test` command inside of the virtual Xvfb session to run it after the main build is completed. This will extend a build time.
 
