@@ -5,11 +5,6 @@ Pass the `-DCMAKE_DISABLE_FIND_PACKAGE_Boost=OFF` (`ON` if the flag is disabled)
 
 It is safe to disable the flag, however is recommended if there are no any alternative mechanisms, such as OS specific.
 
-### debug
-Build library with assertions enabled. When disabled, append the `-DNDEBUG` option to the `CPPFLAGS` for a duration of the build to disable them.
-
-This flag should normally be disabled, unless there is a need to debug the library or develop against it.
-
 ### doc
 Run the `cmake docs` command to build the documentation in HTML format from source code annotations using the Doxygen tool.
 
