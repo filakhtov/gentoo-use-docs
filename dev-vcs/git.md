@@ -75,11 +75,6 @@ Perl integration is used by default to provide additional features, like prepari
 
 It is safe to disable the flag.
 
-### ppcsha1
-Only works when the `blksha1` flag is disabled. Use the GIT's own SHA1 library (inspired by Mozilla's) and optimized for the PowerPC platform, instead of relying on the OpenSSL library to calculate SHA1 hashes.
-
-It is recommended to enable this flag on PowerPC platforms.
-
 ### safe-directory
 When this flag is disabled, apply the patch that disables git `safe.directory` check, i.e. allows to use directories that are owned by a different user when the `GIT_TEST_ASSUME_DIFFERENT_OWNER` environment variable is set.
 
