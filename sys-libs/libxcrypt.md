@@ -5,6 +5,11 @@ Normally, when this flag is disabled, only the `libcrypt.so.2` will be installed
 
 This flag is currently required by the Gentoo system, because some of the obsolete APIs are still in use in different applications.
 
+### headers-only
+Execute the `make install-nodist_includeHEADERS` command instead of the usual `make install` to only install header files and skip the library itself or its man pages and docs.
+
+This flag should be disabled.
+
 ### split-usr
 Install `libxcrypt` libraries into the root `/libXX` directory, instead of the `/usr/libXX`, so it will be available during the early boot on systems that use separate `/usr` partition.
 
