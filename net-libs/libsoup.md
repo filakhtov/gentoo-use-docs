@@ -10,10 +10,15 @@ Pass the `-Dgssapi=enabled` (`disabled` if the flag is disabled) option to the m
 
 This flag should only be enabled if there is a need to use Kerberos HTTP authentication via the library.
 
-### gtk-doc
+### gtk-doc:2.4
 Pass the `-Dgtk_doc=true` (`false` if the flag is disabled) option to the meson build script. Use the Gtk-Doc tool to generate an API reference documentation in the HTML format and install it into the `/usr/share/gtk-doc` directory.
 
 It is safe to disable this flag if there is no need for developer documentation.
+
+### gtk-doc:3.0
+Pass the `-Ddocs=enabled` (`disabled` if the flag is disabled) option to the Meson build script. Use the Gtk-Doc tool to generate an API reference documentation in the HTML format and install it into the `/usr/share/gtk-doc` directory.
+
+This flag can be safely disabled.
 
 ### introspection
 Pass the `-Dintrospection=enabled` (`disabled` when this flag is disabled) option to the meson build script. Generate the `Soup-2.4.gir` GIR metadata file to provide dynamic bindings for the `libsoup` library to languages other than C.
@@ -35,10 +40,15 @@ Pass the `-Dsysprof=enabled` (`disabled` when this flag is disabled) option to t
 
 This flag should only be enabled if there is a need to perform application profiling using sysprof tool.
 
-### test
-Pass the `-Dtests=true` option to the meson build script. Execute the `meson test` command when the main build is completed to run a test suite provided with the source code. This will extend the build time. When disabled, patch the `Makefile.in` and `Makefile.am` files to skip building the test related code.
+### test:2.4
+Pass the `-Dtests=true` option to the meson build script. Execute the `meson test` command when the main build is completed to run a test suite provided with the source code and check for any regressions. This will extend the build time.
 
-This flag should normally be disabled as it is primarily used by the Gentoo team, testers or developers.
+This flag should normally be disabled as it is primarily used by the maintainers, testers or developers.
+
+### test:3.0
+Pass the `-Dtests=true` and `-Dpkcs11_tests=enabled` options to the Meson build script. Execute the `meson test` command when the main build is completed to run a test suite provided with the source code and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled as it is primarily used by the maintainers, testers or developers.
 
 ### vala
 Prepare environment for the configure script to find an appropriate version of vala files. Pass the `-Dvapi=enabled` (`disabled` when the flag is disabled) option to the configure script. Generate `Soup-2.4-custom.vala` Vala language bindings for the `libsoup` library.
