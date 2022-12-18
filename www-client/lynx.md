@@ -29,3 +29,8 @@ This flag should be disabled, unless there is a need to use Lynx in a non-Englis
 Pass the `--with-ssl` option to the configure script. Use the OpenSSL library to provide support for HTTPS (Hyper Text Transfer Protocol Secure) connections.
 
 This flag should normally be enabled, otherwise no HTTPS connections will be possible.
+
+### verify-sig
+Perform signature verification of the upstream source code archive before extracting it and building the package.
+
+It is safe to disable this flag.
