@@ -13,6 +13,6 @@ Use the [sys-apps/mawk](../sys-apps/mawk.md) package as a provider for awk. An (
 Use the [sys-apps/nawk](../sys-apps/nawk.md) package as a provider for awk. This is the version of awk described in The AWK Programming Language, by Al Aho, Brian Kernighan, and Peter Weinberger (Addison-Wesley, 1988, ISBN 0-201-07981-X).
 
 ### split-usr
-If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
+If the flag is enabled some of the produced libraries will be installed into the `/lib` directory and binaries into the `/bin`, instead of the `/usr/lib` and `/usr/bin` directories, so that they are available during the early boot when the `/usr` partition is not yet mounted.
 
 This flag is necessary to boot the system that has separated `/usr` partition, but otherwise can be safely disabled.
