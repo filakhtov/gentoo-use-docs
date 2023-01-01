@@ -5,6 +5,11 @@ Pull the [app-crypt/gnupg](../app-crypt/gnupg.md) package as a dependency. Provi
 
 This flag is required for Portage tree verification feature.
 
+### pretty-log
+Pull in the [dev-python/rich](../dev-python/rich.md) package as a dependency to enable pretty log output.
+
+It is safe to disable this flag.
+
 ### test
 Execute the `setup.py test` command when the main build is completed. Run a test suite provided with the source code. This will extend a build time.
 
