@@ -20,6 +20,11 @@ Pass the `--enable-gold` option to the configure script. Build and install the `
 
 This flag should normally be enabled together with the `default-gold` flag to use faster linker implementation.
 
+### gprofng
+Pass the `--enable-gprofng` option to the configure script. Build and install a new GNU profiler - `gprofng`, which is designed as a replacement for `gprof` and better suited to work with modern applications.
+
+This flag should normally be disabled.
+
 ### multitarget
 Pass the `--enable-targets=all` and `--enable-64-bit-bfd` options to the configure script. Provide a 64-bit computing support (also on hosts with narrower word sizes) and enable all supported targets (not only natively supported targets) for cross-compiling.
 
