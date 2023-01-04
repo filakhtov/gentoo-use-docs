@@ -21,7 +21,7 @@ Pass the `--enable-ftp` option to the configure script. Enable support for the F
 It is recommended to keep this flag enabled, as the FTP protocol is quite widespread.
 
 ### gnutls
-Pass the `--with-gnutls` and `--with-nettle` options to the configure script. Provide an ability to use the GnuTLS (GnuTLS Transport Layer Security Library) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+Only works if the `ssl` flag is enabled. Pass the `--with-gnutls` option to the configure script. Provide an ability to use the GnuTLS (GnuTLS Transport Layer Security Library) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
 
 It is safe to disable this flag if a different backed is preferred.
 
@@ -66,7 +66,7 @@ Pass the `--enable-ldap` and the `--enable-ldaps` options to the configure scrip
 This flag should normally be disabled unless there is a need to access LDAP servers using cURL.
 
 ### mbedtls
-Pass the `--with-ssl` option to the configure script. Provide an ability to use the Mbed TLS library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+Only works if the `ssl` flag is enabled. Pass the `--with-mbedtls` options to the configure script. Provide an ability to use the Mbed TLS library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
 
 This flag should normally be disabled, unless strictly required, e.g. when building for an embedded system.
 
@@ -76,12 +76,12 @@ Pass the `--with-nghttp3` and `--with-ngtcp2` options to the configure script. E
 This flag should normally be disabled, because HTTP/3 support is considered experimental at this stage.
 
 ### nss
-Pass the `--with-nss` and `--with-nss-deprecated` options to the configure script. Provide an ability to use the NSS (Mozilla Network Security Services) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+Only works if the `ssl` flag is enabled. Pass the `--with-nss` and `--with-nss-deprecated` options to the configure script. Provide an ability to use the NSS (Mozilla Network Security Services) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
 
 It is safe to disable this flag if a different backed is preferred.
 
 ### openssl
-Pass the `--with-ssl` option to the configure script. Provide an ability to use the OpenSSL (cryptography and SSL/TLS toolkit) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+Only works if the `ssl` flag is enabled. Pass the `--with-ssl` option to the configure script. Provide an ability to use the OpenSSL (cryptography and SSL/TLS toolkit) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
 
 It is safe to disable this flag if a different backed is preferred.
 
@@ -104,6 +104,11 @@ This flag should normally be disabled, because HTTP/3 support is considered expe
 Pass the `--with-librtmp` option to the configure script. Provide support for an RTMP protocol using an `rtmp://` scheme and allow to download stream media.
 
 This flag can be safely disabled as it is only necessary for downloading stream video/audio using RTMP protocol.
+
+### rustls
+Only works if the `ssl` flag is enabled. Pass the `--with-rustls` option to the configure script. Provide an ability to use the Rustls library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
+
+It is safe to disable this flag if a different backed is preferred.
 
 ### samba
 Pass the `--enable-smb` option to the configure script. Enable support for an SMB protocol. Provide an `smb://` scheme support to download files from Windows shares or Samba servers.
