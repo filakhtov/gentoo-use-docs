@@ -140,3 +140,8 @@ It is safe to disable this flag as no packages in Portage are dependent on it. H
 This flag passes `--enable-widechar` configure option. If `ncurses` flag is also set `--with-ncursesw` will be used instead of `--with-ncurses`. This flag enables "wide" character set support (aka multibyte, aka UTF-8). Commands like `dmesg`, `more` and others will benefit from this flag.
 
 It can be safely disabled on systems that are only ever deal with English language.
+
+### verify-sig
+Decompress the upstream source code tarball and perform upstream signature verification before extracting it and building the package.
+
+It is safe to disable this flag.
