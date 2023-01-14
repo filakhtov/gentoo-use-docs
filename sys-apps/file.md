@@ -5,6 +5,11 @@ Pass the `--enable-bzlib` option to the configure script. Provide an ability to 
 
 It is safe to disable this flag.
 
+### lzip
+Pass the `--enable-lzlib` option to the configure script. Use the `liblz` to provide an ability to look inside of the lzip compressed archives using the `-z` option instead of just reporting the archive type. If the flag is disabled, trying to use the `file -z` on the lzip compressed file will produce the `Bad system call` message.
+
+This flag can be safely disabled.
+
 ### lzma
 Pass the `--enable-xzlib` option to the configure script. Provide an ability to look inside of the XZ/LZMA compressed archives using the `-z` option instead of just reporting the archive type. If the flag is disabled, trying to use `file -z` on the LZMA compressed archive will produce the `Bad system call` message.
 
@@ -39,3 +44,8 @@ It is safe to disable this flag.
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
 It is safe to disable this flag.
+
+### zstd
+Pass the `--enable-zstdlib` option to the configure script. Use the `libzstd` to provide an ability to look inside of the zstd compressed archives using the `-z` option instead of just reporting the archive type. If the flag is disabled, trying to use the `file -z` on the zstd compressed file will produce the `Bad system call` message.
+
+This flag can be safely disabled.
