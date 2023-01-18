@@ -26,7 +26,7 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 This flag should only be enabled if there is an explicit need for the static library.
 
 ### test
-Execute the `make check` command after the main build is completed to run the regression test suite provided with the source code. This will extend the build time.
+Pass the `--enable-tests` option to the configure script to build the test suite provided with the source code and execute the `make check` command after the main build is completed to run it and check for any regressions. This will extend the build time.
 
 This flag should normally be disabled, because it is primarily oriented towards the Gentoo team, testers and developers.
 
