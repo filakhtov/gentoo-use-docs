@@ -35,6 +35,11 @@ Pass the `--enable-nls` option to the configure script. Provide an ability to tr
 
 It is safe to disable this flag if there is no need for non-English languages.
 
+### openssl
+Pass the `--with-openssl` option to the configure script. Use hash functions provided by the OpenSSL library in the tools like `b2sum`, `md5sum`, `sha1sum`, `cksum` and others, instead of using simplified bundled implementations.
+
+This flag can be safely disabled.
+
 ### selinux
 When disabled, export the `ac_cv_search_setfilecon=no`, `ac_cv_header_selinux_context_h=no`, `ac_cv_header_selinux_flash_h=no` and `ac_cv_header_selinux_selinux_h=no` variables for the configure script. Does nothing when enabled, because SELinux support will be detected by configure by default. Enable an ability to preserve a SELinux context (or set a default one) while performing various operations, e.g. a `cp`, `mv`, `install`, etc.
 
