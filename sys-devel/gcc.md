@@ -32,6 +32,16 @@ Pass the `--enable-checking=yes` option to the configure script. The compiler is
 
 This flag should normally be disabled as it slows down the compiler.
 
+### default-stack-clash-protection
+Build packages with stack clash protection on by default as a hardening measure. This enables `-fstack-clash-protection` by default which protects against large memory allocations allowing stack smashing. May cause slightly increased codesize, but modern compilers have been adapted to optimize well for this case, as this mitigation is now quite common. See https://developers.redhat.com/blog/2020/05/22/stack-clash-mitigation-in-gcc-part-3 and https://www.qualys.com/2017/06/19/stack-clash/stack-clash.txt.
+
+This flag should be enabled to improve security.
+
+### default-znow
+Request full relocation on start from `ld.so` by default. This sets the `-z,now` (`BIND_NOW`) flag by default on all linker invocations. By resolving all dynamic symbols at application startup, parts of the program can be made read-only as a hardening measure. This is closely related to RELRO which is also separately enabled by default. In some applications with many unresolved symbols (heavily plugin based, for example), startup time may be impacted.
+
+This flag can be enabled as a security hardening measure at a cost of performance.
+
 ### doc
 Execute the `make doc-man-doxygen` during a build. Build and install a man page for a `libstdc++` library using a `doxygen` tool.
 
@@ -65,6 +75,16 @@ This flag can be safely disabled.
 Enable additional security features like SSP/PIE/RELRO in the compilers by default. This might break various packages at a runtime or during an compilation.
 
 This flag should normally be disabled and toggled only system-wide, e.g. by a hardened Portage profile.
+
+### ieee-long-double
+Only relevant on PowerPC64 systems. Pass the `--with-long-double-format=ieee` option to the configure script. Use the IEEE 754 compliant representation of the 128-bit float when using `long double` instead of IBM 128-bit one. The IBM 128-bit implementation differs from the IEEE standard for long double in the following ways:
+
+- Supports only round-to-nearest mode. If the application changes the rounding mode, results are undefined.
+- Does not fully support the IEEE special numbers NaN and INF.
+- Does not support IEEE status flags for overflow, underflow, and other conditions. These flags have no meaning for the 128-bit long double inplementation.
+- The 128-bit long double data type does not support the certain math APIs.
+
+This flag should normally be disabled.
 
 ### jit
 Append `jit` to the `--enable-languages` option and passes the `--enable-host-shared` option to the configure script. Provide a `libgccjit` library that allows to create Just-In-Time compilers, e.g. from within interpreters.
