@@ -1,5 +1,14 @@
 # sys-apps/grep
 
+### egrep-fgrep
+Remove the `egrep` and `fgrep` upstream wrappers that produce:
+```
+egrep: warning: egrep is obsolescent; using grep -E
+```
+warnings starting from GNU grep 3.8+, and instead replace them with Gentoo's own wrappers that produce no warnings, so that some old scripts that use these wrappers but don't expect any output on stderr.
+
+It is safe to disable this flag if there is no need to rely on `egrep` or `fgrep` commands.
+
 ### nls
 Pass the `--enable-nls` option to the configure script. Use a Gettext library to translate programs messages into various languages based on system locale settings.
 
