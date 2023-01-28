@@ -5,6 +5,11 @@ Pass the `--enable-assembly` option to the configure script. Use an optimized as
 
 This flag should normally be enabled as it provides a performance boost.
 
+### cpudetection
+Pass the `--enable-fat` option to the configure script. Build a “fat binary” build on x86/amd64 platform, where optimized low level subroutines are chosen at runtime according to the CPU detected. This means more code, but gives good performance on all x86 chips (This option might become available for more architectures in the future).
+
+Disabling this flag will result in "generic" unoptimized `x86_64-pc-linux-gnu` build, which is suitable for binary packaging, but is less performant.
+
 ### cxx
 Pass the `--enable-cxx` option to the configure script. Build and install a `libgmpxx` library and a `gmpxx.h` header. Enable a C++ support: provide classes, input/output and string conversion operators, etc.
 
