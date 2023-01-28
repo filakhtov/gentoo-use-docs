@@ -35,21 +35,6 @@ Pass the `-DUSE_GETTEXT=true` option to the meson build command. Use the gettext
 
 It is safe to disable the flag, unless there is a need to use a non-English language.
 
-### rarpd
-Pass the `-DBUILD_RARPD=true` option to the meson build script. Build and install the `rarpd` daemon binary and init scripts (no support for SystemD services at this time). This daemon is necessary to respond to RARP (Reverse Address Resolution Protocol) requests.
-
-RARP is an older alternative to DHCP and is not recommended nowadays, so it is safe to disable this flag unless non-PXE network booting for specific devices is necessary.
-
-### rdisc
-Pass the `-DBUILD_RDISC=true` and `-DENABLE_RDISC_SERVER=true` options to the meson build command. Build and install the `rdisc` binary - a tool that implements both a client and a server side parts of the ICMP router discovery protocol, allowing a system to ask for and accept routing tables from routers, as well as respond to queries.
-
-This flag is only necessary if system to be part of RDISC capable network(s). Otherwise it is completely safe to disable.
-
-### static
-This flag will append `-static` option to `LDFLAGS` for building statically linked binaries.
-
-It is recommended to disable this flag for regular system.
-
 ### test
 Pass the `-DSKIP_TESTS=false` (`true` if the flag is disabled) option to the Meson build script. Execute the `meson test` command after the main build is completed to run the test suite provided with the source code and check for any regressions.
 
