@@ -26,14 +26,9 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 This flag should only be enabled if there is an explicit need for the static library.
 
 ### test
-Execute the `make check` command after the main build is completed. Use the Cunit testing tool to run the test suite provided with the source code. This will extend a build time.
+Pass the `--enable-cunit` option to the configure script. Execute the `make check` command after the main build is completed. Use the Cunit testing tool to run the test suite provided with the source code. This will extend a build time.
 
 This flag should be normally disabled, because it is mainly useful for the Gentoo team, testers and developers.
-
-### threads
-Pass the `--enable-threads` option to the configure script. Use the pthreads library to provide threading support for variety of applications, including `nghttpd` and `h2load`. Make sure that library code is thread safe, e.g. appropriately initialize the OpenSSL library, handle signals, etc.
-
-It is recommended to enable this flag.
 
 ### utils
 Pass the `--enable-app` option to the configure script. Build and install tools in addition to library: the `nghttp` - a simple HTTP/2 client, the `nghttpd` - a simple HTTP/2 server, the `nghttpx` - a reverse proxy for HTTP/2 and HTTP/1, and the `h2load` - a benchmarking tool for HTTP/2 servers.
