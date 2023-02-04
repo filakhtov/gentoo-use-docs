@@ -10,11 +10,6 @@ Pass the `--enable-fuse2fs` option to the configure script. Build and install `f
 
 It is recommended to disable this flag because native Kernel ext4 handling is way more efficient than FUSE.
 
-### lto
-Pass the `--enable-lto` option to the configure script. Append the `-flto` and `-ffat-lto-objects` options to `CFLAGS` and `LDFLAGS` for the duration of the build. Perform Link-Time Optimization (LTO) when building binaries and libraries.
-
-It is recommended to enable this flag on a supported system with modern compiler.
-
 ### nls
 Pass the `--enable-nls` option to the configure script. Use gettext to translate various program messages, e.g. help texts and interactive prompts.
 
@@ -29,11 +24,6 @@ This flag is necessary to boot the system that has separated `/usr` partition, b
 Install statically linked libraries `*.a` (aka library archives) into the target system. If disabled these libraries will be removed from build tree before installation.
 
 It is safe to disable the flag unless there is an explicit need for statically linked libraries, e.g. for development purposes.
-
-### threads
-Pass the `--with-pthread` option to the configure script. Use the `libpthread` library to enable support for using multiple thread in various tools, e.g. allow reading bitmap blocks in parallel and speed up `dumpe2fs`, `e2fsck` and `debugfs` tools for very large file systems.
-
-This flag can be safely disabled.
 
 ### test
 Execute the `make check` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
