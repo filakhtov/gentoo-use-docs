@@ -5,11 +5,6 @@ This flag passes `--enable-acl` option to the configure script. Various Gettext 
 
 This flag can be disabled if there is no need to deal with ACL permissions on translation files.
 
-### cvs
-The flag passes `--with-cvs` option (which is deprecated) to the configure script, but only if the `git` flag is enabled as well. The `autopoint` tools will use `cvs` to compress an infrastructure archive.
-
-This flag should be disabled.
-
 ### cxx
 Passes the `--enable-c++` option that provides C++ support and the `--enable-libasprintf` option that provides the `autosprintf` function to the configure script.
 
