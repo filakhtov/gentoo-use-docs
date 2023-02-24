@@ -1,5 +1,10 @@
 # www-client/lynx
 
+### brotli
+Pass the `--with-brotli` option to the configure scirpt. Use the `libbrotli` library to enable support for transport compression using the Brotli algorithm.
+
+It is safe to disable this flag.
+
 ### bzip2
 Pass the `--with-bzlib` option to the configure script. Use the `libbz2` library to support a BZip2 compressed content, aka `Content-Encoding: bzip2` (and `x-bzip2`) header.
 
