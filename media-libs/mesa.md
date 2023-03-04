@@ -100,11 +100,6 @@ This feature only works with the `freedreno`, `nouveau` or `vmware` driver. Pass
 
 This flag should only be enabled if the target system runs inside of VMWare machine or runs on Adreno GPU with Freedreno driver.
 
-### xvmc
-The feature only works with the `r600` or `nouveau` driver. Pass the `-Dgallium-xvmc=enabled` option to the configure script. Enable the XvMC (X-Video Motion Compensation) API support - an X.Org Server extension that allows video programs to offload portions of the video decoding process to the GPU video-hardware. It is old and outdated extension that is currently obsolete by VA-API and VDPAU and is disabled by default in Mesa.
-
-This flag should normally be disabled and VA-API or VDPAU should be used instead. However it can be used for old hardware that has no such capabilities.
-
 ### zink
 Append `zink` to the `-Dgallium-drivers=` option and pass it to the meson build script. Build and install the Zink Gallium driver that emits Vulkan API calls instead of targeting a specific GPU architecture. This can be used to get full desktop OpenGL support on devices that only support Vulkan. This is a very early stage development.
 
