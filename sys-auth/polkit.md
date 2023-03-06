@@ -1,5 +1,10 @@
 # sys-auth/polkit
 
+### daemon
+Build and install the `polkitd` daemon that provides the `org.freedesktop.PolicyKit1` D-Bus service, allowing to apply policies and rules to allow applications to request elevated privileges. If this flag is disabled, pass the `-Dlibs-only=true` option to the meson build script to avoid building and installing this daemon binary.
+
+This flag should normally be enabled, otherwise PolKit authorization won't work.
+
 ### duktape
 Pass the `-Djs_engine=duktape` (instead of the default `mozjs` one) to the Meson build script. Use the Duktape embeddable Javascript engine instead of the SpiderMonkey (Mozilla's JavaScript engine). Duktape is lighter weight and does not depend on outdated Python 2.7 interpreter.
 
@@ -19,9 +24,6 @@ This flag should be enabled if target system to be running a GTK-based or an LXD
 Pass the `-Dintrospection=true` option to the Meson build script. Generate GIR metadata `Polkit-1.0.gir` and `PolkitAgent-1.0.gir` files during the build time to provide dynamic bindings support for languages other than C.
 
 It is safe to disable the flag unless there is an explicit need for GIR files.
-
-### jit
-This flag does nothing.
 
 ### kde
 Pull in a [kde-plasma/polkit-kde-agent](../kde-plasma/polkit-kde-agent.md) package as a runtime dependency that provides `polkit-kde-authentication-agent-1`.
