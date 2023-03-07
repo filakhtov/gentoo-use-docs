@@ -149,7 +149,7 @@ Pass the `-Dpulse=enabled` option to the Meson build script. Build the `pulse` a
 This flag should be enabled if the target system uses the PulseAudio server as a main sound system.
 
 ### raspberry-pi
-Modify the `CFLAGS` and `LDFLAGS` variables for the duration of the build to make compiler aware of the Raspberry-PI specific include files and libraries. Pass the `-Drpi=enabled` option to the Meson build script. Provide an ability to perform hardware-accelerated video decoding on Raspberry-PI platform.
+Pass the `-Drpi=enabled` option to the Meson build script. Provide an ability to perform hardware-accelerated video decoding on Raspberry-PI platform.
 
 This flag should only be enabled on Raspberry-PI hardware.
 
