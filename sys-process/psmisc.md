@@ -1,9 +1,9 @@
 # sys-process/psmisc
 
-### ipv6
-Pass the `--enable-ipv6` option to the configure script. Enable support for the `-4`, `-6`, `--ipv4` and `--ipv6` runtime options for `fuser` tool. Provide an ability to look for IPv6 sockets.
+### apparmor
+Pass the `--enable-apparmor` option to the configure script. Provide an ability to query and display the AppArmor profile information for running apps from `pstree` tool when `-Z` (aka `--security-context`) command line option is specified at runtime.
 
-This flag can be safely disabled. It should be enabled if the system to be participating in IPv6 capable networks.
+This flag should only be enabled on the AppArmor-enabled systems.
 
 ### nls
 Pass the `--enable-nls` option to the configure script. Provide an ability to translate program messages based on the system locale and install appropriate translation files.
