@@ -19,8 +19,3 @@ It is safe to disable the flag.
 Pass the `--enable-python` option to the configure script. Build and install the `smixer-python` module that provides Python bindings in form of simple abstact wrapper for the mixer interface.
 
 This flag should only be enabled if there is a need to use `smixer_python` module in Python scripts.
-
-### thread-safety
-Pass the `--enable-thread-safety` option to the configure script. Make sure that some PCM functions (e.g. `snd_pcm_avail_update`) are thread-safe and can be called concurrently from multiple threads, and all the functions that are often called during streaming are also covered as thread-safe. When enabled, thread-safe behavior also can be disabled at runtime on per application basis by setting `LIBASOUND_THREAD_SAFE` environment variable to zero.
-
-It is recommended to enable this flag.
