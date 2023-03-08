@@ -50,11 +50,6 @@ Run the `make` command inside of the `contrib/mw-to-git` source subdirectory. Bu
 
 It is safe to disable the flag.
 
-### mediawiki-experimental
-Only makes sense if the `mediawiki` flag is enabled. Apply experimental patches to improve Mediawiki support, however this will affect stability.
-
-This flag should be enabled.
-
 ### nls
 A Gettext library is used by default for localizing Git, e.g. providing an ability to translate programs messages into various languages based on the system locale settings. When disabled, pass the `NO_GETTEXT=YesPlease` variable to the `make` command to disable localization.
 
