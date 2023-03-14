@@ -70,6 +70,11 @@ Pass the `--enable-nscd` option to the configure script. Build and install a `ns
 
 It is generally safe to disable this flag, because `nscd` is primarily used for caching information from NIS or LDAP to avoid excessive queries for each UID/GID.
 
+### perl
+Set the `ac_cv_path_PERL=` environment variable for the duration of the build to force the correct location of the Perl binary or set this to `no` if the flag is disabled. Perl is required by `mtrace` command and if this value isn't properly overridden it can errorneously pick up the wrong path from outside if the prefix and will fail in the event of cross-compiling.
+
+It is safe to disable this flag.
+
 ### profile
 Pass the `--enable-profile` option to the configure script. Build and install additional set of libraries that can be used to generate profile information.
 
