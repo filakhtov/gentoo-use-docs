@@ -35,11 +35,6 @@ Pass the `ozone_platform="headless"`, `use_xkbcommon=false`, `use_gtk=false`, `u
 
 This flag should normally be disabled.
 
-### js-type-check
-Pass the `enable_js_type_check=true` option to the `gn gen` command. Run a closure compiler during the build to analyze JavaScript source code of Chromium and check for syntax errors, variable references and other common JavaScript mistakes. This however will require JRE (Java Runtime Environment) to be available on the build system.
-
-This flag can be safely disabled because such analysis is normally performed by the developers, not end users.
-
 ### kerberos
 Can't be used together with the `headless` flag. Pass the `use_kerberos=true` option to the `gn gen` command. Enable support for the SPNEGO authentication mechanism (Simple and Protected GSS-API Negotiation), also known as "integrated authentication" or "negotiate authentication" to provide the concept of Single Sign-On (SSO) - having authenticated once at the start of a session, users can access network services throughout a Kerberos realm without authenticating again. Enable support for the `--auth-server-whitelist` runtime option that takes as its value a comma-separated list of permitted hostnames. Also enable the `--auth-negotiate-delegate-whitelist` runtime option to allow a network service to authenticate to other network services on users behalf.
 
@@ -59,6 +54,11 @@ It is safe to disable this flag.
 Pass the `is_official_build=true` and `is_cfi=false` options to the `gn gen` command. First flag is responsible for a set of optimization flags that are enabled by the official Chrome builds, while the second disables CFI (Control Flow Integrity) for virtual calls, indirect calls and bad casts, because it is unsupported on GCC compiler. Enabling this flag slows down the build process but should have advantages during the runtime.
 
 It is safe to disable this flag.
+
+### pax-kernel
+Disable the PaX MPROTECT kernel restrictions for the `mksnapshot` and `v8_context_snapshot_generator` binaries by setting an `m` flag on them so that they can run under the PaX-enabled kernel.
+
+This flag should only be enabled for systems with a PaX-restricted kernel.
 
 ### pgo
 Only works with the Clang compiler. Pass the `use_lld=true` option to the `gn gen` command and perform the build twice: first time passing the `chrome_pgo_phase=1` option to the `gn gen` command to produce unoptimized version, then use profiler to determine various optimizations that can be performed, and finally perform a second build passing the `chrome_pgo_phase=2` option this time applying the determined optimizations and producing a final version. Enabling this flag will significantly increase the build time and slightly improve the runtime performance.
@@ -131,7 +131,7 @@ Can't be used together with the `headless` flag. Pass the `use_vaapi=true` optio
 It is safe to disable this flag.
 
 ### wayland
-Can't be used together with the `headless` flag. Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true`, `use_system_wayland_scanner=true`, `use_system_libwayland=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
+Can't be used together with the `headless` flag. Pass the `ozone_platform_wayland=true`, `use_system_libdrm=true`, `use_system_minigbm=true`, `use_xkbcommon=true`, `use_system_libffi=true` and `ozone_platform="wayland"` options to the `gn gen` command. Enable native Wayland implementation for the Ozone platform that does not require `XWayland` or any other intermediate layers.
 
 This flag should be enabled if the system using Wayland window server.
 
