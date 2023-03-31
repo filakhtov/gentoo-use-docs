@@ -5,6 +5,11 @@ Pass the `--enable-libaudit` option to the configure script. Use the `libaudit` 
 
 It is safe to disable the flag.
 
+### elogind
+Either `elogind` or `systemd` flag must be enabled, but not both. Use the [sys-auth/elogind](../sys-auth/elogind.md) as a login manager for LightDM.
+
+This flag should only be toggled system-wide for systems that use elogind over systemd-logind.
+
 ### gnome
 Pass the `--with-user-session=gnome` option to the configure script. Set the default login session to GNOME.
 
@@ -29,6 +34,11 @@ It is recommended to enable this flag.
 Append the `-std=c++11` option to the `CXXFLAGS` variable for a duration of the build. Pass the `--enable-liblightdm-qt5` option to the configure script. Build LightDM with support for the Qt 5 toolkit.
 
 This flag should be enabled if the LightDM to be used with the Qt-based desktop environment, e.g. KDE.
+
+### systemd
+Either `elogind` or `systemd` flag must be enabled, but not both. Use the [sys-apps/systemd](../sys-apps/systemd.md) as a login manager for LightDM.
+
+This flag should be enabled on systemd-based systems.
 
 ### vala
 Prepare environment for the configure script to find an appropriate version of vala files. Pass the `--enable-vala` option to the configure script. Generate and install the `liblightdm-gobject-1.vapi` Vala bindings file for the `liblightdm-gobject-1` library.
