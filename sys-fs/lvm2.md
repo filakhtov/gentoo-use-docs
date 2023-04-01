@@ -1,7 +1,7 @@
 # sys-fs/lvm2
 
 ### lvm
-Pass the `--enable-dmfilemapd`, `--enable-dmeventd`, `--enable-cmdlib`, `--enable-fsadm`, `--enable-lvmpolld`, `--with-mirrors=internal` and `--with-snapshots=internal` options to the configure script. Build and install all the daemons and command line tools to support LVM (Logical Volume Manager) volumes. When this flag is disabled, pass the `--disable-udev-systemd-background-jobs`, `--with-mirrors=none` and `--with-snapshots=none` options to the configure script to build a minimal package with device mapper support only without LVM, init scripts and configs.
+Pass the `--enable-dmfilemapd`, `--enable-dmeventd`, `--enable-cmdlib`, `--enable-fsadm`, `--enable-lvmpolld`, `--with-mirrors=internal` and `--with-snapshots=internal` options to the configure script. Build and install all the daemons and command line tools to support LVM (Logical Volume Manager) volumes. When this flag is disabled, pass the `--with-mirrors=none` and `--with-snapshots=none` options to the configure script to build a minimal package with device mapper support only without LVM, init scripts and configs.
 
 This flag should normally be enabled to provide support for LVM. Disabling it generally only make sense for embedded systems.
 
@@ -36,7 +36,7 @@ Build and install statically linked a `libdevmapper.a` library. If the `device-m
 This flag should be disabled unless there is an explicit need for the static libraries, e.g. for development purposes.
 
 ### systemd
-Pass the `--enable-udev-systemd-background-jobs`, `--enable-app-machineid`, `--enable-systemd-journal` and `--enable-notify-dbus` options to the configure script. Enable integration with an udev SystemD protocol, install unit files and generators, and provide an ability to send D-Bus notifications for various events.
+Pass the `--with-systemd-run=/rus/bin/systemd-run`, `--enable-app-machineid`, `--enable-systemd-journal` and `--enable-notify-dbus` options to the configure script. Enable integration with an udev SystemD protocol, install unit files and generators, and provide an ability to send D-Bus notifications for various events.
 
 It is recommended to toggle this flag system-wide, e.g. as part of a SystemD Portage profile.
 
