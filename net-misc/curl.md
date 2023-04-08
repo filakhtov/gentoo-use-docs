@@ -50,11 +50,6 @@ Pass the `--enable-imap` option to the configure script. Enable support to query
 
 It is safe to disable this flag.
 
-### ipv6
-Pass the `--enable-ipv6` option to the configure script. Enable support for an IPv6 protocol.
-
-This flag should be enabled if the target system participates in IPv6 capable networks. It can be safely disabled otherwise.
-
 ### kerberos
 Pass the `--with-gssapi=/usr` option to the configure script. Provide support for a Kerberos authentication protocol using a GSS-API for an HTTP and to some extent for an FTP protocols.
 
@@ -94,11 +89,6 @@ The flag can be safely disabled.
 Pass the `--enable-progress-meter` option to the configure script. Enable progress meter that shows how transfer (either upload or download) is progressing, including the current transfer speed, elapsed time and estimated time to completion.
 
 It is safe to disable the flag if there is no need to monitor transfer progress with cURL.
-
-### quiche
-Pass the `--with-quiche` option to the configure script. Use the `quiche` library to enable support for the HTTP/3 protocol on top of the QUIC protocol and enable the `--http3` runtime option to access this feature.
-
-This flag should normally be disabled, because HTTP/3 support is considered experimental at this stage.
 
 ### rtmp
 Pass the `--with-librtmp` option to the configure script. Provide support for an RTMP protocol using an `rtmp://` scheme and allow to download stream media.
