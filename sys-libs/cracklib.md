@@ -20,6 +20,11 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 
 This flag should be normally disabled, unless there is an explicit need for the static library.
 
+### test
+Use the Python's `unittest` module to run the test suite provided with the source code after the main build is completed and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, because the test suite is primarily oriented towards the developers, maintainers and testers.
+
 ### zlib
 Export an `ac_cv_header_zlib_h=yes` and an `ac_cv_search_gzopen=-lz` variables for the configure script. Provide a transparent support for Gzip compressed dictionary files.
 
