@@ -42,11 +42,6 @@ Pass the `--enable-pwquality` option to the configure script. Enable a decryptio
 
 It is safe to disable this flag but it can be used to improve passphrase security.
 
-### reencrypt
-Pass the `--enable-cryptsetup-reencrypt` option to the configure script. Build and install a `cryptsetup-reencrypt` tool for offline LUKS device re-encryption (change encryption parameters which otherwise require full on-disk data change).
-
-It is safe to disable this flag unless there is a need to re-encrypt LUKS devices.
-
 ### ssh
 Pass the `--enable-ssh-token` option to the configure script. Build and install the `cryptsetup-ssh` experimental cryptsetup plugin for unlocking LUKS2 devices with token connected to an SSH server.
 
