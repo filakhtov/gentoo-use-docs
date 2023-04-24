@@ -1,5 +1,10 @@
 # app-arch/xz-utils
 
+### doc
+Pass the `--enable-doc` option to the configure script. Install additional documentation files into the `/usr/share/doc/xz-utils-<VERSION>` directory. This documentation consists of the list of authors, news, readme, thanks, todo list, frequently asked questions, XZ and LZMA file format description, etc.
+
+It is safe to disable this flag.
+
 ### extra-filters
 Does nothing when enabled and thus installing a complete set of encoders, decoders, matchers and checkers.
 
