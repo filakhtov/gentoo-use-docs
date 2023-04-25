@@ -15,15 +15,15 @@ Pass the `--enable-iconv` option to the configure script. Enable a runtime `--ic
 
 It is safe to disable this flag.
 
-### ipv6
-Pass the `--enable-ipv6` option to the configure script. Enable IPv6 protocol support by rsync. When disabled, a `-6` and a `--ipv6` runtime options will be a no-op.
-
-This flag should be enabled if the target system to be a part of an IPv6-capable network. Otherwise, it is safe to disable.
-
 ### lz4
 Pass the `--enable-lz4` option to the configure script. Provide an ability to use the LZ4 compression algorithm when doing file transfer by passing the `--compress-choice=lz4` (or `--zc=lz4`) option to the `rsync` command.
 
 It is safe to disable the flag.
+
+### rrsync
+Pass `--with-rrsync` option to the configure script. Install `rrsync` - a script to setup restricted rsync users via ssh logins.
+
+This flag should normally be disabled.
 
 ### ssl
 Pass the `--enable-openssl` option to the configure script. Install the `rsync-ssl` script that will use the `OpenSSL` to run an rsync copy to and from an rsync daemon that requires ssl connections (using the nginx or haproxy as an SSL-terminating proxy).
