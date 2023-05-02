@@ -9,3 +9,8 @@ This flag can be safely disabled.
 Pass a `-Dintrospection=enabled` (`disabled` when disabled) option to the meson build command. Generate and install a `Json-1.0.gir` GIR metadata file to provide dynamic bindings for a `libjson-glib` library to languages other than C using a GObject Introspection infrastructure.
 
 It is safe to disable the flag.
+
+### test
+Pass the `-Dtests=true` option to the meson build script. Build the test suite provided with the source code. Run the `meson test` command after the main build is completed to run built suite and check for any regressions. This will extend the build time.
+
+This flag should normally be disabled, as these tests are primarily oriented towards the developers, maintainers and testers.
