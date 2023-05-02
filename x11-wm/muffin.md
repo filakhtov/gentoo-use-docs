@@ -1,16 +1,26 @@
 # x11-wm/muffin
 
 ### introspection
-Pass a `--enable-introspection` option to a configure script. Generate and install a `Meta-Muffin.0.gir` GIR metadata file to provide dynamic bindings for a `libmuffin` library to languages other than C using a GObject Introspection infrastructure.
+Pass the `-Dintrospection=true` option to the meson build script. Generate and install a `CoglPango-0`, `Clutter-0`, `Cally-0`, `Meta-0`, `Cogl-0` and `ClutterX11-0` GIR metadata files to provide dynamic bindings for the `libmuffin-clutter`, `libmuffin-cogl`, `libmuffin-cogl-pango` and `libmuffin` libraries to languages other than C using the GObject Introspection framework.
 
 It is safe to disable the flag.
 
+### sceencast
+Pass the `-Dremote_desktop=true` option to the meson build script. Enable remote desktop and screen cast support. This is implemented in GNOME Mutter and most likely doesn't properly work in Cinnamon's fork.
+
+This flag should normally be disabled.
+
+### sysprof
+Pass the `-Dprofiler=true` option to the meson build script. Enable better integration with Sysprof 3. Enable traces that capture data about time spent in various routines and expose it to the profiler.
+
+This flag should normally be disabled.
+
 ### test
-Start a new Xvfb session and execute the `make check` command inside of it after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+Pass the `-Dtests=true`, `-Dcogl_tests=true` and `-Dclutter_tests=true` options to the meson build script. Build the test suite provided with the source code. Start a new Xvfb session and execute the `meson test` command after the main build is complete to run the suite and check for any regressions. This will extend the build time.
 
 This flag should normally be disabled as it is mainly useful for the maintainers, testers and developers.
 
-### xinerama
-Pass a `--enable-xinerama` option to a configure script. Use a Xinerama API to query a multi-monitor geometry and provide a proper window positioning and sizing for screens that are configured using the Xinerama X extension.
+### udev
+Pass the `-Dudev=true` option to the meson build script. Enable udev support for the X11 backend, allowing to detect various device capabilities, such as trackball or trackpoint.
 
-This flag should normally be disabled, because Xinerama is an outdated way of doing multi-monitor setup and is nowadays replaced by the Xrandr extension.
+It is recommended to enable this flag to provide support for advanced device capabilities.
