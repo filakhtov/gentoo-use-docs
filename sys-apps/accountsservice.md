@@ -29,3 +29,8 @@ This flag should only ever be toggled system-wide, e.g. as part of the SELinux-e
 Can not be used together with the `elogind` flag. Integrate AccountsService with the SystemD LoginD to query and manage login sessions and seats.
 
 This flag should be enabled on systems that use systemd as their init system.
+
+### test
+Build the test suite provided with the source code and execute the `meson test` command to run it after the main build is completed to check for any regressions. This will extend the build time. When this flag is disabled, patch the `meson.build` script to disable the test suite build.
+
+This flag should normally be disabled, because the test suite is primarily oriented towards the developers, maintainers and testers.
