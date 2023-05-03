@@ -10,6 +10,11 @@ Pass the `-Dbroadway-backend=true` option to the Meson build script. Enable supp
 
 It is safe to disable the flag.
 
+### cloudproviders
+Pass the `-Dcloudproviders=enabled` option to the Meson build script. This flag controls whether GTK should use the `libcloudproviders` library for supporting various Cloud storage APIs in the file chooser.
+
+This flag can be safely disabled.
+
 ### colord
 Pass the `-Dcolord=enabled` option to the Meson build script. Enable support for the `colord` daemon to provide color management abilities in the GTK apps. Allow to change and apply new profiles to the display. Provide an ability to associate color profiles with various devices such as monitors, printers or scanners and allow to calibrate these devices if they have necessary hadware or software suport.
 
@@ -46,7 +51,7 @@ Pass the `-Dsysprof=enabled` option to the Meson build script. Enable profiling 
 This flag should normally be disabled.
 
 ### test
-Pass the `-Dbuild-tests=true` option to the Meson build script. Run the test suites provided with the source code after the main build is completed to check for any regressions. When the `X` flag is enabled, start the virtual Xvfb session and execute the `meson test --setup=x11` command. When the `wayland` flag is enabled execute the `meson test --setup=wayland` command inside of the headless Weston compositor. This will extend the build time.
+Pass the `-Dbuild-testsuite=true` option to the Meson build script. Build the test suites provided with the source code and run it after the main build is completed to check for any regressions. When the `X` flag is enabled, start the virtual Xvfb session and execute the `meson test --setup=x11` command. When the `wayland` flag is enabled execute the `meson test --setup=wayland` command inside of the headless Weston compositor. This will extend the build time.
 
 This flag should normally be disabled because these tests are primarily oriented towards the developers, maintainers and testers.
 
