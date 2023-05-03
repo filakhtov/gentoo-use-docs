@@ -6,7 +6,7 @@ Enabling this flag will pull in the [gnome-base/dconf](../gnome-base/dconf.md) p
 It is recommended to enable this flag if the GNOME desktop environment or gnome applications are to be used on the target system.
 
 ### debug
-Append the `-DG_ENABLE_DEBUG` option to the `CFLAGS` variable for the duration of the build to enable additional debugging code. When flag is disabled, append the `-DG_DISABLE_CAST_CHECKS` option instead to disable some additional sanity checks that are primarily useful for development builds.
+Pass the `--buildtype=debug` option to the meson build script. Enable additional debugging code and sanity checks that are primarily useful for development builds.
 
 This flag should be disabled and is only useful for testers, developers or for collecting a debugging information to report bugs.
 
