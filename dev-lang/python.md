@@ -16,7 +16,7 @@ Enabling this flag will install example Python code that comes together with the
 This flag can be safely disabled. It is only necessary for developers who require exmaple files in order to learn Python.
 
 ### gdbm
-Build and install the `gdbm` module, that provides an interface to the GNU DBM library. `gdbm` objects behave like mappings (dictionaries), except that keys and values are always strings. When the flag is disabled, add the `gdbm` module to the `PYTHON_DISABLE_MODULES` environment variable for the duration of the build to disable module installation.
+Build and install the `dbm` module, that provides an interface to the GNU DBM library. `gdbm` objects behave like mappings (dictionaries), except that keys and values are always strings. When the flag is disabled, add the `MODULE__GDBM_STATE=disabled` and `MODULE__DBM_STATE=disabled` to the `Makefile` to prevent the module from being installed.
 
 It is safe to disable this flag.
 
@@ -36,7 +36,7 @@ Pass the `--with-lto` option to the configure script to enable Link Time Optimiz
 It is safe to disable this flag.
 
 ### ncurses
-Enables the `_curses`, the `_curses_panel` and the dependent Python modules. These modules provide an interface for portable advanced terminal handling using the `ncurses` library. They also provide window management like functionality in a terminal. If the flag is disabled, add these modules to the `PYTHON_DISABLE_MODULES` environment variable for the duration of the build to avoid installing them.
+Enables the `_curses`, the `_curses_panel` and the dependent Python modules. These modules provide an interface for portable advanced terminal handling using the `ncurses` library. They also provide window management like functionality in a terminal. If the flag is disabled, add the `MODULE__CURSES_STATE=disabled` and `MODULE__CURSES_PANEL=disabled` to the `Makefile` to avoid installing these modules.
 
 This flag is generally safe to disable. There are quite a few packages in the Portage tree that depend on it however.
 
@@ -46,17 +46,17 @@ Pass the `--enable-optimizations` option to the configure script and export the 
 It is safe to disable this flag.
 
 ### readline
-This flag enables the `readline` Python module. This module influences how interactive input is handled by the Python interpreter and various built-in input related functions. Features include autocompletion and reading/writing of history files. Whe the flag is disabled, disable the module by adding it to the `PYTHON_DISABLE_MODULES` environment variable for the duration of the build.
+This flag enables the `readline` Python module. This module influences how interactive input is handled by the Python interpreter and various built-in input related functions. Features include autocompletion and reading/writing of history files. Whe the flag is disabled, add the `MODULE_READLINE_STATE=disabled` to the `Makefile` to prevent this module from being installed.
 
 It is safe to disable this flag. It is recommended to leave it enabled if there is a need to deal with the Python interpreter and scripts that provide interactive input.
 
 ### sqlite
-The flag enables the `_sqlite3` and the dependent Python modules. The module provides an access to an SQLite database (version 3) that is often used by Python scripts for internal data storage. If the flag is disabled, add `_sqlite3` to the `PYTHON_DISABLE_MODULES` environment variable for the duration of the build to avoid installing the module.
+The flag enables the `_sqlite3` and the dependent Python modules. The module provides an access to an SQLite database (version 3) that is often used by Python scripts for internal data storage. If the flag is disabled, add the `MODULE__SQLITE3_STATE=disabled` to the `Makefile` to avoid installing the module.
 
 This flag is safe to disable. There is a number of packages in the Portage tree that are dependent on this flag.
 
 ### ssl
-Python has an SSL support enabled by default. Disabling this flag will export the `PYTHON_DISABLE_SSL` environment variable and force a build to disable an SSL support.
+Python has an SSL support enabled by default. Disabling this flag will add the `MODULE__HASHLIB_STATE=disabled` and `MODULE__SSL_STATE=disabled` into the `Makefile` and force a build to disable an SSL support.
 
 This flag should be enabled as it is required by the Portage to work properly.
 
@@ -66,7 +66,7 @@ Skip some tests with known problems, by moving them out of the test directory. E
 This flag should normally be disabled, because these tests are primarily useful for the developers, testers and maintainers.
 
 ### tk
-Enables the `_tkinter` and the dependent Python modules. This module provides an ability to render GUIs from Python scripts using the Tcl/Tk widget toolkit.
+Enables the `_tkinter` and the dependent Python modules. This module provides an ability to render GUIs from Python scripts using the Tcl/Tk widget toolkit. When this flag is disabled, add the `MODULE__TKINTER_STATE=disabled` to the `Makefile` to prevent the module from being installed.
 
 This flag can be safely disabled.
 
@@ -79,8 +79,3 @@ This flag should normally be disabled.
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
 It is safe to disable this flag.
-
-### xml
-Enables the `_elementtree`, the `pyexpat` and the dependent Python modules. This provides an ability to handle XML files in Python scripts.
-
-The flag is safe to disable, however there is a fair amount of packages in the Portage tree that depend on it.
