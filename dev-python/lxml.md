@@ -1,5 +1,10 @@
 # dev-python/lxml
 
+### debug
+Add the `-UNDEBUG` option to the `CPPFLAGS` environment variable for the duration of the build. Build the package with debugging symbols and some additional debugging routines enabled.
+
+This flag should normally be disabled.
+
 ### doc
 Run the `make html` command to generate API documentation using Sphinx, build additional documentation using the Docutil, and install all the build docs into the `/usr/share/doc/lxml-<VERSION>/` directory.
 
