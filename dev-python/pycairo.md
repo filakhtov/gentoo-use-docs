@@ -1,5 +1,10 @@
 # dev-python/pycairo
 
+### debug
+Add the `-UNDEBUG` option to the `CPPFLAGS` environment variable for the duration of the build. Build the package with debugging symbols and some additional debugging routines enabled.
+
+This flag should normally be disabled.
+
 ### doc
 Execute the `make` command inside of the `docs` subdirectory of the source tree. Use the Sphinx documentation generation tool to build additional documentation in an HTML format and install it into the `/usr/share/doc/pycairo-<VERSION>/html` directory.
 
