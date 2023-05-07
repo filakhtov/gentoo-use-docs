@@ -1,5 +1,10 @@
 # dev-python/pydantic
 
+### debug
+Add the `-UNDEBUG` option to the `CPPFLAGS` environment variable for the duration of the build. Build the package with debugging symbols and some additional debugging routines enabled.
+
+This flag should normally be disabled.
+
 ### native-extensions
 Pull in the [dev-python/cython](../dev-python/cython.md) dependency and use it to build extensions for native C modules.
 
