@@ -5,6 +5,11 @@ Pass the `-Dpycairo=enabled` (`disabled` if the flag is disabled) option to the 
 
 This flag should only be enabled if there is a need to use Python GObject bindings for the Cairo library.
 
+### debug
+Add the `-UNDEBUG` option to the `CPPFLAGS` environment variable for the duration of the build. Build the package with debugging symbols and some additional debugging routines enabled.
+
+This flag should normally be disabled.
+
 ### examples
 Install additional example files into the `/usr/share/doc/pygobject-<VERSION>/examples` directory. This includes a demo Cairo project written in Python and based on the C code from the Cairo library itself.
 
