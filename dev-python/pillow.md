@@ -1,5 +1,10 @@
 # dev-python/pillow
 
+### debug
+Add the `-UNDEBUG` option to the `CPPFLAGS` environment variable for the duration of the build. Build the package with debugging symbols and some additional debugging routines enabled.
+
+This flag should normally be disabled.
+
 ### examples
 Install additional example files into the `/usr/share/doc/pillow-<VERSION>/examples` directory. Examples show how to perform image adjustments like sharpness, brightness and contrast manipulation, how to split animation into a number of frame files, convert a sequence of GIF images into an animation, image file conversion, etc.
 
