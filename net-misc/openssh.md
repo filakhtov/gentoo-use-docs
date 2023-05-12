@@ -10,13 +10,6 @@ Append the `-DSANDBOX_SECCOMP_FILTER_DEBUG` option to a `CPPFLAGS` variable. Cha
 
 This flag is only useful for debugging a seccomp filter functionality and should normally be disabled.
 
-### hpn
-Apply a set of patches that improve an SSH and SCP performance known as an "HPN patch". Install an HPN-README documentation into a `/usr/share/doc/openssh-<VERSION>/` directory. HPN provides significant performance improvements, especially on long and high bandwith network links.
-
-Append a `DisableMTAES yes` directive to `sshd_config` file, because multi-threaded AES CTR cipher is known to be broken with HPN.
-
-It is safe to disable the flag.
-
 ### kerberos
 Pass the `--with-kerberos5=/usr` option to the configure script. Provide support for authentication using a Kerberos protocol.
 
@@ -56,13 +49,8 @@ Pass the `--with-pie` option to the configure script. Append an `-fPIE` option t
 
 It is recommended to keep this flag enabled.
 
-### sctp
-Apply SCTP (Stream Control Transmission Protocol) patches to a source code before compiling it. Pass the `--with-sctp` option to the configure script. Provide support for an SCTP protocol for the client and the server.
-
-It is safe to disable this flag as it is only ever necessary for systems that are using SCTP.
-
 ### security-key
-This flag can not be enabled together with the `X509` flag. Pass the `--with-security-key-builtin` option to the configure script. Enable support for FIDO/U2F protocol to allow to configure a hardware security key when authenticating via SSH on a remote server. After a user logs into a server by using their regular credentials, they'll be required to present a FIDO/U2F-based security key (USB, Bluetooth, NFC, etc) as a second proof-of-identity.
+Pass the `--with-security-key-builtin` option to the configure script. Enable support for FIDO/U2F protocol to allow to configure a hardware security key when authenticating via SSH on a remote server. After a user logs into a server by using their regular credentials, they'll be required to present a FIDO/U2F-based security key (USB, Bluetooth, NFC, etc) as a second proof-of-identity.
 
 This flag can be safely disabled, however is very useful for security-conscious users.
 
@@ -97,11 +85,6 @@ It is safe to disable this flag.
 Pull a [x11-apps/xauth](../x11-auth/xauth.md) package as a dependency. It is necessary for `X11Forwarding` to securily access GUI on a remote server via SSH protocol.
 
 It is recommended to disable this flag unless there is a need to use X11 Forwarding functionality, especially because there are know vulnerabilities associated with the feature.
-
-### X509
-Apply a set of patches to support X.509 PKI (Public Key Infrastructure). Provide an ability to authenticate using client certificates signed by known Certificate Authority.
-
-This flag should normally be disabled due to complex nature of the X.509 infrastructure and introduces a risk.
 
 ### xmss
 Append the `-DWITH_XMSS` option to the `CFLAGS` variable. Enable experimental support for PQC (Post Quantum Crypto) XMSS keys that are using the stateful hash-based signature scheme (RFC 8391).
