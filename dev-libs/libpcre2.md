@@ -45,6 +45,11 @@ Pass the `--enable-unicode` option to the configure script. Enable support for U
 
 It is recommended to enable this flag as Unicode character set is everywhere nowadays.
 
+### valgrind
+Pass the `--enable-valgrind` option to the configure script. Pass additional `CFLAGS` when building `libpcre2` to enable better support for running the library code under the Valgrind profiler.
+
+This flag should normally be disabled.
+
 ### verify-sig
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
