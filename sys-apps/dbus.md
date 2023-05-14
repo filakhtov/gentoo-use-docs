@@ -35,6 +35,11 @@ Run a configure script in designated test directory and pass the `--enable-asser
 
 This flag should normally be disabled as it is only useful for the Gentoo team, testers and developers.
 
+### valgrind
+Pass the `--with-valgrind` option to the configure script. Enable additional instrumentation that is useful when running programs using `libdbus` with Valgrind profiler.
+
+This flag should normally be disabled.
+
 ### X
 Pass the `--with-x` option to the configure script. Install an `80-dbus` script into a system `xinitrc.d` directory that is responsible for automatically launching a session dbus instance as part of an X.org startup.
 
