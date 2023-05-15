@@ -24,3 +24,8 @@ This flag should only be enabled on systems using systemd as their init daemon.
 Prepare a Python environment to properly run tests. Compile GSettings XML schemas necessary for running test. Start a new Xvfb session and execute the `make check` command inside of it. Run a test suite provided with the source code. This will extend a build time.
 
 This flag should normally be disabled. It is oriented to the Gentoo team, testers and developers.
+
+### valgrind
+Pass the `--enable-valgrind` option to the configure script. Enable additional code to suppress false positive reports when running the `gnome-keyring-daemon` using the Valgrind profiler.
+
+This flag should normally be disabled.
