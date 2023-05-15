@@ -71,7 +71,7 @@ Pass the `--enable-static` option to the configure script. Build and install sta
 This flag should only be enabled if there is a need for the static libraries.
 
 ### test
-Pass the `--enable-tests` option to the configure script. Execute the `make check` command after the main build is completed. Build and run a test suite provided with the source code. This will extend a build time. See also the `seccomp`, `test-full` and `valgrind` flags for additional test options.
+Pass the `--enable-tests` option to the configure script. Execute the `make check` command after the main build is completed. Build and run a test suite provided with the source code. This will extend a build time. See also the `seccomp` and `test-full` flags for additional test options.
 
 This flag should normally be disabled as these tests are primarily used by the Gentoo team, developers or testers.
 
@@ -97,11 +97,6 @@ Pass the `--enable-tools` option to the configure script. Install various tools:
 - `gnutls-cli` - a simple client program to set up a TLS connection to some other computer.
 - `ocsptool` - a program that can parse and print information about OCSP requests/responses, generate requests and verify responses.
 - `certtool` - a tool to generate X.509 certificates, certificate requests, and private keys.
-
-### valgrind
-This flag is only working together with the `test` flag. Pass the `--enable-valgrind-tests` option to the configure script. Build and execute additional tests that are using the Valgrind tool to test GnuTLS for memory errors.
-
-As with the `test` flag, this one should normally be disabled.
 
 ### verify-sig
 Perform signature verification of the upstream source code archive before extracting it and building the package.
