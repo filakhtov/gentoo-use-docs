@@ -20,11 +20,6 @@ Pass the `-Dthumbnail_cache=enabled` option to the meson build script. Use the `
 
 It is safe to disable the flag.
 
-### gnome-keyring
-Pass the `-Dkeyring=enabled` option to the meson build script. Use the `libsecret` library to integrate with the GNOME keyring daemon to store and retrieve passwords for password-protected PDF documents.
-
-This flag should be enabled for keyring integration.
-
 ### gstreamer
 Pass the `-Dmultimedia=enabled` option to the meson build script. Use the GStreamer library to provide an ability to play multimedia files embedded into PDF documents with built-in player.
 
@@ -37,6 +32,11 @@ Pass the `-Dgtk_doc=true` option to the meson build script. Use the Gtk-Doc tool
 Pass the `-Dintrospection=true` option to the meson build script. Generate and install the `EvinceDocument-3.0.gir` and `EvinceView-3.0.gir` GIR metadata files to provide dynamic bindings for the `libevdocument3` and `libevview3` libraries to languages other than C using the GObject Introspection framework.
 
 The flag can be safely disabled.
+
+### keyring
+Pass the `-Dkeyring=enabled` option to the meson build script. Use the `libsecret` library to integrate with the GNOME keyring daemon to store and retrieve passwords for password-protected PDF documents.
+
+This flag should be enabled for keyring integration.
 
 ### nautilus
 Pass the `-Dnautilus=true` option to the meson build script. Build the `libevince-properties-page.so` library that provides Nautilus plugin that adds a properties page to document properties dialog to show additional information for PDF and other document types, and install it into the `/usr/lib/nautilus/extensions-3.0/` directory.
