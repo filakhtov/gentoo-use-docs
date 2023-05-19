@@ -15,11 +15,6 @@ Pull in the [sys-apps/dbus](../sys-apps/dbus.md) package as a dependency. D-Bus 
 
 This flag should be enabled to provide an ability to interact with Rhythmbox over the D-Bus interface.
 
-### gnome-keyring
-Pass the `-Dlibsecret=enabled` option to the Meson build script. Use the `libsecret` library to provide an ability to access GNOME keyring to store and obtain authentication information when accessing media over the DAAP protocol.
-
-This flag should only be enabled together with the `daap` flag and if there is a need to save passwords for protected DAAP shares.
-
 ### gtk-doc
 Pass the `-Dgtk_doc=true` option to the Meson build script. Use the Gtk-Doc tool to extract annotations from the source code to generate developer documentation in the HTML format and install it into the `/usr/share/gtk-doc/html/rhythmbox` directory.
 
@@ -29,6 +24,11 @@ It is safe to disable this flag.
 Pass the `-Dipod=enabled` option to the Meson build script. Build and install the `Portable Players - iPod` plugin that uses the `libgpod` library to enable support for Apple iPod or iPhone devices, e.g. transfer media to a player, display a content on a device, play music from device, etc. Note: support is very limited and newer iOS versions might not be properly supported.
 
 This flag should only be enabled if there is a need to access Apple devices.
+
+### keyring
+Pass the `-Dlibsecret=enabled` option to the Meson build script. Use the `libsecret` library to provide an ability to access GNOME keyring to store and obtain authentication information when accessing media over the DAAP protocol.
+
+This flag should only be enabled together with the `daap` flag and if there is a need to save passwords for protected DAAP shares.
 
 ### libnotify
 Pass the `-Dlibnotify=enabled` option to the Meson build script. Build and install the `Notification` plugin that uses the `libnotify` library to enable notification popups, such as playback start, stop, pause, etc.
