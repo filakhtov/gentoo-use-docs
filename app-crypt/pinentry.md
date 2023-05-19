@@ -15,15 +15,15 @@ Pass the `--enable-pinentry-emacs` option to the configure script. Use the Emacs
 
 This option should be disabled as it has security issues, e.g. it can expose recently typed keystrokes and therefore entered passphrase.
 
-### gnome-keyring
-Pass the `--enable-libsecret` option to the configure script. Provide an ability to cache an entered passphrases in a GNOME keyring providing an appropriate checkbox in UI.
-
-This flag should be enabled if the target system runs the GNOME3 Desktop Environment or another GNOME3 based DE, e.g. Cinnamon.
-
 ### gtk
 Pass the `--enable-pinentry-gnome3` option to the configure script. Build and install the `pinentry-gnome3` program - a graphical, GTK3 based dialog to allow secure entry of PINs and passphrases.
 
 This flag should be enabled if the target system runs a GTK2 based Desktop Environment, e.g. Xfce.
+
+### keyring
+Pass the `--enable-libsecret` option to the configure script. Provide an ability to cache an entered passphrases in a GNOME keyring providing an appropriate checkbox in UI.
+
+This flag should be enabled if the target system runs the GNOME3 Desktop Environment or another GNOME3 based DE, e.g. Cinnamon.
 
 ### ncurses
 Pass the `--enable-pinentry-curses` and the `--enable-fallback-curses` options to the configure script. Use the `ncurses` library to display a text console based dialog for secure entry of PINs and passphrases. Fallback to this method if an X server is not available or there are no any supported graphical dialogs.
