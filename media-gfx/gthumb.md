@@ -15,11 +15,6 @@ Pass the `-Dexiv2=true` option to the Meson build script. Build and install the 
 
 It is recommended to enable this flag if there is a need to deal with photos.
 
-### gnome-keyring
-Only makes sense if the `http`, `webkit` and `json` flags are enabled. Pass the `-Dlibsecret=true` option to the configure script. Provide an ability to read credentials from and save them to a system keyring using the `libsecret` library. This functionality is used by the oAuth authentication flow to upload images via various web service plugins, e.g. 23hq.com, Facebook, Flickr, etc.
-
-This flag can be safely disabled if there is no need to use web services or store credentials in a keyring.
-
 ### gstreamer
 Pass the `-Dgstreamer=true` option to the Meson build script. Build and install the "Audio/Video support" plugin that uses the GStreamer framework to provide an ability to play audio and video files from gThumb. GStreamer is also integrated with slideshow plugin (see the `slideshow` flag).
 
@@ -39,6 +34,11 @@ This flag can be safely disabled if there is no need to upload images to web ser
 Pass the `-Dlibjxl=true` option to the Meson build script. Use the `libjxl` library to enable support for JPEG XL (`.jxl`) - the next generation image coding standard.
 
 It is safe to disable this flag unless there is a need to open JXL images in gThumb.
+
+### keyring
+Only makes sense if the `http`, `webkit` and `json` flags are enabled. Pass the `-Dlibsecret=true` option to the configure script. Provide an ability to read credentials from and save them to a system keyring using the `libsecret` library. This functionality is used by the oAuth authentication flow to upload images via various web service plugins, e.g. 23hq.com, Facebook, Flickr, etc.
+
+This flag can be safely disabled if there is no need to use web services or store credentials in a keyring.
 
 ### lcms
 Pass the `-Dlcms2=true` option to the Meson build script. Use the Little CMS color engine to provide an ability to handle ICC color profiles and try to reproduce image colors more accurately when viewing an image (e.g. convert colors from image color profile into the display color profile).
