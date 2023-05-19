@@ -25,11 +25,6 @@ Download an archive with documentation sources, unpack it into the `Documentatio
 
 It is safe to disable the flag.
 
-### gnome-keyring
-Execute the `make` command from the `contrib/credential/libsecret` subdirectory to build the `git-credential-libsecret` binary to handle storing and providing usernames and passwords to Git using the `libsecret` library.
-
-This flag should be enabled to integrate GIT with the GNOME Keyring.
-
 ### gpg
 Pull in the [app-crypt/gnupg](../app-crypt/gnupg.md) package as a dependency. Provide an ability to cryptographically sign and verify commits, using the `git commit -S` and `git verify-commit` commands and tags using the `git tag -s` and `git verify-tag` commands respectively.
 
@@ -44,6 +39,11 @@ It is safe to disable the flag.
 When disabled, pass the `NO_ICONV=YesPlease` variable to the `make` command. Use the `libiconv` library to perform a character encoding translation, e.g. when formatting commit messages for displaying purposes and input or output encoding is not a UTF-8, or displaying messages from remote that aren't in native output encoding.
 
 It is recommended to enable this flag to avoid issues with character encoding.
+
+### keyring
+Execute the `make` command from the `contrib/credential/libsecret` subdirectory to build the `git-credential-libsecret` binary to handle storing and providing usernames and passwords to Git using the `libsecret` library.
+
+This flag should be enabled to integrate GIT with the GNOME Keyring.
 
 ### mediawiki
 Run the `make` command inside of the `contrib/mw-to-git` source subdirectory. Build and install the Git-Mediawiki - a project which aims the creation of a gate between git and mediawiki, allowing git users to push and pull objects from mediawiki just as one would do with a classic git repository.
