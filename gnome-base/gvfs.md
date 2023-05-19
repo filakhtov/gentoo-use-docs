@@ -30,11 +30,6 @@ Pass the `-Dfuse=true` (`false` when the flag is disabled) option to the meson b
 
 The flag should be enabled if there is a need to mount FUSE filesystems.
 
-### gnome-keyring
-Pass the `-Dkeyring=true` (`false` if the flag is disabled) option to the meson build script. Use the `libsecret` library to obtain authentication information, such as username, password or passphrase for network shares, servers or encrypted disks from the GNOME Keyring daemon.
-
-This flag should be enabled if there is a desire to use GNOME Keyring for reading authentication info and secrets.
-
 ### gnome-online-accounts
 Pass the `-Dgoa=true` (`false` when the flag is disabled) option to the meson build script. Build and install the `gvfs-goa-volume-monitor` daemon that uses the `libgoa` library to monitor and expose online storage services as a virtual filesystem or volume.
 
@@ -59,6 +54,11 @@ This flag should only be enabled if there is a need for the HTTP VFS access.
 Pass the `-Dafc=true` (`false` when the flag is disabled) option to the meson build script. Build and install the `gvfsd-afc` and `gvfs-afc-volume-monitor` tools, that are used by the `gvfsd` daemon to provide an access to iOS devices, such as iPhone or iPod Touch via the `afc://` protocol.
 
 This flag should be enabled if there is a need to mount an iOS device storage via GVfs.
+
+### keyring
+Pass the `-Dkeyring=true` (`false` if the flag is disabled) option to the meson build script. Use the `libsecret` library to obtain authentication information, such as username, password or passphrase for network shares, servers or encrypted disks from the GNOME Keyring daemon.
+
+This flag should be enabled if there is a desire to use GNOME Keyring for reading authentication info and secrets.
 
 ### mtp
 Pass the `-Dmtp=true` and the `-Dlibusb=true` (`false` for both if the flag is disabled) flags to the meson build script. Buil and install the `gvfsd-mtp` tool, that uses the `libusb` and the `libmtp` libraries, to provide an acces to a media device's storage over the MTP (Media Transfer Protocol) via the `mtp://` scheme.
