@@ -39,3 +39,13 @@ This flag should be enabled if the target system runs a KDE based Desktop Enviro
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
 It is safe to disable this flag.
+
+### wayland
+Pass the `--enable-wayland` option to the configure script. Enable support for native Qt password prompting dialog under Wayland.
+
+This flag should only be enabled if the target system uses Qt on top of Wayland.
+
+### X
+Pass the `--with-x` and `--enable-qtx11extras` options to the configure script. Enable support for native Qt passphrase prompting dialog under the X11 server.
+
+This flag should only be enabled if the target system uses Qt on top of X11 server.
