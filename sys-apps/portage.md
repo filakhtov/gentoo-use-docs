@@ -8,6 +8,11 @@ This flag can be safely disabled if there is no need for Portage Python API docu
 ### build
 This flag should normally be disabled. It is used by the Gentoo team to create early build stages and bootstrapping. Under the hood it will ignore a number of flags and dependencies as well as disable the rsync verification.
 
+### debug
+This flag is coming from the parent eclass and does nothing for this package.
+
+This flag should normally be disabled.
+
 ### doc
 Generate and install HTML documentation from DocBook by calling a `make docbook` command followed by a `make install_docbook`. Resulting documentation will be installed into a `/usr/share/doc/portage-<VERSION>/html` directory.
 
