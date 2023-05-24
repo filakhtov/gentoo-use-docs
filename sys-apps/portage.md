@@ -9,7 +9,7 @@ This flag can be safely disabled if there is no need for Portage Python API docu
 This flag should normally be disabled. It is used by the Gentoo team to create early build stages and bootstrapping. Under the hood it will ignore a number of flags and dependencies as well as disable the rsync verification.
 
 ### debug
-This flag is coming from the parent eclass and does nothing for this package.
+Append the `-UNDEBUG` option to the `CXXFLAGS` environment variable for the duration of the build (`-DNDEBUG` if the flag is disabled). Enable additional assertions in the C code that will fail and terminate the program if the condition is violated. This is useful for development and debugging purposes.
 
 This flag should normally be disabled.
 
