@@ -5,6 +5,11 @@ Enable support for the L2CAP, RFCOMM, HCI and SCO Bluetooth protocols in the Soc
 
 This flag should be enabled if there is a need for the Bluetooth protocol.
 
+### debug
+Pass the `--with-assertions` option to the configure script. Enable runtime assertions in the Python interpreter that will check for certain conditions that always must be true and crash the program if they fail.
+
+This flag should almost always be disabled, especially for production use.
+
 ### ensurepip
 When this flag is enabled the `ensurepip` module will be installed, which can be used to bootstrap `pip` and `setuptools` using the bundled wheels. When this flag is disabled, the module will be removed from the resulting image before installation.
 
