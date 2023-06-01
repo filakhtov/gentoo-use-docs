@@ -5,11 +5,6 @@ Pass the `--enable-dmfilemapd`, `--enable-dmeventd`, `--enable-cmdlib`, `--enabl
 
 This flag should normally be enabled to provide support for LVM. Disabling it generally only make sense for embedded systems.
 
-### lvm2create-initrd
-Install an `lvm2create_initrd` tool - a tool to create initial ramdisk (initrd) image suitable for booting systems with a root partition on LVM.
-
-This flag should normally be disabled as it is obsolete and does not even work with Gentoo.
-
 ### readline
 Pass the `--enable-readline` option to the configure script. Enable support for an LVM shell. Provide a history support using a GNU Readline library.
 
@@ -49,3 +44,8 @@ This flag should be disabled unless there is a need to manage Thin LVM.
 Pass the `--enable-udev_rules` and `--enable-udev_sync` options to the configure script. Enable udev sync support and install appropriate rules to ensure that parallel udev rules processing aren't conflicting and e.g. not removing a device node that might be handling another event at the same time.
 
 It is recommended to enable this flag to avoid various synchronisation issues.
+
+### valgrind
+Pass the `--enable-valgrind-pool` option to the configure script. Enable valgrind-aware build with additional code that prevents false positive reports from being reported when running under Valgrind profiler.
+
+This flag should only be enabled if there is a need to run `lvm2` or linked program under Valgrind.
