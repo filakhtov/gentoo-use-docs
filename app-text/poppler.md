@@ -68,6 +68,11 @@ Pass the `-DCMAKE_DISABLE_FIND_PACKAGE_Qt5Core=OFF` (`ON` when disabled) option 
 
 This flag should be enabled for using Poppler with Qt5 applications.
 
+### test
+Pass the `-DBUILD_CPP_TESTS=true`, `-DBUILD_MANUAL_TESTS=true` and `-DBUILD_QT5_TESTS=true` (if the `qt5` flag is also enabled) to the `cmake` command. Build the test suite provided with the source code and execute the `ctest` command after the main build is completed to run it and check for any regressions.
+
+This flag should normally be disabled, because these tests are primarily oriented towards the developers, maintainers and testers.
+
 ### tiff
 Pass the `-DWITH_TIFF=true` (`false` if disabled) option to the `cmake` command. Use the `libtiff` library to provide an ability to write images in the TIFF (Tagged Image File Format) format, e.g. when converting entire PDF into a set of images, extracting pages or images out of PDF, both with poppler tools and through the `libppopler` library itself.
 
