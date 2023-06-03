@@ -10,13 +10,18 @@ Append the `cl` value to the `--enable-languages` option that is passed to the c
 
 This flag should only be enabled if there is a need to use GpgME with Common Lisp programs.
 
+### debug
+Append the `-UNDEBUG` option to the `CPPFLAGS` environment variable for the duration of the build. Enable additional assertions in the code that would terminate the program if the condition fails.
+
+This flag should normally be disabled, especially in production use.
+
 ### python
 Prepare python environment and execute the `make prepare`, `make` and `make` install commands from the `lang/python` source subdirectory. Install a `gpg` Python module that offers two interfaces, one is a high-level, curated, and idiomatic interface that is implemented as a shim on top of the low-level interface automatically created using SWIG (Simplified Wrapper and Interface Generator).
 
 This flag should only be enabled if there is a need to use the `gpg` module in Python scripts.
 
 ### qt5
-Append the `qt` value to the `--enable-languages` option that is passed to the configure script. Build and install the `libqgpgme` library that provides a very high level Qt API around GpgMEpp library.
+Append the `qt5` value to the `--enable-languages` option that is passed to the configure script. Build and install the `libqgpgme` library that provides a very high level Qt API around GpgMEpp library.
 
 This flag should be enabled if there is a need for the Qt wrapper library.
 
@@ -26,7 +31,7 @@ Pass the `--enable-static` option to the configure script. Build and install a s
 This flag should only be enabled if there is an explicit need for the static libraries.
 
 ### test
-Execute the `make check` command (and additional `make check` for every enable Python version) after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+A test suite is build by default. Execute the `make check` command (and additional `make check` for every enable Python version) after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time. When disabled, pass the `--disable-gpgconf-test`, `--disable-gpg-test`, `--disable-gpgsm-test`, `--disable-g13-test` options to the configure script to prevent building the test suite.
 
 This flag should normally be disabled, because it is primarily oriented towards the developers, maintainers and testers.
 
