@@ -46,7 +46,7 @@ Append `rust-demangler` to the `tools` option and set the `profiler` to `true` i
 It is safe to disable this flag.
 
 ### rust-analyzer
-Append the `rust-analyzer` and `analysis` to the `tools` option in the `build` section of the `config.toml` build configuration file. Install the `rust-analyzer` - a modular compiler frontend for the Rust language that is used by IDEs (Integrated Development Environment) to create better support for Rust language.
+Append the `rust-analyzer` to the `tools` option in the `build` section of the `config.toml` build configuration file. Install the `rust-analyzer` - a modular compiler frontend for the Rust language that is used by IDEs (Integrated Development Environment) to create better support for Rust language.
 
 It is safe to disable this flag.
 
