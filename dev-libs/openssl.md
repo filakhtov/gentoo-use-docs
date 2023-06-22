@@ -5,15 +5,15 @@ Passes the `enable-asm` argument to the `Configure` script. This uses an assembl
 
 It is recommended to enable this flag.
 
-### gmp
-The flag passes the `enable-gmp` and the `-lgmp` arguments to the `Configure` script. This will replace OpenSSL built-in RSA private key operations with GMP library routines.
+### fips
+Pass the `enable-fips` argument to the `Configure` script. Build and install OpenSSL FIPS modules, which provides a specific subset of OpenSSL that has gone through FIPS (Federal Information Processing Standard Publication) 140-2 validation. Execute the `make install_fips` to install the FIPS module into the system after the main build is completed.
 
-In a past the GMP library used to provide performance benefits over an OpenSSL implementation. It is no longer true nowadays at least on x86 platform. This flag is not recommended any longer.
+This flag should only be enabled if there is a need to achieve FIPS-compliance, because any change in FIPS needs to be revalidated, meaning bugs and vulnerabilities take longer to fix compared to the standard OpenSSL builds.
 
-### kerberos
-Passes the `enable-krb5` and the `--with-krb5-flavor=<backend>` arguments to the Configure script. The `<backend>` value can be either `MIT` if the [app-crypt/mit-krb5](../app-crypt/mit-krb5.md) package is installed or `Heimdal` otherwise. The flag enables Kerberos ciphersuite support in OpenSSL.
+### klts
+Pass the `enable-ktls` argument to the `Configure` script. Enable support for kTLS (Kernel Transport Layer Security), allowing to offload cryptographic operations to the supported Kernels to significantly improve performance by eliminating the need to copy data from the kernel space, encrypt or decrypt in user space and copy it back for transport.
 
-This flag provides OpenSSL routines for Kerberos an authentication and encryption support. It is safe to disable the flag unless Kerberos support is required.
+It is recommended to enable this flag on supported systems.
 
 ### rfc3779
 This flag passes the `enable-rfc3779` argument to the `Configure` script. It enables support for RFC-3779 (aka X.509 Extensions for IP Addresses and AS Identifiers).
@@ -25,20 +25,13 @@ Passes the `enable-sctp` argument to the `Configure` script. The flag enables su
 
 It is recommended to keep this flag disabled, unless TLS encrypted SCTP connections are required.
 
-### sslv3
-This flag is passing the `enabled-ssl3` and `enable-ssl3-method` arguments to the `Configure` script. It enables an SSLv3 (Secure Socket Layer version 3) cryptographic protocol support.
-
-It is strongly recommended to disable the flag, because an SSLv3 is vulnerable, insecure and should not be used nowadays.
-
-It should only be enabled if there is an absolute need for SSLv3 support and all applications except affected ones should have it disabled via configuration.
-
 ### static-libs
 Static libraries (`*.a` files) are built by default but are removed by an ebuild before installation. Enabling the flag will preserve these libraries and install them into the target system.
 
 This flag should be disabled unless there is a specific need for static libraries, e.g. for development purposes.
 
 ### test
-Build the test suite provided with the source code and executes the `make -j1 test` command after the main build is completed to run it and check for any regressions. This will extend the build time. When this flag is disabled, pass the `no-tests` option to the `Configure` script to avoid building the test suite.
+Build the test suite provided with the source code and executes the `make test` command after the main build is completed to run it and check for any regressions. This will extend the build time. When this flag is disabled, pass the `no-tests` option to the `Configure` script to avoid building the test suite.
 
 The flag should be disabled. It is mainly useful for Gentoo developers and testers.
 
@@ -46,11 +39,6 @@ The flag should be disabled. It is mainly useful for Gentoo developers and teste
 Passes the `enable-zlib` argument to the `Configure` script. Enables support for a clear-text compression and decompression before the encryption and after the decryption using zlib library. Compression is enabled by default when this flag is enabled.
 
 It is safe to disable the flag unless there is a need to establish encrypted connections with a compression support.
-
-### tls-heartbeat
-This flag passes the `enable-heartbeats` argument to the `Configure` script. Enables the TLS Heartbeat protocol support as described in the RFC6520 to keep an encrypted connection alive without performing a renegotiation.
-
-The flag can be safely disabled. It might be necessary to enable it under certain network setups, e.g. where a firewall eagerly closes inactive connections.
 
 ### vanilla
 Enabling this flag will ensure that no Gentoo-specific patches are applied to the source code before compilation.
