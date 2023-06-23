@@ -25,11 +25,6 @@ Build and install the `dbm` module, that provides an interface to the GNU DBM li
 
 It is safe to disable this flag.
 
-### hardened
-This flag replaces the `-O3` compiler optimization option with the `-O2`. The higher level of an optimization is conflicting with the stack protection features of the compiler (i.e. `-fstack-protector`, `-fstack-protector-all` or `-fstack-protector-strong` options) and can results in random Python crashes.
-
-It is recommended to enable this flag on systems that have the `-O3` optimization option set in the `CFLAGS` and/or the `CXXFLAGS`. See the [Gentoo bug #50309](https://bugs.gentoo.org/50309) for more information.
-
 ### libedit
 Only works if the `readline` flag is enabled. This would do exactly the same as the `readline` flag, except it would use the `libedit` library under the hood instead.
 
