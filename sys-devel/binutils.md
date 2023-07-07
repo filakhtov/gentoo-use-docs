@@ -1,14 +1,9 @@
 # sys-devel/binutils
 
 ### cet
-Pass the `--enable-cet` option to the configure script. Enable support for CET (Intel's Control-Flow Enforcement Technology) - the Intel feature for helping prevent ROP (Return-Oriented Programming) and COP/JOP (Call/Jump Oriented Programming) style attacks via indirect branch tracking and a shadow stack.
+Pass the `--enable-cet` option to the configure script. Remove the `-minidirect-branch` options from the `XXFLAGS` environment variables for the duration of the build. Enable support for CET (Intel's Control-Flow Enforcement Technology) - the Intel feature for helping prevent ROP (Return-Oriented Programming) and COP/JOP (Call/Jump Oriented Programming) style attacks via indirect branch tracking and a shadow stack.
 
 It is safe to disable this flag, however it will be beneficial to enable it on compatible systems for improved security.
-
-### default-gold
-Requires the `gold` flag to be enabled. Pass the `--enable-gold=default` option to the configure script. Ensure that the `ld.gold` linker is used by default, instead of the `ld.bfd` one, by installing it as the `ld` binary.
-
-It is recommended to enable this flag to use the `ld.gold` linker by default, unless there is any specific reason not to.
 
 ### doc
 Run `make info` during a build to produce info pages. They will be installed into a `/usr/share/doc/binutils-<VERSION>` directory.
@@ -59,3 +54,8 @@ This flag should be disabled, unless there is an explicit need for unpatched ver
 Execute `make -k check` after the build is complete. Run test suites provided with a source code. This will extend a build time.
 
 This flag should normally be disabled as it is only useful for the Gentoo team, developers and testers.
+
+### zstd
+Pass the `--with-zstd` option to the configure script. Enable support for Zstd compressed debug sections for the `objcopy` tool (via both `--decompress-debug-sections` and `--compress-debug-sections=zstd`), as well as for the `addr2line` and `objdump --dwarf` commands.
+
+This flag should only be enabled if there is a need to deal with zstd-compressed debug sections.
