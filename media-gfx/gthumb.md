@@ -25,11 +25,6 @@ Pass the `-Dlibheif=true` option to the Meson build script. Use the `libheif` li
 
 This flag can be safely disabled, if there is no need to open HEIF images with gThumb.
 
-### http
-This flag only works together with the `json` and `webkit` flags. Pass the `-Dwebservices=true` option to the configure script. Use the `libsoup` library to handle HTTP(S) connections for various web service plugins, such as Upload to Facebook, Flickr, Picasa, etc.
-
-This flag can be safely disabled if there is no need to upload images to web services.
-
 ### jpegxl
 Pass the `-Dlibjxl=true` option to the Meson build script. Use the `libjxl` library to enable support for JPEG XL (`.jxl`) - the next generation image coding standard.
 
@@ -64,6 +59,11 @@ This flag should be enabled if there is a need to view SVG images.
 Pass the `-Dlibtiff=true` option to the Meson build script. Use the `libtiff` library to provide advanced support for TIFF files, e.g. not only displaying the thumbnail, but actually showing full-size image, zooming, as well as saving and converting images into the TIFF format.
 
 This flag should be enabled if there is a need to handle TIFF files.
+
+### webkit
+Pass the `-Dwebservices=true` option to the configure script. Use the WebKitGTK and the `libsoup` library to handle HTTP(S) connections for various web service plugins, such as Upload to Facebook, Flickr, Picasa, etc.
+
+This flag can be safely disabled if there is no need to upload images to web services.
 
 ### webp
 Pass the `-Dlibwebp=true` option to the Meson build script. Use the `libwebp` library to provide an ability to display images in the WebP format and also save (or convert) into this format.
