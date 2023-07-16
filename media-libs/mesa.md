@@ -31,7 +31,7 @@ Passe the `-Dlmsensors=enabled` option to the meson build script. Use the `libse
 It is safe to disable the flag.
 
 ### opencl
-This feature only works with the `r600` and `radeonsi` Gallium3D drivers and requires the `llvm` flag to be enabled. Pass the `-Dgallium-opencl=icd` (`disabled` if the flag is off) option to the meson build command. Build and install the `libOpenCL.so` library into the `/usr/lib/OpenCL/vendors/mesa` directory to provide support for the OpenCL 1.1 API - the open, royalty-free standard for cross-platform, parallel programming of diverse processors found in personal computers, servers, mobile devices and embedded platforms.
+This feature only works with the `r600` and `radeonsi` Gallium3D drivers and requires the `llvm` flag to be enabled. Pass the `-Dgallium-rusticl=true` and `-Drust_std=2021` options to the meson build command. Build and install the `libOpenCL.so` library into the `/usr/lib/OpenCL/vendors/mesa` directory to provide support for the OpenCL 1.1 API - the open, royalty-free standard for cross-platform, parallel programming of diverse processors found in personal computers, servers, mobile devices and embedded platforms.
 
 This flag should only be enabled if there is a need to use the OpenCL API and the target system has supported AMD card.
 
