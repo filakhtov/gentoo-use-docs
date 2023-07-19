@@ -1,41 +1,36 @@
 # net-libs/libproxy
 
 ### duktape
-Pass the `-DWITH_DUKTAPE=yes` option to the CMake command. Build and install `pacrunner_duktape` library - a `libproxy` module that contains the plugin to allow libproxy to interpret PAC (Proxy Auto-Configuration) files using the Duktape embeddable JavaScript engine.
+Pass the `-Dpacrunner-duktape=true` and `-Dcurl=true` options to the Meson build script. Use the Duktape embeddedable JavaScript engine as a backend to interpret PAC (Proxy Auto-Configuration) files.
 
-It is safe to disable this flag.
+It is safe to disable this flag if there is no need to use PAC files with `libproxy`.
 
 ### gnome
-Pass the `-DWITH_GNOME3=yes` option to the CMake command. Build and install the `pxgsettings` binary that is used to query GSettings configuration backend for proxy settings. When disabled, build and install the `pxgconf` instead to query GConf backend (but only if GConf library is found).
+Pass the `-Dconfig-gnome=true` option to the Meson build script. Build the plugin to integrate with Gnome desktop environment and be able to query GSettings configuration backend for proxy configuration information.
 
 This flag should be enabled if the target system is running a GNOME 3 based desktop environment.
 
+### gtk-doc
+Pass the `-Ddocs=true` option to the Meson build script. Generate and install the API reference documentation for `libproxy` using the Gtk-Doc tool and install it into the `/usr/share/gtk-doc/html/libproxy` directory.
+
+This flag should normally be disabled.
+
+### introspection
+Pass the `-Dintrospection=true` option to the Meson build script. Generate and install the `Libproxy-1.0.gir` GIR metadata file to provide binding for the `libproxy` library to languages other than C using the GObject Introspection Framework.
+
+It is safe to disable this flag.
+
 ### kde
-Pass the `-DWITH_KDE=yes` option to the CMake command. Build and install module to read proxy settings from KDE4/KF5 using the `kreadconfig` or `kreadconfig5` tools.
+Pass the `-Dconfig-kde=true` option to the Meson build script. Build the plugin to integrate with the KDE (K Desktop Environment) and read proxy settings from KDE system settings.
 
 This flag should be enabled if the target system is running a KDE based desktop environment.
 
-### mono
-Pass the `-DWITH_DOTNET=yes` and the `-DGMCS_EXECUTABLE="/usr/bin/mcs"` options to the CMake command. Build and install `libproxy-sharp` library - C# bindings for the `libproxy` library to be used with Mono-based applications for automatic proxy configuration management.
-
-This flag should only be enabled if there is a need to use `libproxy` with C# applications.
-
-### networkmanager
-Pass the `-DWITH_NM=yes` option to the CMake command. Build and install the `network_networkmanager` library - a libproxy module to read information about a network connections change from NetworkManager.
-
-This flag should be enabled if target system uses NetworkManager for network configuration.
-
-### spidermonkey
-Pass the `-DWITH_MOZJS` option to the CMake command. Build and install the `pacrunner_mozjs` library - a `libproxy` module that contains the plugin to allow libproxy to interpret PAC (Proxy Auto-Configuration) files using mozjs.
-
-It is safe to disable the flag.
-
 ### test
-Pass the `-DBUILD_TESTING=yes` option to the CMake command. Build test suite provided with the source code and execute the `ctest` command after the main build is completed to run it. This will extend a build time.
+Pass the `-Dtests=true` option to the Meson build script. Build the test suite provided with the source code. Execute the `meson test` command after the main build is completed to run tests and check for any regressions. This will extend the build time.
 
-This flag should normally be disabled as it is mainly useful for testers, developers or the Gentoo team.
+This flag should normally be disabled, because these tests are primarily oriented towards the developers, maintainers and testers.
 
-### webkit
-Pass the `-DWITH_WEBKIT=yes` and `-DWITH_WEBKIT3=yes` option to the CMake command. Build and install the `pacrunner_webkit` library - a `libproxy` module that contains the plugin to allow libproxy to interpret PAC (Proxy Auto-Configuration) files using GTK+ webkit engine.
+### vala
+Pass the `-Dvapi=true` option to the Meson build script. Generate and install the `libproxy-1.0.vapi` Vala language bindings for the `libproxy` library.
 
-It is safe to disable the flag.
+It is safe to disable this flag.
