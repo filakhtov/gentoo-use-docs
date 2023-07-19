@@ -9,3 +9,6 @@ This flag can be safely disabled.
 Execute the `pytest` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
 
 This flag should normally be disabled, because these tests are primarily used by the maintainers, developers and testers.
+
+### zstd
+Pull in the [dev-python/zstandard](../dev-python/zstandard.md) package as a dependency to enable support for the Zstd compression algorithm, a lossless data compression algorithm based on LZ77 family and created at Facebook.
