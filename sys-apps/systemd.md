@@ -177,7 +177,7 @@ The flag controls whether commands like `halt`, `init`, `poweroff` that are nece
 It is recommended to enable the flag. A system built with this flag disabled will need to provide the aforementioned tools via the [sys-apps/sysvinit](sysvinit.md) package that isn't aware of the systemd, might cause various compatibility issues and results in additional dependency being installed.
 
 ### test
-Passes the `-Ddbus=true` option to the Meson build script that is only necessary for running tests. The flag will execute a test suite that is provided with the source code. This will increase the build time.
+Pass the `-Dtests=true` and `-Ddbus=true` options to the Meson build script. Build the test suite provided with the source code. Execute the `meson test` command after the main build is completed to run the test suite and check for any regressions. This will increase the build time.
 
 This flag should only be used for testing and is not recommended for regular system.
 
