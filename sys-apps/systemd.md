@@ -154,6 +154,11 @@ Passes the `-Dseccomp=true` option to the Meson build script. This builds variet
 
 It is a security feature and should generally be enabled.
 
+### secureboot
+Automatically sign the `systemd-boot` bootloader for use on UEFI systems with Secure Boot option enabled.
+
+This flag can be safely disabled if the system doesn't use Secure Boot.
+
 ### selinux
 This flag passes the `-Dselinux=true` option to the Meson build script. Doing so will ensure that resulting binaries can properly operate with the SELinux enabled.
 
