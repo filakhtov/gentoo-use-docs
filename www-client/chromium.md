@@ -85,6 +85,11 @@ Only works if the `headless` flag is disabled. Pass the `use_qt=true` option to 
 
 This flag should only be enabled when running Chromium on QT-based platform.
 
+### qt6
+Requires `qt5` flag to be enabled. Only works if the `headless` flag is disabled. Pass the `use_qt6=true` option to the `gn gen` command. Enable support for QT 6 based toolkid for Chromium to enable better integration with the latest KDE & Plasma 6 desktop environment. Allow switching between QT toolkit versions by passing `--qt-version` flag at runtime.
+
+This flag should only be enabled if the system using QT 6 based desktop environment.
+
 ### screencast
 Requires `wayland` flag to be enabled. Pass the `rtc_use_pipewire=true` option to the `gn gen` command. Use the PipeWire server to enable screen and audio capture in Chromium to allow screencast functionality on Wayland.
 
