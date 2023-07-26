@@ -25,11 +25,6 @@ Install a C source code providing examples of how to use the GnuTLS library into
 
 It is safe to disable the flag.
 
-### guile
-Pass the `--enable-guile` option to the configure script. Build and install the `guile-gnutls-v-2` library - Guile bindings for the GnuTLS library.
-
-This flag should only be enabled if there is a need to run Guile scripts that require the GnuTLS library.
-
 ### idn
 Pass the `--with-idn` options to the configure script. Use the `libidn2` library to provide support for IDN (Internationalized Domain Names) as described in the IDNA2008 protocol. Allow to properly handle PKIX (X.509) certificates and verification with internationalized domain names.
 
