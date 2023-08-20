@@ -33,6 +33,11 @@ This flag only makes sense if the `cairo` flag is enabled. Install additional do
 
 It is safe to disable the flag.
 
+### gpgme
+Pass the `-DWITH_Gpgmepp=true` option to the `cmake` command. Enable GpgME (GnuPG Made Easy) backend to enable support for digital signature validation for PDF files.
+
+It is saf to disable this flag.
+
 ### introspection
 Pass the `-DWITH_GObjectIntrospection=true` (`false` if disabled) option to the `cmake` command. Generate and install the `Poppler-0.18.gir` GIR metadata file to provide dynamic bindings for the `libpoppler-glib` (Glib Poppler frontend) library to languages other than C using the GObject Introspection framework.
 
