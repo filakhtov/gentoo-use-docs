@@ -1,7 +1,7 @@
 # sys-apps/baselayout
 
 ### build
-Execute a `make layout` command to install directories and some device nodes.
+Execute a `make layout-usrmerge` command to install directories and some device nodes. If the `split-usr` flag is enabled then execute the `make layout` instead.
 
 This flag is primarily used for building early images and stages and should not be enabled on the actual running system.
 
