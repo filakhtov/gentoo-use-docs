@@ -10,11 +10,6 @@ Use the Sphinx documentation generator to build the documentation in the HTML fo
 
 This flag can be safely disabled.
 
-### emacs
-Insatll Emacs major mode for editing Cython files.
-
-This flag should only be enabled if there is a need to edit Cython files with the Emacs editor.
-
 ### test
 Execute the `runtests.py` script after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
 
