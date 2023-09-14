@@ -6,7 +6,7 @@ Append `clippy` to the `tools` option in the `build` section of the `config.toml
 It is safe to disable this flag.
 
 ### debug
-Set the `optimize` option to `false`, `release-debuginfo` to `true`, `assertions` to `true` under the `llvm` section, and `debug` to `true`, `debug-assertions` to `true`, `debug-assertions-std` to `true`, `debuginfo-level` to `2`, `debuginfo-level-rustc` to `2`, `debuginfo-level-std` to `2`, `debuginfo-level-tools` to `2` and `optimize-tests` to `false` under the `rust` section of the `config.toml` build configuration file. Produce the unoptimized, debug version of the rust toolchain, compiler and standard library, also enable LLVM, compiler and standard library assertions. This will take much more time to build the package and make it much slower to run.
+Set the `optimize` option to `false`, `release-debuginfo` to `true`, `assertions` to `true` under the `llvm` section, and `debug` to `true`, `debug-assertions` to `true`, `debug-assertions-std` to `true`, `debuginfo-level` to `2`, `debuginfo-level-rustc` to `2`, `debuginfo-level-std` to `2`, `debuginfo-level-tools` to `2`, `debuginfo-level-tests` to `2` and `optimize-tests` to `false` under the `rust` section of the `config.toml` build configuration file. Produce the unoptimized, debug version of the rust toolchain, compiler and standard library, also enable LLVM, compiler and standard library assertions. This will take much more time to build the package and make it much slower to run.
 
 This flag should only ever be enabled if there is a need to debug toolchain, standard library or compiler components of rust.
 
@@ -24,6 +24,11 @@ It is safe to disable the flag.
 Set the `llvm-libunwind` option in the `config.toml` build configuration file to either `system` or `in-tree`, depending if the `system-llvm` flag is enabled or disabled. When this flag is disabled, set the `llvm-libunwind` option to `no`. Link against LLVM's `libunwind` library instead of the GCC one to generate backtraces on panics.
 
 This flag can be safely disabled.
+
+### lto
+Set the `rust.lto=fat` (`off` when the option is disabled) option in the `config.toml` build configuration file. Enable LTO (link-time optimization) which helps to reduce the final size of the binaries and libraries and potentially improve the performance of the code.
+
+It is safe to disable this flag. It can be especially beneficial for the bigger programs.
 
 ### miri
 Requires the `nightly` flag to be enabled. Append `miri` to the `tools` option in the `build` section of the `config.toml` build configuration file. Build and install the `miri` tool - an experimental interpreter for Rust's mid-level intermediate representation (MIR). It can run binaries and test suites of cargo projects and detect certain classes of undefined behavior.
