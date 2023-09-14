@@ -1,5 +1,10 @@
 # net-libs/nodejs
 
+### corepack
+Install `corepack` - a zero-runtime-dependency Nodejs script that acts as a bridge between Nodejs projects and package managers, like `Yarn` and `Pnpm`. When this flag is disabled, pass the `--without-corepack` option to the configure script to disable `corepack`.
+
+This flag should normally be disabled, because `corepack` is considered an experimental feature a the moment.
+
 ### debug
 Patch the `tools/install.py` script to change install path, remove optimisations and set the build type to `Debug`. Pass the `--debug` option to the configure script. Produce (slower) binaries with additional debugging information attached.
 
