@@ -175,6 +175,11 @@ Pass the `--enable-libopenjpeg` option to the configure script. Enable support f
 
 This flag should only be enabled if there is a need to deal with JPEG2000 videos.
 
+### jpegxl
+Pass the `--enable-libjxl` option to the configure script. Enable support for encoding and decoding the JPEG-XL image format, both still and animated images. For example extracting a frame from the video and saving it in the JPEG-XL or combining multiple JPEG-XL images as frames of the video file.
+
+This flag can be safely disabled, unless there is a need to use JPEG-XL format with ffmpeg.
+
 ### kvazaar
 Only works when the `encode` flag is enabled. Pass the `--enable-libkvazaar` option to the configure script. Use the `libkvazaar` library to provide an ability to perform encoding in the HEVC (High Efficiency Video Coding) compressed video format, also known as H.265.
 
@@ -184,6 +189,11 @@ It is safe to disable the flag if there is no need to encode video in the HEVC f
 Pass the `--enable-ladspa` option to the configure script. Provide an ability to use LADSPA (Linux Audio Developer's Simple Plugin API) based plugins to apply audio filters and audio signal processing effects.
 
 This flag should normally be disabled, unless there is a need to use LADSPA plugins.
+
+### lcms
+Pass the `--enable-lcms2` option to the configure script. Enable support for ICC (International Color Consortium) profiles using the `lcms2` library. This ensures that color profiles are properly respected in various image and video formats to provide better color reproduction accuracy for the output format.
+
+It is safe to disable this flag if there is no need to deal with ICC profiles when transcoding.
 
 ### libaom
 Only works when the `encode` flag is enabled. Pass the `--enable-libaom` option to the configure script. Use the `libaom` library - an AOMedia video encoder for the AV1 video codec. `libaom` can save about 30% bitrate compared to VP9 and H.265 / HEVC, and about 50% over H.264, while retaining the same visual quality.
@@ -214,6 +224,11 @@ This flag should be enabled on supported platforms that benefit from DRM hardwar
 Pass the `--enable-libilbc` option to the configure script. Use the `libilbc` library to allow to decode the Internet Low Bitrate Codec (iLBC) audio codec - a free narrowband voice codec that was developed by Global IP Solutions, and is used in many Voice over IP (VoIP) and streaming audio applications.
 
 It is safe to disable the flag unless there is a need to use software that requires iLBC decoding using the FFmpeg library.
+
+### libplacebo
+Pass the `--enable-libplacebo` option to the configure script. Use the `libplacebo` library to support applying various GPU filters, such as HDR tone mapping, upscaling, downscaling, anti-aliasing, color mapping, debanding, etc.
+
+It is safe to disable this flag if there is no need to use `libplacebo` filters.
 
 ### librtmp
 Pass the `--enable-librtmp` option to the configure script. Use the `librtmp` library to provide support for the Real-Time Messaging Protocol (RTMP) and its variants. Provides most client functions and a few server functions needed to support RTMP, RTMP tunneled in HTTP (RTMPT), encrypted RTMP (RTMPE), RTMP over SSL/TLS (RTMPS) and tunneled variants of these encrypted types (RTMPTE, RTMPTS). Enabling this flag will replace the native RTMP protocol implementation.
@@ -339,6 +354,11 @@ This flag should be enabled if there is a need to use postprocessing filters and
 Pass the `--enable-libpulse` option to the configure script. Enable the `pulse` input device to capture audio through hardware devices connected to the PulseAudio server, as well as the output devices to perform playback.
 
 This flag should be enabled if the target system uses the PulseAudio sound server.
+
+### qsv
+Pass the `--enable-libvpl` option to the configure script. Use the `libvpl` library (oneAPI Video Processing Library) to support accelerated video decoding and encoding using the Intel QSV (Quick Sync Video) on compatible hardware.
+
+It is safe to disable this flag, unless there is a need to use QSV acceleration.
 
 ### rav1e
 Only works when the `encode` flag is enabled. Pass the `--enable-librav1e` option to the configure script. Provide an ability to create (encode) files in the AV1 format using the `librav1e` library - the fastest and safest AV1 encoder that is suitable for cases where the reference encoder library (`libaom`) is too slow.
