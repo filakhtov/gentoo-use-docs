@@ -1,35 +1,30 @@
 # sys-apps/portage
 
 ### apidoc
-Add the `apidoc` target to the list of tagets that are passed to `setup.py`. Use the Sphinx Python documentation tool to generate API documentation from the source code.
+Pass the `-Dapidoc=true` option to the meson build script. Use the Sphinx Python documentation tool to generate API documentation from the source code and install it into the system.
 
 This flag can be safely disabled if there is no need for Portage Python API documentation.
 
 ### build
 This flag should normally be disabled. It is used by the Gentoo team to create early build stages and bootstrapping. Under the hood it will ignore a number of flags and dependencies as well as disable the rsync verification.
 
-### debug
-Append the `-UNDEBUG` option to the `CXXFLAGS` environment variable for the duration of the build (`-DNDEBUG` if the flag is disabled). Enable additional assertions in the C code that will fail and terminate the program if the condition is violated. This is useful for development and debugging purposes.
-
-This flag should normally be disabled.
-
 ### doc
-Generate and install HTML documentation from DocBook by calling a `make docbook` command followed by a `make install_docbook`. Resulting documentation will be installed into a `/usr/share/doc/portage-<VERSION>/html` directory.
+Pass the `-Ddoc=true` option to the meson build script. Generate and install HTML documentation from DocBook into a `/usr/share/doc/portage-<VERSION>/html` directory.
 
 It is safe to disable this flag unless a documentation is necessary.
 
 ### gentoo-dev
-Disable the `--dynamic-deps` emerge runtime option that is enabled by default. Enable the following additional Portage FEATURES by default: an `ipc-sandbox`, a `network-sandbox` and a `strict-keepdir`.
+Pass the `-Dgentoo-dev=true` option to the meson build script. Disable the `--dynamic-deps` emerge runtime option that is enabled by default. Enable the following additional Portage FEATURES by default: an `ipc-sandbox`, a `network-sandbox` and a `strict-keepdir`.
 
 This flag should normally be disabled. It is mainly used by Gentoo developers.
 
 ### ipc
-Modify sources to enable a Portage IPC daemon. This daemon is responsible for communication between the main Portage process and a running ebuild. It helps detect dead or stale builds and action on them.
+Pass the `-Dipc=true` option to the meson build script. Enable a Portage IPC daemon that is responsible for communication between the main Portage process and a running ebuild. It helps detect dead or stale builds and action on them.
 
 It is recommended to enable this flag as an IPC functionality is mature enough nowadays and helps with various edge cases.
 
 ### native-extensions
-Compiles native C language extensions to improve portage performance. If disabled a Python code is used instead.
+Pass the `-Dnative-extensions=true` option to the meson build script. Compile native C language extensions to improve portage performance. If disabled a Python code is used instead.
 
 Enabling this flag is recommended for performance reasons. It can be disabled temporarily, e.g. for bootstrapping or while cross-compilling.
 
@@ -44,11 +39,11 @@ Pull in the [sys-libs/libselinux](../sys-libs/libselinux.md) package as a depend
 This flag should only be ever toggled system-wide, e.g. as part of SELinux-enabled Portage profile.
 
 ### test
-Execute the `setup.py test` command after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
+Execute the `meson test` command for each active Python implementation after the main build is completed to run the test suite provided with the source code and check for any regressions. This will extend the build time.
 
 This flag should normally be disabled, because it is mainly oriented towards the developers, maintainers and testers.
 
 ### xattr
-Enable `xattr` Portage feature by default (but only on Linux system). Ensure that all portage operations are handling XATTRs (eXtended ATTRibutes) properly, e.g. `tar` archives are extracted using a `--xattrs` option.
+Pass the `-Dxattr=true` option to the meson build script. Enable `xattr` Portage feature by default (but only on Linux system). Ensure that all portage operations are handling XATTRs (eXtended ATTRibutes) properly, e.g. `tar` archives are extracted using a `--xattrs` option.
 
 This flag should be toggled system-wide only. Enabling this flag on individual packages might and will result into lost XATTRs.
