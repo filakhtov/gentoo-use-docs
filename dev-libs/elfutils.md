@@ -5,6 +5,11 @@ This enables `--with-bzlib` configure option. Doing so will compile `libdwfl` wi
 
 This flag can be safely disabled if kernel or modules aren't compressed using aforementioned formats.
 
+### debuginfod
+Pass the `--enable-debuginfod` and `--enable-libdebuginfod` options to the configure script. Enable `debuginfod` - a client/server utilities that automatically distribute elf, dwarf and source-code from servers to clients such as debuggers across HTTP.
+
+It is safe to disable this flag.
+
 ### lzma
 This flag enables `--with-lzma` configure option. Doing so will compile `libdwfl` with LZMA compression support. This is required for dealing with kernel image and modules compressed using LZMA or XZ.
 
