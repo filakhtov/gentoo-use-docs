@@ -45,11 +45,6 @@ Pass the `--with-harfbuzz` option to the configure script. Use the HarfBuzz libr
 
 This flag should be enabled to improve OpenType fonts rendering.
 
-### infinality
-Patch the `ftoption.h` file to define the `TT_CONFIG_OPTION_SUBPIXEL_HINTING` macro and set its value to `1`. Enable subpixel hinting support for the TrueType driver. Use original Infinality (v38) code base that provides high amount of configurability and flexibility, down to rules for single glyphs in fonts. This mode is also very slow.
-
-This flag should normally be disabled, unless there is a need to fine-tune fonts appearance.
-
 ### png
 Pass the `--with-png` option to the configure script. Provide support for PNG compressed OpenType embedded bitmaps (also called 'sbits' for "scaler bitmaps"). One use of such bitmaps is emoji fonts.
 
