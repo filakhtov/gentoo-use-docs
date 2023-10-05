@@ -25,6 +25,11 @@ Start a new Xvfb session and execute the `meson test` command inside of it when 
 
 The flag should normally be disabled, as it is mainly targeted for the maintainers, testers and developers.
 
+### tracker
+Pass the `-Dgtk_doc=true` option to the `meson` build script. Integrate with Tracker search engine to provide real-time searching and browsing of file contents, full-text search for supported document types and perform advanced search queries.
+
+It is safe to disable this flag.
+
 ### xmp
 Pass a `-Dxmp=true` option to the `meson` build script. Integrate with the `libexempi` library to read an XMP (Extensible Metadata Platform) image metadata, such as location, description, subject and others, and display this information in an image file properties dialog.
 
