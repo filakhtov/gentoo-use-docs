@@ -59,3 +59,8 @@ This flag should normally be disabled, unless there is a need to work with Micro
 Pass the `-DLLVM_ENABLE_Z3_SOLVER=on` (`off` when the flag is disabled) option to the cmake command. Use the z3 SMT (Satisfiability Modulo Theories) problem solver library for the clang static analyzer, when performing symbolic execution on input code. Z3 theorem prover is slower than LLVM's built-in range-based solver, but can handle more complex queries.
 
 It is safe to disable this flag.
+
+### zstd
+Pass the `-DLLVM_ENABLE_ZSTD=on` (`off` when the flag is disabled) option to the cmake command. Enable support for Zstd compression algorithm that is used in a lot of different places in LLVM, such as compressing ELF debug sections, AST data structures and serialization of performance stats.
+
+It is safe to disable this flag.
