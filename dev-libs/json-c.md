@@ -1,10 +1,5 @@
 # dev-libs/json-c
 
-### doc
-Pass the `-DBUILD_DOCUMENTATION=true` option to the cmake command. Use the Doxygen tool to generate the documentation in the HTML format from the annotations in the source files and install it into the system.
-
-It is safe to disable the flag.
-
 ### static-libs
 Pass the `-DBUILD_STATIC_LIBS=true` option to the cmake command. Build and install a statically linked version of the `libjson-c` library.
 
