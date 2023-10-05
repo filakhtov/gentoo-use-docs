@@ -11,7 +11,7 @@ Pass the `--enable-debug` and `--disable-optimize` options to the configure scri
 This flag should be normally disabled as it has performance impact, can crash programs linked against the library and only useful for debugging.
 
 ### jit
-Pass the `--enable-ion` option to the configure script. Enable the IonMonkey JavaScript JIT (Just-In-Time) compiler for SpiderMonkey - a whole-method JIT with the ability to perform type specialization, function inlining, linear-scan register allocation, dead code elimination and loop-invariant code motion.
+Pass the `--enable-jit` option to the configure script. Enable the IonMonkey JavaScript JIT (Just-In-Time) compiler for SpiderMonkey - a whole-method JIT with the ability to perform type specialization, function inlining, linear-scan register allocation, dead code elimination and loop-invariant code motion.
 
 This flag should be enabled for platforms that support JIT compilation to improve performance.
 
