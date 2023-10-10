@@ -31,7 +31,7 @@ Pass the `-DEXIV2_BUILD_UNIT_TESTS=true` option to the cmake command. Build the 
 This flag should normally be disabled, because the test suite primarily oriented towards the developers, maintainers and testers, not the end users.
 
 ### webready
-Pass the `-DEXIV2_ENABLE_CURL=true`, `-DEXIV2_ENABLE_SSH=true` and `-DEXIV2_ENABLE_WEBREADY=true` options to the cmake command. Use the `libssh` and `libcurl` libraries to enable "Web Ready" feature - support for reading and writing metadata using HTTP(S), FTP(S) and SSH protocols.
+Pass the `-DEXIV2_ENABLE_CURL=true` and `-DEXIV2_ENABLE_WEBREADY=true` options to the cmake command. Use the `libssh` and `libcurl` libraries to enable "Web Ready" feature - support for reading and writing metadata using HTTP(S), FTP(S) and SSH protocols.
 
 It is safe to disable the flag.
 
