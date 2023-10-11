@@ -50,6 +50,11 @@ Pass the `--enable-utf` and the `--enable-unicode-properties` options to the con
 
 It is recommended to enable this flag as Unicode character set is mainstream nowadays.
 
+### valgrind
+Pass the `--enable-valgrind` option to the configure script. Enable additional flags at compile time to better support running applications linked against `libpcre` library under the Valgrind profiler.
+
+This flag should only ever be enabled if there is a need to profile apps linked with `libpcre` using Valgrind.
+
 ### zlib
 Pass the `--enable-pcregrep-libz` option to the configure script. Allow `pcregrep` utility to search for a pattern inside of Gzip compressed files. Compression handling is managed by a `libz` library.
 
