@@ -8,7 +8,7 @@ This flag can be safely disabled.
 ### alt-svc
 Pass the `--enable-alt-svc` option to the configure script. Enable support for HTTP Alternative Services (aka `Alt-Svc` header) which was added to cURL as a prerequisite for the HTTP/3 protocol support.
 
-This flag should normally be disabled.
+It is safe to disable this flag.
 
 ### brotli
 Pass the `--with-brotli` option to the configure script. Enable support for a `brotli` compression algorithm introduced by Google (provides 14% to 21% better compression than `gzip`) that recently becoming popular.
@@ -33,7 +33,7 @@ This flag should normally be disabled, as Gopher is ancient and is almost dead t
 ### hsts
 Pass the `--enable-hsts` option to the configure script. Enable support for HSTS (HTTP Strict Transport Security) standard. cURL will parse `Strict-Transport-Security` header sent by the server and save HSTS information into the cache file that can be specified via the `--hsts` option on the initial request, then cURL can load this same cache and avoid clear text HTTP requests for as long as the server indicated.
 
-It is recommended to diable this flag - it is currently considered to be experimental.
+It is safe to disable this flag.
 
 ### http2
 Pass the `--with-nghttp2` option to the configure script. Modify a pkg-config `libcurl.pc` file to remove `-lnghttp2` option from a `Libs.private` keyword and append a `libnghttp2` value to a `Requires.private` keyword. Provides support for an HTTP/2 protocol using a `nghttp2` library.
@@ -69,11 +69,6 @@ This flag should normally be disabled, unless strictly required, e.g. when build
 Pass the `--with-nghttp3` and `--with-ngtcp2` options to the configure script. Enable support for the QUIC protocol using the `ngtcp2` library to implement the HTTP/3 protocol on top of it using the `nghttp3` library and enable the `--http3` runtime option to access this feature.
 
 This flag should normally be disabled, because HTTP/3 support is considered experimental at this stage.
-
-### nss
-Only works if the `ssl` flag is enabled. Pass the `--with-nss` and `--with-nss-deprecated` options to the configure script. Provide an ability to use the NSS (Mozilla Network Security Services) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
-
-It is safe to disable this flag if a different backed is preferred.
 
 ### openssl
 Only works if the `ssl` flag is enabled. Pass the `--with-ssl` option to the configure script. Provide an ability to use the OpenSSL (cryptography and SSL/TLS toolkit) library for crypto operations, such as TLS encryption, certificate verification, etc. Multiple crypto backends can be enabled at a time and the default one can be selected using `CURL_SSL` variable.
