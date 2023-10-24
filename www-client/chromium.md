@@ -1,10 +1,5 @@
 # www-client/chromium
 
-### component-build
-Pass the `is_component_build=true` option to the `gn gen` command. Normally, one executable is compiled and a couple of shared libraries (depending on the platform), producing efficient runtime binary, but can take a long time to link because so much code goes into a single binary. This flag switches to a component build, where many smaller shared libraries will be generated. This speeds up link times, and means that many changes only require that the local shared library be linked rather than the full executable, but at the expense of program load-time performance.
-
-This flag should normally be disabled, because component build isn't generally intended for use by end users and is mostly useful for developement and debugging.
-
 ### cups
 Can't be used together with the `headless` flag. Pass the `use_cups=true` option to the `gn gen` command. Link against the `libcups` library to enable printing support using CUPS (Common Unix Printing System), including both, remote and local printers.
 
@@ -65,11 +60,6 @@ Only works with the Clang compiler. Pass the `use_lld=true` option to the `gn ge
 
 This flag can be safely disabled.
 
-### pic
-Only makes sense on the `ia32` architecture when `system-ffmpeg` flag is disabled. Pass the `--disable-asm` option to the `chromium/scripts/build_ffmpeg.py` script. Disable optimized assembly code and use the non-optimized but PIC-friendly (Position-Independent Code) code instead.
-
-This flag should normally be disabled.
-
 ### proprietary-codecs
 Pass the `proprietary_codecs=true` and the `ffmpeg_branding=Chrome` (instead of `Chromium`) option to the `gn gen` command. If the `system-ffmpeg` flag is disabled, also pass the `--branding Chrome` (instead of `Chromium`) option to the `chromium/scripts/build_ffmpeg.py` build script. Build the bundled FFmpeg library with support for proprietary codecs, e.g. MP3, etc, and make sure that the built Chromium exposes an ability to play these when requested.
 
@@ -99,21 +89,6 @@ It is safe to disable this flag.
 Pull in the [sec-policy/selinux-chromium](../sec-policy/selinux-chromium.md) package as a dependency that provides SELinux policies required for Chromium to properly operate under a SELinux-restricted kernel.
 
 This flag should only ever be toggled system-wide, i.e. as part of the SELinux-enabled Portage profile.
-
-### suid
-Run the `ninja chrome_sandbox` command during the build and install produced binary into the `/usr/bin/chrome-sandbox` location with SUID bit set. This is a special helper binary that is used to launch the zygote process, and once started it will create a new network and PID namespace, as well as `chroot()` the process to an empty directory on request.
-
-This flag should be disabled as it is almost but not completely removed from Chromium and replaced with user namespaces sandbox.
-
-### system-av1
-Pass the `dav1d` and `libaom` values to the `--system-libraries` option of the `build/linux/unbundle/replace_gn_files.py` script to replace the bundled `libaom` and `libdav1d` libraries with system-wide versions to link against.
-
-It is recommended to disable this flag for maximum Chromium stability.
-
-### system-ffmpeg
-Pass the `ffmpeg` and `opus` parameters to the `--system-libraries` option for the `build/linux/unbundle/replace_gn_files.py` script to replace bundled FFmpeg library with the system-wide version to link against.
-
-It is recommended to disable this flag for maximum Chromium stability.
 
 ### system-harfbuzz
 Pass the `use_system_harfbuzz=true` option to the `gn gen` command. Link against the system-wide version of the HarfBuzz text shaping library, instead of building and using the one bundled with the Chromium source code.
