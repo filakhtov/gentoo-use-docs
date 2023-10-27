@@ -19,3 +19,8 @@ It is safe to disable this flag.
 Pass the `-Dtests=true` option to the Meson build script. Build the test suite provided with the source code and execute the `meson test` command to run it after the main build is completed and check for any regression.
 
 This flag should normally be disabled, because these tests are primarily oriented towards the developers, maintainers and testers.
+
+### zstd
+Pass the `-Dzstd=true` option to the meson build script. Use the `libzstd` library to enable support for XML files compressed using the Zstandard (aka zstd) compression algorithm.
+
+It is safe to disable this flag.
