@@ -15,6 +15,11 @@ Enabling this flag will pass the `-Daudit=true` to the Meson build script. This 
 
 This flag is safe to disable.
 
+### boot
+Pass the `-Dbootloader=true` option to the meson build script. Build and install systemd boot tools: `systemd-boot`, `systemd-stub`, `bootctl` and so on. These tools are designed to be used as a lightweight replacement for the GRUB bootloader on systems that support the UEFI boot.
+
+This flag can be enabled on UEFI systems to use the `systemd-boot` bootloader.
+
 ### build
 This flag is used by the Gentoo team during early build stages for creating build images and bootstrapping. Under the hood it ignores dependency on the `kill` binary provided by one of [sys-apps/util-linux](util-linux.md), [sys-process/procps](../sys-process/procps.md) or [sys-apps/coreutils](coreutils.md) package.
 
@@ -56,11 +61,6 @@ It is safe to disable this flag.
 Passes the `-Dgcrypt=true` to the Meson build script. This flag enables support for the `allow-downgrade` mode of a DNSSEC operation for the `systemd-resolved`. It also enables the FSS (Forward Secure Sealing) feature of the `systemd-journald`.
 
 It is safe to disable the flag, unless there is a need to seal a journal or support the DNSSEC downgrading mode.
-
-### gnuefi
-This flag passes the `-Dgnu-efi=true` option to the Meson build script and enables compilation and installation of a `systemd-boot` - a systemd EFI boot manager. The `systemd-boot` can be used as a lightweight replacement for a GRUB bootloader on systems that support the UEFI.
-
-This flag should be enabled on UEFI systems to use the `systemd-boot` bootloader.
 
 ### gnutls
 Pass the `-Dgnutls=true` option to the Meson build script. Use the GnuTLS crypto library to enable support for DoT (DNS-over-TLS) in the `systemd-resolved` daemon. Takes precedence over the `openssl` flag is both are enabled.
