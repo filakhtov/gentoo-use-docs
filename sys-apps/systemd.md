@@ -94,6 +94,11 @@ The `nspawn`, for example, will support the `--port` option. Enabling this flag 
 
 This flag can be safely disabled unless one or more features described above are required.
 
+### kernel-install
+Pass the `-Dkernel-install=true` option to the Meson build script. Build and install the `kernel-install` tool that is used to install and remove kernel and initrd images from the bootloader partition.
+
+It is safe to disable this flag if there is no need to use the `kernel-install` utility.
+
 ### kmod
 The flag passes `-Dkmod=true` option to the Meson build script. This will build and install a `systemd-modules-load` - a tool responsible for loading kernel modules during a boot process.
 
@@ -190,6 +195,11 @@ This flag should only be used for testing and is not recommended for regular sys
 Pass the `-Dtpm2=true` option to the `meson` build script. Use the tpm2-tss (Trusted Computing Group's (TCG) TPM2 Software Stack (TSS) implementation) library to provide an ability for `systemd-cryptsetup` to unlock encrypted LUKS partitions using the TPM2 security chips (commonly found on non-budget PCs and laptops).
 
 It is safe to disable this flag.
+
+### ukify
+Pass the `-Dukify=true` option to the Meson build script. Build and install the `ukify` tool that can be used to combine components (such as kernel, initrd and a UEFI boot stub) to generate a UKI (Unified Kernel Image) - a portable executable binary that can be run directly by the firmware to start the embedded kernel.
+
+It is safe to disable this flag if there is no need to generate UKI images.
 
 ### vanilla
 This flag will skip applying Gentoo-specific pathces to the systemd source. It will also ignore the [sys-apps/gentoo-systemd-integration](gentoo-systemd-integration.md) dependency.
