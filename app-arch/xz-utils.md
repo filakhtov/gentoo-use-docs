@@ -17,6 +17,11 @@ Pass the `--enable-nls` option to the configure script. Enable messages translat
 
 It is safe to disable the flag unless there is a need to use non-English languages.
 
+### pgo
+Enable PGO (Profiler-Guided Optimization). First build an application using additional profiler flags. Then execute the test suite to generate profiling data. Finally rebuild the application again, performing optimizations based on the collected profiling data. This will extend the build time significantly.
+
+It is safe to disable this flag.
+
 ### split-usr
 If the flag is enabled some of the produced libraries will be installed into the `/lib` directory, instead of the `/usr/lib` directory, so that they are available during the early boot when the `/usr` partition is not yet mounted.
 
