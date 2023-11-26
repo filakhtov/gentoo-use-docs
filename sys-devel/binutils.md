@@ -5,6 +5,11 @@ Pass the `--enable-cet` option to the configure script. Remove the `-minidirect-
 
 It is safe to disable this flag, however it will be beneficial to enable it on compatible systems for improved security.
 
+### debuginfod
+Pass the `--with-debuginfod` option to the configure script. Use the `libdebuginfod` library to allow `objdump` and `readelf` tools to automatically query the `debuginfod` server over HTTP protocol to obtain separate DWARF/ELF debug files when they can not otherwise be found.
+
+This flag can be safely disabled.
+
 ### doc
 Run `make info` during a build to produce info pages. They will be installed into a `/usr/share/doc/binutils-<VERSION>` directory.
 
