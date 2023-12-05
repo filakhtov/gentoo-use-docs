@@ -6,7 +6,7 @@ Pass the `--with-audit` option to the configure script. Enable support for Kerne
 It is safe to disable this flag if no auditing support is necessary.
 
 ### build
-This flag is used by Gentoo team when building and bootstrapping early stage images. Under the hood this flag will exclude [sys-apps/systemd](systemd.md) from dependencies regardless if `systemd` USE flag is set or not.
+This flag is used by Gentoo team when building and bootstrapping early stage images. Under the hood this flag will exclude [sys-apps/systemd](systemd.md) from dependencies regardless if `systemd` USE flag is set or not and force the `--without-udev` and `--without-systemd` options during the configure phase.
 
 This flag should be disabled.
 
