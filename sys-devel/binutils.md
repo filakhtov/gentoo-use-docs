@@ -25,6 +25,11 @@ Pass the `--enable-gprofng` option to the configure script. Build and install a 
 
 This flag should normally be disabled.
 
+### hardened
+Pass the `--enable-texrel-check=error` (instead of `warning`) and `--enable-default-execstack=no` options to the configure script. Build a security hardened version of binutils. First, prevent the linker from automatically assuming and marking the stack as executable for objects built from the assembler code that is missing the `.note.GNU-stack` section. Second, fail the build when trying to include non-PIC (Position-Independent Code) object into the shared library.
+
+It is recommended to enable this flag, however doing so might break certain applications.
+
 ### multitarget
 Pass the `--enable-targets=all` and `--enable-64-bit-bfd` options to the configure script. Provide a 64-bit computing support (also on hosts with narrower word sizes) and enable all supported targets (not only natively supported targets) for cross-compiling.
 
