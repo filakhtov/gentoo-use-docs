@@ -41,7 +41,7 @@ Add the `-DNDEBUG` option to the `CFLAGS`, `CXXFLAGS`, `...FLAGS` variables for 
 This flag should normally be disabled, unless there is a need to perform debugging.
 
 ### drm
-Pass the `-Ddrm=enabled` and `-Dgbm=enabled` options to the Meson build script. Enable the `drm` video output driver that is using Kernel Mode Setting subpart of the Direct Rendering Manager to output decoded video frames and provide an ability to store decoded video frames in a GBM (Graphics Buffer Manager) buffer for subsequent rendering via the EGL API.
+Pass the `-Ddrm=enabled` option to the Meson build script. Enable the `drm` video output driver that is using Kernel Mode Setting subpart of the Direct Rendering Manager to output the decoded video frames.
 
 This flag should be enabled if there is a need to play videos without full-blown graphical environment, i.e. X or Wayland server.
 
@@ -60,7 +60,7 @@ Requires the `X`, `drm` or `wayland` flag to be enabled. Provide an ability to r
 
 When enabled together with the `X` flag, then also pass the `-Degl-x11=enabled` option to the Meson build script to allow to use the X Window System implementation of the EGL API. It can be useful on an embedded system that has only OpenGL ES capabilities and runs an X server. See the `X` flag for additional details.
 
-If enabled together with the `drm` flag, pass the `-Degl-drm=enabled` option to the Meson build script to provide an ability to use the DRM (Direct Rendering Manager) implementation for the EGL API via the Mesa GBM. This allows to use the OpenGL output without a full-featured window system. See the `drm` flag for more details.
+If enabled together with the `drm` flag, pass the `-Degl-drm=enabled` and `-Dgbm=enabled` options to the Meson build script to provide an ability to use the DRM (Direct Rendering Manager) implementation for the EGL API via the Mesa GBM. This allows to use the OpenGL output without a full-featured window system. See the `drm` flag for more details.
 
 For hardware-accelerated video decoding with EGL rendering, see the `vaapi` flag.
 
@@ -107,11 +107,6 @@ This flag should normally be disabled.
 Pass the `-Dlibmpv=true`, `-Dgl=enabled` and `-Dplain-gl=enabled` options to the Meson build script. Build and install the shared `libmpv` library that can be used by other programs as a video and audio playback backend, including the OpenGL rendering capabilities, without platform-specific implementation (in which case a library client will have to provide one).
 
 This flag should be enabled if mpv is not to be used directly, but with some frontend interface, such as gnome-mpv.
-
-### libplacebo
-Pass the `-Dlibplacebo=enabled` option to the Meson build script. Enable support for GPU accelerated video rendering using the `libplacebo` library.
-
-It is recommended to enabled this flag to enable hardware accelerated video rendering.
 
 ### lua
 Pass the `-Dlua=enabled` option to the Meson build script. Allow to load and execute external Lua scripts to extend mpv functionality, i.e. control mpv in a similar way to slave mode using the client API via the provided `mp` Lua module. Install additional Lua scripts into the `/usr/share/mpv` directory, including the `acompressor.lua` that adds keyboard shortcuts to control the dynamic range compression FFmpeg filter, `ao-null-reload.lua` that handles the edge case where attempts to init audio output fails, `autocrop.lua` that uses the lavfi cropdetect filter to automatically apply the crop filter with appropriate paramteres for the currently playing video, and others.
@@ -198,9 +193,9 @@ Pass the `-Duchardet=enabled` option to the Meson build script. Use the `libucha
 The flag can be safely disabled, unless there is a need to deal with non-UTF-8 subtitle files.
 
 ### vaapi
-Requires at least one of the `egl`, `X`, `libplacebo` or `drm` (if the `wayland` flag is enabled) flag to be enabled. Pass the `-Dvaapi=enabled` option to the Meson build script. Use the VA-API (Video Acceleration API) to perform hardware-accelerated video decoding and postprocessing.
+Requires at least one of the `X`, `drm` or `wayland` flag to be enabled. Pass the `-Dvaapi=enabled` option to the Meson build script. Use the VA-API (Video Acceleration API) to perform hardware-accelerated video decoding and postprocessing.
 
-If enabled together with the `X` flag, also pass the `-Dvaapi-x11=enabled` option to the Meson build script to provide an ability to render decoded frames directly from the VA-API pipeline onto the X server drawable area. If the `egl` flag is enabled together with the `X` flag, then pass the `-Dvaapi-x-egl=enabled` flag that can also use the EGL API for rendering utilizing the X Window System as a backend.
+If enabled together with the `X` flag, also pass the `-Dvaapi-x11=enabled` option to the Meson build script to provide an ability to render decoded frames directly from the VA-API pipeline onto the X server drawable area.
 
 When enabled together with the `wayland` flag, also pass the `-Dvaapi-wayland=enabled` option to the Meson build script. Provide an ability to render video frames onto Wayland surface, necessary when running the Wayland display server.
 
