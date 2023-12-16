@@ -54,3 +54,8 @@ This flag should normally be disabled unless there is an explicit need for stati
 Perform signature verification of the upstream source code archive before extracting it and building the package.
 
 It is safe to disable this flag.
+
+### xattr
+Pass the `--enable-attr` option to the configure script. Link against the `libattr` library to enable support for extended file attributes on files generated with gettext.
+
+This flag should be toggled system-wide, otherwise there is a high chanse of losing the exented attributes when processing files with vasious tools.
